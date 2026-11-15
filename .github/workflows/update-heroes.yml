@@ -22,6 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - name: Record trigger and collection time
+        env:
+          TRIGGER_EVENT: ${{ github.event_name }}
+        run: |
+          printf 'Trigger: %s\n' "$TRIGGER_EVENT"
+          date -u '+Started: %Y-%m-%dT%H:%M:%SZ'
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
