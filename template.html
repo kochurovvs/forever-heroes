@@ -22,23 +22,23 @@ for(const o of Object.keys(DATA.roster))$('#owner').add(new Option(o,o));for(con
 $('#roster').innerHTML=Object.entries(DATA.roster).map(([o,ns])=>`<span class="person"><b>${esc(o)}</b> · ${ns.length?ns.length+' гер.':'герои не указаны'}</span>`).join('');$('#stamp').textContent=(DATA.complete===false?'Частичный снимок: ':'Последнее успешное обновление: ')+time(DATA.fetchedAt)+' МСК';
 const opened=new Set();let visible=[];
 const statFields = [
-  ['ARMOR', 'Броня', 'inv_shield_04', 'prof:Blacksmithing'],
-  ['STRENGTH', 'Сила', 'spell_nature_strength', 'class:Warrior'],
-  ['AGILITY', 'Ловкость', 'ability_rogue_sprint', 'class:Rogue'],
-  ['STAMINA', 'Выносливость', 'spell_nature_unyeildingstamina', 'class:Druid'],
-  ['INTELLECT', 'Интеллект', 'spell_holy_magicalsentry', 'class:Priest'],
-  ['SPIRIT', 'Дух', 'spell_holy_divinespirit', 'class:Shaman'],
-  ['HEALTH', 'Здоровье', 'inv_potion_54', 'prof:First Aid'],
-  ['MANA', 'Мана', 'inv_potion_76', 'prof:Alchemy'],
-  ['RAGE', 'Ярость', 'ability_racial_bloodrage', 'class:Warrior'],
-  ['ENERGY', 'Энергия', 'spell_shadow_shadowworddominate', 'class:Rogue'],
-  ['DAMAGE', 'Урон оружия', 'inv_sword_04', 'class:Warrior'],
-  ['ATTACKPOWER', 'Сила атаки', 'ability_meleedamage', 'class:Warrior'],
-  ['CRITICALSTRIKE', 'Критический удар', 'ability_criticalstrike', 'class:Rogue'],
-  ['SPELLPOWER', 'Сила заклинаний', 'spell_arcane_blast', 'prof:Enchanting'],
-  ['DODGE', 'Уклонение', 'spell_nature_invisibilty', 'class:Rogue'],
-  ['PARRY', 'Парирование', 'ability_parry', 'class:Warrior'],
-  ['BLOCK', 'Блокирование', 'ability_defend', 'prof:Blacksmithing']
+  ['ARMOR', 'Armor', 'inv_shield_04', 'prof:Blacksmithing'],
+  ['STRENGTH', 'Strength', 'spell_nature_strength', 'class:Warrior'],
+  ['AGILITY', 'Agility', 'ability_rogue_sprint', 'class:Rogue'],
+  ['STAMINA', 'Stamina', 'spell_nature_unyeildingstamina', 'class:Druid'],
+  ['INTELLECT', 'Intellect', 'spell_holy_magicalsentry', 'class:Priest'],
+  ['SPIRIT', 'Spirit', 'spell_holy_divinespirit', 'class:Shaman'],
+  ['HEALTH', 'Health', 'inv_potion_54', 'prof:First Aid'],
+  ['MANA', 'Mana', 'inv_potion_76', 'prof:Alchemy'],
+  ['RAGE', 'Rage', 'ability_racial_bloodrage', 'class:Warrior'],
+  ['ENERGY', 'Energy', 'spell_shadow_shadowworddominate', 'class:Rogue'],
+  ['DAMAGE', 'Weapon Damage', 'inv_sword_04', 'class:Warrior'],
+  ['ATTACKPOWER', 'Attack Power', 'ability_meleedamage', 'class:Warrior'],
+  ['CRITICALSTRIKE', 'Critical Strike', 'ability_criticalstrike', 'class:Rogue'],
+  ['SPELLPOWER', 'Spell Power', 'spell_arcane_blast', 'prof:Enchanting'],
+  ['DODGE', 'Dodge', 'spell_nature_invisibilty', 'class:Rogue'],
+  ['PARRY', 'Parry', 'ability_parry', 'class:Warrior'],
+  ['BLOCK', 'Block', 'ability_defend', 'prof:Blacksmithing']
 ];
 const decimal = new Intl.NumberFormat('ru-RU', {maximumFractionDigits: 2});
 function statValue(v) {
@@ -93,15 +93,15 @@ const qualityColors = {POOR:'#aaa', COMMON:'#eee', UNCOMMON:'#78dc56', RARE:'#67
 const itemStatNames = new Map(statFields.map(([key, label]) => [key, label]));
 function itemTooltip(item) {
   const lines = [];
-  if (Number.isFinite(item.armor?.value)) lines.push('Броня: ' + item.armor.value);
+  if (Number.isFinite(item.armor?.value)) lines.push('Armor: ' + item.armor.value);
   const weapon = item.weapon;
   if (weapon?.damage?.display_string) {
     const {min_value, max_value, display_string} = weapon.damage;
     lines.push(Number.isFinite(min_value) && Number.isFinite(max_value) ?
-      'Урон: ' + min_value + '–' + max_value : display_string);
+      'Damage: ' + min_value + '–' + max_value : display_string);
   }
-  if (Number.isFinite(weapon?.attack_speed?.value)) lines.push('Скорость: ' + decimal.format(weapon.attack_speed.value / 1000) + ' с');
-  if (Number.isFinite(weapon?.dps?.value)) lines.push('Урон в секунду: ' + decimal.format(weapon.dps.value));
+  if (Number.isFinite(weapon?.attack_speed?.value)) lines.push('Speed: ' + decimal.format(weapon.attack_speed.value / 1000) + ' s');
+  if (Number.isFinite(weapon?.dps?.value)) lines.push('Damage per Second: ' + decimal.format(weapon.dps.value));
   for (const stat of item.stats || []) {
     const label = itemStatNames.get(stat.type?.type?.replaceAll('_', '')) || stat.type?.name;
     if (label && Number.isFinite(stat.value)) lines.push(label + ': ' + (stat.value > 0 ? '+' : '') + stat.value);
