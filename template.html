@@ -3,7 +3,8 @@
 .stats{margin-bottom:24px}.stats h3{font-weight:500}.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 12px;margin:0}.stat{position:relative;padding:7px 8px 7px 44px;background:#211c15;border:1px solid #473924;border-radius:3px}.stat dt{font-size:12px;color:#c2b399}.stat dd{margin:0;font:18px Georgia,serif;color:#f4d99e;font-variant-numeric:tabular-nums}.stat-icon{position:absolute;top:50%;left:8px;transform:translateY(-50%);width:27px;height:27px;background-size:cover;background-position:center}
 .toolbar{margin-bottom:8px}.compact-option{display:inline-flex;align-items:center;gap:8px;color:#dfc58f;margin:2px 0 12px;cursor:pointer}.compact-option input{min-width:0;flex:none;width:16px;height:16px;accent-color:#c4a464}.hero td{padding-block:8px}.summary td{padding:5px 12px 8px 20px;background:#191610}.mini-line{display:flex;align-items:baseline;gap:10px;font-size:12px}.mini-line+.mini-line{margin-top:4px}.mini-label{flex:0 0 70px;color:#bbab8e}.mini-items{display:flex;flex-wrap:wrap;align-items:center;gap:3px 12px}.chip{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;font-variant-numeric:tabular-nums}.chip b{font-weight:500;color:#ddbf85}.chip .icon{position:static;transform:none;flex:none;width:17px;height:17px;box-shadow:none;border-color:#76613e}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .gearlist{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:5px 14px}.gearlist li{display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #403525;line-height:1.3}.gearlist .icon{width:30px;height:30px;flex:none}.gearlist small{color:var(--muted);font-size:11px}
-</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><div class="scroll"><table><thead><tr><th style="width:36px"></th><th>Владелец</th><th>Персонаж</th><th>Раса</th><th>Класс</th><th>Уровень</th></tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел. На узком экране таблицу можно прокрутить вправо.</p><h2>Состав компании</h2><div id="roster" class="company"></div><footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><script>
+#hover-tip{position:fixed;z-index:20;pointer-events:none;box-sizing:border-box;max-width:min(350px,calc(100vw - 12px));white-space:pre-line;padding:8px 12px;border:1px solid #96794a;border-radius:4px;background:#15120ff5;color:#eedbb8;box-shadow:0 4px 14px #0009;font-size:13px;line-height:1.45}[data-tip]{cursor:help}[data-tip]:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><div class="scroll"><table><thead><tr><th style="width:36px"></th><th>Владелец</th><th>Персонаж</th><th>Раса</th><th>Класс</th><th>Уровень</th></tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел. На узком экране таблицу можно прокрутить вправо.</p><h2>Состав компании</h2><div id="roster" class="company"></div><footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
 const DATA=__DATA__, ICONS=__ICONS__;
 const names={'Leatherworking':'Кожевничество','Skinning':'Снятие шкур','Cooking':'Кулинария','Alchemy':'Алхимия','Blacksmithing':'Кузнечное дело','Enchanting':'Наложение чар','Engineering':'Инженерное дело','Herbalism':'Травничество','Mining':'Горное дело','Tailoring':'Портняжное дело','Fishing':'Рыбная ловля','First Aid':'Первая помощь'};
 const races={'Tauren':'Таурен','Undead':'Нежить','Orc':'Орк','Windshaper Skyborne':'Windshaper Skyborne'};
@@ -66,7 +67,7 @@ function statEntries(stats) {
 function summaryRows(h, entries) {
   if (!h.character) return '';
   const stats = entries.map(({label, image, amount}) =>
-    '<span class="chip" title="' + label + '" aria-label="' + label + ' ' + amount + '">' +
+    '<span class="chip" tabindex="0" data-tip="' + esc(label) + '" aria-label="' + label + ' ' + amount + '">' +
     image + '<span class="sr-only">' + label + ' </span>' + amount + '</span>');
   const professions = skills(h).map(p => {
     const tier = value(p);
@@ -89,6 +90,31 @@ const gearSlots = {
 const slotOrder = new Map(Object.keys(gearSlots).map((key, index) => [key, index]));
 const qualityColors = {POOR:'#aaa', COMMON:'#eee', UNCOMMON:'#78dc56', RARE:'#67acff',
   EPIC:'#c491ff', LEGENDARY:'#ffad54', ARTIFACT:'#e9cd89', HEIRLOOM:'#94d9df'};
+const itemStatNames = new Map(statFields.map(([key, label]) => [key, label]));
+function itemTooltip(item) {
+  const lines = [];
+  if (Number.isFinite(item.armor?.value)) lines.push('Броня: ' + item.armor.value);
+  const weapon = item.weapon;
+  if (weapon?.damage?.display_string) {
+    const {min_value, max_value, display_string} = weapon.damage;
+    lines.push(Number.isFinite(min_value) && Number.isFinite(max_value) ?
+      'Урон: ' + min_value + '–' + max_value : display_string);
+  }
+  if (Number.isFinite(weapon?.attack_speed?.value)) lines.push('Скорость: ' + decimal.format(weapon.attack_speed.value / 1000) + ' с');
+  if (Number.isFinite(weapon?.dps?.value)) lines.push('Урон в секунду: ' + decimal.format(weapon.dps.value));
+  for (const stat of item.stats || []) {
+    const label = itemStatNames.get(stat.type?.type?.replaceAll('_', '')) || stat.type?.name;
+    if (label && Number.isFinite(stat.value)) lines.push(label + ': ' + (stat.value > 0 ? '+' : '') + stat.value);
+    else if (stat.display?.display_string) lines.push(stat.display.display_string);
+  }
+  for (const enchant of item.enchantments || []) {
+    if (enchant.display_string) lines.push(enchant.display_string);
+  }
+  for (const effect of item.spells || []) {
+    if (effect.description) lines.push(effect.description);
+  }
+  return lines.length ? lines.join('\n') : 'В оружейной нет характеристик для этого предмета.';
+}
 function equippedItem(item) {
   const slot = item.slot || {};
   const label = gearSlots[slot.type] || slot.name || 'Предмет';
@@ -97,7 +123,7 @@ function equippedItem(item) {
     '<img class="icon" src="' + esc(url) + '" loading="lazy" alt="">' : '';
   const level = Number.isFinite(item.level?.value) ? ' · ур. ' + item.level.value : '';
   const color = qualityColors[item.quality?.type] || '#eee';
-  return '<li>' + image + '<div><small>' + esc(label) + level + '</small>' +
+  return '<li tabindex="0" data-tip="' + esc(itemTooltip(item)) + '">' + image + '<div><small>' + esc(label) + level + '</small>' +
     '<div style="color:' + color + '">' + esc(item.name) + '</div></div></li>';
 }
 function details(h) {
@@ -116,8 +142,41 @@ function details(h) {
 }
 function toggle(i){opened.has(i)?opened.delete(i):opened.add(i);const row=$('#hero-'+i),detail=$('#detail-'+i);row.setAttribute('aria-expanded',String(opened.has(i)));row.querySelector('.arrow').textContent=opened.has(i)?'▾':'▸';detail.hidden=!opened.has(i);updateButton()}
 function updateButton(){$('#expand').textContent=visible.length&&visible.every(i=>opened.has(i))?'Свернуть все':'Раскрыть все'}
-function render(){const q=$('#search').value.trim().toLowerCase(),o=$('#owner').value,p=$('#profession').value;visible=[];
+function render(){hideTooltip();const q=$('#search').value.trim().toLowerCase(),o=$('#owner').value,p=$('#profession').value;visible=[];
 $('#rows').innerHTML=DATA.heroes.map((h,i)=>{const c=h.character,terms=[h.name,h.owner,c?.race?.name,races[c?.race?.name],classes[c?.class?.name],...skills(h).flatMap(s=>[s.name,tr(s.name)])].join(' ').toLowerCase();if(o&&h.owner!==o||p&&!skills(h).some(s=>s.name===p)||!terms.includes(q))return '';visible.push(i);const expanded=opened.has(i), entries=statEntries(c?.stats);return `<tr id="hero-${i}" class="hero" role="button" tabindex="0" aria-expanded="${expanded}" aria-controls="detail-${i}" aria-label="${esc(h.name)}, ${esc(h.owner)}. Экипировка"><td class="arrow">${expanded?'▾':'▸'}</td><td class="owner">${esc(h.owner)}</td><td><span class="heroname" style="color:${colors[c?.class?.name]||'#b4a48c'}">${esc(h.name)}</span>${h.stale?'<span class="status">Сохранённые данные · '+esc(h.status)+'</span>':!c?'<span class="status">Профиль недоступен</span>':''}</td><td><span class="iconlabel">${c?icon('race:'+c.race.slug+':'+c.gender.slug,'raceIcon'):''}${esc(races[c?.race?.name]||c?.race?.name||'—')}</span></td><td><span class="iconlabel" style="color:${colors[c?.class?.name]||'inherit'}">${c?icon('class:'+c.class.name):''}${esc(classes[c?.class?.name]||c?.class?.name||'—')}</span></td><td class="level">${c?.level||'—'}</td></tr>${$('#compact').checked ? summaryRows(h, entries) : ''}<tr class="detail" id="detail-${i}" ${expanded?'':'hidden'}><td colspan="6"><div class="detailbox">${details(h)}</div></td></tr>`}).join('');
 for(const i of visible){const row=$('#hero-'+i);row.onclick=()=>toggle(i);row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i)}}}$('#noresults').classList.toggle('hidden',!!visible.length);updateButton()}
+const tip = $('#hover-tip');
+let tipAnchor;
+function hideTooltip() {
+  tip.hidden = true;
+  tipAnchor?.removeAttribute('aria-describedby');
+  tipAnchor = null;
+}
+function showTooltip(anchor) {
+  if (!anchor || anchor === tipAnchor) return;
+  hideTooltip();
+  tipAnchor = anchor;
+  tip.textContent = anchor.dataset.tip;
+  anchor.setAttribute('aria-describedby', tip.id);
+  tip.hidden = false;
+  const rect = anchor.getBoundingClientRect();
+  const left = Math.max(6, Math.min(rect.left, window.innerWidth - tip.offsetWidth - 6));
+  const top = rect.bottom + tip.offsetHeight + 12 <= window.innerHeight ?
+    rect.bottom + 6 : Math.max(6, rect.top - tip.offsetHeight - 6);
+  tip.style.left = left + 'px';
+  tip.style.top = top + 'px';
+}
+const rows = $('#rows');
+for (const event of ['pointerover', 'focusin']) {
+  rows.addEventListener(event, e => showTooltip(e.target.closest('[data-tip]')));
+}
+for (const event of ['pointerout', 'focusout']) {
+  rows.addEventListener(event, e => {
+    if (tipAnchor && !tipAnchor.contains(e.relatedTarget)) hideTooltip();
+  });
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') hideTooltip(); });
+window.addEventListener('scroll', hideTooltip, true);
+window.addEventListener('resize', hideTooltip);
 for(const id of ['search','owner','profession','compact'])$('#'+id).addEventListener(id==='search'?'input':'change',render);$('#expand').onclick=()=>{const close=visible.every(i=>opened.has(i));visible.forEach(i=>close?opened.delete(i):opened.add(i));render()};render();
 </script></html>
