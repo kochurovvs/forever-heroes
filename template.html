@@ -11,14 +11,13 @@ const races={'Tauren':'Таурен','Undead':'Нежить','Orc':'Орк','Win
 const classes={'Shaman':'Шаман','Warrior':'Воин','Priest':'Жрец','Mage':'Маг','Warlock':'Чернокнижник','Druid':'Друид','Rogue':'Разбойник','Hunter':'Охотник','Paladin':'Паладин'};
 const colors={'Shaman':'#409cff','Warrior':'#c79c6e','Priest':'#eee','Mage':'#69ccf0','Warlock':'#b6a1ef','Druid':'#ff9549','Rogue':'#fff49b','Hunter':'#abd473','Paladin':'#f58cba'};
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const tr=s=>names[s]||s;
 const time=s=>s?new Date(s).toLocaleString('ru-RU',{timeZone:'Europe/Moscow',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'не указано';
 const skills=h=>['primaries','secondaries'].flatMap(type=>(h.character?.professions?.[type]||[]).map(p=>({...p,type})));
 const value=p=>p.tiers?.reduce((a,b)=>(b.skillPoints||0)>(a.skillPoints||0)?b:a,p.tiers[0])||{};
 const icon=(key,cls='')=>ICONS[key]?`<img class="icon ${cls}" src="${ICONS[key]}" alt="" width="33" height="33">`:'';
 const available=DATA.heroes.filter(h=>h.character),unique=[...new Set(available.flatMap(skills).map(p=>p.name))];
 $('#counts').innerHTML=`<span><strong>${Object.keys(DATA.roster).length}</strong> владельцев</span><span><strong>${DATA.heroes.length}</strong> персонажей</span><span><strong>${available.length}</strong> профилей получено</span><span><strong>${unique.length}</strong> видов профессий</span>`;
-for(const o of Object.keys(DATA.roster))$('#owner').add(new Option(o,o));for(const p of unique.sort((a,b)=>tr(a).localeCompare(tr(b),'ru')))$('#profession').add(new Option(tr(p),p));
+for(const o of Object.keys(DATA.roster))$('#owner').add(new Option(o,o));for(const p of unique.sort((a,b)=>a.localeCompare(b,'en')))$('#profession').add(new Option(p,p));
 $('#roster').innerHTML=Object.entries(DATA.roster).map(([o,ns])=>`<span class="person"><b>${esc(o)}</b> · ${ns.length?ns.length+' гер.':'герои не указаны'}</span>`).join('');$('#stamp').textContent=(DATA.complete===false?'Частичный снимок: ':'Последнее успешное обновление: ')+time(DATA.fetchedAt)+' МСК';
 const opened=new Set();let visible=[];
 const statFields = [
@@ -72,7 +71,7 @@ function summaryRows(h, entries) {
   const professions = skills(h).map(p => {
     const tier = value(p);
     const points = [tier.skillPoints, tier.maxSkillPoints].filter(Number.isFinite).join('/');
-    return '<span class="chip">' + icon('prof:' + p.name) + esc(tr(p.name)) +
+    return '<span class="chip">' + icon('prof:' + p.name) + esc(p.name) +
       (points ? ' <b>' + points + '</b>' : '') + '</span>';
   });
   const line = (label, chips) => '<div class="mini-line"><span class="mini-label">' + label +
@@ -81,11 +80,11 @@ function summaryRows(h, entries) {
     line('Профессии', professions) + '</td></tr>';
 }
 const gearSlots = {
-  HEAD:'Голова', NECK:'Шея', SHOULDER:'Плечи', BACK:'Спина', CHEST:'Грудь',
-  SHIRT:'Рубашка', TABARD:'Гербовая накидка', WRIST:'Запястья', HANDS:'Кисти рук',
-  WAIST:'Пояс', LEGS:'Ноги', FEET:'Ступни', FINGER_1:'Кольцо 1', FINGER_2:'Кольцо 2',
-  TRINKET_1:'Аксессуар 1', TRINKET_2:'Аксессуар 2', MAIN_HAND:'Правая рука',
-  OFF_HAND:'Левая рука', RANGED:'Дальний бой'
+  HEAD:'Head', NECK:'Neck', SHOULDER:'Shoulders', BACK:'Back', CHEST:'Chest',
+  SHIRT:'Shirt', TABARD:'Tabard', WRIST:'Wrist', HANDS:'Hands',
+  WAIST:'Waist', LEGS:'Legs', FEET:'Feet', FINGER_1:'Ring 1', FINGER_2:'Ring 2',
+  TRINKET_1:'Trinket 1', TRINKET_2:'Trinket 2', MAIN_HAND:'Main Hand',
+  OFF_HAND:'Off Hand', RANGED:'Ranged'
 };
 const slotOrder = new Map(Object.keys(gearSlots).map((key, index) => [key, index]));
 const qualityColors = {POOR:'#aaa', COMMON:'#eee', UNCOMMON:'#78dc56', RARE:'#67acff',
@@ -117,7 +116,7 @@ function itemTooltip(item) {
 }
 function equippedItem(item) {
   const slot = item.slot || {};
-  const label = gearSlots[slot.type] || slot.name || 'Предмет';
+  const label = slot.name || gearSlots[slot.type] || 'Item';
   const url = item.media?.content?.assets?.find(asset => asset.key === 'icon')?.value;
   const image = typeof url === 'string' && url.startsWith('https://') ?
     '<img class="icon" src="' + esc(url) + '" loading="lazy" alt="">' : '';
@@ -143,7 +142,7 @@ function details(h) {
 function toggle(i){opened.has(i)?opened.delete(i):opened.add(i);const row=$('#hero-'+i),detail=$('#detail-'+i);row.setAttribute('aria-expanded',String(opened.has(i)));row.querySelector('.arrow').textContent=opened.has(i)?'▾':'▸';detail.hidden=!opened.has(i);updateButton()}
 function updateButton(){$('#expand').textContent=visible.length&&visible.every(i=>opened.has(i))?'Свернуть все':'Раскрыть все'}
 function render(){hideTooltip();const q=$('#search').value.trim().toLowerCase(),o=$('#owner').value,p=$('#profession').value;visible=[];
-$('#rows').innerHTML=DATA.heroes.map((h,i)=>{const c=h.character,terms=[h.name,h.owner,c?.race?.name,races[c?.race?.name],classes[c?.class?.name],...skills(h).flatMap(s=>[s.name,tr(s.name)])].join(' ').toLowerCase();if(o&&h.owner!==o||p&&!skills(h).some(s=>s.name===p)||!terms.includes(q))return '';visible.push(i);const expanded=opened.has(i), entries=statEntries(c?.stats);return `<tr id="hero-${i}" class="hero" role="button" tabindex="0" aria-expanded="${expanded}" aria-controls="detail-${i}" aria-label="${esc(h.name)}, ${esc(h.owner)}. Экипировка"><td class="arrow">${expanded?'▾':'▸'}</td><td class="owner">${esc(h.owner)}</td><td><span class="heroname" style="color:${colors[c?.class?.name]||'#b4a48c'}">${esc(h.name)}</span>${h.stale?'<span class="status">Сохранённые данные · '+esc(h.status)+'</span>':!c?'<span class="status">Профиль недоступен</span>':''}</td><td><span class="iconlabel">${c?icon('race:'+c.race.slug+':'+c.gender.slug,'raceIcon'):''}${esc(races[c?.race?.name]||c?.race?.name||'—')}</span></td><td><span class="iconlabel" style="color:${colors[c?.class?.name]||'inherit'}">${c?icon('class:'+c.class.name):''}${esc(classes[c?.class?.name]||c?.class?.name||'—')}</span></td><td class="level">${c?.level||'—'}</td></tr>${$('#compact').checked ? summaryRows(h, entries) : ''}<tr class="detail" id="detail-${i}" ${expanded?'':'hidden'}><td colspan="6"><div class="detailbox">${details(h)}</div></td></tr>`}).join('');
+$('#rows').innerHTML=DATA.heroes.map((h,i)=>{const c=h.character,terms=[h.name,h.owner,c?.race?.name,races[c?.race?.name],c?.class?.name,classes[c?.class?.name],...skills(h).flatMap(s=>[s.name,names[s.name]])].join(' ').toLowerCase();if(o&&h.owner!==o||p&&!skills(h).some(s=>s.name===p)||!terms.includes(q))return '';visible.push(i);const expanded=opened.has(i), entries=statEntries(c?.stats);return `<tr id="hero-${i}" class="hero" role="button" tabindex="0" aria-expanded="${expanded}" aria-controls="detail-${i}" aria-label="${esc(h.name)}, ${esc(h.owner)}. Экипировка"><td class="arrow">${expanded?'▾':'▸'}</td><td class="owner">${esc(h.owner)}</td><td><span class="heroname" style="color:${colors[c?.class?.name]||'#b4a48c'}">${esc(h.name)}</span>${h.stale?'<span class="status">Сохранённые данные · '+esc(h.status)+'</span>':!c?'<span class="status">Профиль недоступен</span>':''}</td><td><span class="iconlabel">${c?icon('race:'+c.race.slug+':'+c.gender.slug,'raceIcon'):''}${esc(races[c?.race?.name]||c?.race?.name||'—')}</span></td><td><span class="iconlabel" style="color:${colors[c?.class?.name]||'inherit'}">${c?icon('class:'+c.class.name):''}${esc(c?.class?.name||'—')}</span></td><td class="level">${c?.level||'—'}</td></tr>${$('#compact').checked ? summaryRows(h, entries) : ''}<tr class="detail" id="detail-${i}" ${expanded?'':'hidden'}><td colspan="6"><div class="detailbox">${details(h)}</div></td></tr>`}).join('');
 for(const i of visible){const row=$('#hero-'+i);row.onclick=()=>toggle(i);row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i)}}}$('#noresults').classList.toggle('hidden',!!visible.length);updateButton()}
 const tip = $('#hover-tip');
 let tipAnchor;
