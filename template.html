@@ -5,6 +5,17 @@
 .gearlist{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:5px 14px}.gearlist li{display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #403525;line-height:1.3}.gearlist .icon{width:30px;height:30px;flex:none}.gearlist small{color:var(--muted);font-size:11px}
 #hover-tip{position:fixed;z-index:20;pointer-events:none;box-sizing:border-box;max-width:min(350px,calc(100vw - 12px));white-space:pre-line;padding:8px 12px;border:1px solid #96794a;border-radius:4px;background:#15120ff5;color:#eedbb8;box-shadow:0 4px 14px #0009;font-size:13px;line-height:1.45}[data-tip]{cursor:help}[data-tip]:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
+th:has(.sort-button) { padding: 0 }
+.sort-button {
+  display: flex; align-items: center; gap: 6px; width: 100%; padding: 14px 18px;
+  color: inherit; background: transparent; border: 0; border-radius: 0;
+  font: inherit; letter-spacing: inherit; text-align: left;
+}
+.sort-button:hover, th[aria-sort] .sort-button { color: #ffe1a0 }
+.sort-button:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px }
+.sort-arrow { color: var(--muted); letter-spacing: 0 }
+th[aria-sort] .sort-arrow { color: var(--gold) }
+
 @media (max-width: 900px) {
   main { padding: 20px clamp(12px, 3vw, 26px) 36px }
   header { gap: 10px; padding-bottom: 12px; flex-wrap: wrap }
@@ -19,7 +30,15 @@
   .compact-option { min-height: 44px; margin: 0 0 4px; font-size: 13px }
   .scroll { overflow: visible; margin: 0; border: 0; box-shadow: none }
   .scroll table, #rows { display: block; min-width: 0; background: transparent }
-  .scroll thead { display: none }
+  .scroll thead { display: block }
+  .scroll thead tr { display: flex; flex-wrap: wrap; gap: 4px }
+  .scroll thead th { background: none; border: 0; letter-spacing: 0; font-size: 12px }
+  .scroll thead th:first-child { display: none }
+  .sort-button {
+    min-height: 44px; padding: 6px 9px; gap: 4px;
+    border: 1px solid #55452e; border-radius: 4px; background: #211c15;
+  }
+  th[aria-sort] .sort-button { border-color: #ac8a4d }
   .hero {
     display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) auto 12px;
     grid-template-areas: "name name level arrow" "owner owner level arrow" "race class class class";
@@ -63,7 +82,13 @@
   .toolbar { grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1.2fr)) auto }
   #search, #expand { grid-column: auto }
 }
-</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><div class="scroll"><table><thead><tr><th style="width:36px"></th><th>Владелец</th><th>Персонаж</th><th>Раса</th><th>Класс</th><th>Уровень</th></tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел.</p><h2>Состав компании</h2><div id="roster" class="company"></div><footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
+</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><div class="scroll"><table><thead><tr><th style="width:36px"></th>
+<th scope="col"><button type="button" class="sort-button" data-sort="owner">Владелец<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+<th scope="col"><button type="button" class="sort-button" data-sort="name">Персонаж<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+<th scope="col"><button type="button" class="sort-button" data-sort="race">Раса<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+<th scope="col"><button type="button" class="sort-button" data-sort="class">Класс<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+<th scope="col"><button type="button" class="sort-button" data-sort="level">Уровень<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+</tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел.</p><h2>Состав компании</h2><div id="roster" class="company"></div><footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
 const DATA=__DATA__, ICONS=__ICONS__;
 const names={'Leatherworking':'Кожевничество','Skinning':'Снятие шкур','Cooking':'Кулинария','Alchemy':'Алхимия','Blacksmithing':'Кузнечное дело','Enchanting':'Наложение чар','Engineering':'Инженерное дело','Herbalism':'Травничество','Mining':'Горное дело','Tailoring':'Портняжное дело','Fishing':'Рыбная ловля','First Aid':'Первая помощь'};
 const races={'Tauren':'Таурен','Undead':'Нежить','Orc':'Орк','Windshaper Skyborne':'Windshaper Skyborne'};
@@ -200,8 +225,63 @@ function details(h) {
 }
 function toggle(i){opened.has(i)?opened.delete(i):opened.add(i);const row=$('#hero-'+i),detail=$('#detail-'+i);row.setAttribute('aria-expanded',String(opened.has(i)));row.querySelector('.arrow').textContent=opened.has(i)?'▾':'▸';detail.hidden=!opened.has(i);updateButton()}
 function updateButton(){$('#expand').textContent=visible.length&&visible.every(i=>opened.has(i))?'Свернуть все':'Раскрыть все'}
-function render(){hideTooltip();const q=$('#search').value.trim().toLowerCase(),o=$('#owner').value,p=$('#profession').value;visible=[];
-$('#rows').innerHTML=DATA.heroes.map((h,i)=>{const c=h.character,terms=[h.name,h.owner,c?.race?.name,races[c?.race?.name],c?.class?.name,classes[c?.class?.name],...skills(h).flatMap(s=>[s.name,names[s.name]])].join(' ').toLowerCase();if(o&&h.owner!==o||p&&!skills(h).some(s=>s.name===p)||!terms.includes(q))return '';visible.push(i);const expanded=opened.has(i), entries=statEntries(c?.stats);return `<tr id="hero-${i}" class="hero" role="button" tabindex="0" aria-expanded="${expanded}" aria-controls="detail-${i}" aria-label="${esc(h.name)}, ${esc(h.owner)}. Экипировка"><td class="arrow">${expanded?'▾':'▸'}</td><td class="owner">${esc(h.owner)}</td><td class="hero-name"><span class="heroname" style="color:${colors[c?.class?.name]||'#b4a48c'}">${esc(h.name)}</span>${h.stale?'<span class="status">Сохранённые данные · '+esc(h.status)+'</span>':!c?'<span class="status">Профиль недоступен</span>':''}</td><td class="hero-race"><span class="iconlabel">${c?icon('race:'+c.race.slug+':'+c.gender.slug,'raceIcon'):''}${esc(c?.race?.name||'—')}</span></td><td class="hero-class"><span class="iconlabel" style="color:${colors[c?.class?.name]||'inherit'}">${c?icon('class:'+c.class.name):''}${esc(c?.class?.name||'—')}</span></td><td class="level">${c?.level||'—'}</td></tr>${$('#compact').checked ? summaryRows(h, entries) : ''}<tr class="detail" id="detail-${i}" ${expanded?'':'hidden'}><td colspan="6"><div class="detailbox">${details(h)}</div></td></tr>`}).join('');
+const sortValues = {
+  owner: hero => hero.owner,
+  name: hero => hero.name,
+  race: hero => hero.character?.race?.name,
+  class: hero => hero.character?.class?.name,
+  level: hero => hero.character?.level
+};
+const collator = new Intl.Collator('ru', {sensitivity: 'base', numeric: true});
+let sortKey = null;
+let sortDirection = 1;
+function compareHeroes(firstIndex, secondIndex) {
+  const value = sortValues[sortKey];
+  const first = value(DATA.heroes[firstIndex]);
+  const second = value(DATA.heroes[secondIndex]);
+  // Keep heroes with unavailable profile data at the end in both directions.
+  if (first == null || second == null) return Number(first == null) - Number(second == null);
+  const order = sortKey === 'level' ? Number(first) - Number(second) : collator.compare(first, second);
+  return order * sortDirection;
+}
+const sortButtons = document.querySelectorAll('.sort-button');
+for (const button of sortButtons) {
+  button.addEventListener('click', () => {
+    const key = button.dataset.sort;
+    if (key === sortKey) sortDirection *= -1;
+    else sortDirection = key === 'level' ? -1 : 1;
+    sortKey = key;
+    for (const column of sortButtons) {
+      const active = column === button;
+      const header = column.closest('th');
+      if (active) header.setAttribute('aria-sort', sortDirection === 1 ? 'ascending' : 'descending');
+      else header.removeAttribute('aria-sort');
+      column.querySelector('.sort-arrow').textContent = active ? (sortDirection === 1 ? '↑' : '↓') : '↕';
+    }
+    render();
+  });
+}
+function render() {
+  hideTooltip();
+  const query = $('#search').value.trim().toLowerCase();
+  const owner = $('#owner').value;
+  const profession = $('#profession').value;
+  visible = [];
+  DATA.heroes.forEach((hero, index) => {
+    if (owner && hero.owner !== owner) return;
+    const professions = skills(hero);
+    if (profession && !professions.some(skill => skill.name === profession)) return;
+    const race = hero.character?.race?.name;
+    const heroClass = hero.character?.class?.name;
+    const terms = [hero.name, hero.owner, race, races[race], heroClass, classes[heroClass],
+      ...professions.flatMap(skill => [skill.name, names[skill.name]])];
+    if (terms.join(' ').toLowerCase().includes(query)) visible.push(index);
+  });
+  if (sortKey) visible.sort(compareHeroes);
+  $('#rows').innerHTML = visible.map(i => {
+    const h = DATA.heroes[i], c = h.character;
+    const expanded = opened.has(i), entries = statEntries(c?.stats);
+    return `<tr id="hero-${i}" class="hero" role="button" tabindex="0" aria-expanded="${expanded}" aria-controls="detail-${i}" aria-label="${esc(h.name)}, ${esc(h.owner)}. Экипировка"><td class="arrow">${expanded?'▾':'▸'}</td><td class="owner">${esc(h.owner)}</td><td class="hero-name"><span class="heroname" style="color:${colors[c?.class?.name]||'#b4a48c'}">${esc(h.name)}</span>${h.stale?'<span class="status">Сохранённые данные · '+esc(h.status)+'</span>':!c?'<span class="status">Профиль недоступен</span>':''}</td><td class="hero-race"><span class="iconlabel">${c?icon('race:'+c.race.slug+':'+c.gender.slug,'raceIcon'):''}${esc(c?.race?.name||'—')}</span></td><td class="hero-class"><span class="iconlabel" style="color:${colors[c?.class?.name]||'inherit'}">${c?icon('class:'+c.class.name):''}${esc(c?.class?.name||'—')}</span></td><td class="level">${c?.level||'—'}</td></tr>${$('#compact').checked ? summaryRows(h, entries) : ''}<tr class="detail" id="detail-${i}" ${expanded?'':'hidden'}><td colspan="6"><div class="detailbox">${details(h)}</div></td></tr>`}).join('');
 for(const i of visible){const row=$('#hero-'+i);row.onclick=()=>toggle(i);row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i)}}}$('#noresults').classList.toggle('hidden',!!visible.length);updateButton()}
 const tip = $('#hover-tip');
 let tipAnchor;
