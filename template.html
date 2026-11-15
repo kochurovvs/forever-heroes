@@ -82,13 +82,117 @@ th[aria-sort] .sort-arrow { color: var(--gold) }
   .toolbar { grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1.2fr)) auto }
   #search, #expand { grid-column: auto }
 }
-</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><div class="scroll"><table><thead><tr><th style="width:36px"></th>
+.analytics { margin: 44px 0 16px; scroll-margin-top: 15px; --teal: #78b9a6; --bar: #bf9c57; --edge: #4f422e }
+.analytics *, .report-shortcut { box-sizing: border-box }
+.report-shortcut { display:inline-block; float:right; margin:6px 0 10px 12px; font-size:13px }
+.report-head { display:flex; justify-content:space-between; align-items:center; gap:14px; border-top:1px solid #82673f; margin-bottom:18px; padding-top:23px }
+.report-head h2 { font:clamp(27px,3.2vw,37px)/1.15 Georgia,serif; color:#f2d69e; margin:0 }
+.report-head p, .panel-caption { font-size:13px; margin:6px 0 0; line-height:1.55; color:#bbaa92 }
+.table-link { font-size:12px; white-space:nowrap }
+.report-grid,.distribution-grid { display:grid; gap:14px; margin-bottom:14px }
+.report-grid { grid-template-columns:minmax(0,1.45fr) minmax(0,1fr) }
+.distribution-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+.report-panel { min-width:0; padding:clamp(15px,2vw,24px); background:linear-gradient(135deg,#272219,#1c1914 72%); border:1px solid var(--edge); border-radius:6px }
+.report-panel h3 { margin:0; color:#f4dfba; font:clamp(19px,2vw,24px)/1.22 Georgia,serif }
+.report-panel .icon { width:26px; height:26px; box-shadow:none; flex:none; border-color:#65543a; vertical-align:middle }
+.level-chart { display:flex; gap:5px; overflow-x:auto; margin-top:20px; padding:3px 2px 4px; scrollbar-width:thin }
+.level-bin { flex:1 0 33px; display:flex; flex-direction:column; align-items:stretch; gap:5px; padding:4px 2px; border:0; border-radius:3px; background:transparent; min-width:0; color:#b7aa93; font:12px/1.25 system-ui,sans-serif; text-align:center }
+.bin-plot { height:98px; display:flex; justify-content:flex-end; flex-direction:column; align-items:center; border-bottom:1px solid #635338; background:repeating-linear-gradient(to top, transparent 0 23px, #c8ab7620 23px 24px) }
+.bin-bar { display:block; width:56%; max-width:65px; height:var(--height); background:linear-gradient(to top,#47796e,#8dc7ad); border-radius:3px 3px 0 0 }
+.bin-count { margin-bottom:2px; color:#e6e0cb; font:600 13px/1.15 system-ui; font-variant-numeric:tabular-nums }
+.level-bin[aria-pressed="true"] .bin-bar { background:linear-gradient(to top,#9d7038,#eccb82) }
+.level-bin[aria-pressed="true"] .bin-range { font-weight:650; color:#ffdb94 }
+.level-bin:focus-visible { outline:2px solid #efcf93; outline-offset:0 }
+.level-members { border-top:1px solid var(--edge); margin-top:12px; padding-top:11px; font-size:12px; line-height:1.7; color:#cfbea3 }
+.level-members strong { color:#eed3a0; font-weight:600; margin-right:8px }
+.level-members span { display:inline-block; margin-right:10px }
+.level-leaders { padding:0; margin:13px 0 0; list-style:none }
+.level-leaders li { display:grid; grid-template-columns:22px 28px minmax(0,1fr) auto; align-items:center; gap:8px; padding:12px 0; border-bottom:1px solid var(--edge) }
+.level-leaders li:last-child { border-bottom:0 }
+.level-leaders li:first-child .leader-score,.level-leaders li:first-child .place { color:#f0cf84 }
+.place { font:16px Georgia,serif; color:#b5a68b }
+.leader-name,.prof-player { display:block; font-weight:550; color:#ece1cc; overflow-wrap:anywhere }
+.leader-info small,.prof-meta { display:block; color:#b9aa90; font-size:12px }
+.leader-score { white-space:nowrap; color:#ddcead; font:22px Georgia,serif }
+.leader-score small { color:#b8a88b; font:11px system-ui }
+.dist-list { list-style:none; margin:16px 0 0; padding:0; display:grid; gap:10px }
+.dist-item { display:grid; align-items:center; grid-template-columns:24px minmax(9em,1.4fr) minmax(28px,1fr) minmax(60px,auto); gap:8px; font-size:13px }
+.dist-item .icon { width:22px; height:22px }
+.report-meter { display:block; border-radius:5px; height:5px; background:#3c352b; overflow:hidden }
+.report-meter i { display:block; height:100%; width:var(--share); background:var(--tint,var(--teal)); border-radius:5px }
+.dist-value { color:#e5cd9d; text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap }
+.dist-value small { color:#b2a288; font-size:11px }
+.profession-ranks { min-width:0; margin-top:15px; background:transparent; table-layout:fixed; border-collapse:collapse }
+.profession-ranks th { font-size:11px; letter-spacing:.3px; color:#cab69a; background:#29231a; font-weight:550 }
+.profession-ranks td,.profession-ranks th { padding:10px 8px; border-color:#453b2b; text-align:left }
+.profession-ranks thead th:first-child { width:22% }
+.profession-ranks thead th:nth-child(2) { width:13% }
+.profession-ranks tbody th { background:transparent; font:500 13px/1.3 system-ui; color:#ecd8b6 }
+.prof-title { display:flex; align-items:center; gap:8px }
+.prof-count { display:block; color:#dccdaa; font-size:12px; margin-bottom:4px; font-variant-numeric:tabular-nums }
+.prof-count-col .report-meter { max-width:70px }
+.prof-player { font-size:13px }
+.prof-meta b { color:#9ec8b7; font-weight:600 }
+.rank-empty { color:#867d6c }
+@media(max-width:920px) {
+  .report-grid { grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) }
+  .dist-item { grid-template-columns:22px minmax(0,1.45fr) minmax(24px,.65fr) auto }
+}
+@media(max-width:720px) {
+  .report-grid,.distribution-grid { grid-template-columns:1fr }
+  .analytics { margin-top:30px }
+  .profession-ranks,.profession-ranks tbody { display:block }
+  .profession-ranks thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%) }
+  .profession-ranks tbody tr { display:grid; grid-template-columns:1fr auto; padding:12px 0; border-top:1px solid var(--edge); column-gap:8px; align-items:center }
+  .profession-ranks tbody th,.profession-ranks td { border:0; padding:2px 0 }
+  .prof-count-col { min-width:48px }
+  .prof-count { text-align:right }
+  .profession-ranks .prof-rank { grid-column:1 / -1; display:grid; grid-template-columns:20px minmax(0,1fr) auto; align-items:baseline; gap:6px; margin-top:3px }
+  .prof-rank::before { content:attr(data-place); color:#b2a288; font:12px Georgia }
+  .profession-ranks .rank-empty { display:none }
+  .prof-meta { font-size:11px }
+}
+@media(max-width:480px) {
+  .report-shortcut { float:none; margin:0 0 12px; display:block; width:fit-content }
+  .level-bin { font-size:11px }
+}
+
+.rank-disclosure summary{cursor:pointer;display:list-item;width:fit-content;color:#ebcd92;border:1px solid #705831;padding:7px 12px;border-radius:4px;background:#2a2319;font-size:13px}
+.rank-disclosure summary:focus-visible{outline:2px solid var(--gold)}
+.rank-disclosure .when-open,.rank-disclosure[open] .when-closed{display:none}
+.rank-disclosure[open] .when-open{display:inline}
+.more-ranks ol{padding-left:3em;line-height:1.9}.more-ranks b{color:#9ec8b7}
+.profession-ranks tbody .more-ranks{border:0}.more-ranks td{grid-column:1/-1}
+</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><a class="report-shortcut" href="#analytics">Аналитика компании ↓</a><div class="scroll"><table><thead><tr><th style="width:36px"></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="owner">Владелец<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="name">Персонаж<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="race">Раса<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="class">Класс<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="level">Уровень<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-</tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел.</p><h2>Состав компании</h2><div id="roster" class="company"></div><footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
+</tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел.</p><h2>Состав компании</h2><div id="roster" class="company"></div><section id="analytics" class="analytics" aria-labelledby="analytics-heading">
+  <div class="report-head"><div><h2 id="analytics-heading">Аналитика компании</h2><p id="report-scope"></p></div><a href="#rows" class="table-link">К героям ↑</a></div>
+  <div class="report-grid">
+    <section class="report-panel" aria-labelledby="levels-heading">
+      <h3 id="levels-heading">Распределение по уровням</h3>
+      <p class="panel-caption" id="level-caption"></p>
+      <div id="level-chart" class="level-chart" role="group" aria-label="Герои по диапазонам уровней"></div>
+      <div id="level-members" class="level-members" aria-live="polite"></div>
+    </section>
+    <section class="report-panel" aria-labelledby="leaders-heading">
+      <h3 id="leaders-heading">Топ-3 по уровню</h3><ol class="level-leaders" id="level-leaders"></ol>
+    </section>
+  </div>
+  <div class="distribution-grid">
+    <section class="report-panel"><h3>Расы</h3><ul class="dist-list" id="race-distribution"></ul></section>
+    <section class="report-panel"><h3>Классы</h3><ul class="dist-list" id="class-distribution"></ul></section>
+  </div>
+  <section class="report-panel professions-panel" aria-labelledby="professions-heading">
+    <h3 id="professions-heading">Профессии и мастера</h3>
+    <p class="panel-caption">Сколько героев владеют профессией и у кого выше навык. При равных очках — по имени героя.</p>
+    <table class="profession-ranks"><thead><tr><th scope="col">Профессия</th><th scope="col">Владеют</th><th scope="col">1-е место</th><th scope="col">2-е место</th><th scope="col">3-е место</th></tr></thead><tbody id="profession-ranks"></tbody></table>
+  </section>
+</section>
+<footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
 const DATA=__DATA__, ICONS=__ICONS__;
 const names={'Leatherworking':'Кожевничество','Skinning':'Снятие шкур','Cooking':'Кулинария','Alchemy':'Алхимия','Blacksmithing':'Кузнечное дело','Enchanting':'Наложение чар','Engineering':'Инженерное дело','Herbalism':'Травничество','Mining':'Горное дело','Tailoring':'Портняжное дело','Fishing':'Рыбная ловля','First Aid':'Первая помощь'};
 const races={'Tauren':'Таурен','Undead':'Нежить','Orc':'Орк','Windshaper Skyborne':'Windshaper Skyborne'};
@@ -322,4 +426,123 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') hideTooltip(
 window.addEventListener('scroll', hideTooltip, true);
 window.addEventListener('resize', hideTooltip);
 for(const id of ['search','owner','profession','compact'])$('#'+id).addEventListener(id==='search'?'input':'change',render);$('#expand').onclick=()=>{const close=visible.every(i=>opened.has(i));visible.forEach(i=>close?opened.delete(i):opened.add(i));render()};render();
+</script><script>
+(() => {
+  const profiles = DATA.heroes.filter(hero => hero.character && hero.status === 'ok' && !hero.stale);
+  const total = profiles.length;
+  const nameOrder = new Intl.Collator('en', {sensitivity:'base', numeric:true});
+  const byName = (a, b) => nameOrder.compare(a.name, b.name);
+  const level = hero => Number(hero.character.level);
+  const levelled = profiles.filter(hero => Number.isInteger(level(hero)) && level(hero) > 0)
+    .sort((a, b) => level(b) - level(a) || byName(a, b));
+  const number = new Intl.NumberFormat('ru', {maximumFractionDigits:1});
+  const pct = n => total ? 100 * n / total : 0;
+  const meter = (n, tint) => '<span class="report-meter" aria-hidden="true" style="--share:' +
+    pct(n) + '%;--tint:' + tint + '"><i></i></span>';
+  const iconSlot = key => '<span>' + icon(key) + '</span>';
+  const tieOrder = (a, b) => b.count - a.count || nameOrder.compare(a.label, b.label);
+  $('#report-scope').textContent = 'По всему реестру · профилей в сводке: ' + total + ' из ' + DATA.heroes.length;
+
+  function distribution(type, selector) {
+    const groups = new Map();
+    for (const {character} of profiles) {
+      const category = character[type];
+      const label = category?.name || 'Нет данных';
+      const key = type === 'class' ? 'class:' + label : 'race:' + category?.slug + ':' + character.gender?.slug;
+      const group = groups.get(label) || {label, count:0, key};
+      if (!ICONS[group.key] && ICONS[key]) group.key = key;
+      group.count++;
+      groups.set(label, group);
+    }
+    $(selector).innerHTML = [...groups.values()].sort(tieOrder).map(g =>
+      '<li class="dist-item">' + iconSlot(g.key) + '<span>' + esc(g.label) + '</span>' +
+      meter(g.count, type === 'class' ? colors[g.label] || '#87b3aa' : '#b89860') +
+      '<span class="dist-value">' + g.count + ' <small>· ' + number.format(pct(g.count)) + '%</small></span></li>'
+    ).join('') || '<li class="empty">Нет данных.</li>';
+  }
+  distribution('race', '#race-distribution');
+  distribution('class', '#class-distribution');
+
+  function disclosure(count, list) {
+    return '<details class="rank-disclosure"><summary><span class="when-closed">Показать ещё ' + count +
+      '</span><span class="when-open">Свернуть список</span></summary>' + list + '</details>';
+  }
+  const leaderRows = levelled.map((hero, i) => '<li><span class="place">' + (i+1) +
+    '</span>' + iconSlot('class:' + hero.character.class?.name) + '<span class="leader-info"><span class="leader-name">' +
+    esc(hero.name) + '</span><small>' + esc(hero.owner) + ' · ' + esc(hero.character.class?.name) +
+    '</small></span><span class="leader-score">' + level(hero) + ' <small>ур.</small></span></li>');
+  const leadersList = $('#level-leaders');
+  leadersList.innerHTML = leaderRows.slice(0,3).join('') || '<li class="empty">Нет данных об уровнях.</li>';
+  leadersList.nextElementSibling?.matches('.rank-disclosure') && leadersList.nextElementSibling.remove();
+  if (leaderRows.length > 3) leadersList.insertAdjacentHTML('afterend',
+    disclosure(leaderRows.length-3, '<ol class="level-leaders" start="4">' + leaderRows.slice(3).join('') + '</ol>'));
+
+  if (levelled.length) {
+    const levels = levelled.map(level), n = levels.length;
+    const median = (levels[Math.floor((n-1)/2)] + levels[Math.floor(n/2)]) / 2;
+    $('#level-caption').textContent = 'Медиана ' + number.format(median) + ' · от ' + levels[n-1] + ' до ' + levels[0] + ' ур. Выбери столбец, чтобы увидеть героев.';
+    const buckets = [];
+    for (let start = Math.floor(levels[n-1] / 5) * 5; start <= levels[0]; start += 5) {
+      const heroes = levelled.filter(h => level(h) >= start && level(h) < start + 5);
+      buckets.push({label:Math.max(1,start) + '–' + (start+4), heroes});
+    }
+    const peak = Math.max(...buckets.map(bin => bin.heroes.length));
+    const chart = $('#level-chart');
+    chart.innerHTML = buckets.map((b, i) => '<button type="button" class="level-bin" data-bin="' + i +
+      '" aria-controls="level-members" aria-pressed="false" aria-label="Уровни ' + b.label + ', героев: ' + b.heroes.length +
+      '"><span class="bin-plot"><span class="bin-count">' + b.heroes.length +
+      '</span><span class="bin-bar" style="--height:' + (78*b.heroes.length/peak) +
+      '%"></span></span><span class="bin-range">' + b.label + '</span></button>').join('');
+    function selectBucket(i) {
+      const bin = buckets[i];
+      chart.querySelectorAll('button').forEach((btn, n) => btn.setAttribute('aria-pressed', String(n === i)));
+      $('#level-members').innerHTML = '<strong>' + bin.label + ' ур.</strong>' + (bin.heroes.map(hero => '<span>' +
+        esc(hero.name) + ' · ' + level(hero) + '</span>').join('') || 'В этом диапазоне героев нет.');
+    }
+    chart.addEventListener('click', event => {
+      const btn = event.target.closest('button[data-bin]');
+      if (btn) selectBucket(Number(btn.dataset.bin));
+    });
+    selectBucket(buckets.findIndex(b => b.heroes.length === peak));
+  } else {
+    $('#level-caption').textContent = 'Нет данных об уровнях.';
+  }
+
+  const professions = new Map();
+  for (const hero of profiles) {
+    const known = new Map();
+    for (const skill of skills(hero)) {
+      if (!skill.name) continue;
+      const points = (skill.tiers || []).filter(t => Number.isFinite(t.skillPoints))
+        .sort((a, b) => b.skillPoints - a.skillPoints || (b.maxSkillPoints || 0) - (a.maxSkillPoints || 0))[0];
+      if (!known.has(skill.name) || (points?.skillPoints ?? -1) > (known.get(skill.name)?.skillPoints ?? -1)) {
+        known.set(skill.name, points);
+      }
+    }
+    for (const [label, tier] of known) {
+      const group = professions.get(label) || {label, count:0, masters:[]};
+      group.count++;
+      if (tier) group.masters.push({hero, tier});
+      professions.set(label, group);
+    }
+  }
+  $('#profession-ranks').innerHTML = [...professions.values()].sort(tieOrder).map(group => {
+    const leaders = group.masters.sort((a, b) => b.tier.skillPoints - a.tier.skillPoints || byName(a.hero, b.hero));
+    const places = [0,1,2].map(i => {
+      if (!leaders[i]) return '<td class="rank-empty" aria-label="Нет участника">—</td>';
+      const {hero,tier} = leaders[i];
+      return '<td class="prof-rank" data-place="' + (i+1) + '."><span class="prof-player">' + esc(hero.name) +
+        '</span><small class="prof-meta"><b>' + tier.skillPoints + '</b>' +
+        (Number.isFinite(tier.maxSkillPoints) ? '/' + tier.maxSkillPoints : '') + ' · ' + esc(hero.owner) + '</small></td>';
+    }).join('');
+    const extra = leaders.slice(3).map(({hero,tier}) => '<li>' + esc(hero.name) + ' · ' + esc(hero.owner) +
+      ' <b>' + tier.skillPoints + (Number.isFinite(tier.maxSkillPoints) ? '/' + tier.maxSkillPoints : '') + '</b></li>').join('');
+    const more = extra ? '<tr class="more-ranks"><td colspan="5">' +
+      disclosure(leaders.length-3,'<ol start="4">' + extra + '</ol>') + '</td></tr>' : '';
+    return '<tr><th scope="row"><span class="prof-title">' + icon('prof:' + group.label) + esc(group.label) +
+      '</span></th><td class="prof-count-col"><span class="prof-count">' + group.count + ' из ' + total +
+      '</span>' + meter(group.count,'#78b9a6') + '</td>' + places + '</tr>' + more;
+  }).join('') || '<tr><td colspan="5" class="empty">В доступных профилях нет профессий.</td></tr>';
+})();
+
 </script></html>
