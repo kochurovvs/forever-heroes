@@ -18,6 +18,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
+    outputs:
+      artifact_name: ${{ steps.site.outputs.name }}
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -36,9 +38,13 @@ jobs:
         run: python -m unittest discover -p test_update.py
       - name: Collect all profiles and build candidate
         run: python update.py --output _site/index.html
+      - name: Set Pages artifact name
+        id: site
+        run: echo "name=github-pages-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
       - name: Upload successful site
         uses: actions/upload-pages-artifact@v4
         with:
+          name: ${{ steps.site.outputs.name }}
           path: _site
   deploy:
     needs: build
@@ -54,3 +60,5 @@ jobs:
       - name: Deploy successful collection
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ needs.build.outputs.artifact_name }}
