@@ -4,7 +4,66 @@
 .toolbar{margin-bottom:8px}.compact-option{display:inline-flex;align-items:center;gap:8px;color:#dfc58f;margin:2px 0 12px;cursor:pointer}.compact-option input{min-width:0;flex:none;width:16px;height:16px;accent-color:#c4a464}.hero td{padding-block:8px}.summary td{padding:5px 12px 8px 20px;background:#191610}.mini-line{display:flex;align-items:baseline;gap:10px;font-size:12px}.mini-line+.mini-line{margin-top:4px}.mini-label{flex:0 0 70px;color:#bbab8e}.mini-items{display:flex;flex-wrap:wrap;align-items:center;gap:3px 12px}.chip{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;font-variant-numeric:tabular-nums}.chip b{font-weight:500;color:#ddbf85}.chip .icon{position:static;transform:none;flex:none;width:17px;height:17px;box-shadow:none;border-color:#76613e}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .gearlist{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:5px 14px}.gearlist li{display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #403525;line-height:1.3}.gearlist .icon{width:30px;height:30px;flex:none}.gearlist small{color:var(--muted);font-size:11px}
 #hover-tip{position:fixed;z-index:20;pointer-events:none;box-sizing:border-box;max-width:min(350px,calc(100vw - 12px));white-space:pre-line;padding:8px 12px;border:1px solid #96794a;border-radius:4px;background:#15120ff5;color:#eedbb8;box-shadow:0 4px 14px #0009;font-size:13px;line-height:1.45}[data-tip]{cursor:help}[data-tip]:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><div class="scroll"><table><thead><tr><th style="width:36px"></th><th>Владелец</th><th>Персонаж</th><th>Раса</th><th>Класс</th><th>Уровень</th></tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел. На узком экране таблицу можно прокрутить вправо.</p><h2>Состав компании</h2><div id="roster" class="company"></div><footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
+
+@media (max-width: 900px) {
+  main { padding: 20px clamp(12px, 3vw, 26px) 36px }
+  header { gap: 10px; padding-bottom: 12px; flex-wrap: wrap }
+  .brand { font-size: clamp(16px, 3.6vw, 22px); letter-spacing: 1.3px }
+  .region { padding: 4px 8px; white-space: nowrap }
+  h1 { margin: 20px 0 5px; font-size: clamp(29px, 6vw, 36px) }
+  .intro { margin-bottom: 12px }
+  .counts { gap: 4px 14px }
+  .toolbar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 16px }
+  .toolbar > * { width: 100%; min-width: 0; min-height: 44px; padding: 8px 10px; font-size: 16px }
+  #search, #expand { grid-column: 1 / -1 }
+  .compact-option { min-height: 44px; margin: 0 0 4px; font-size: 13px }
+  .scroll { overflow: visible; margin: 0; border: 0; box-shadow: none }
+  .scroll table, #rows { display: block; min-width: 0; background: transparent }
+  .scroll thead { display: none }
+  .hero {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) auto 12px;
+    grid-template-areas: "name name level arrow" "owner owner level arrow" "race class class class";
+    align-items: center; gap: 2px 8px; margin-top: 10px; padding: 12px;
+    border: 1px solid #675233; border-radius: 8px;
+    background: linear-gradient(115deg, #2b241b, #201b15);
+  }
+  .hero:nth-of-type(4n+1) { background: linear-gradient(115deg, #2b241b, #201b15) }
+  .hero:has(+ .summary), .hero[aria-expanded="true"] { border-radius: 8px 8px 0 0 }
+  .hero td { display: block; min-width: 0; padding: 0; border: 0 }
+  .hero-name { grid-area: name }
+  .heroname { font-size: 19px; white-space: normal; overflow-wrap: anywhere }
+  .hero .owner { grid-area: owner; font-size: 12px; color: #bcae97; overflow-wrap: anywhere }
+  .hero .owner::before { content: "Игрок · " }
+  .hero .level { grid-area: level; padding: 2px 6px; border: 1px solid #675233; border-radius: 4px; font-size: 17px }
+  .hero .level::before { content: "Ур. "; font: 11px system-ui; color: #c9b590 }
+  .hero .arrow { grid-area: arrow }
+  .hero-race { grid-area: race }
+  .hero-class { grid-area: class }
+  .hero .iconlabel { gap: 6px; margin-top: 7px; white-space: normal; overflow-wrap: anywhere; font-size: 13px; line-height: 1.25 }
+  .hero .icon { flex: none; width: 23px; height: 23px }
+  .summary, .detail:not([hidden]), .summary td, .detail td { display: block }
+  .summary td, .detailbox { padding: 10px 12px; border: 1px solid #675233; border-top: 0; border-radius: 0 0 8px 8px }
+  .hero[aria-expanded="true"] + .summary td { border-radius: 0 }
+  .mini-line { display: block }
+  .mini-line + .mini-line { margin-top: 8px }
+  .mini-label { display: block; margin-bottom: 3px; color: #c4af8a }
+  .mini-items { gap: 2px 10px }
+  .chip { min-height: 28px; max-width: 100%; white-space: normal; overflow-wrap: anywhere }
+  .chip .icon { width: 20px; height: 20px }
+  .detailhead { gap: 6px 12px; margin-bottom: 10px }
+  .sectiontitle { margin: 10px 0 6px }
+  .gearlist { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 2px 12px }
+  .gearlist li { min-height: 44px; overflow-wrap: anywhere }
+  .legend { display: none }
+}
+@media (max-width: 360px) {
+  .toolbar select { grid-column: 1 / -1 }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .toolbar { grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1.2fr)) auto }
+  #search, #expand { grid-column: auto }
+}
+</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><div class="scroll"><table><thead><tr><th style="width:36px"></th><th>Владелец</th><th>Персонаж</th><th>Раса</th><th>Класс</th><th>Уровень</th></tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел.</p><h2>Состав компании</h2><div id="roster" class="company"></div><footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
 const DATA=__DATA__, ICONS=__ICONS__;
 const names={'Leatherworking':'Кожевничество','Skinning':'Снятие шкур','Cooking':'Кулинария','Alchemy':'Алхимия','Blacksmithing':'Кузнечное дело','Enchanting':'Наложение чар','Engineering':'Инженерное дело','Herbalism':'Травничество','Mining':'Горное дело','Tailoring':'Портняжное дело','Fishing':'Рыбная ловля','First Aid':'Первая помощь'};
 const races={'Tauren':'Таурен','Undead':'Нежить','Orc':'Орк','Windshaper Skyborne':'Windshaper Skyborne'};
@@ -142,7 +201,7 @@ function details(h) {
 function toggle(i){opened.has(i)?opened.delete(i):opened.add(i);const row=$('#hero-'+i),detail=$('#detail-'+i);row.setAttribute('aria-expanded',String(opened.has(i)));row.querySelector('.arrow').textContent=opened.has(i)?'▾':'▸';detail.hidden=!opened.has(i);updateButton()}
 function updateButton(){$('#expand').textContent=visible.length&&visible.every(i=>opened.has(i))?'Свернуть все':'Раскрыть все'}
 function render(){hideTooltip();const q=$('#search').value.trim().toLowerCase(),o=$('#owner').value,p=$('#profession').value;visible=[];
-$('#rows').innerHTML=DATA.heroes.map((h,i)=>{const c=h.character,terms=[h.name,h.owner,c?.race?.name,races[c?.race?.name],c?.class?.name,classes[c?.class?.name],...skills(h).flatMap(s=>[s.name,names[s.name]])].join(' ').toLowerCase();if(o&&h.owner!==o||p&&!skills(h).some(s=>s.name===p)||!terms.includes(q))return '';visible.push(i);const expanded=opened.has(i), entries=statEntries(c?.stats);return `<tr id="hero-${i}" class="hero" role="button" tabindex="0" aria-expanded="${expanded}" aria-controls="detail-${i}" aria-label="${esc(h.name)}, ${esc(h.owner)}. Экипировка"><td class="arrow">${expanded?'▾':'▸'}</td><td class="owner">${esc(h.owner)}</td><td><span class="heroname" style="color:${colors[c?.class?.name]||'#b4a48c'}">${esc(h.name)}</span>${h.stale?'<span class="status">Сохранённые данные · '+esc(h.status)+'</span>':!c?'<span class="status">Профиль недоступен</span>':''}</td><td><span class="iconlabel">${c?icon('race:'+c.race.slug+':'+c.gender.slug,'raceIcon'):''}${esc(c?.race?.name||'—')}</span></td><td><span class="iconlabel" style="color:${colors[c?.class?.name]||'inherit'}">${c?icon('class:'+c.class.name):''}${esc(c?.class?.name||'—')}</span></td><td class="level">${c?.level||'—'}</td></tr>${$('#compact').checked ? summaryRows(h, entries) : ''}<tr class="detail" id="detail-${i}" ${expanded?'':'hidden'}><td colspan="6"><div class="detailbox">${details(h)}</div></td></tr>`}).join('');
+$('#rows').innerHTML=DATA.heroes.map((h,i)=>{const c=h.character,terms=[h.name,h.owner,c?.race?.name,races[c?.race?.name],c?.class?.name,classes[c?.class?.name],...skills(h).flatMap(s=>[s.name,names[s.name]])].join(' ').toLowerCase();if(o&&h.owner!==o||p&&!skills(h).some(s=>s.name===p)||!terms.includes(q))return '';visible.push(i);const expanded=opened.has(i), entries=statEntries(c?.stats);return `<tr id="hero-${i}" class="hero" role="button" tabindex="0" aria-expanded="${expanded}" aria-controls="detail-${i}" aria-label="${esc(h.name)}, ${esc(h.owner)}. Экипировка"><td class="arrow">${expanded?'▾':'▸'}</td><td class="owner">${esc(h.owner)}</td><td class="hero-name"><span class="heroname" style="color:${colors[c?.class?.name]||'#b4a48c'}">${esc(h.name)}</span>${h.stale?'<span class="status">Сохранённые данные · '+esc(h.status)+'</span>':!c?'<span class="status">Профиль недоступен</span>':''}</td><td class="hero-race"><span class="iconlabel">${c?icon('race:'+c.race.slug+':'+c.gender.slug,'raceIcon'):''}${esc(c?.race?.name||'—')}</span></td><td class="hero-class"><span class="iconlabel" style="color:${colors[c?.class?.name]||'inherit'}">${c?icon('class:'+c.class.name):''}${esc(c?.class?.name||'—')}</span></td><td class="level">${c?.level||'—'}</td></tr>${$('#compact').checked ? summaryRows(h, entries) : ''}<tr class="detail" id="detail-${i}" ${expanded?'':'hidden'}><td colspan="6"><div class="detailbox">${details(h)}</div></td></tr>`}).join('');
 for(const i of visible){const row=$('#hero-'+i);row.onclick=()=>toggle(i);row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i)}}}$('#noresults').classList.toggle('hidden',!!visible.length);updateButton()}
 const tip = $('#hover-tip');
 let tipAnchor;
@@ -174,6 +233,11 @@ for (const event of ['pointerout', 'focusout']) {
     if (tipAnchor && !tipAnchor.contains(e.relatedTarget)) hideTooltip();
   });
 }
+document.addEventListener('click', e => {
+  const anchor = e.target.closest('[data-tip]');
+  if (anchor) showTooltip(anchor);
+  else hideTooltip();
+});
 document.addEventListener('keydown', e => { if (e.key === 'Escape') hideTooltip(); });
 window.addEventListener('scroll', hideTooltip, true);
 window.addEventListener('resize', hideTooltip);
