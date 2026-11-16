@@ -5,6 +5,24 @@
 .gearlist{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:5px 14px}.gearlist li{display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #403525;line-height:1.3}.gearlist .icon{width:30px;height:30px;flex:none}.gearlist small{color:var(--muted);font-size:11px}
 #hover-tip{position:fixed;z-index:20;pointer-events:none;box-sizing:border-box;max-width:min(350px,calc(100vw - 12px));white-space:pre-line;padding:8px 12px;border:1px solid #96794a;border-radius:4px;background:#15120ff5;color:#eedbb8;box-shadow:0 4px 14px #0009;font-size:13px;line-height:1.45}[data-tip]{cursor:help}[data-tip]:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
+.snapshot-time {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.snapshot-age {
+  color: var(--gold);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 650;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+.snapshot-time time { white-space: nowrap }
+
 th:has(.sort-button) { padding: 0 }
 .sort-button {
   display: flex; align-items: center; gap: 6px; width: 100%; padding: 14px 18px;
@@ -163,7 +181,12 @@ th[aria-sort] .sort-arrow { color: var(--gold) }
 .rank-disclosure[open] .when-open{display:inline}
 .more-ranks ol{padding-left:3em;line-height:1.9}.more-ranks b{color:#9ec8b7}
 .profession-ranks tbody .more-ranks{border:0}.more-ranks td{grid-column:1/-1}
-</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><a class="report-shortcut" href="#analytics">Аналитика компании ↓</a><div class="scroll"><table><thead><tr><th style="width:36px"></th>
+</style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1>
+<p class="snapshot-time" id="stamp">
+  <strong class="snapshot-age" id="snapshot-age"></strong>
+  <span><span id="snapshot-label">Последнее успешное обновление</span> · <time id="snapshot-time"></time></span>
+</p>
+<p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><a class="report-shortcut" href="#analytics">Аналитика компании ↓</a><div class="scroll"><table><thead><tr><th style="width:36px"></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="owner">Владелец<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
 <th scope="col" aria-sort="ascending"><button type="button" class="sort-button" data-sort="name">Персонаж<span class="sort-arrow" aria-hidden="true">↑</span></button></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="race">Раса<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
@@ -192,7 +215,7 @@ th[aria-sort] .sort-arrow { color: var(--gold) }
     <table class="profession-ranks"><thead><tr><th scope="col">Профессия</th><th scope="col">Владеют</th><th scope="col">1-е место</th><th scope="col">2-е место</th><th scope="col">3-е место</th></tr></thead><tbody id="profession-ranks"></tbody></table>
   </section>
 </section>
-<footer><div id="stamp"></div><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
+<footer><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
 const DATA=__DATA__, ICONS=__ICONS__;
 const names={'Leatherworking':'Кожевничество','Skinning':'Снятие шкур','Cooking':'Кулинария','Alchemy':'Алхимия','Blacksmithing':'Кузнечное дело','Enchanting':'Наложение чар','Engineering':'Инженерное дело','Herbalism':'Травничество','Mining':'Горное дело','Tailoring':'Портняжное дело','Fishing':'Рыбная ловля','First Aid':'Первая помощь'};
 const races={'Tauren':'Таурен','Undead':'Нежить','Orc':'Орк','Windshaper Skyborne':'Windshaper Skyborne'};
@@ -206,7 +229,44 @@ const icon=(key,cls='')=>ICONS[key]?`<img class="icon ${cls}" src="${ICONS[key]}
 const available=DATA.heroes.filter(h=>h.character),unique=[...new Set(available.flatMap(skills).map(p=>p.name))];
 $('#counts').innerHTML=`<span><strong>${Object.keys(DATA.roster).length}</strong> владельцев</span><span><strong>${DATA.heroes.length}</strong> персонажей</span><span><strong>${available.length}</strong> профилей получено</span><span><strong>${unique.length}</strong> видов профессий</span>`;
 for(const o of Object.keys(DATA.roster))$('#owner').add(new Option(o,o));for(const p of unique.sort((a,b)=>a.localeCompare(b,'en')))$('#profession').add(new Option(p,p));
-$('#roster').innerHTML=Object.entries(DATA.roster).map(([o,ns])=>`<span class="person"><b>${esc(o)}</b> · ${ns.length?ns.length+' гер.':'герои не указаны'}</span>`).join('');$('#stamp').textContent=(DATA.complete===false?'Частичный снимок: ':'Последнее успешное обновление: ')+time(DATA.fetchedAt)+' МСК';
+$('#roster').innerHTML=Object.entries(DATA.roster).map(([o,ns])=>`<span class="person"><b>${esc(o)}</b> · ${ns.length?ns.length+' гер.':'герои не указаны'}</span>`).join('');
+
+function displaySnapshotTime() {
+  const timestamp = Date.parse(DATA.fetchedAt);
+  const absolute = $('#snapshot-time');
+  if (DATA.complete === false) $('#snapshot-label').textContent = 'Частичный снимок';
+  if (!Number.isFinite(timestamp)) {
+    absolute.replaceWith(document.createTextNode('время не указано'));
+    return;
+  }
+  absolute.dateTime = new Date(timestamp).toISOString();
+  absolute.textContent = time(DATA.fetchedAt) + ' МСК';
+
+  const age = $('#snapshot-age');
+  const plural = new Intl.PluralRules('ru');
+  function unit(count, one, few, many) {
+    if (count === 0) return '';
+    const forms = { one, few, many };
+    return count + ' ' + forms[plural.select(count)];
+  }
+
+  let timer;
+  function updateAge() {
+    clearTimeout(timer);
+    const elapsed = Math.max(0, Date.now() - timestamp);
+    const minutes = Math.floor(elapsed / 60_000);
+    const parts = [
+      unit(Math.floor(minutes / 1440), 'день', 'дня', 'дней'),
+      unit(Math.floor(minutes / 60) % 24, 'час', 'часа', 'часов'),
+      unit(minutes % 60, 'минуту', 'минуты', 'минут')
+    ].filter(Boolean);
+    age.textContent = parts.length ? parts.join(' ') + ' назад' : 'только что';
+    if (!document.hidden) timer = setTimeout(updateAge, 60_000 - elapsed % 60_000);
+  }
+  updateAge();
+  document.addEventListener('visibilitychange', updateAge);
+}
+displaySnapshotTime();
 const opened=new Set();let visible=[];
 const statFields = [
   ['ARMOR', 'Armor', 'inv_shield_04', 'prof:Blacksmithing'],
