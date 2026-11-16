@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - name: Read completed quests for Allison Burgerrs
+      - name: Read completed quests for Dargor Springhill
         env:
           BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
           BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
@@ -43,8 +43,8 @@ jobs:
           if not token:
               raise SystemExit("No access token in OAuth response")
           print(f"::add-mask::{token}", flush=True)
-          result = request_json("Allison Burgerrs completed quests", Request(
-              "https://eu.api.blizzard.com/profile/wow/character/allison-burgerrs/quests/completed"
+          result = request_json("Dargor Springhill completed quests", Request(
+              "https://eu.api.blizzard.com/profile/wow/character/dargor-springhill/quests/completed"
               "?namespace=profile-forever-eu&locale=en_GB",
               headers={"Authorization": f"Bearer {token}"},
           ))
@@ -55,4 +55,4 @@ jobs:
           if len(ids) != len(quests):
               raise SystemExit("Some quest entries have no numeric id")
           print("Distinct completed quest IDs:", len(set(ids)))
-          print("First quest IDs:", ids[:5])
+
