@@ -1,0 +1,70 @@
+.sqc-tabs{display:flex;gap:14px;border-bottom:1px solid #55452e}
+.sqc-tabs a{padding:8px 4px;line-height:1.3;font-weight:650;color:#b8a88d;text-decoration:none;border-bottom:2px solid transparent}
+#heroes:not(:target)~.sqc-tabs a[href="#dungeons"],#heroes:target~.sqc-tabs a[href="#heroes"]{color:#f1d292;border-color:#d1a859}
+#sq-heroes,#heroes:target~#sq-dungeons{display:none}
+#heroes:target~#sq-heroes{display:block}
+#sq-dungeons{--hairline:#473a29;--pale:#f1dcb5;--dim:#bcac93;max-width:940px;margin-inline:auto}
+.dg-toolbar{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.dg-toolbar h1{font:27px/1.15 Georgia,serif;margin:16px 0 10px}
+.dg-toolbar small{font-size:11px;color:var(--dim)}
+.dg-layout{position:relative}
+.dg-radio{position:absolute;width:1px;height:1px;min-width:0;padding:0;border:0;overflow:hidden;clip-path:inset(50%)}
+.dg-rfc{--tint:#c97b56}.dg-rol{--tint:#94acbf}.dg-wc{--tint:#96b87c}.dg-sfk{--tint:#ae94c1}
+.dg-switch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin:0 0 9px}
+.dg-switch label{display:flex;align-items:center;justify-content:center;padding:8px 6px;min-height:37px;line-height:1.1;border:1px solid #574830;border-radius:4px;background:#211c15;color:#c5b59b;cursor:pointer;font:600 14px/1.2 Georgia,serif}
+.dg-switch label:hover{background:#32291e;color:#f8e4c1}
+#pick-rfc:checked~.dg-switch [for=pick-rfc],#pick-rol:checked~.dg-switch [for=pick-rol],#pick-wc:checked~.dg-switch [for=pick-wc],#pick-sfk:checked~.dg-switch [for=pick-sfk]{color:#f7e9cc;border-color:var(--tint);box-shadow:inset 0 -2px var(--tint);background:#2e2a21}
+#pick-rfc:focus-visible~.dg-switch [for=pick-rfc],#pick-rol:focus-visible~.dg-switch [for=pick-rol],#pick-wc:focus-visible~.dg-switch [for=pick-wc],#pick-sfk:focus-visible~.dg-switch [for=pick-sfk],#sq-dungeons :is(summary,button,select,input,textarea):focus-visible,.sqc-tabs a:focus-visible{outline:2px solid #efcb84;outline-offset:-2px}
+.dg-report{display:none;border:1px solid #605036;border-radius:5px;background:#211c15;overflow:hidden}
+#pick-rfc:checked~#dg-report-rfc,#pick-rol:checked~#dg-report-rol,#pick-wc:checked~#dg-report-wc,#pick-sfk:checked~#dg-report-sfk{display:block}
+.dg-report-head{padding:12px 18px 8px;gap:8px;border:0;background:linear-gradient(100deg,#2e271d,#25221a);align-items:center}
+.dg-zone{color:var(--tint);font:600 10px/1.5 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.dg-report h2{margin:1px 0 0;color:var(--pale);font:27px/1.15 Georgia,serif}
+.dg-total{display:grid;text-align:right;gap:1px;line-height:1}.dg-total strong{color:#f7e7c5;font:26px/1 Georgia,serif}
+.dg-total small{font:16px Georgia,serif;color:#baab92}.dg-total span{color:#cbbca3;font-size:11px}
+.dg-legend{margin:0;padding:4px 18px 10px;color:#d8c7a7;font:12px/1.4 system-ui,sans-serif;border-bottom:1px solid var(--hairline)}
+.dg-legend span{display:inline;margin-left:14px;color:var(--dim)}.dg-legend b{color:#edd4a2;font-variant-numeric:tabular-nums}
+.dg-line{display:grid;grid-template-columns:minmax(0,1fr) minmax(80px,25%) 77px;align-items:center;column-gap:12px;padding:5px 18px}
+.dg-colheads{color:#b7a687;background:#19160f;font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding-block:5px}
+.dg-colheads span:nth-child(2){text-align:right}
+.dg-colheads span:last-child,.dg-state{text-align:right}
+.dg-member{border-bottom:1px solid #3c3225;--progress:#cfad6b;--status:#d9c39b}
+.dg-member:last-child{border-bottom:0}
+.dg-member.is-ready{--progress:#95ae78;--status:#b8d99f}
+.dg-member.is-empty,.dg-member.is-unknown{--status:#baad99}
+.dg-member>summary{list-style:none;cursor:pointer;min-height:31px}
+.dg-member>summary::-webkit-details-marker{display:none}
+.dg-member>summary:hover,.dg-member[open]>summary{background:#312a1f}
+.dg-person,.dg-score{display:flex;gap:8px;align-items:center;min-width:0}
+.dg-name{font:16px/1.15 Georgia,serif;color:#efdfc5}
+.dg-owner{color:#b5a58e;font:11px/1.2 system-ui,sans-serif}
+.dg-dot{width:6px;height:6px;flex:none;border-radius:50%;background:#c2b397}
+.class-shaman{background:#4e94e4}.class-warrior{background:#c79c6e}.class-paladin{background:#f58cba}.class-rogue{background:#e5d55b}.class-priest{background:#eee}.class-druid{background:#ff9342}.class-hunter{background:#a6c778}.class-warlock{background:#aca2d9}.class-mage{background:#75c8db}
+.dg-score{justify-content:flex-end}.dg-score b{min-width:30px;text-align:right;font:600 13px/1.2 system-ui,sans-serif;font-variant-numeric:tabular-nums;color:#e7d7bc}
+.dg-bar{height:4px;width:clamp(40px,9vw,100px);border-radius:4px;background:#433a2b;overflow:hidden}.dg-bar i{display:block;height:100%;background:var(--progress)}
+.dg-state{color:var(--status);font:600 12px/1.2 system-ui,sans-serif}
+.dg-body{background:#1b1812;padding:10px 18px 11px;border-top:1px solid #453827;color:#c9b99d}
+.dg-profile{font-size:12px;color:#e3d1ae}
+.dg-body p{margin:5px 0;color:var(--dim);font-size:12px}
+
+.dg-quest-list summary,.dg-guide>summary{cursor:pointer;color:#e1c48e;font-weight:600}
+.dg-quest-list>summary{padding:5px 0;font-size:13px}
+.dg-body .dg-zero,.dg-body .dg-stamp{color:#baac93;font-size:12px;margin:4px 0}
+.dg-guide{border-top:1px solid #68553a;padding:0 18px}
+.dg-guide>summary{padding:9px 0;font-size:13px}
+.dg-group{padding:5px 0 7px}.dg-group h4{margin:5px 0 4px;font-size:14px;color:#d8c19a}
+.dg-row{padding:8px 0;border-top:1px solid var(--hairline)}.dg-row-head{display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap}
+.dg-row-head a{color:#efd7a8;font:600 16px Georgia,serif}.dg-tag{padding:1px 6px;border:1px solid #6e593b;font:11px/1.3 system-ui,sans-serif;color:#c5b79c;border-radius:3px}
+.dg-tag.inner{color:#f0ce8d;background:#30271a}
+.dg-row p{margin:3px 0 0;color:#c5b79f;font:12px/1.45 system-ui,sans-serif}
+.dg-row b{color:#e0cfaf}.dg-refs{font-size:11px;padding:3px 0 12px}
+@media(max-width:650px){
+ .dg-switch{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.dg-switch label{min-height:32px;font-size:14px}
+ .dg-toolbar h1{font-size:23px;margin:11px 0 8px}.dg-toolbar small{font-size:10px}
+ .dg-report-head{padding:9px 11px 5px}.dg-report h2{font-size:23px}.dg-total strong{font-size:22px}.dg-total span{font-size:10px}
+ .dg-legend{padding:3px 11px 6px;font-size:11px}.dg-legend span{display:block;margin:2px 0 0}
+ .dg-line{grid-template-columns:minmax(0,1fr) 60px 53px;gap:6px;padding-inline:10px}
+ .dg-name{font-size:15px}.dg-owner{display:none}.dg-score,.dg-person{gap:5px}.dg-score b{min-width:25px;font-size:12px}.dg-bar{width:25px}
+ .dg-state{font-size:11px}.dg-member>summary{min-height:32px}.dg-body,.dg-guide{padding-inline:11px}
+}
+@media(max-width:340px){.dg-line{grid-template-columns:minmax(0,1fr) 31px 50px}.dg-bar{display:none}}

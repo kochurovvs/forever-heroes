@@ -1,0 +1,319 @@
+[
+  {
+    "id": "rfc",
+    "name": "Ragefire Chasm",
+    "zone": "Orgrimmar",
+    "sources": [
+      "https://www.wowhead.com/forever/guide/ragefire-chasm-dungeon-overview-location-rewards",
+      "https://db.icy-veins.com/wow-forever/quests/zones/ragefire-chasm/",
+      "https://questing.wiki/wow-forever/quests/series/5722/",
+      "https://questing.wiki/wow-forever/quests/5727/"
+    ],
+    "quests": [
+      {
+        "id": 5728,
+        "name": "Hidden Enemies",
+        "min": 9,
+        "inside": false,
+        "place": "Orgrimmar · Valley of Wisdom · 31, 37",
+        "giver": "Thrall",
+        "how": "Сначала возьми у Thrall два предыдущих задания с тем же названием. Найди Lieutenant’s Insignia в Skull Rock, затем поговори с Neeru Fireblade и вернись к Thrall за заданием на Bazzalan и Jergosh.",
+        "prereqs": [
+          5726,
+          5727
+        ]
+      },
+      {
+        "id": 5761,
+        "name": "Slaying the Beast",
+        "min": 9,
+        "inside": false,
+        "place": "Orgrimmar · Cleft of Shadow · 49.5, 50.6",
+        "giver": "Neeru Fireblade",
+        "how": "Найди Neeru в хижине возле портала. Он попросит убить Taragaman the Hungerer."
+      },
+      {
+        "id": 5723,
+        "name": "Testing an Enemy's Strength",
+        "min": 9,
+        "inside": false,
+        "place": "Thunder Bluff · Elder Rise · 70, 30",
+        "giver": "Rahauro",
+        "how": "Поговори с Rahauro на Elder Rise. Он даёт задание на троггов и шаманов в пещерах."
+      },
+      {
+        "id": 5722,
+        "name": "Searching for the Lost Satchel",
+        "min": 9,
+        "inside": false,
+        "place": "Thunder Bluff · Elder Rise · 70, 30",
+        "giver": "Rahauro",
+        "how": "Возьми задание у Rahauro до похода. Внутри найди тело Maur Grimtotem у Oggleflint."
+      },
+      {
+        "id": 5725,
+        "name": "The Power to Destroy...",
+        "min": 9,
+        "inside": false,
+        "place": "Undercity · Royal Quarter · 56.2, 92.2",
+        "giver": "Varimathras",
+        "how": "Пройди в королевский квартал и поговори с Varimathras. Ему нужны две книги с прислужников Searing Blade."
+      },
+      {
+        "id": 5724,
+        "name": "Returning the Lost Satchel",
+        "min": 9,
+        "inside": true,
+        "place": "Ragefire Chasm · логово Oggleflint",
+        "giver": "Maur Grimtotem",
+        "how": "Найди тело таурена, сдай Searching for the Lost Satchel и сразу возьми продолжение. Сумку нужно вернуть Rahauro в Thunder Bluff.",
+        "prereqs": [
+          5722
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rol",
+    "name": "Ruins of Lordaeron",
+    "zone": "Tirisfal Glades",
+    "sources": [
+      "https://mobalytics.gg/wow-forever/dungeons/ruins-of-lordaeron-dungeon-quests",
+      "https://www.wowhead.com/forever/news/new-prerequisites-required-for-ruins-of-lordaeron-dungeon-quests-in-wow-forever-383769",
+      "https://db.icy-veins.com/wow-forever/quests/zones/ruins-of-lordaeron/",
+      "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-6-2026"
+    ],
+    "quests": [
+      {
+        "id": 92422,
+        "name": "The Wrath of Rath'mael",
+        "min": 15,
+        "inside": false,
+        "place": "Tirisfal Glades · лагерь у Brill · 65.4, 60.2",
+        "giver": "Deathguard Kristof",
+        "how": "Пройди обе части Rear Guard Patrol у Deathguard Linnea: зачисти ферму и убей Riptear. После этого поговори с Kristof в том же лагере.",
+        "prereqs": [
+          356,
+          99156
+        ]
+      },
+      {
+        "id": 92401,
+        "name": "A Frightened Request",
+        "min": 15,
+        "inside": false,
+        "place": "Silverpine Forest · The Sepulcher · 44.5, 43.0",
+        "giver": "Tabitha Heartweaver",
+        "how": "При входе в The Sepulcher поверни налево к могилам. Tabitha попросит найти Edward Heartweaver."
+      },
+      {
+        "id": 92421,
+        "name": "Light's Justice",
+        "min": 15,
+        "inside": false,
+        "place": "Undercity · The Apothecarium · 57.8, 89.8",
+        "giver": "Morbin Lightbane",
+        "how": "Поговори с Morbin в квартале аптекарей. Он попросит собрать 25 Intact Limbs."
+      },
+      {
+        "id": 95216,
+        "name": "The New Plague",
+        "min": 15,
+        "inside": false,
+        "place": "Undercity · The Apothecarium · 46.6, 71.9",
+        "giver": "Theodore Griffs",
+        "how": "Начни A Recipe for Death у Apothecary Renferrel в The Sepulcher (42.8, 40.8). Сдай все три части, затем найди Griffs на нижнем уровне квартала аптекарей.",
+        "prereqs": [
+          447,
+          450,
+          451
+        ]
+      },
+      {
+        "id": 95204,
+        "name": "Crest of Lordaeron",
+        "min": 15,
+        "inside": true,
+        "place": "Ruins of Lordaeron · башни и двор у Bjork",
+        "giver": "Crest of Lordaeron",
+        "how": "Осмотри башню справа от входа, башню у The Abandoned и комнату у Bjork. Герб появляется в разных местах. Щёлкни по нему, чтобы начать задание."
+      },
+      {
+        "id": 97288,
+        "name": "Unending Torment",
+        "min": 15,
+        "inside": true,
+        "place": "Ruins of Lordaeron · King's Alley",
+        "giver": "The Baron · Abominable Head",
+        "how": "Убей The Baron и забери Abominable Head, если предмет выпал. Нажми на голову в сумке, чтобы начать цепочку. Её продолжение проходит в Undercity."
+      }
+    ]
+  },
+  {
+    "id": "wc",
+    "name": "Wailing Caverns",
+    "zone": "The Barrens",
+    "sources": [
+      "https://www.icy-veins.com/wow-forever/wailing-caverns-quests/",
+      "https://questing.wiki/wow-forever/dungeons/wailing-caverns/quests/",
+      "https://db.icy-veins.com/wow-forever/quests/zones/wailing-caverns/",
+      "https://questing.wiki/wow-forever/quests/series/1489/"
+    ],
+    "quests": [
+      {
+        "id": 914,
+        "name": "Leaders of the Fang",
+        "min": 10,
+        "inside": false,
+        "place": "Thunder Bluff · Elder Rise · 75.6, 31.2",
+        "giver": "Nara Wildmane",
+        "how": "Начни The Forgotten Pools у Tonga Runetotem в The Crossroads (52.2, 31.9). Затем пройди The Stagnant Oasis и Altered Beings. После заданий Hamuul Runetotem и Nara Wildmane поговори с Nara ещё раз.",
+        "prereqs": [
+          870,
+          877,
+          880,
+          1489,
+          1490
+        ]
+      },
+      {
+        "id": 962,
+        "name": "Serpentbloom",
+        "min": 14,
+        "inside": false,
+        "place": "Thunder Bluff · Pools of Vision · 23, 21",
+        "giver": "Apothecary Zamah",
+        "how": "Спустись в пещеру Pools of Vision под Spirit Rise. Zamah поручит собрать десять растений Serpentbloom."
+      },
+      {
+        "id": 1491,
+        "name": "Smart Drinks",
+        "min": 13,
+        "inside": false,
+        "place": "The Barrens · Ratchet · 62.4, 37.6",
+        "giver": "Mebok Mizzyrix",
+        "how": "Сначала возьми и сдай у Mebok задание Raptor Horns. Затем поговори с ним ещё раз.",
+        "prereqs": [
+          865
+        ]
+      },
+      {
+        "id": 959,
+        "name": "Trouble at the Docks",
+        "min": 14,
+        "inside": false,
+        "place": "The Barrens · Ratchet · 63.0, 37.6",
+        "giver": "Crane Operator Bigglefuzz",
+        "how": "Поговори с крановщиком у причала. Вино для него охраняет Mad Magglish в туннелях перед порталом."
+      },
+      {
+        "id": 1486,
+        "name": "Deviate Hides",
+        "min": 13,
+        "inside": false,
+        "place": "The Barrens · пещера над входом · 46.4, 33.7",
+        "giver": "Nalpak",
+        "how": "Поднимись на скалу с тыльной стороны черепа и спустись к проёму над входом. В этой пещере Nalpak даёт задание на шкуры."
+      },
+      {
+        "id": 1487,
+        "name": "Deviate Eradication",
+        "min": 15,
+        "inside": false,
+        "place": "The Barrens · пещера над входом · 46.4, 33.7",
+        "giver": "Ebru",
+        "how": "Поднимись на скалу над входом и спрыгни к пещере в глазнице черепа. Ebru стоит рядом с Nalpak, снаружи инстанса."
+      },
+      {
+        "id": 6981,
+        "name": "The Glowing Shard",
+        "min": 15,
+        "inside": true,
+        "place": "Wailing Caverns · финальное событие Naralex",
+        "giver": "Mutanus the Devourer · Glowing Shard",
+        "how": "После четырёх Fanglords проведи Disciple of Naralex до конца. Забери осколок с Mutanus и нажми на него в сумке."
+      }
+    ]
+  },
+  {
+    "id": "sfk",
+    "name": "Shadowfang Keep",
+    "zone": "Silverpine Forest",
+    "sources": [
+      "https://questing.wiki/wow-forever/dungeons/shadowfang-keep/quests/",
+      "https://db.icy-veins.com/wow-forever/quests/1740",
+      "https://db.icy-veins.com/wow-forever/quests/78261",
+      "https://mobalytics.gg/wow-forever/dungeons/shadowfang-keep-dungeon-quests",
+      "https://www.foreverdb.app/en/forever/quests/95036/a-moon-kissed-blade",
+      "https://warcraft.wiki.gg/wiki/Enchanted_Silver_Ingot"
+    ],
+    "quests": [
+      {
+        "id": 1098,
+        "name": "Deathstalkers in Shadowfang",
+        "min": 18,
+        "inside": false,
+        "place": "Silverpine Forest · The Sepulcher · 43.4, 40.8",
+        "giver": "High Executor Hadrec",
+        "how": "В The Sepulcher найди Hadrec. Он попросит разыскать разведчиков в крепости."
+      },
+      {
+        "id": 1014,
+        "name": "Arugal Must Die",
+        "min": 18,
+        "inside": false,
+        "place": "Silverpine Forest · The Sepulcher · 44.2, 39.8",
+        "giver": "Dalar Dawnweaver",
+        "how": "Поговори с Dalar в The Sepulcher перед заходом. Он попросит принести голову Archmage Arugal."
+      },
+      {
+        "id": 1013,
+        "name": "The Book of Ur",
+        "min": 16,
+        "inside": false,
+        "place": "Undercity · The Apothecarium · 53.6, 54.0",
+        "giver": "Keeper Bel'dugur",
+        "how": "Поговори с хранителем в квартале аптекарей. Книга стоит на полке в комнате Fenrus."
+      },
+      {
+        "id": 1740,
+        "name": "The Orb of Soran'ruk",
+        "min": 20,
+        "inside": false,
+        "place": "The Barrens · у Camp Taurajo · 49.3, 57.2",
+        "giver": "Doan Karhan",
+        "how": "Поговори с Doan у лагеря. Большой фрагмент добывается с Shadowfang Darksoul в крепости, три малых — в Blackfathom Deeps.",
+        "cls": "Warlock"
+      },
+      {
+        "id": 78261,
+        "name": "The Horn of Xelthos",
+        "min": 20,
+        "inside": false,
+        "place": "Silverpine Forest · у Pyrewood Village · 47.1, 71.1",
+        "giver": "Dead Drop",
+        "how": "Письмо от C направит к тайнику в доме у деревни. Прочитай записку в сундуке. Проход в крепость за рогом нужно выполнить в одиночку.",
+        "cls": "Rogue"
+      },
+      {
+        "id": 95036,
+        "name": "A Moon-Kissed Blade",
+        "min": 20,
+        "inside": false,
+        "place": "Silverpine Forest · The Sepulcher · 43.3, 41.0",
+        "giver": "Lumina Windsinger",
+        "how": "Пройди классовую цепочку от Diplomatic Incident до The Debt. Lumina отправит к Trevan Rol. В крепости забери Enchanted Silver Ingot со стола возле Archmage Arugal.",
+        "prereqs": [
+          91858,
+          91859,
+          91860,
+          91861,
+          91862,
+          96204,
+          95034
+        ],
+        "cls": "Paladin"
+      }
+    ]
+  }
+]

@@ -1,89 +1,56 @@
-name: Check group dungeon readiness
+name: Build dungeon quest preview
 on:
   push:
     branches: ['test/bnet-completed-quests-20261117']
-    paths: ['.github/workflows/check-bnet-quests.yml']
-permissions: {}
+    paths:
+      - '.github/workflows/check-bnet-quests.yml'
+      - 'dungeons/**'
+      - 'roster.json'
+      - 'update.py'
+      - 'template.html'
+      - 'test_dungeon_quests.py'
+permissions:
+  contents: read
 jobs:
-  check:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
-      - name: Count pre-entry quest readiness for the roster
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Test update and quest handling
+        run: python -m unittest discover
+      - name: Collect profiles and dungeon quests and build the test page
         env:
           BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
           BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
+        run: python update.py --output _site/index.html
+      - name: Verify the live build for every roster member and dungeon
         shell: python
         run: |
-          import base64
           import json
-          import os
-          from urllib.error import HTTPError
-          from urllib.request import Request, urlopen
-
-          def request_json(label, request):
-              try:
-                  with urlopen(request, timeout=25) as response:
-                      print(f"{label}: HTTP {response.status}", flush=True)
-                      return json.load(response)
-              except HTTPError as error:
-                  raise SystemExit(f"{label}: HTTP {error.code}") from None
-
-          for key in ("BLIZZARD_CLIENT_ID", "BLIZZARD_CLIENT_SECRET"):
-              if not os.environ.get(key):
-                  raise SystemExit(f"Missing repository secret: {key}")
-          credentials = os.environ["BLIZZARD_CLIENT_ID"] + ":" + os.environ["BLIZZARD_CLIENT_SECRET"]
-          basic = base64.b64encode(credentials.encode()).decode()
-          token_data = request_json("Battle.net OAuth", Request(
-              "https://oauth.battle.net/token",
-              data=b"grant_type=client_credentials",
-              headers={"Authorization": f"Basic {basic}", "Content-Type": "application/x-www-form-urlencoded"},
-          ))
-          token = token_data.get("access_token")
-          if not token:
-              raise SystemExit("No access token in OAuth response")
-          print(f"::add-mask::{token}", flush=True)
-          from datetime import datetime, timezone
-          from time import sleep
-          from urllib.error import URLError
-
-          players = [["dargor-springhill","Shaman"],["saar-oathwell","Warrior"],["lior-shadowlord","Priest"],["lioren-aurelith","Shaman"],["chipson-bomfrey","Rogue"],["allison-burgerrs","Paladin"],["hehehehe-hahahaha","Hunter"],["classic-schmosby","Priest"],["edou-khil","Shaman"],["graag-gogkhilghak","Warlock"],["lailah-shemesh","Druid"],["lailah-primali","Warlock"],["aloy-cosem","Mage"]]
-          outside = {"rfc":[[5728,""],[5761,""],[5723,""],[5722,""],[5725,""]],"rol":[[92422,""],[92401,""],[92421,""],[95216,""]],"wc":[[914,""],[962,""],[1491,""],[959,""],[1486,""],[1487,""]],"sfk":[[1098,""],[1014,""],[1013,""],[1740,"Warlock"],[78261,"Rogue"],[95036,"Paladin"]]}
-          query = "?namespace=profile-forever-eu&locale=en_GB"
-          headers = {"Authorization": f"Bearer {token}"}
-
-          def get_ids(url, field):
-              for attempt in range(3):
-                  try:
-                      with urlopen(Request(url + query, headers=headers), timeout=12) as response:
-                          entries = json.load(response).get(field)
-                      if not isinstance(entries, list):
-                          return None
-                      ids = set()
-                      for entry in entries:
-                          qid = entry.get("quest", entry).get("id")
-                          if not isinstance(qid, int):
-                              return None
-                          ids.add(qid)
-                      return ids
-                  except HTTPError as err:
-                      if err.code != 429 and err.code < 500:
-                          return None
-                  except (URLError, OSError, ValueError):
-                      pass
-                  if attempt < 2:
-                      sleep(2 ** attempt)
-              return None
-
-          for slug, hero_class in players:
-              base = "https://eu.api.blizzard.com/profile/wow/character/" + slug + "/quests"
-              active = get_ids(base, "in_progress")
-              completed = get_ids(base + "/completed", "quests")
-              stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
-              summary = {"hero": slug, "time": stamp, "ready": {}}
-              if active is not None and completed is not None:
-                  covered = active | completed
-                  for key, entries in outside.items():
-                      applicable = {qid for qid, restriction in entries if not restriction or restriction == hero_class}
-                      summary["ready"][key] = [len(applicable & covered), len(applicable)]
-              print("DUNGEON_TOTALS " + json.dumps(summary, separators=(",", ":")), flush=True)
+          from pathlib import Path
+          import sys
+          sys.path.insert(0, str(Path.cwd()))
+          from dungeons.quests import character_key
+          roster = json.loads(Path('roster.json').read_text())
+          heroes = {character_key(name) for names in roster['owners'].values() for name in names}
+          catalog = json.loads(Path('dungeons/catalog.json').read_text())
+          snapshot = json.loads(Path('.dungeon-quests-cache.json').read_text())
+          assert set(snapshot['heroes']) == heroes
+          allowed = {q['id'] for d in catalog for q in d['quests']}
+          for data in snapshot['heroes'].values():
+              active, done = set(data['active']), set(data['done'])
+              assert active.isdisjoint(done) and (active | done) <= allowed
+          html = Path('_site/index.html').read_text()
+          for hero in heroes:
+              assert html.count(f'data-member="{hero}"') == len(catalog)
+          assert html.count('Не взяты · ') == len(heroes) * len(catalog)
+          assert html.count('В журнале · ') == len(heroes) * len(catalog)
+          assert html.count('Сданы · ') == len(heroes) * len(catalog)
+          assert 'C_QuestLog' not in html
+          print(f'Verified detailed quest status for {len(heroes)} heroes across {len(catalog)} dungeons.')
