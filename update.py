@@ -16,6 +16,9 @@ import urllib.request
 import urllib.parse
 from pathlib import Path
 
+from dungeons import quests
+from dungeons.view import add_dungeons
+
 ROOT = Path(__file__).resolve().parent
 
 
@@ -263,10 +266,24 @@ def main():
     icons = read_json(ROOT / 'icons.json', {})
     if not args.offline:
         icons = update_icons(heroes, icons)
+    catalog = read_json(ROOT / 'dungeons' / 'catalog.json')
+    quest_cache = ROOT / '.dungeon-quests-cache.json'
+    if args.offline:
+        snapshot = read_json(quest_cache, {})
+        catalog_ids = sorted(quests.tracked_ids(catalog))
+        if snapshot.get('region') != config['region'] or snapshot.get('catalog') != catalog_ids:
+            snapshot = {}
+    else:
+        try:
+            snapshot = quests.collect(config['region'], heroes, catalog, args.allow_partial)
+        except RuntimeError as error:
+            raise SystemExit(str(error)) from None
     html = render_dashboard((ROOT / 'template.html').read_text(encoding='utf-8'), data, icons)
     html = html.replace('WoW Forever · EU', 'WoW Forever · ' + config['region'].upper())
+    html = add_dungeons(html, heroes, catalog, snapshot)
     atomic_write(args.output, html)
     if not args.offline:
+        atomic_write(quest_cache, json.dumps(snapshot, ensure_ascii=False))
         atomic_write(ROOT / 'cache.json', json.dumps(data, ensure_ascii=False, indent=2))
         atomic_write(ROOT / 'icons.json', json.dumps(icons))
     print(f'HTML: {args.output.resolve()}')

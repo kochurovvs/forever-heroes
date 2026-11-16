@@ -9,6 +9,8 @@ on:
       - 'roster.json'
       - 'update.py'
       - 'template.html'
+      - 'dungeons/**'
+      - 'test_dungeon_quests.py'
       - 'icons.json'
       - '.github/workflows/update-heroes.yml'
 permissions:
@@ -35,8 +37,11 @@ jobs:
         with:
           python-version: '3.12'
       - name: Verify failure handling
-        run: python -m unittest discover -p test_update.py
-      - name: Collect all profiles and build candidate
+        run: python -m unittest discover
+      - name: Refresh roster and dungeon quests from Battle.net
+        env:
+          BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
+          BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
         run: python update.py --output _site/index.html
       - name: Set Pages artifact name
         id: site

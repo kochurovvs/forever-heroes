@@ -12,13 +12,15 @@ spec.loader.exec_module(update)
 
 
 class PublicationTests(unittest.TestCase):
-    def run_case(self, failed):
+    def run_case(self, failed, quest_failure=False):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'roster.json').write_text(json.dumps({'region': 'eu', 'owners': {'Owner': ['Test Hero']}}))
             (root / 'cache.json').write_text('{"fetchedAt":"old-time","heroes":[]}')
             (root / 'icons.json').write_text('{}')
-            (root / 'template.html').write_text('__DATA__ __ICONS__')
+            (root / 'dungeons').mkdir()
+            (root / 'dungeons/catalog.json').write_text('[]')
+            (root / 'template.html').write_text('<style></style><main><header></header><h1>Heroes</h1>__DATA__ __ICONS__</main><div id="hover-tip"></div>')
             (root / 'index.html').write_text('previous working site')
             def collect(pair, region, cache, offline):
                 return {'name': pair[1], 'owner': pair[0], 'url': 'https://example.test',
@@ -26,8 +28,9 @@ class PublicationTests(unittest.TestCase):
                         'character': None if failed else {'level': 18}}
             original = (root / 'cache.json').read_bytes()
             with patch.object(update, 'ROOT', root), patch.object(update, 'collect', collect), \
+                 patch.object(update.quests, 'collect', return_value={'heroes':{}}, side_effect=RuntimeError('API unavailable') if quest_failure else None), \
                  patch.object(update, 'update_icons', lambda heroes, icons: icons), patch.object(sys, 'argv', ['update.py']):
-                if failed:
+                if failed or quest_failure:
                     with self.assertRaises(SystemExit):
                         update.main()
                     self.assertEqual((root / 'index.html').read_text(), 'previous working site')
@@ -41,6 +44,9 @@ class PublicationTests(unittest.TestCase):
 
     def test_failure_keeps_html_and_timestamp(self):
         self.run_case(True)
+
+    def test_quest_failure_keeps_previous_dashboard(self):
+        self.run_case(False, quest_failure=True)
 
     def test_success_publishes_new_snapshot(self):
         self.run_case(False)
