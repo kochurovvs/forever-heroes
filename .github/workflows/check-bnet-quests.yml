@@ -1,4 +1,4 @@
-name: Check Wailing Caverns readiness
+name: Check group dungeon readiness
 on:
   push:
     branches: ['test/bnet-completed-quests-20261117']
@@ -7,9 +7,9 @@ permissions: {}
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 12
     steps:
-      - name: Count completed and active Wailing Caverns quests
+      - name: Count pre-entry quest readiness for the roster
         env:
           BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
           BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
@@ -43,31 +43,47 @@ jobs:
           if not token:
               raise SystemExit("No access token in OAuth response")
           print(f"::add-mask::{token}", flush=True)
-          base = "https://eu.api.blizzard.com/profile/wow/character/dargor-springhill/quests"
+          from datetime import datetime, timezone
+          from time import sleep
+          from urllib.error import URLError
+
+          players = [["dargor-springhill","Shaman"],["saar-oathwell","Warrior"],["lior-shadowlord","Priest"],["lioren-aurelith","Shaman"],["chipson-bomfrey","Rogue"],["allison-burgerrs","Paladin"],["hehehehe-hahahaha","Hunter"],["classic-schmosby","Priest"],["edou-khil","Shaman"],["graag-gogkhilghak","Warlock"],["lailah-shemesh","Druid"],["lailah-primali","Warlock"],["aloy-cosem","Mage"]]
+          outside = {"rfc":[[5728,""],[5761,""],[5723,""],[5722,""],[5725,""]],"rol":[[92422,""],[92401,""],[92421,""],[95216,""]],"wc":[[914,""],[962,""],[1491,""],[959,""],[1486,""],[1487,""]],"sfk":[[1098,""],[1014,""],[1013,""],[1740,"Warlock"],[78261,"Rogue"],[95036,"Paladin"]]}
           query = "?namespace=profile-forever-eu&locale=en_GB"
           headers = {"Authorization": f"Bearer {token}"}
-          completed = request_json("Completed quests", Request(base + "/completed" + query, headers=headers))
-          journal = request_json("Quest journal", Request(base + query, headers=headers))
 
-          def quest_ids(entries):
-              if not isinstance(entries, list):
-                  raise SystemExit("Blizzard did not return a quest list for this category")
-              result = set()
-              for entry in entries:
-                  quest_id = entry.get("quest", entry).get("id")
-                  if not isinstance(quest_id, int):
-                      raise SystemExit("Unexpected quest entry shape")
-                  result.add(quest_id)
-              return result
+          def get_ids(url, field):
+              for attempt in range(3):
+                  try:
+                      with urlopen(Request(url + query, headers=headers), timeout=12) as response:
+                          entries = json.load(response).get(field)
+                      if not isinstance(entries, list):
+                          return None
+                      ids = set()
+                      for entry in entries:
+                          qid = entry.get("quest", entry).get("id")
+                          if not isinstance(qid, int):
+                              return None
+                          ids.add(qid)
+                      return ids
+                  except HTTPError as err:
+                      if err.code != 429 and err.code < 500:
+                          return None
+                  except (URLError, OSError, ValueError):
+                      pass
+                  if attempt < 2:
+                      sleep(2 ** attempt)
+              return None
 
-          dungeon = {914, 959, 962, 1486, 1487, 1491, 6981}
-          before_entry = dungeon - {6981}
-          done = dungeon & quest_ids(completed.get("quests"))
-          print("WC completed count:", len(done))
-          if not isinstance(journal.get("in_progress"), list):
-              print("Active quest list unavailable. Journal fields:", sorted(journal))
-          else:
-              active = (dungeon - done) & quest_ids(journal["in_progress"])
-              print("WC active count:", len(active))
-              print("WC neither completed nor active count:", len(dungeon - done - active))
-              print("All six pre-run quests completed or active:", before_entry <= (done | active))
+          for slug, hero_class in players:
+              base = "https://eu.api.blizzard.com/profile/wow/character/" + slug + "/quests"
+              active = get_ids(base, "in_progress")
+              completed = get_ids(base + "/completed", "quests")
+              stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
+              summary = {"hero": slug, "time": stamp, "ready": {}}
+              if active is not None and completed is not None:
+                  covered = active | completed
+                  for key, entries in outside.items():
+                      applicable = {qid for qid, restriction in entries if not restriction or restriction == hero_class}
+                      summary["ready"][key] = [len(applicable & covered), len(applicable)]
+              print("DUNGEON_TOTALS " + json.dumps(summary, separators=(",", ":")), flush=True)
