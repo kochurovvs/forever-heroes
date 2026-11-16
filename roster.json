@@ -1,5 +1,6 @@
 {
   "region": "eu",
+  "refreshEndpoint": "",
   "owners": {
     "Виталик": [
       "Dargor Springhill",

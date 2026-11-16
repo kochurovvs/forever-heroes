@@ -46,6 +46,11 @@ def download(url):
 def validate(config):
     if config.get('region') not in ('eu', 'us'):
         raise ValueError('region must be eu or us')
+    endpoint = config.get('refreshEndpoint')
+    if endpoint:
+        url = urllib.parse.urlsplit(endpoint)
+        if url.scheme != 'https' or not url.hostname or url.path != '/refresh' or url.username or url.password or url.query or url.fragment:
+            raise ValueError('refreshEndpoint must be a public HTTPS URL ending in /refresh')
     owners = config.get('owners')
     if not isinstance(owners, dict) or not owners:
         raise ValueError('owners must be a non-empty object')
@@ -158,6 +163,8 @@ def main():
     data = {'roster': config['owners'], 'heroes': heroes,
             'fetchedAt': cached_data.get('fetchedAt') if args.offline else now(),
             'complete': not failures}
+    if not args.offline and config.get('refreshEndpoint'):
+        data['refreshEndpoint'] = config['refreshEndpoint']
     icons = read_json(ROOT / 'icons.json', {})
     if not args.offline:
         icons = update_icons(heroes, icons)
@@ -166,6 +173,8 @@ def main():
         html = html.replace(marker, json.dumps(obj, ensure_ascii=False).replace('</', '<\\/'))
     html = html.replace('WoW Forever · EU', 'WoW Forever · ' + config['region'].upper())
     atomic_write(args.output, html)
+    marker = {'fetchedAt': data['fetchedAt'], 'complete': data['complete']}
+    atomic_write(args.output.with_name('snapshot.json'), json.dumps(marker))
     if not args.offline:
         atomic_write(ROOT / 'cache.json', json.dumps(data, ensure_ascii=False, indent=2))
         atomic_write(ROOT / 'icons.json', json.dumps(icons))

@@ -1,0 +1,10 @@
+{
+  "name": "forever-heroes-refresh",
+  "main": "worker/index.mjs",
+  "compatibility_date": "2026-01-01",
+  "workers_dev": true,
+  "durable_objects": {
+    "bindings": [{ "name": "REFRESH_GATE", "class_name": "RefreshGate" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["RefreshGate"] }]
+}
