@@ -54,3 +54,14 @@ jobs:
           assert html.count('Сданы · ') == len(heroes) * len(catalog)
           assert 'C_QuestLog' not in html
           print(f'Verified detailed quest status for {len(heroes)} heroes across {len(catalog)} dungeons.')
+          export = {hero: {field: data[field] for field in ('active', 'done', 'time')}
+                    for hero, data in snapshot['heroes'].items()}
+          Path('dungeon-status.json').write_text(json.dumps({'heroes': export}), encoding='utf-8')
+      - name: Share the approved dungeon snapshot for one day
+        if: github.event_name == 'push' && github.event.before == 'e5fa27ecc82a7645df4b167fdd386a100d618403' && github.run_attempt == 1
+        uses: actions/upload-artifact@v4
+        with:
+          name: dungeon-quest-status
+          path: dungeon-status.json
+          retention-days: 1
+          if-no-files-found: error
