@@ -50,5 +50,23 @@ class PublicationTests(unittest.TestCase):
             update.validate({'region': 'eu', 'owners': {'A': ['Test Hero'], 'B': ['test hero']}})
 
 
+    def test_comparison_is_rendered_from_the_current_snapshot(self):
+        hero = {'name': 'A & B', 'owner': '<Player>', 'character': {
+            'level': 17, 'stats': {'overview': [{'enum': 'MANA', 'value': {'type': 'WHOLE', 'value': 0}}]},
+            'professions': {'primaries': [{'name': 'Mining', 'tiers': [{'skillPoints': 12, 'maxSkillPoints': 75}]}]},
+        }}
+        data = {'heroes': [hero], 'complete': True, 'fetchedAt': '2026-11-16T11:45:00+00:00'}
+        template = ('<table class="paper"><thead><tr><th data-key="MANA"></th><th data-key="Mining"></th>'
+                    '<th data-key="ENERGY"></th></tr></thead><tbody>__SNAPSHOT_ROWS__</tbody></table>__DISPLAY_TIME__')
+        result = update.render_dashboard(template, data, {})
+        self.assertIn('A &amp; B', result)
+        self.assertIn('&lt;Player&gt;', result)
+        self.assertIn('>0</td>', result)
+        self.assertIn('>12/75</td>', result)
+        self.assertIn('>—</td>', result)
+        self.assertIn('>17</span>', result)
+        self.assertIn('16.11.2026, 14:45 МСК', result)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Side Quest Company — Реестр героев</title><style>
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Side Quest Company — Сравнение героев</title><style>
 :root{color-scheme:dark;--gold:#e4bd70;--muted:#aa9d86;--line:#55452e}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#6c3a1760,transparent 60%),repeating-linear-gradient(110deg,#17130f 0,#17130f 2px,#191510 3px,#191510 5px);color:#e8dfcc;font:14px/1.5 system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:35px 26px 60px}header{border-bottom:1px solid #77613d;padding-bottom:22px;display:flex;justify-content:space-between;align-items:center}.brand{font:22px Georgia;letter-spacing:2px;color:var(--gold)}.eyebrow{color:#aa8e56;text-transform:uppercase;letter-spacing:3px;font-size:10px}.region{border:1px solid #71603e;background:#201b12;border-radius:3px;padding:6px 12px;color:var(--gold);font-size:11px}h1{font:38px Georgia;margin:28px 0 8px;color:#f1d49b;text-shadow:0 2px 3px #000}p{color:var(--muted)}.intro{margin:0 0 25px}.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 16px}input,select,button{font:inherit;background:#13110d;color:#e3d6bb;border:1px solid #6d5631;border-radius:3px;padding:10px 13px}input{min-width:200px;flex:1}button{cursor:pointer;background:linear-gradient(#4c2518,#2d160f);border-color:#8d6333;color:#f0cc86}button:hover{filter:brightness(1.2)}.counts{font-size:12px;color:var(--muted);display:flex;gap:22px;flex-wrap:wrap}.counts strong{color:var(--gold);font-weight:500}.scroll{overflow:auto;border:1px solid #7e6337;box-shadow:0 0 0 3px #211c14,0 12px 35px #0008}table{width:100%;border-collapse:collapse;min-width:820px;background:#1c1913}th{text-align:left;font-size:10px;letter-spacing:1.7px;color:#c7aa76;background:linear-gradient(#393022,#282116);padding:14px 18px;border-bottom:1px solid #78613c}td{padding:13px 18px;border-bottom:1px solid #423724}.hero{cursor:pointer;transition:background .15s}.hero:nth-of-type(4n+1){background:#221d16}.hero:hover{background:#342b1d}.hero:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}.iconlabel{display:flex;align-items:center;gap:10px;white-space:nowrap}.icon{width:33px;height:33px;border:1px solid #b08a48;border-radius:3px;box-shadow:0 0 0 2px #080705,0 2px 5px #000;object-fit:cover}.raceIcon{border-color:#77643e}.heroname{font:17px Georgia;white-space:nowrap}.owner{color:#f1dfbb}.level{color:#f5d875;font:23px Georgia;font-variant-numeric:tabular-nums}.arrow{color:var(--gold);font-size:16px}.status{color:#a68d6a;font-size:11px;display:block}.detail td{padding:0;border:0}.detail[hidden]{display:none}.detailbox{padding:24px 28px 24px 70px;background:linear-gradient(100deg,#15130f,#262015);box-shadow:inset 0 3px 8px #0007;border-bottom:1px solid #77613c}.detailhead{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px;color:var(--muted);font-size:12px}a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}.skillgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.sectiontitle{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#c9af7c;margin-bottom:14px}.skill{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;margin:12px 0}.skill .icon{width:29px;height:29px}.skillname{font-size:13px}.value{font-size:12px;color:#dac087;font-variant-numeric:tabular-nums}.track{height:4px;background:#443a26;margin-top:6px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#7a5927,#d5b66b)}.gear{margin-top:22px;border-top:1px solid #514329;padding-top:18px;color:#b3a78f;font-size:12px;line-height:1.9}.gear span{display:inline-block;margin-right:14px}.empty{color:var(--muted);font-size:12px}.company{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 25px}.person{border:1px solid #51442e;padding:7px 10px;color:var(--muted);font-size:12px;background:#1d1912}.person b{color:#ddca9e;font-weight:500}h2{font:23px Georgia;color:#cfb681;margin-top:30px}footer{border-top:1px solid #59482d;padding-top:20px;margin-top:30px;color:var(--muted);font-size:11px}.notice{max-width:850px;line-height:1.8}.hidden{display:none}#noresults{padding:25px}.legend{font-size:11px;color:#aa9d86;margin-top:12px}@media(max-width:650px){main{padding:22px 13px}.brand{font-size:17px}.region{font-size:10px}h1{font-size:31px}.toolbar select{flex:1}.skillgrid{grid-template-columns:1fr}.detailbox{padding:20px}.counts{gap:12px}th,td{padding:12px}header{gap:12px}.scroll{margin:0 -3px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .stats{margin-bottom:24px}.stats h3{font-weight:500}.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 12px;margin:0}.stat{position:relative;padding:7px 8px 7px 44px;background:#211c15;border:1px solid #473924;border-radius:3px}.stat dt{font-size:12px;color:#c2b399}.stat dd{margin:0;font:18px Georgia,serif;color:#f4d99e;font-variant-numeric:tabular-nums}.stat-icon{position:absolute;top:50%;left:8px;transform:translateY(-50%);width:27px;height:27px;background-size:cover;background-position:center}
 .toolbar{margin-bottom:8px}.compact-option{display:inline-flex;align-items:center;gap:8px;color:#dfc58f;margin:2px 0 12px;cursor:pointer}.compact-option input{min-width:0;flex:none;width:16px;height:16px;accent-color:#c4a464}.hero td{padding-block:8px}.summary td{padding:5px 12px 8px 20px;background:#191610}.mini-line{display:flex;align-items:baseline;gap:10px;font-size:12px}.mini-line+.mini-line{margin-top:4px}.mini-label{flex:0 0 70px;color:#bbab8e}.mini-items{display:flex;flex-wrap:wrap;align-items:center;gap:3px 12px}.chip{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;font-variant-numeric:tabular-nums}.chip b{font-weight:500;color:#ddbf85}.chip .icon{position:static;transform:none;flex:none;width:17px;height:17px;box-shadow:none;border-color:#76613e}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -187,19 +187,602 @@ th[aria-sort] .sort-arrow { color: var(--gold) }
 .rank-disclosure[open] .when-open{display:inline}
 .more-ranks ol{padding-left:3em;line-height:1.9}.more-ranks b{color:#9ec8b7}
 .profession-ranks tbody .more-ranks{border:0}.more-ranks td{grid-column:1/-1}
+[hidden]{display:none!important}
+.intro{margin-bottom:12px}
+#roster-view{scroll-margin-top:12px}
+.view-options,.matrix-tools,.mode-picker,.field-controls,.field-picker,#metric-pager{display:flex;align-items:center}
+.view-options{gap:18px;min-height:44px;margin:3px 0 11px}
+.view-options .compact-option,.view-options .report-shortcut{margin:0;float:none}
+.view-options .compact-option{font-weight:550}
+.view-options .report-shortcut{margin-left:auto}
+#expand{background:none;border:0;padding:4px 0;color:#c9b99a;font-size:12px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#716046}
+#matrix-wrap{border:1px solid #725a39;border-radius:6px;background:#211d16;box-shadow:0 5px 18px #0004}
+.matrix-tools{justify-content:space-between;gap:12px;padding:12px 15px;background:#272118;border-bottom:1px solid #5b4930;border-radius:6px 6px 0 0}
+.mode-picker{gap:2px;padding:3px;border-radius:5px;background:#171510;border:1px solid #5a4930}
+.mode-picker button{border:1px solid transparent;border-radius:3px;background:none;color:#c5b69c;padding:5px 14px;font-weight:550;font-size:13px}
+.mode-picker button[aria-pressed=true]{border-color:#84663d;color:#ffe2a4;background:#473821}
+.field-controls,.field-picker{gap:10px}
+.field-picker span{font-size:12px;color:#c1b49c}
+.field-picker select{padding:6px 8px;max-width:100%;font-size:13px}
+#metric-pager{gap:5px}
+#metric-pager button{background:#30271b;border-color:#685434;font-size:23px;line-height:1;padding:0;width:32px;height:32px}
+#metric-pager button:disabled{opacity:.35;cursor:default}
+#metric-page{min-width:49px;text-align:center;font-variant-numeric:tabular-nums;color:#c9bba1;font-size:12px}
+.matrix{border-collapse:separate;border-spacing:0;table-layout:fixed;min-width:0;width:100%;background:#1c1914;border-radius:0 0 5px 5px}
+.matrix .owner-col{width:clamp(76px,8.5vw,118px)}
+.matrix .hero-col{width:clamp(205px,19.8vw,264px)}
+.matrix .level-col{width:66px}
+.matrix th,.matrix td{padding:0;vertical-align:middle}
+.matrix th{background:#30291d;font-size:12px;letter-spacing:normal;height:62px;border-bottom:1px solid #78603b}
+.matrix td{border-bottom:1px solid #423828}
+.matrix tbody tr:last-child td{border-bottom:0}
+.matrix .m-sort{display:flex;align-items:center;justify-content:center;position:relative;flex-direction:column;gap:3px;width:100%;min-height:57px;border:0;background:none;padding:4px 2px;color:#c9bca3;font:500 12px/1.16 system-ui,sans-serif;letter-spacing:normal}
+.matrix .m-sort:hover,.matrix th[aria-sort] .m-sort{color:#ffe2a3}
+.matrix :focus-visible,#matrix-wrap button:focus-visible{outline:2px solid #e5bb71;outline-offset:-3px}
+.matrix .m-owner .m-sort,.matrix .m-identity .m-sort{align-items:flex-start;padding-left:14px;flex-direction:row;align-items:center;justify-content:flex-start}
+.matrix .sort-mark{color:#e6ba69;font:11px system-ui;line-height:1}
+.matrix .th-metric[aria-sort] .sort-mark{position:absolute;top:9px;left:calc(50% + 15px)}
+.matrix .th-metric[aria-sort]{box-shadow:inset 0 -2px #d4ad66}
+.matrix .th-metric,.matrix .metric-value,.matrix .m-level{border-inline-start:1px solid #403729}
+.metric-icon{width:24px;height:24px;border:1px solid #8b7249;border-radius:4px;object-fit:cover}
+.matrix .label-short,.mobile-owner{display:none}
+.matrix .compare-row{cursor:pointer;background:#211c16}
+.matrix .compare-row.shaded{background:#272119}
+.matrix .compare-row:hover,.matrix .compare-row:focus-within,.matrix .compare-row.expanded{background:#352c20}
+.matrix .compare-row td{height:54px}
+.matrix td.m-owner{padding-left:14px;color:#d5c8b2}
+.matrix .m-identity{padding:0 6px 0 0}
+.identity-content{display:flex;align-items:center;gap:10px;min-width:0;padding:7px 6px 7px 14px}
+.hero-info{min-width:0;flex:1;line-height:1.22}
+.hero-trigger{display:block;padding:2px 0;text-align:left;background:none;border:0;font:17px/1.17 Georgia,serif;color:inherit;overflow-wrap:anywhere}
+.hero-trigger:hover{text-decoration:underline;text-underline-offset:3px}
+.icon-pair{display:inline-flex;align-items:center;gap:3px;flex:none}
+.icon-pair .icon{width:22px;height:22px;box-shadow:none;border-color:#796545;border-radius:3px;display:block}
+.matrix .metric-value,.matrix .m-level{text-align:center;font-variant-numeric:tabular-nums}
+.metric-value{color:#eee3ce;font-weight:550;font-size:15px;white-space:nowrap}
+.metric-value .denom{font-size:.8em;font-weight:450;color:#b2a28a}
+.matrix .missing{color:#958770;font-weight:400}
+.matrix td.m-level{font:bold 17px/1.25 Georgia,serif;color:#f2d18d}
+.matrix .matrix-detail td{padding:0}
+.matrix .detailbox{border-radius:0}
+.matrix .no-profiles{padding:24px;color:#cbbd9f;text-align:center}
+@media(max-width:1060px){
+  .matrix .label-long{display:none}.matrix .label-short{display:inline}
+}
+@media(max-width:900px){
+  .matrix .owner-col{width:90px}.matrix .hero-col{width:205px}
+  .matrix .level-col{width:48px}
+}
+@media(max-width:700px){
+  main{padding-left:12px;padding-right:12px}
+  .toolbar{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:12px 0 2px}
+  .toolbar #search{grid-column:1/-1}
+  .toolbar select{grid-column:auto}
+  .view-options{gap:12px;margin:0 0 5px}.view-options #expand{min-height:44px}
+  .view-options .report-shortcut{font-size:12px}
+  .matrix-tools{flex-wrap:wrap;gap:8px;padding:8px}
+  .mode-picker{width:100%}.mode-picker button{flex:1;min-height:35px}
+  .field-controls{width:100%;justify-content:space-between;gap:4px}.field-picker{gap:7px}
+  .field-picker select{height:36px;padding:4px 7px;max-width:140px}
+  #metric-pager button{width:37px;height:36px}
+  .matrix .hero-col{width:40%}.matrix .level-col{width:32px}
+  .matrix th{height:55px}
+  .matrix .m-sort{min-height:51px;font-size:11px}
+  .matrix .m-identity .m-sort,.identity-content{padding-left:8px}
+  .matrix .compare-row td{height:59px}
+  .matrix .m-identity{padding-right:2px}
+  .identity-content{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"hero hero" "icons owner";align-content:center;gap:4px 5px;padding-top:5px;padding-bottom:5px;padding-right:2px}
+  .hero-info{grid-area:hero}.icon-pair{grid-area:icons}.mobile-owner{grid-area:owner;display:block;font:11px/1.1 system-ui;color:#c1b398;overflow-wrap:anywhere}
+  .icon-pair .icon{width:15px;height:15px;border-radius:2px}
+  .hero-trigger{font-size:15px;line-height:1.08;padding:0}
+  .matrix .metric-value{font-size:13px;letter-spacing:-.2px}
+  .matrix .metric-value.range{font-size:11px}
+  .matrix .th-metric[aria-sort] .sort-mark{left:calc(50% + 12px)}
+  .metric-icon{width:22px;height:22px}
+  .matrix td.m-level{font-size:15px}
+}
+@media(max-width:360px){
+  .view-options{column-gap:9px}
+  .toolbar select{font-size:14px}
+}
+.matrix th{position:sticky;top:0;z-index:1}
+.matrix .identity-value{text-align:center;color:#d1c4ad;border-inline-start:1px solid #403729;padding:0 4px;font-size:14px;line-height:1.2;overflow-wrap:anywhere}
+.field-picker select:disabled{opacity:.55}
+@media(max-width:700px){.matrix .identity-value{font-size:12px}.matrix .field-controls{min-height:36px}}
+.matrix .profile-field{display:flex;align-items:center;gap:10px;line-height:1.25;text-align:left}
+.matrix .profile-field .icon{width:33px;height:33px;flex:none;border-radius:3px}
+.matrix .profile-field .raceIcon{border-color:#77643e}
+.matrix .identity-value{border-inline-start:0;padding-inline:18px}
+.matrix.is-roster .icon-pair>span{visibility:hidden}
+.matrix.is-roster .th-metric,.matrix.is-roster .m-level{border-inline-start-color:transparent}
+.matrix.is-roster .th-metric .m-sort{align-items:flex-start;padding-left:18px}
+.matrix.is-roster .compare-row{background:#1c1913}
+.matrix.is-roster .compare-row.shaded{background:#221d16}
+.matrix.is-roster .compare-row:hover,.matrix.is-roster .compare-row:focus-within{background:#342b1d}
+.matrix.is-roster td.m-owner{color:#f1dfbb}
+.matrix .level-number{display:inline-grid;place-items:center}
+.matrix .level-number{font:23px Georgia,serif;font-variant-numeric:tabular-nums;color:#f5d875}
+@media(max-width:700px){
+  .matrix .compare-row{position:relative}
+  .matrix .compare-row td{height:90px}
+  .matrix td.m-identity{vertical-align:top}
+  .matrix .identity-content{padding-top:8px;grid-template-columns:36px 1fr}
+  .matrix .icon-pair{position:relative}
+  .matrix.is-roster .icon-pair::after{content:"Игрок ·";position:absolute;left:0;top:50%;transform:translateY(-50%);color:#bcae97;font:11px system-ui;white-space:nowrap}
+  .matrix.is-roster .identity-value{padding:0}
+  .matrix.is-roster .profile-field{position:absolute;bottom:9px;left:10px;width:calc(54% - 14px);gap:6px;font-size:13px;min-height:23px}
+  .matrix.is-roster .profile-field.field-class{left:55%;width:calc(45% - 12px)}
+  .matrix.is-roster .profile-field .icon{width:23px;height:23px;box-shadow:0 0 0 1px #080705}
+  .matrix.is-roster .compare-row,.matrix.is-roster .compare-row.shaded{background:linear-gradient(115deg,#2b241b,#201b15)}
+  .matrix.is-roster .compare-row td{border-block:1px solid #675233;box-shadow:inset 0 -4px #191510}
+  .matrix.is-roster .compare-row td:first-child{border-left:1px solid #675233;border-radius:7px 0 0 7px}
+  .matrix.is-roster .compare-row td:last-child{border-right:1px solid #675233;border-radius:0 7px 7px 0}
+  .matrix .compare-row td.m-identity{border-left:1px solid transparent;border-top:1px solid transparent}
+  .matrix .level-number{min-width:24px;height:24px;font-size:17px;border:1px solid transparent}
+  .matrix:not(.is-roster) .compare-row td.m-level{border-top:1px solid transparent;border-right:1px solid transparent;border-bottom:1px solid #423828}
+  .matrix.is-roster .level-number{border-color:#675233;background:#2b2419;border-radius:4px}
+  .matrix.is-roster .th-metric .m-sort{align-items:center;padding-left:2px}
+}
+@media(max-width:700px){
+  .matrix .compare-row td{height:76px}
+  .matrix .identity-content{padding-bottom:37px}
+}
+@media(max-width:700px){.matrix tbody .compare-row:last-child td.m-identity{border-bottom:1px solid #57462f}}
+@media(max-width:360px){.matrix .identity-content{padding-bottom:47px}}
 </style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1>
 <p class="snapshot-time" id="stamp">
   <strong class="snapshot-age" id="snapshot-age"></strong>
-  <span><span id="snapshot-label">Последнее успешное обновление</span> <time id="snapshot-time"></time></span>
+  <span><span id="snapshot-label">__SNAPSHOT_LABEL__</span> <time id="snapshot-time">__DISPLAY_TIME__</time></span>
 </p>
-<p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><a class="report-shortcut" href="#analytics">Аналитика компании ↓</a><div class="scroll"><table><thead><tr><th style="width:36px"></th>
-<th scope="col"><button type="button" class="sort-button" data-sort="owner">Владелец<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-<th scope="col" aria-sort="ascending"><button type="button" class="sort-button" data-sort="name">Персонаж<span class="sort-arrow" aria-hidden="true">↑</span></button></th>
-<th scope="col"><button type="button" class="sort-button" data-sort="race">Раса<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-<th scope="col"><button type="button" class="sort-button" data-sort="class">Класс<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-<th scope="col"><button type="button" class="sort-button" data-sort="level">Уровень<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-</tr></thead><tbody id="rows"></tbody></table><div id="noresults" class="hidden">Ничего не найдено.</div></div><p class="legend">Нажмите на строку или используйте Enter / пробел.</p><h2>Состав компании</h2><div id="roster" class="company"></div><section id="analytics" class="analytics" aria-labelledby="analytics-heading">
-  <div class="report-head"><div><h2 id="analytics-heading">Аналитика компании</h2><p id="report-scope"></p></div><a href="#rows" class="table-link">К героям ↑</a></div>
+<div id="snapshot-roster" lang="ru">
+<style>
+#snapshot-roster{font:14px/1.35 system-ui,sans-serif;color:#eee3ce;min-width:0}
+#snapshot-roster *{box-sizing:border-box}
+#snapshot-roster .shell{background:#211c16;border:1px solid #705c3b;border-radius:6px;overflow:hidden}
+#snapshot-roster .bar{display:flex;flex-wrap:wrap;gap:3px;padding:7px 9px;background:#282219}
+#snapshot-roster .bar label{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:38px;border:1px solid transparent;border-radius:4px;color:#d9c9aa;padding:4px 10px}
+#snapshot-roster .modebar{border-bottom:1px solid #58482e;font-weight:600}
+#snapshot-roster .picks{display:flex;align-items:center;gap:7px;flex-wrap:wrap;background:#211c16}
+#snapshot-roster .picks label{font-size:13px;padding:4px 7px}
+#snapshot-roster .sr{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+#snapshot-roster .panel,#snapshot-roster .group,#snapshot-roster .pager{display:none}
+#snapshot-roster .paper{width:100%;min-width:0;border-collapse:collapse;table-layout:fixed;color:#eee3ce;background:#211c16;margin:0}
+#snapshot-roster .paper th,#snapshot-roster .paper td{padding:7px 3px;text-align:center;letter-spacing:normal;border:0;border-bottom:1px solid #4d402d;background:none;color:inherit}
+#snapshot-roster .paper th{font:500 12px/1.22 system-ui,sans-serif;color:#d6c29f;background:#342b1f}
+#snapshot-roster .paper th[scope=row]{text-align:left;font:15px/1.22 Georgia,serif;background:none}
+#snapshot-roster .paper .who{width:26%;padding-left:11px;text-align:left;overflow-wrap:anywhere}
+#snapshot-roster .paper .lvl{width:40px;color:#e6c486}
+#snapshot-roster .paper tbody tr:nth-child(even){background:#2a231b}
+#snapshot-roster .paper td{font:500 14px/1.25 system-ui,sans-serif;font-variant-numeric:tabular-nums}
+#snapshot-roster .avatar{display:flex;align-items:center;gap:4px;margin-top:3px;color:#cebea0;font:12px/1.3 system-ui,sans-serif}
+#snapshot-roster .glyph{background-size:cover;background-position:center;display:inline-block;width:21px;height:21px;border-radius:3px;border:1px solid #8e754f;vertical-align:middle}
+#snapshot-roster .avatar .glyph{width:16px;height:16px}
+#snapshot-roster .cap{display:block;margin-top:3px;overflow-wrap:anywhere}
+#snapshot-roster .short{display:none}
+@media(min-width:791px) and (max-width:1060px){
+#snapshot-roster .paper thead th{padding-block:3px}
+}
+__SNAPSHOT_ICON_STYLES__
+#fh-stats:checked ~ .panel-fh-stats{display:block}
+#fh-stats:checked ~ .modebar label[for="fh-stats"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats:focus-visible ~ .modebar label[for="fh-stats"]{outline:2px solid #e4bd70}
+
+#fh-stats0:checked ~ .group-fh-stats0{display:block}
+#fh-stats0:checked ~ .picks label[for="fh-stats0"]{background:#3d3223;color:#f4d29a;border-color:#705b3a}
+#fh-stats0:focus-visible ~ .picks label[for="fh-stats0"]{outline:2px solid #e4bd70}
+
+@media (max-width:360px){
+
+#snapshot-roster .pager-fh-stats0-2{display:flex}
+
+#fh-stats0c2-0:checked ~ .paper .v:not(.c2-0){display:none}
+#fh-stats0c2-0:checked ~ .pager label[for="fh-stats0c2-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats0c2-0:focus-visible ~ .pager label[for="fh-stats0c2-0"]{outline:2px solid #e4bd70}
+
+#fh-stats0c2-1:checked ~ .paper .v:not(.c2-1){display:none}
+#fh-stats0c2-1:checked ~ .pager label[for="fh-stats0c2-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats0c2-1:focus-visible ~ .pager label[for="fh-stats0c2-1"]{outline:2px solid #e4bd70}
+
+#fh-stats0c2-2:checked ~ .paper .v:not(.c2-2){display:none}
+#fh-stats0c2-2:checked ~ .pager label[for="fh-stats0c2-2"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats0c2-2:focus-visible ~ .pager label[for="fh-stats0c2-2"]{outline:2px solid #e4bd70}
+
+#fh-stats0c2-3:checked ~ .paper .v:not(.c2-3){display:none}
+#fh-stats0c2-3:checked ~ .pager label[for="fh-stats0c2-3"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats0c2-3:focus-visible ~ .pager label[for="fh-stats0c2-3"]{outline:2px solid #e4bd70}
+
+}
+
+@media (min-width:361px) and (max-width:790px){
+
+#snapshot-roster .pager-fh-stats0-3{display:flex}
+
+#fh-stats0c3-0:checked ~ .paper .v:not(.c3-0){display:none}
+#fh-stats0c3-0:checked ~ .pager label[for="fh-stats0c3-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats0c3-0:focus-visible ~ .pager label[for="fh-stats0c3-0"]{outline:2px solid #e4bd70}
+
+#fh-stats0c3-1:checked ~ .paper .v:not(.c3-1){display:none}
+#fh-stats0c3-1:checked ~ .pager label[for="fh-stats0c3-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats0c3-1:focus-visible ~ .pager label[for="fh-stats0c3-1"]{outline:2px solid #e4bd70}
+
+#fh-stats0c3-2:checked ~ .paper .v:not(.c3-2){display:none}
+#fh-stats0c3-2:checked ~ .pager label[for="fh-stats0c3-2"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats0c3-2:focus-visible ~ .pager label[for="fh-stats0c3-2"]{outline:2px solid #e4bd70}
+
+}
+
+#fh-stats1:checked ~ .group-fh-stats1{display:block}
+#fh-stats1:checked ~ .picks label[for="fh-stats1"]{background:#3d3223;color:#f4d29a;border-color:#705b3a}
+#fh-stats1:focus-visible ~ .picks label[for="fh-stats1"]{outline:2px solid #e4bd70}
+
+@media (max-width:360px){
+
+#snapshot-roster .pager-fh-stats1-2{display:flex}
+
+#fh-stats1c2-0:checked ~ .paper .v:not(.c2-0){display:none}
+#fh-stats1c2-0:checked ~ .pager label[for="fh-stats1c2-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats1c2-0:focus-visible ~ .pager label[for="fh-stats1c2-0"]{outline:2px solid #e4bd70}
+
+#fh-stats1c2-1:checked ~ .paper .v:not(.c2-1){display:none}
+#fh-stats1c2-1:checked ~ .pager label[for="fh-stats1c2-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats1c2-1:focus-visible ~ .pager label[for="fh-stats1c2-1"]{outline:2px solid #e4bd70}
+
+#fh-stats1c2-2:checked ~ .paper .v:not(.c2-2){display:none}
+#fh-stats1c2-2:checked ~ .pager label[for="fh-stats1c2-2"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats1c2-2:focus-visible ~ .pager label[for="fh-stats1c2-2"]{outline:2px solid #e4bd70}
+
+#fh-stats1c2-3:checked ~ .paper .v:not(.c2-3){display:none}
+#fh-stats1c2-3:checked ~ .pager label[for="fh-stats1c2-3"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats1c2-3:focus-visible ~ .pager label[for="fh-stats1c2-3"]{outline:2px solid #e4bd70}
+
+}
+
+@media (min-width:361px) and (max-width:790px){
+
+#snapshot-roster .pager-fh-stats1-3{display:flex}
+
+#fh-stats1c3-0:checked ~ .paper .v:not(.c3-0){display:none}
+#fh-stats1c3-0:checked ~ .pager label[for="fh-stats1c3-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats1c3-0:focus-visible ~ .pager label[for="fh-stats1c3-0"]{outline:2px solid #e4bd70}
+
+#fh-stats1c3-1:checked ~ .paper .v:not(.c3-1){display:none}
+#fh-stats1c3-1:checked ~ .pager label[for="fh-stats1c3-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats1c3-1:focus-visible ~ .pager label[for="fh-stats1c3-1"]{outline:2px solid #e4bd70}
+
+#fh-stats1c3-2:checked ~ .paper .v:not(.c3-2){display:none}
+#fh-stats1c3-2:checked ~ .pager label[for="fh-stats1c3-2"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats1c3-2:focus-visible ~ .pager label[for="fh-stats1c3-2"]{outline:2px solid #e4bd70}
+
+}
+
+#fh-stats2:checked ~ .group-fh-stats2{display:block}
+#fh-stats2:checked ~ .picks label[for="fh-stats2"]{background:#3d3223;color:#f4d29a;border-color:#705b3a}
+#fh-stats2:focus-visible ~ .picks label[for="fh-stats2"]{outline:2px solid #e4bd70}
+
+@media (max-width:360px){
+
+#snapshot-roster .pager-fh-stats2-2{display:flex}
+
+#fh-stats2c2-0:checked ~ .paper .v:not(.c2-0){display:none}
+#fh-stats2c2-0:checked ~ .pager label[for="fh-stats2c2-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats2c2-0:focus-visible ~ .pager label[for="fh-stats2c2-0"]{outline:2px solid #e4bd70}
+
+#fh-stats2c2-1:checked ~ .paper .v:not(.c2-1){display:none}
+#fh-stats2c2-1:checked ~ .pager label[for="fh-stats2c2-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats2c2-1:focus-visible ~ .pager label[for="fh-stats2c2-1"]{outline:2px solid #e4bd70}
+
+}
+
+@media (min-width:361px) and (max-width:790px){
+
+#snapshot-roster .pager-fh-stats2-3{display:flex}
+
+#fh-stats2c3-0:checked ~ .paper .v:not(.c3-0){display:none}
+#fh-stats2c3-0:checked ~ .pager label[for="fh-stats2c3-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-stats2c3-0:focus-visible ~ .pager label[for="fh-stats2c3-0"]{outline:2px solid #e4bd70}
+
+}
+
+#fh-prof:checked ~ .panel-fh-prof{display:block}
+#fh-prof:checked ~ .modebar label[for="fh-prof"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof:focus-visible ~ .modebar label[for="fh-prof"]{outline:2px solid #e4bd70}
+
+#fh-prof0:checked ~ .group-fh-prof0{display:block}
+#fh-prof0:checked ~ .picks label[for="fh-prof0"]{background:#3d3223;color:#f4d29a;border-color:#705b3a}
+#fh-prof0:focus-visible ~ .picks label[for="fh-prof0"]{outline:2px solid #e4bd70}
+
+@media (max-width:360px){
+
+#snapshot-roster .pager-fh-prof0-2{display:flex}
+
+#fh-prof0c2-0:checked ~ .paper .v:not(.c2-0){display:none}
+#fh-prof0c2-0:checked ~ .pager label[for="fh-prof0c2-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof0c2-0:focus-visible ~ .pager label[for="fh-prof0c2-0"]{outline:2px solid #e4bd70}
+
+#fh-prof0c2-1:checked ~ .paper .v:not(.c2-1){display:none}
+#fh-prof0c2-1:checked ~ .pager label[for="fh-prof0c2-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof0c2-1:focus-visible ~ .pager label[for="fh-prof0c2-1"]{outline:2px solid #e4bd70}
+
+#fh-prof0c2-2:checked ~ .paper .v:not(.c2-2){display:none}
+#fh-prof0c2-2:checked ~ .pager label[for="fh-prof0c2-2"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof0c2-2:focus-visible ~ .pager label[for="fh-prof0c2-2"]{outline:2px solid #e4bd70}
+
+}
+
+@media (min-width:361px) and (max-width:790px){
+
+#snapshot-roster .pager-fh-prof0-3{display:flex}
+
+#fh-prof0c3-0:checked ~ .paper .v:not(.c3-0){display:none}
+#fh-prof0c3-0:checked ~ .pager label[for="fh-prof0c3-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof0c3-0:focus-visible ~ .pager label[for="fh-prof0c3-0"]{outline:2px solid #e4bd70}
+
+#fh-prof0c3-1:checked ~ .paper .v:not(.c3-1){display:none}
+#fh-prof0c3-1:checked ~ .pager label[for="fh-prof0c3-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof0c3-1:focus-visible ~ .pager label[for="fh-prof0c3-1"]{outline:2px solid #e4bd70}
+
+}
+
+#fh-prof1:checked ~ .group-fh-prof1{display:block}
+#fh-prof1:checked ~ .picks label[for="fh-prof1"]{background:#3d3223;color:#f4d29a;border-color:#705b3a}
+#fh-prof1:focus-visible ~ .picks label[for="fh-prof1"]{outline:2px solid #e4bd70}
+
+@media (max-width:360px){
+
+#snapshot-roster .pager-fh-prof1-2{display:flex}
+
+#fh-prof1c2-0:checked ~ .paper .v:not(.c2-0){display:none}
+#fh-prof1c2-0:checked ~ .pager label[for="fh-prof1c2-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof1c2-0:focus-visible ~ .pager label[for="fh-prof1c2-0"]{outline:2px solid #e4bd70}
+
+#fh-prof1c2-1:checked ~ .paper .v:not(.c2-1){display:none}
+#fh-prof1c2-1:checked ~ .pager label[for="fh-prof1c2-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof1c2-1:focus-visible ~ .pager label[for="fh-prof1c2-1"]{outline:2px solid #e4bd70}
+
+}
+
+@media (min-width:361px) and (max-width:790px){
+
+#snapshot-roster .pager-fh-prof1-3{display:flex}
+
+#fh-prof1c3-0:checked ~ .paper .v:not(.c3-0){display:none}
+#fh-prof1c3-0:checked ~ .pager label[for="fh-prof1c3-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof1c3-0:focus-visible ~ .pager label[for="fh-prof1c3-0"]{outline:2px solid #e4bd70}
+
+}
+
+#fh-prof2:checked ~ .group-fh-prof2{display:block}
+#fh-prof2:checked ~ .picks label[for="fh-prof2"]{background:#3d3223;color:#f4d29a;border-color:#705b3a}
+#fh-prof2:focus-visible ~ .picks label[for="fh-prof2"]{outline:2px solid #e4bd70}
+
+@media (max-width:360px){
+
+#snapshot-roster .pager-fh-prof2-2{display:flex}
+
+#fh-prof2c2-0:checked ~ .paper .v:not(.c2-0){display:none}
+#fh-prof2c2-0:checked ~ .pager label[for="fh-prof2c2-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof2c2-0:focus-visible ~ .pager label[for="fh-prof2c2-0"]{outline:2px solid #e4bd70}
+
+#fh-prof2c2-1:checked ~ .paper .v:not(.c2-1){display:none}
+#fh-prof2c2-1:checked ~ .pager label[for="fh-prof2c2-1"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof2c2-1:focus-visible ~ .pager label[for="fh-prof2c2-1"]{outline:2px solid #e4bd70}
+
+}
+
+@media (min-width:361px) and (max-width:790px){
+
+#snapshot-roster .pager-fh-prof2-3{display:flex}
+
+#fh-prof2c3-0:checked ~ .paper .v:not(.c3-0){display:none}
+#fh-prof2c3-0:checked ~ .pager label[for="fh-prof2c3-0"]{background:#493a26;border-color:#896b43;color:#ffe1a4}
+#fh-prof2c3-0:focus-visible ~ .pager label[for="fh-prof2c3-0"]{outline:2px solid #e4bd70}
+
+}
+
+@media(max-width:790px){
+#snapshot-roster .paper .who{width:40%;padding-left:7px}
+#snapshot-roster .paper .lvl{width:32px}
+#snapshot-roster .paper td{font-size:13px}
+#snapshot-roster .cap.full{display:none}
+#snapshot-roster .cap.short{display:block}
+#snapshot-roster .pager{border-top:1px solid #4d402d;align-items:center;padding:3px 9px}
+#snapshot-roster .pager span{color:#c7b89b;font-size:12px;margin-right:4px}
+#snapshot-roster .bar label{min-height:42px}
+}
+
+#snapshot-roster .paper th,#snapshot-roster .paper td{vertical-align:middle}
+#snapshot-roster .paper thead tr{height:62px}
+#snapshot-roster .paper tbody tr{height:55px}
+#snapshot-roster .paper .profile-v{overflow-wrap:anywhere}
+#snapshot-roster .paper .who{width:29%}
+#fh-compare:not(:checked) ~ .panel .v,#fh-compare:checked ~ .panel .profile-v{display:none}
+#snapshot-roster .checkmark{width:16px;height:16px;border-radius:3px;border:1px solid #ab9162;display:inline-grid;place-items:center;background:#201c16;margin-right:7px}
+#fh-compare:checked ~ .modebar .checkmark{background:#dfbc78}
+#fh-compare:checked ~ .modebar .checkmark::after{content:"✓";color:#271c0e;line-height:1;font-size:13px}
+#fh-compare:focus-visible ~ .modebar .compare-switch{outline:2px solid #e4bd70}
+#snapshot-roster .modebar{align-items:center}
+#snapshot-roster .modebar .compare-switch{padding-left:0;margin-right:10px}
+#fh-compare:not(:checked) ~ .modebar label:not(.compare-switch),#fh-compare:not(:checked) ~ .panel .bar{opacity:.76}
+@media(max-width:790px){
+#snapshot-roster .paper .who{width:40%}
+#snapshot-roster .paper thead tr{height:59px}
+#snapshot-roster .paper tbody tr{height:63px}
+#snapshot-roster .paper .profile-v{font-size:12px}
+}
+#snapshot-roster .paper .profile-field{display:flex;align-items:center;text-align:left;gap:10px;padding-left:8px}
+#snapshot-roster .profile-field .glyph{flex:none;width:33px;height:33px;border:1px solid #b08a48;border-radius:3px;box-shadow:0 0 0 2px #080705,0 2px 5px #0006}
+#snapshot-roster .field-race .glyph{border-color:#77643e}
+#fh-compare:not(:checked) ~ .panel .avatar .glyph{visibility:hidden}
+#snapshot-roster .avatar{position:relative}
+#fh-compare:not(:checked) ~ .panel .avatar::before{content:"Игрок ·";position:absolute;left:0;color:#bcad94;white-space:nowrap;font:11px system-ui}
+#fh-compare:not(:checked) ~ .panel th.profile-v{text-align:left;padding-left:12px}
+#snapshot-roster .level-number{display:inline-grid;place-items:center}
+#snapshot-roster .level-number{font:23px Georgia,serif;font-variant-numeric:tabular-nums;color:#f5d875}
+@media(max-width:790px){
+#snapshot-roster .paper{border-collapse:separate;border-spacing:0}
+#snapshot-roster .paper tbody tr{position:relative;height:90px}
+#snapshot-roster .paper tbody .who{vertical-align:top;padding-top:8px;border-left:1px solid transparent;border-top:1px solid transparent}
+#fh-compare:not(:checked) ~ .panel .paper tbody tr{background:linear-gradient(115deg,#2b241b,#201b15)}
+#fh-compare:not(:checked) ~ .panel .paper tbody :is(td,th){border-block:1px solid #675233;box-shadow:inset 0 -4px #191510}
+#fh-compare:not(:checked) ~ .panel .paper tbody .who{border-left:1px solid #675233;border-radius:7px 0 0 7px}
+#fh-compare:not(:checked) ~ .panel .paper tbody .lvl{border-right:1px solid #675233;border-radius:0 7px 7px 0}
+#snapshot-roster .profile-field{position:absolute;bottom:9px;left:10px;width:calc(54% - 14px);min-height:23px;font-size:13px}
+#snapshot-roster .paper .profile-field{padding:0;gap:6px}
+#snapshot-roster .profile-field.field-class{left:55%;width:calc(45% - 12px)}
+#snapshot-roster .profile-field .glyph{width:23px;height:23px;box-shadow:0 0 0 1px #080705}
+#snapshot-roster .level-number{height:24px;min-width:24px;font-size:17px;border:1px solid transparent}
+#fh-compare:checked ~ .panel .paper tbody .lvl{border-top:1px solid transparent;border-right:1px solid transparent}
+#fh-compare:not(:checked) ~ .panel .level-number{border-color:#675233;border-radius:4px;background:#2b2419}
+#fh-compare:not(:checked) ~ .panel th.profile-v{text-align:center;padding-left:3px}
+}
+@media(max-width:790px){
+  #snapshot-roster .paper tbody tr{height:76px}
+  #snapshot-roster .paper tbody .who{padding-bottom:37px}
+}
+@media(max-width:360px){ #snapshot-roster .paper tbody .who{padding-bottom:47px}}
+</style>
+<div class="shell">
+<input type="checkbox" id="fh-compare" class="sr">
+
+<input class="sr" type="radio" name="fhm" id="fh-stats" checked>
+
+<input class="sr" type="radio" name="fhm" id="fh-prof" >
+
+<div class="bar modebar"><label for="fh-compare" class="compare-switch"><span class="checkmark" aria-hidden="true"></span>Сравнить героев</label><label for="fh-stats">Характеристики</label><label for="fh-prof">Профессии</label></div>
+
+<div class="panel panel-fh-stats">
+<input class="sr" type="radio" name="fh-stats-groups" id="fh-stats0" checked><input class="sr" type="radio" name="fh-stats-groups" id="fh-stats1" ><input class="sr" type="radio" name="fh-stats-groups" id="fh-stats2" >
+<div class="bar picks"><label for="fh-stats0">Основные</label><label for="fh-stats1">Боевые</label><label for="fh-stats2">Ресурсы</label></div>
+
+<div class="group group-fh-stats0" data-group="Основные">
+
+<input class="sr page-select" type="radio" name="fh-stats0-2" id="fh-stats0c2-0" checked><input class="sr page-select" type="radio" name="fh-stats0-2" id="fh-stats0c2-1" ><input class="sr page-select" type="radio" name="fh-stats0-2" id="fh-stats0c2-2" ><input class="sr page-select" type="radio" name="fh-stats0-2" id="fh-stats0c2-3" >
+
+<input class="sr page-select" type="radio" name="fh-stats0-3" id="fh-stats0c3-0" checked><input class="sr page-select" type="radio" name="fh-stats0-3" id="fh-stats0c3-1" ><input class="sr page-select" type="radio" name="fh-stats0-3" id="fh-stats0c3-2" >
+
+<div class="bar pager pager-fh-stats0-2"><span>Столбцы</span><label for="fh-stats0c2-0">1–2</label><label for="fh-stats0c2-1">3–4</label><label for="fh-stats0c2-2">5–6</label><label for="fh-stats0c2-3">7</label></div>
+
+<div class="bar pager pager-fh-stats0-3"><span>Столбцы</span><label for="fh-stats0c3-0">1–3</label><label for="fh-stats0c3-1">4–6</label><label for="fh-stats0c3-2">7</label></div>
+
+<table class="paper" aria-label="Характеристики · Основные">
+<thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th class="v c2-0 c3-0" scope="col" aria-label="Health" data-key="HEALTH"><i class="glyph glyph-stat-health" aria-hidden="true"></i><span class="cap full">Health</span><span class="cap short">HP</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Armor" data-key="ARMOR"><i class="glyph glyph-stat-armor" aria-hidden="true"></i><span class="cap full">Armor</span><span class="cap short">Armor</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Strength" data-key="STRENGTH"><i class="glyph glyph-stat-strength" aria-hidden="true"></i><span class="cap full">Strength</span><span class="cap short">Str</span></th><th class="v c2-1 c3-1" scope="col" aria-label="Agility" data-key="AGILITY"><i class="glyph glyph-stat-agility" aria-hidden="true"></i><span class="cap full">Agility</span><span class="cap short">Agi</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Stamina" data-key="STAMINA"><i class="glyph glyph-stat-stamina" aria-hidden="true"></i><span class="cap full">Stamina</span><span class="cap short">Sta</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Intellect" data-key="INTELLECT"><i class="glyph glyph-stat-intellect" aria-hidden="true"></i><span class="cap full">Intellect</span><span class="cap short">Int</span></th><th class="v c2-3 c3-2" scope="col" aria-label="Spirit" data-key="SPIRIT"><i class="glyph glyph-stat-spirit" aria-hidden="true"></i><span class="cap full">Spirit</span><span class="cap short">Spi</span></th>
+<th class="lvl" scope="col">Ур.</th></tr></thead>
+<tbody>__SNAPSHOT_ROWS__</tbody></table></div>
+
+<div class="group group-fh-stats1" data-group="Боевые">
+
+<input class="sr page-select" type="radio" name="fh-stats1-2" id="fh-stats1c2-0" checked><input class="sr page-select" type="radio" name="fh-stats1-2" id="fh-stats1c2-1" ><input class="sr page-select" type="radio" name="fh-stats1-2" id="fh-stats1c2-2" ><input class="sr page-select" type="radio" name="fh-stats1-2" id="fh-stats1c2-3" >
+
+<input class="sr page-select" type="radio" name="fh-stats1-3" id="fh-stats1c3-0" checked><input class="sr page-select" type="radio" name="fh-stats1-3" id="fh-stats1c3-1" ><input class="sr page-select" type="radio" name="fh-stats1-3" id="fh-stats1c3-2" >
+
+<div class="bar pager pager-fh-stats1-2"><span>Столбцы</span><label for="fh-stats1c2-0">1–2</label><label for="fh-stats1c2-1">3–4</label><label for="fh-stats1c2-2">5–6</label><label for="fh-stats1c2-3">7</label></div>
+
+<div class="bar pager pager-fh-stats1-3"><span>Столбцы</span><label for="fh-stats1c3-0">1–3</label><label for="fh-stats1c3-1">4–6</label><label for="fh-stats1c3-2">7</label></div>
+
+<table class="paper" aria-label="Характеристики · Боевые">
+<thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th class="v c2-0 c3-0" scope="col" aria-label="Weapon Damage" data-key="DAMAGE"><i class="glyph glyph-stat-damage" aria-hidden="true"></i><span class="cap full">Weapon Damage</span><span class="cap short">Dmg</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Attack Power" data-key="ATTACKPOWER"><i class="glyph glyph-stat-attackpower" aria-hidden="true"></i><span class="cap full">Attack Power</span><span class="cap short">AP</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Critical Strike" data-key="CRITICALSTRIKE"><i class="glyph glyph-stat-criticalstrike" aria-hidden="true"></i><span class="cap full">Critical Strike</span><span class="cap short">Crit</span></th><th class="v c2-1 c3-1" scope="col" aria-label="Spell Power" data-key="SPELLPOWER"><i class="glyph glyph-stat-spellpower" aria-hidden="true"></i><span class="cap full">Spell Power</span><span class="cap short">SP</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Dodge" data-key="DODGE"><i class="glyph glyph-stat-dodge" aria-hidden="true"></i><span class="cap full">Dodge</span><span class="cap short">Dodge</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Parry" data-key="PARRY"><i class="glyph glyph-stat-parry" aria-hidden="true"></i><span class="cap full">Parry</span><span class="cap short">Parry</span></th><th class="v c2-3 c3-2" scope="col" aria-label="Block" data-key="BLOCK"><i class="glyph glyph-stat-block" aria-hidden="true"></i><span class="cap full">Block</span><span class="cap short">Block</span></th>
+<th class="lvl" scope="col">Ур.</th></tr></thead>
+<tbody>__SNAPSHOT_ROWS__</tbody></table></div>
+
+<div class="group group-fh-stats2" data-group="Ресурсы">
+
+<input class="sr page-select" type="radio" name="fh-stats2-2" id="fh-stats2c2-0" checked><input class="sr page-select" type="radio" name="fh-stats2-2" id="fh-stats2c2-1" >
+
+<input class="sr page-select" type="radio" name="fh-stats2-3" id="fh-stats2c3-0" checked>
+
+<div class="bar pager pager-fh-stats2-2"><span>Столбцы</span><label for="fh-stats2c2-0">1–2</label><label for="fh-stats2c2-1">3</label></div>
+
+<div class="bar pager pager-fh-stats2-3"><span>Столбцы</span><label for="fh-stats2c3-0">1–3</label></div>
+
+<table class="paper" aria-label="Характеристики · Ресурсы">
+<thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th class="v c2-0 c3-0" scope="col" aria-label="Mana" data-key="MANA"><i class="glyph glyph-stat-mana" aria-hidden="true"></i><span class="cap full">Mana</span><span class="cap short">Mana</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Rage" data-key="RAGE"><i class="glyph glyph-stat-rage" aria-hidden="true"></i><span class="cap full">Rage</span><span class="cap short">Rage</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Energy" data-key="ENERGY"><i class="glyph glyph-stat-energy" aria-hidden="true"></i><span class="cap full">Energy</span><span class="cap short">Energy</span></th>
+<th class="lvl" scope="col">Ур.</th></tr></thead>
+<tbody>__SNAPSHOT_ROWS__</tbody></table></div>
+
+</div>
+
+<div class="panel panel-fh-prof">
+<input class="sr" type="radio" name="fh-prof-groups" id="fh-prof0" checked><input class="sr" type="radio" name="fh-prof-groups" id="fh-prof1" ><input class="sr" type="radio" name="fh-prof-groups" id="fh-prof2" >
+<div class="bar picks"><label for="fh-prof0">Ремёсла</label><label for="fh-prof1">Сбор</label><label for="fh-prof2">Вторичные</label></div>
+
+<div class="group group-fh-prof0" data-group="Ремёсла">
+
+<input class="sr page-select" type="radio" name="fh-prof0-2" id="fh-prof0c2-0" checked><input class="sr page-select" type="radio" name="fh-prof0-2" id="fh-prof0c2-1" ><input class="sr page-select" type="radio" name="fh-prof0-2" id="fh-prof0c2-2" >
+
+<input class="sr page-select" type="radio" name="fh-prof0-3" id="fh-prof0c3-0" checked><input class="sr page-select" type="radio" name="fh-prof0-3" id="fh-prof0c3-1" >
+
+<div class="bar pager pager-fh-prof0-2"><span>Столбцы</span><label for="fh-prof0c2-0">1–2</label><label for="fh-prof0c2-1">3–4</label><label for="fh-prof0c2-2">5–6</label></div>
+
+<div class="bar pager pager-fh-prof0-3"><span>Столбцы</span><label for="fh-prof0c3-0">1–3</label><label for="fh-prof0c3-1">4–6</label></div>
+
+<table class="paper" aria-label="Профессии · Ремёсла">
+<thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th class="v c2-0 c3-0" scope="col" aria-label="Alchemy" data-key="Alchemy"><i class="glyph glyph-prof-alchemy" aria-hidden="true"></i><span class="cap full">Alchemy</span><span class="cap short">Alch.</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Blacksmithing" data-key="Blacksmithing"><i class="glyph glyph-prof-blacksmithing" aria-hidden="true"></i><span class="cap full">Blacksmithing</span><span class="cap short">Smith.</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Enchanting" data-key="Enchanting"><i class="glyph glyph-prof-enchanting" aria-hidden="true"></i><span class="cap full">Enchanting</span><span class="cap short">Ench.</span></th><th class="v c2-1 c3-1" scope="col" aria-label="Engineering" data-key="Engineering"><i class="glyph glyph-prof-engineering" aria-hidden="true"></i><span class="cap full">Engineering</span><span class="cap short">Eng.</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Leatherworking" data-key="Leatherworking"><i class="glyph glyph-prof-leatherworking" aria-hidden="true"></i><span class="cap full">Leatherworking</span><span class="cap short">Leather</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Tailoring" data-key="Tailoring"><i class="glyph glyph-prof-tailoring" aria-hidden="true"></i><span class="cap full">Tailoring</span><span class="cap short">Tailor</span></th>
+<th class="lvl" scope="col">Ур.</th></tr></thead>
+<tbody>__SNAPSHOT_ROWS__</tbody></table></div>
+
+<div class="group group-fh-prof1" data-group="Сбор">
+
+<input class="sr page-select" type="radio" name="fh-prof1-2" id="fh-prof1c2-0" checked><input class="sr page-select" type="radio" name="fh-prof1-2" id="fh-prof1c2-1" >
+
+<input class="sr page-select" type="radio" name="fh-prof1-3" id="fh-prof1c3-0" checked>
+
+<div class="bar pager pager-fh-prof1-2"><span>Столбцы</span><label for="fh-prof1c2-0">1–2</label><label for="fh-prof1c2-1">3</label></div>
+
+<div class="bar pager pager-fh-prof1-3"><span>Столбцы</span><label for="fh-prof1c3-0">1–3</label></div>
+
+<table class="paper" aria-label="Профессии · Сбор">
+<thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th class="v c2-0 c3-0" scope="col" aria-label="Herbalism" data-key="Herbalism"><i class="glyph glyph-prof-herbalism" aria-hidden="true"></i><span class="cap full">Herbalism</span><span class="cap short">Herb.</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Mining" data-key="Mining"><i class="glyph glyph-prof-mining" aria-hidden="true"></i><span class="cap full">Mining</span><span class="cap short">Mining</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Skinning" data-key="Skinning"><i class="glyph glyph-prof-skinning" aria-hidden="true"></i><span class="cap full">Skinning</span><span class="cap short">Skin.</span></th>
+<th class="lvl" scope="col">Ур.</th></tr></thead>
+<tbody>__SNAPSHOT_ROWS__</tbody></table></div>
+
+<div class="group group-fh-prof2" data-group="Вторичные">
+
+<input class="sr page-select" type="radio" name="fh-prof2-2" id="fh-prof2c2-0" checked><input class="sr page-select" type="radio" name="fh-prof2-2" id="fh-prof2c2-1" >
+
+<input class="sr page-select" type="radio" name="fh-prof2-3" id="fh-prof2c3-0" checked>
+
+<div class="bar pager pager-fh-prof2-2"><span>Столбцы</span><label for="fh-prof2c2-0">1–2</label><label for="fh-prof2c2-1">3</label></div>
+
+<div class="bar pager pager-fh-prof2-3"><span>Столбцы</span><label for="fh-prof2c3-0">1–3</label></div>
+
+<table class="paper" aria-label="Профессии · Вторичные">
+<thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th class="v c2-0 c3-0" scope="col" aria-label="Cooking" data-key="Cooking"><i class="glyph glyph-prof-cooking" aria-hidden="true"></i><span class="cap full">Cooking</span><span class="cap short">Cook.</span></th><th class="v c2-0 c3-0" scope="col" aria-label="First Aid" data-key="First Aid"><i class="glyph glyph-prof-first-aid" aria-hidden="true"></i><span class="cap full">First Aid</span><span class="cap short">Aid</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Fishing" data-key="Fishing"><i class="glyph glyph-prof-fishing" aria-hidden="true"></i><span class="cap full">Fishing</span><span class="cap short">Fish.</span></th>
+<th class="lvl" scope="col">Ур.</th></tr></thead>
+<tbody>__SNAPSHOT_ROWS__</tbody></table></div>
+
+</div>
+
+</div>
+</div><div id="interactive-roster" hidden><p class="intro">Нажмите на имя героя, чтобы посмотреть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select></div><div class="view-options" id="roster-view">
+  <label class="compact-option"><input id="compact" type="checkbox"> Сравнить героев</label>
+  <button id="expand" type="button">Раскрыть все</button>
+  <a class="report-shortcut" href="#analytics">Аналитика ↓</a>
+</div>
+<section id="matrix-wrap" aria-label="Сравнение героев">
+  <div class="matrix-tools">
+    <div class="mode-picker" role="group" aria-label="Что сравнивать">
+      <button type="button" data-mode="stats" aria-pressed="true">Характеристики</button>
+      <button type="button" data-mode="prof" aria-pressed="false">Профессии</button>
+    </div>
+    <div class="field-controls">
+      <label class="field-picker"><span>Группа</span><select id="metric-group" aria-label="Группа столбцов"></select></label>
+      <div id="metric-pager">
+        <button type="button" id="metric-prev" aria-label="Предыдущие столбцы">‹</button>
+        <output id="metric-page" aria-live="polite"></output>
+        <button type="button" id="metric-next" aria-label="Следующие столбцы">›</button>
+      </div>
+    </div>
+  </div>
+  <table class="matrix" aria-label="Сравнение героев по характеристикам"><colgroup></colgroup><thead></thead><tbody></tbody></table>
+</section>
+<p class="legend">Нажмите на строку или используйте Enter / пробел.</p><h2>Состав компании</h2><div id="roster" class="company"></div><section id="analytics" class="analytics" aria-labelledby="analytics-heading">
+  <div class="report-head"><div><h2 id="analytics-heading">Аналитика компании</h2><p id="report-scope"></p></div><a href="#roster-view" class="table-link">К героям ↑</a></div>
   <div class="report-grid">
     <section class="report-panel" aria-labelledby="levels-heading">
       <h3 id="levels-heading">Распределение по уровням</h3>
@@ -221,12 +804,12 @@ th[aria-sort] .sort-arrow { color: var(--gold) }
     <table class="profession-ranks"><thead><tr><th scope="col">Профессия</th><th scope="col">Владеют</th><th scope="col">1-е место</th><th scope="col">2-е место</th><th scope="col">3-е место</th></tr></thead><tbody id="profession-ranks"></tbody></table>
   </section>
 </section>
-<footer><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></main><div id="hover-tip" role="tooltip" hidden></div><script>
+<footer><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></div></main><div id="hover-tip" role="tooltip" hidden></div><script>
 const DATA=__DATA__, ICONS=__ICONS__;
 const names={'Leatherworking':'Кожевничество','Skinning':'Снятие шкур','Cooking':'Кулинария','Alchemy':'Алхимия','Blacksmithing':'Кузнечное дело','Enchanting':'Наложение чар','Engineering':'Инженерное дело','Herbalism':'Травничество','Mining':'Горное дело','Tailoring':'Портняжное дело','Fishing':'Рыбная ловля','First Aid':'Первая помощь'};
 const races={'Tauren':'Таурен','Undead':'Нежить','Orc':'Орк','Windshaper Skyborne':'Windshaper Skyborne'};
 const classes={'Shaman':'Шаман','Warrior':'Воин','Priest':'Жрец','Mage':'Маг','Warlock':'Чернокнижник','Druid':'Друид','Rogue':'Разбойник','Hunter':'Охотник','Paladin':'Паладин'};
-const colors={'Shaman':'#409cff','Warrior':'#c79c6e','Priest':'#eee','Mage':'#69ccf0','Warlock':'#b6a1ef','Druid':'#ff9549','Rogue':'#fff49b','Hunter':'#abd473','Paladin':'#f58cba'};
+const colors=__CLASS_COLORS__;
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time=s=>s?new Date(s).toLocaleString('ru-RU',{timeZone:'Europe/Moscow',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'не указано';
 const skills=h=>['primaries','secondaries'].flatMap(type=>(h.character?.professions?.[type]||[]).map(p=>({...p,type})));
@@ -274,25 +857,19 @@ function displaySnapshotTime() {
 }
 displaySnapshotTime();
 const opened=new Set();let visible=[];
-const statFields = [
-  ['ARMOR', 'Armor', 'inv_shield_04', 'prof:Blacksmithing'],
-  ['STRENGTH', 'Strength', 'spell_nature_strength', 'class:Warrior'],
-  ['AGILITY', 'Agility', 'ability_rogue_sprint', 'class:Rogue'],
-  ['STAMINA', 'Stamina', 'spell_nature_unyeildingstamina', 'class:Druid'],
-  ['INTELLECT', 'Intellect', 'spell_holy_magicalsentry', 'class:Priest'],
-  ['SPIRIT', 'Spirit', 'spell_holy_divinespirit', 'class:Shaman'],
-  ['HEALTH', 'Health', 'inv_potion_54', 'prof:First Aid'],
-  ['MANA', 'Mana', 'inv_potion_76', 'prof:Alchemy'],
-  ['RAGE', 'Rage', 'ability_racial_bloodrage', 'class:Warrior'],
-  ['ENERGY', 'Energy', 'spell_shadow_shadowworddominate', 'class:Rogue'],
-  ['DAMAGE', 'Weapon Damage', 'inv_sword_04', 'class:Warrior'],
-  ['ATTACKPOWER', 'Attack Power', 'ability_meleedamage', 'class:Warrior'],
-  ['CRITICALSTRIKE', 'Critical Strike', 'ability_criticalstrike', 'class:Rogue'],
-  ['SPELLPOWER', 'Spell Power', 'spell_arcane_blast', 'prof:Enchanting'],
-  ['DODGE', 'Dodge', 'spell_nature_invisibilty', 'class:Rogue'],
-  ['PARRY', 'Parry', 'ability_parry', 'class:Warrior'],
-  ['BLOCK', 'Block', 'ability_defend', 'prof:Blacksmithing']
-];
+const categories = {}, fieldLabels = new Map(), abbreviations = {};
+for (const mode of ['stats','prof']) {
+  const groups = document.querySelectorAll('#snapshot-roster .panel-fh-' + mode + ' [data-group]');
+  categories[mode] = Array.from(groups, group => {
+    const keys = Array.from(group.querySelectorAll('th[data-key]'), header => {
+      const key = header.dataset.key;
+      fieldLabels.set(key,header.getAttribute('aria-label'));
+      abbreviations[key] = header.querySelector('.cap.short').textContent;
+      return key;
+    });
+    return [group.dataset.group,keys];
+  });
+}
 const decimal = new Intl.NumberFormat('ru-RU', {maximumFractionDigits: 2});
 function statValue(v) {
   if (v?.type === 'RANGE') {
@@ -302,36 +879,6 @@ function statValue(v) {
   if (!Number.isFinite(v?.value)) return '';
   const number = decimal.format(v.type === 'WHOLE' ? Math.round(v.value) : v.value);
   return v.type === 'PERCENTAGE' ? number + ' %' : number;
-}
-function statEntries(stats) {
-  const values = new Map();
-  for (const entry of [...(stats?.basic?.primary || []), ...(stats?.basic?.secondary || []),
-      ...(stats?.overview || []), ...(stats?.groups || []).flatMap(group => group.stats || [])]) {
-    const value = statValue(entry?.value);
-    if (value) values.set(entry.enum, value);
-  }
-  return statFields.filter(([key]) => values.has(key)).map(([key, label, asset, fallback]) => {
-    const layers = ['url(https://render.worldofwarcraft.com/classic-us/icons/56/' + asset + '.jpg)'];
-    if (ICONS[fallback]) layers.push('url(' + ICONS[fallback] + ')');
-    const image = '<i aria-hidden="true" class="icon stat-icon" style="background-image:' + layers.join(',') + '"></i>';
-    return {label, image, amount: values.get(key)};
-  });
-}
-function summaryRows(h, entries) {
-  if (!h.character) return '';
-  const stats = entries.map(({label, image, amount}) =>
-    '<span class="chip" tabindex="0" data-tip="' + esc(label) + '" aria-label="' + label + ' ' + amount + '">' +
-    image + '<span class="sr-only">' + label + ' </span>' + amount + '</span>');
-  const professions = skills(h).map(p => {
-    const tier = value(p);
-    const points = [tier.skillPoints, tier.maxSkillPoints].filter(Number.isFinite).join('/');
-    return '<span class="chip">' + icon('prof:' + p.name) + esc(p.name) +
-      (points ? ' <b>' + points + '</b>' : '') + '</span>';
-  });
-  const line = (label, chips) => '<div class="mini-line"><span class="mini-label">' + label +
-    '</span><div class="mini-items">' + (chips.join('') || 'Нет данных') + '</div></div>';
-  return '<tr class="summary"><td colspan="6">' + line('Статы', stats) +
-    line('Профессии', professions) + '</td></tr>';
 }
 const gearSlots = {
   HEAD:'Head', NECK:'Neck', SHOULDER:'Shoulders', BACK:'Back', CHEST:'Chest',
@@ -343,7 +890,7 @@ const gearSlots = {
 const slotOrder = new Map(Object.keys(gearSlots).map((key, index) => [key, index]));
 const qualityColors = {POOR:'#aaa', COMMON:'#eee', UNCOMMON:'#78dc56', RARE:'#67acff',
   EPIC:'#c491ff', LEGENDARY:'#ffad54', ARTIFACT:'#e9cd89', HEIRLOOM:'#94d9df'};
-const itemStatNames = new Map(statFields.map(([key, label]) => [key, label]));
+const itemStatNames = fieldLabels;
 function itemTooltip(item) {
   const lines = [];
   if (Number.isFinite(item.armor?.value)) lines.push('Armor: ' + item.armor.value);
@@ -393,7 +940,6 @@ function details(h) {
       '<p class="empty">В оружейной нет данных об экипировке.</p>') +
     '<small class="status">Снимок профиля: ' + time(c.lastUpdatedTimestamp?.iso8601) + ' МСК</small>';
 }
-function toggle(i){opened.has(i)?opened.delete(i):opened.add(i);const row=$('#hero-'+i),detail=$('#detail-'+i);row.setAttribute('aria-expanded',String(opened.has(i)));row.querySelector('.arrow').textContent=opened.has(i)?'▾':'▸';detail.hidden=!opened.has(i);updateButton()}
 function updateButton(){$('#expand').textContent=visible.length&&visible.every(i=>opened.has(i))?'Свернуть все':'Раскрыть все'}
 const sortValues = {
   owner: hero => hero.owner,
@@ -403,34 +949,173 @@ const sortValues = {
   level: hero => hero.character?.level
 };
 const collator = new Intl.Collator('ru', {sensitivity: 'base', numeric: true});
-let sortKey = 'name';
-let sortDirection = 1;
-function compareHeroes(firstIndex, secondIndex) {
-  const value = sortValues[sortKey];
-  const first = value(DATA.heroes[firstIndex]);
-  const second = value(DATA.heroes[secondIndex]);
-  // Keep heroes with unavailable profile data at the end in both directions.
-  if (first == null || second == null) return Number(first == null) - Number(second == null);
-  const order = sortKey === 'level' ? Number(first) - Number(second) : collator.compare(first, second);
-  return order * sortDirection;
+const readings = DATA.heroes.map(hero => {
+  const result = new Map();
+  const s = hero.character?.stats;
+  for (const entry of [...(s?.basic?.primary || []), ...(s?.basic?.secondary || []),
+      ...(s?.overview || []), ...(s?.groups || []).flatMap(group => group.stats || [])]) {
+    const raw = entry.value, formatted = statValue(raw);
+    if (!formatted || !fieldLabels.has(entry.enum)) continue;
+    const range = raw.type === 'RANGE';
+    result.set(entry.enum,{numeric:range ? (raw.min.value + raw.max.value)/2 : raw.value,
+      html:esc(formatted),range});
+  }
+  for (const p of skills(hero)) {
+    const t = value(p);
+    if (!Number.isFinite(t.skillPoints)) continue;
+    const limit = Number.isFinite(t.maxSkillPoints) ? '<span class="denom">/' + t.maxSkillPoints + '</span>' : '';
+    result.set(p.name,{numeric:t.skillPoints,html:t.skillPoints + limit});
+  }
+  return result;
+});
+const matrix = $('.matrix'), groupSelect = $('#metric-group');
+let mode = 'stats', pageNumber = 0, matrixKey = 'name', matrixDirection = 1;
+const groupChoice = {stats:0, prof:0};
+const narrow = matchMedia('(max-width:700px)');
+function pageSize() {
+  if (innerWidth <= 360) return 2;
+  if (innerWidth <= 700) return 3;
+  if (innerWidth <= 900) return 5;
+  return 7;
 }
-const sortButtons = document.querySelectorAll('.sort-button');
-for (const button of sortButtons) {
-  button.addEventListener('click', () => {
-    const key = button.dataset.sort;
-    if (key === sortKey) sortDirection *= -1;
-    else sortDirection = key === 'level' ? -1 : 1;
-    sortKey = key;
-    for (const column of sortButtons) {
-      const active = column === button;
-      const header = column.closest('th');
-      if (active) header.setAttribute('aria-sort', sortDirection === 1 ? 'ascending' : 'descending');
-      else header.removeAttribute('aria-sort');
-      column.querySelector('.sort-arrow').textContent = active ? (sortDirection === 1 ? '↑' : '↓') : '↕';
+function chooseGroup() {
+  groupSelect.replaceChildren(...categories[mode].map(([name],i) => new Option(name,String(i))));
+  groupSelect.value = String(groupChoice[mode]);
+}
+chooseGroup();
+function sortReading(i) {
+  return Object.hasOwn(sortValues,matrixKey) ? sortValues[matrixKey](DATA.heroes[i]) : readings[i].get(matrixKey)?.numeric;
+}
+function compareReadings(a,b) {
+  const x = sortReading(a), y = sortReading(b);
+  if ((x == null) !== (y == null)) return x == null ? 1 : -1;
+  const diff = x == null ? 0 : typeof x === 'number' ? x - y : collator.compare(x,y);
+  return diff * matrixDirection || collator.compare(DATA.heroes[a].name,DATA.heroes[b].name);
+}
+function fieldHeader(key,label,style,isMetric=false) {
+  const sorted = key === matrixKey;
+  const direction = matrixDirection === 1 ? 'ascending' : 'descending';
+  const mark = sorted ? '<span aria-hidden="true" class="sort-mark">' + (matrixDirection === 1 ? '↑' : '↓') + '</span>' : '';
+  let content = esc(label);
+  if (isMetric) {
+    const src = ICONS[(mode === 'stats' ? 'stat:' : 'prof:') + key];
+    content = (src ? '<img class="metric-icon" alt="" src="' + src + '">' : '') +
+      '<span class="label-long">' + esc(label) + '</span><span class="label-short">' + esc(abbreviations[key] || label) + '</span>';
+  } else if (key === 'level') {
+    content = '<span class="label-long">Уровень</span><span class="label-short">Ур.</span>';
+  }
+  return '<th scope="col" class="' + style + '"' + (sorted ? ' aria-sort="' + direction + '"' : '') +
+    '><button type="button" class="m-sort" data-field="' + esc(key) + '" data-tip="' + esc(label) +
+    '" aria-label="Сортировать по столбцу «' + esc(label) + '»">' + content + mark + '</button></th>';
+}
+function portrait(key,title) {
+  const img = icon(key);
+  if (!img) return '';
+  return '<span role="img" aria-label="' + esc(title) + '" data-tip="' + esc(title) + '">' + img + '</span>';
+}
+const profileFields = {race:'Раса',class:'Класс'};
+function middleCells(i,columns) {
+  return columns.map(key => {
+    if (Object.hasOwn(profileFields,key)) {
+      const c = DATA.heroes[i].character;
+      const field = c?.[key];
+      if (!field) return '<td class="identity-value">—</td>';
+      const isRace = key === 'race';
+      const image = isRace ? icon('race:'+field.slug+':'+c.gender?.slug,'raceIcon') : icon('class:'+field.name);
+      const color = isRace ? '#e8dfcc' : (colors[field.name] || '#e8dfcc');
+      return '<td class="identity-value"><span class="profile-field field-' + key + '" style="color:' + color + '">' +
+        image + '<span>' + esc(field.name) + '</span></span></td>';
     }
-    render();
-  });
+    const cell = readings[i].get(key);
+    return '<td class="metric-value' + (cell?.range ? ' range' : '') + '">' +
+      (cell?.html ?? '<span class="missing" aria-label="Нет данных">—</span>') + '</td>';
+  }).join('');
 }
+function comparisonRow(i,columns,position) {
+  const hero = DATA.heroes[i], c = hero.character, expanded = opened.has(i);
+  const owner = esc(hero.owner), ownerCell = narrow.matches ? '' : '<td class="m-owner">' + owner + '</td>';
+  const race = c?.race, heroClass = c?.class;
+  const portraits = (race ? portrait('race:' + race.slug + ':' + c.gender?.slug,race.name) : '') +
+    (heroClass ? portrait('class:' + heroClass.name,heroClass.name) : '');
+  const status = hero.stale ? '<small class="status">Сохранённые данные</small>' : !c ? '<small class="status">Профиль недоступен</small>' : '';
+  const identity = '<td class="m-identity"><div class="identity-content"><div class="hero-info"><button type="button" class="hero-trigger" data-hero="' + i +
+    '" aria-expanded="' + expanded + '" aria-label="Экипировка · ' + esc(hero.name) + '" style="color:' + (colors[heroClass?.name] || '#d3c2a5') + '">' +
+    esc(hero.name) + '</button>' + status + '</div><span class="icon-pair">' + portraits +
+    '</span>' + (narrow.matches ? '<span class="mobile-owner">' + owner + '</span>' : '') + '</div></td>';
+  const cells = middleCells(i,columns);
+  const gear = expanded ? '<tr class="matrix-detail"><td colspan="' + (columns.length + (narrow.matches ? 2 : 3)) +
+    '"><div class="detailbox">' + details(hero) + '</div></td></tr>' : '';
+  return '<tr class="compare-row' + (position % 2 ? ' shaded' : '') + (expanded ? ' expanded' : '') + '" data-index="' + i + '">' +
+    ownerCell + identity + cells + '<td class="m-level"><span class="level-number">' + esc(c?.level ?? '—') + '</span></td></tr>' + gear;
+}
+function drawComparison(columnsOnly = false) {
+  const comparing = $('#compact').checked;
+  matrix.classList.toggle('is-roster',!comparing);
+  const all = categories[mode][groupChoice[mode]][1], size = pageSize();
+  pageNumber = Math.min(pageNumber, Math.ceil(all.length/size)-1);
+  const offset = pageNumber*size, metrics = all.slice(offset,offset+size);
+  const columns = comparing ? metrics : Object.keys(profileFields);
+  for (const button of document.querySelectorAll('[data-mode]')) {
+    button.setAttribute('aria-pressed',String(comparing && mode === button.dataset.mode));
+  }
+  groupSelect.disabled = !comparing;
+  $('#metric-pager').hidden = all.length <= size;
+  $('#metric-page').textContent = (offset+1) + '–' + (offset+metrics.length) + ' / ' + all.length;
+  $('#metric-prev').disabled = !comparing || offset === 0;
+  $('#metric-next').disabled = !comparing || offset+metrics.length >= all.length;
+  matrix.setAttribute('aria-label',comparing ? 'Сравнение героев · ' + categories[mode][groupChoice[mode]][0] : 'Герои компании');
+  matrix.querySelector('colgroup').innerHTML = (narrow.matches ? '' : '<col class="owner-col">') +
+    '<col class="hero-col">' + columns.map(() => '<col>').join('') + '<col class="level-col">';
+  matrix.tHead.innerHTML = '<tr>' + (narrow.matches ? '' : fieldHeader('owner','Владелец','m-owner')) +
+    fieldHeader('name','Герой','m-identity') + columns.map(key => fieldHeader(key,profileFields[key] || fieldLabels.get(key) || key,'th-metric',comparing)).join('') +
+    fieldHeader('level','Уровень','m-level') + '</tr>';
+  if (columnsOnly) {
+    for (const row of matrix.tBodies[0].querySelectorAll('.compare-row')) {
+      row.querySelectorAll('.identity-value,.metric-value').forEach(cell => cell.remove());
+      row.lastElementChild.insertAdjacentHTML('beforebegin',middleCells(Number(row.dataset.index),columns));
+    }
+    for (const cell of matrix.tBodies[0].querySelectorAll('.matrix-detail td,.no-profiles')) {
+      cell.colSpan = columns.length + (narrow.matches ? 2 : 3);
+    }
+    return;
+  }
+  const sorted = visible.slice().sort(compareReadings);
+  matrix.tBodies[0].innerHTML = sorted.length ? sorted.map((i,n) => comparisonRow(i,columns,n)).join('') :
+    '<tr><td class="no-profiles" colspan="' + (columns.length + (narrow.matches ? 2 : 3)) + '">Ничего не найдено.</td></tr>';
+}
+for (const button of document.querySelectorAll('[data-mode]')) button.addEventListener('click',() => {
+  const changingMode = mode !== button.dataset.mode;
+  if ($('#compact').checked && !changingMode) return;
+  $('#compact').checked = true;
+  if (changingMode) {mode = button.dataset.mode; pageNumber = 0; chooseGroup();}
+  hideTooltip(); drawComparison(true);
+});
+groupSelect.addEventListener('change',() => {groupChoice[mode] = Number(groupSelect.value); pageNumber = 0; render()});
+$('#metric-prev').onclick = () => {pageNumber--; render()};
+$('#metric-next').onclick = () => {pageNumber++; render()};
+matrix.addEventListener('click',event => {
+  const field = event.target.closest('[data-field]');
+  if (field) {
+    event.stopPropagation();
+    const key = field.dataset.field;
+    matrixDirection = key === matrixKey ? -matrixDirection : ['name','owner','race','class'].includes(key) ? 1 : -1;
+    matrixKey = key; render();
+    const updated = Array.from(matrix.tHead.querySelectorAll('[data-field]')).find(b => b.dataset.field === key);
+    updated.focus({preventScroll:true}); showTooltip(updated); return;
+  }
+  const row = event.target.closest('.compare-row');
+  if (!row || event.target.closest('[data-tip]')) return;
+  const i = Number(row.dataset.index), keyboard = event.detail === 0;
+  if (opened.has(i)) opened.delete(i); else opened.add(i);
+  render();
+  if (keyboard) matrix.querySelector('[data-hero="' + i + '"]').focus({preventScroll:true});
+});
+let matrixSize = pageSize();
+window.addEventListener('resize',() => {
+  const size = pageSize();
+  if (size !== matrixSize) {matrixSize = size; pageNumber = 0; render();}
+});
+
 function render() {
   hideTooltip();
   const query = $('#search').value.trim().toLowerCase();
@@ -447,12 +1132,9 @@ function render() {
       ...professions.flatMap(skill => [skill.name, names[skill.name]])];
     if (terms.join(' ').toLowerCase().includes(query)) visible.push(index);
   });
-  if (sortKey) visible.sort(compareHeroes);
-  $('#rows').innerHTML = visible.map(i => {
-    const h = DATA.heroes[i], c = h.character;
-    const expanded = opened.has(i), entries = statEntries(c?.stats);
-    return `<tr id="hero-${i}" class="hero" role="button" tabindex="0" aria-expanded="${expanded}" aria-controls="detail-${i}" aria-label="${esc(h.name)}, ${esc(h.owner)}. Экипировка"><td class="arrow">${expanded?'▾':'▸'}</td><td class="owner">${esc(h.owner)}</td><td class="hero-name"><span class="heroname" style="color:${colors[c?.class?.name]||'#b4a48c'}">${esc(h.name)}</span>${h.stale?'<span class="status">Сохранённые данные · '+esc(h.status)+'</span>':!c?'<span class="status">Профиль недоступен</span>':''}</td><td class="hero-race"><span class="iconlabel">${c?icon('race:'+c.race.slug+':'+c.gender.slug,'raceIcon'):''}${esc(c?.race?.name||'—')}</span></td><td class="hero-class"><span class="iconlabel" style="color:${colors[c?.class?.name]||'inherit'}">${c?icon('class:'+c.class.name):''}${esc(c?.class?.name||'—')}</span></td><td class="level">${c?.level||'—'}</td></tr>${$('#compact').checked ? summaryRows(h, entries) : ''}<tr class="detail" id="detail-${i}" ${expanded?'':'hidden'}><td colspan="6"><div class="detailbox">${details(h)}</div></td></tr>`}).join('');
-for(const i of visible){const row=$('#hero-'+i);row.onclick=()=>toggle(i);row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i)}}}$('#noresults').classList.toggle('hidden',!!visible.length);updateButton()}
+  drawComparison();
+  updateButton();
+}
 const tip = $('#hover-tip');
 let tipAnchor;
 function hideTooltip() {
@@ -474,7 +1156,7 @@ function showTooltip(anchor) {
   tip.style.left = left + 'px';
   tip.style.top = top + 'px';
 }
-const rows = $('#rows');
+const rows = $('main');
 for (const event of ['pointerover', 'focusin']) {
   rows.addEventListener(event, e => showTooltip(e.target.closest('[data-tip]')));
 }
@@ -491,7 +1173,9 @@ document.addEventListener('click', e => {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') hideTooltip(); });
 window.addEventListener('scroll', hideTooltip, true);
 window.addEventListener('resize', hideTooltip);
-for(const id of ['search','owner','profession','compact'])$('#'+id).addEventListener(id==='search'?'input':'change',render);$('#expand').onclick=()=>{const close=visible.every(i=>opened.has(i));visible.forEach(i=>close?opened.delete(i):opened.add(i));render()};render();
+$('#compact').addEventListener('change', () => {hideTooltip(); drawComparison(true)});
+for(const id of ['search','owner','profession'])$('#'+id).addEventListener(id==='search'?'input':'change',render);$('#expand').onclick=()=>{const close=visible.every(i=>opened.has(i));visible.forEach(i=>close?opened.delete(i):opened.add(i));render()};render();
+document.getElementById('interactive-roster').hidden=false;document.getElementById('snapshot-roster').hidden=true;
 </script><script>
 (() => {
   const profiles = DATA.heroes.filter(hero => hero.character && hero.status === 'ok' && !hero.stale);

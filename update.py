@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """Build the WoW Forever roster dashboard. Python 3.10+, no dependencies."""
+from decimal import Decimal, ROUND_HALF_UP
+from html import escape
+import math
 import argparse
 import base64
 import concurrent.futures
@@ -138,6 +141,105 @@ def update_icons(heroes, icons):
     return icons
 
 
+CLASS_COLORS = {
+    'Shaman': '#409cff', 'Warrior': '#c79c6e', 'Priest': '#eee', 'Mage': '#69ccf0',
+    'Warlock': '#b6a1ef', 'Druid': '#ff9549', 'Rogue': '#fff49b', 'Hunter': '#abd473',
+    'Paladin': '#f58cba',
+}
+
+
+def glyph_class(key):
+    return 'glyph-' + re.sub('[^a-z0-9-]+', '-', key.lower()).strip('-')
+
+
+def stat_text(value):
+    if not value:
+        return ''
+    kind = value.get('type')
+    if kind == 'RANGE':
+        low, high = stat_text(value.get('min')), stat_text(value.get('max'))
+        return f'{low}–{high}' if low and high else ''
+    number = value.get('value')
+    if not isinstance(number, (int, float)) or not math.isfinite(number):
+        return ''
+    if kind == 'WHOLE':
+        text = f'{math.floor(number + 0.5):,}'
+    else:
+        rounded = Decimal(str(number)).quantize(Decimal('.01'), rounding=ROUND_HALF_UP)
+        text = f'{rounded:,.2f}'.rstrip('0').rstrip('.')
+    return text.replace(',', '\N{NO-BREAK SPACE}').replace('.', ',') + (' %' if kind == 'PERCENTAGE' else '')
+
+
+def snapshot_row(hero):
+    character = hero.get('character') or {}
+    stats = character.get('stats') or {}
+    basic = stats.get('basic') or {}
+    values = {}
+    for group in [basic.get('primary'), basic.get('secondary'), stats.get('overview'),
+                  *(g.get('stats') for g in stats.get('groups') or [])]:
+        for entry in group or []:
+            text = stat_text(entry.get('value'))
+            if text:
+                values[entry['enum']] = text
+    professions = character.get('professions') or {}
+    for group in ('primaries', 'secondaries'):
+        for skill in professions.get(group) or []:
+            tiers = [t for t in skill.get('tiers') or [] if isinstance(t.get('skillPoints'), (int, float))]
+            if tiers:
+                tier = max(tiers, key=lambda t: t['skillPoints'])
+                maximum = tier.get('maxSkillPoints')
+                values[skill['name']] = str(tier['skillPoints']) + (f'/{maximum}' if maximum is not None else '')
+
+    race, cls = character.get('race') or {}, character.get('class') or {}
+    race_key = "race:{}:{}".format(race.get('slug', ''), (character.get('gender') or {}).get('slug', ''))
+    race_name = escape(race.get('name') or '—')
+    class_name = escape(cls.get('name') or '—')
+    color = CLASS_COLORS.get(cls.get('name'), '#d3c2a5')
+    race_glyph = f'<i class="glyph {glyph_class(race_key)}" role="img" aria-label="{race_name}"></i>' if race else ''
+    class_glyph = f'<i class="glyph {glyph_class("class:" + cls["name"])}" role="img" aria-label="{class_name}"></i>' if cls.get('name') else ''
+    identity = (
+        f'<tr><th class="who" scope="row"><span style="color:{color}">{escape(hero["name"])}</span>'
+        f'<span class="avatar">{race_glyph}{class_glyph}<span class="owner-name">{escape(hero["owner"])}</span></span></th>'
+        f'<td class="profile-v"><span class="profile-field field-race">{race_glyph}<span>{race_name}</span></span></td>'
+        f'<td class="profile-v"><span class="profile-field field-class" style="color:{color}">{class_glyph}<span>{class_name}</span></span></td>'
+    )
+    level_cell = f'<td class="lvl"><span class="level-number">{escape(str(character.get("level", "—")))}</span></td></tr>'
+    return identity, values, level_cell
+
+
+def render_dashboard(template, data, icons):
+    # Render the script-free view from the same snapshot and column definitions as the interactive table.
+    heroes = sorted(data['heroes'], key=lambda hero: hero['name'].casefold())
+    rows = [snapshot_row(hero) for hero in heroes]
+
+    def render_group(match):
+        header = match[1]
+        keys = re.findall(r' data-key="([^"]+)"', header)
+        result = [header]
+        for identity, values, level in rows:
+            result.append(identity)
+            for i, key in enumerate(keys):
+                result.append(f'<td class="v c2-{i // 2} c3-{i // 3}">{escape(values.get(key, "—"))}</td>')
+            result.append(level)
+        return ''.join(result)
+
+    html = re.sub(r'(<table class="paper"[^>]*>.*?<tbody>)__SNAPSHOT_ROWS__', render_group, template, flags=re.S)
+    styles = [f"#snapshot-roster .{glyph_class(key)}{{background-image:url('{src}')}}"
+              for key, src in icons.items() if re.fullmatch(r'data:image/[\w.+-]+;base64,[A-Za-z0-9+/=]+', src)]
+    stamp = 'время не указано'
+    if data.get('fetchedAt'):
+        try:
+            timestamp = datetime.datetime.fromisoformat(data['fetchedAt'].replace('Z', '+00:00'))
+            stamp = timestamp.astimezone(datetime.timezone(datetime.timedelta(hours=3))).strftime('%d.%m.%Y, %H:%M МСК')
+        except ValueError:
+            pass
+    html = html.replace('__DISPLAY_TIME__', stamp).replace('__SNAPSHOT_ICON_STYLES__', '\n'.join(styles))
+    html = html.replace('__SNAPSHOT_LABEL__', 'Последнее успешное обновление' if data['complete'] else 'Частичный снимок')
+    for marker, obj in [('__CLASS_COLORS__', CLASS_COLORS), ('__DATA__', data), ('__ICONS__', icons)]:
+        html = html.replace(marker, json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c'))
+    return html
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--roster', type=Path, default=ROOT / 'roster.json')
@@ -161,9 +263,7 @@ def main():
     icons = read_json(ROOT / 'icons.json', {})
     if not args.offline:
         icons = update_icons(heroes, icons)
-    html = (ROOT / 'template.html').read_text(encoding='utf-8')
-    for marker, obj in [('__DATA__', data), ('__ICONS__', icons)]:
-        html = html.replace(marker, json.dumps(obj, ensure_ascii=False).replace('</', '<\\/'))
+    html = render_dashboard((ROOT / 'template.html').read_text(encoding='utf-8'), data, icons)
     html = html.replace('WoW Forever · EU', 'WoW Forever · ' + config['region'].upper())
     atomic_write(args.output, html)
     if not args.offline:
