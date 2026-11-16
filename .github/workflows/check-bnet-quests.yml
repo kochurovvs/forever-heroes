@@ -1,0 +1,58 @@
+name: Check Battle.net completed quests
+on:
+  push:
+    branches: ['test/bnet-completed-quests-20261117']
+    paths: ['.github/workflows/check-bnet-quests.yml']
+permissions: {}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Read completed quests for Allison Burgerrs
+        env:
+          BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
+          BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
+        shell: python
+        run: |
+          import base64
+          import json
+          import os
+          from urllib.error import HTTPError
+          from urllib.request import Request, urlopen
+
+          def request_json(label, request):
+              try:
+                  with urlopen(request, timeout=25) as response:
+                      print(f"{label}: HTTP {response.status}", flush=True)
+                      return json.load(response)
+              except HTTPError as error:
+                  raise SystemExit(f"{label}: HTTP {error.code}") from None
+
+          for key in ("BLIZZARD_CLIENT_ID", "BLIZZARD_CLIENT_SECRET"):
+              if not os.environ.get(key):
+                  raise SystemExit(f"Missing repository secret: {key}")
+          credentials = os.environ["BLIZZARD_CLIENT_ID"] + ":" + os.environ["BLIZZARD_CLIENT_SECRET"]
+          basic = base64.b64encode(credentials.encode()).decode()
+          token_data = request_json("Battle.net OAuth", Request(
+              "https://oauth.battle.net/token",
+              data=b"grant_type=client_credentials",
+              headers={"Authorization": f"Basic {basic}", "Content-Type": "application/x-www-form-urlencoded"},
+          ))
+          token = token_data.get("access_token")
+          if not token:
+              raise SystemExit("No access token in OAuth response")
+          print(f"::add-mask::{token}", flush=True)
+          result = request_json("Allison Burgerrs completed quests", Request(
+              "https://eu.api.blizzard.com/profile/wow/character/allison-burgerrs/quests/completed"
+              "?namespace=profile-forever-eu&locale=en_GB",
+              headers={"Authorization": f"Bearer {token}"},
+          ))
+          quests = result.get("quests")
+          if not isinstance(quests, list):
+              raise SystemExit(f"Expected a quests list. Response fields: {sorted(result)}")
+          ids = [q["id"] for q in quests if isinstance(q, dict) and isinstance(q.get("id"), int)]
+          if len(ids) != len(quests):
+              raise SystemExit("Some quest entries have no numeric id")
+          print("Distinct completed quest IDs:", len(set(ids)))
+          print("First quest IDs:", ids[:5])
