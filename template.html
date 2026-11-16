@@ -165,7 +165,7 @@ th[aria-sort] .sort-arrow { color: var(--gold) }
 .profession-ranks tbody .more-ranks{border:0}.more-ranks td{grid-column:1/-1}
 </style><main><header><div><div class="eyebrow">Реестр приключенцев</div><div class="brand">SIDE QUEST COMPANY</div></div><div class="region">WoW Forever · EU</div></header><h1>Герои компании</h1><p class="intro">Владелец, раса, класс и уровень — одним взглядом. Раскройте строку, чтобы увидеть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select><button id="expand">Раскрыть все</button></div><label class="compact-option"><input id="compact" type="checkbox">Показывать характеристики и профессии</label><a class="report-shortcut" href="#analytics">Аналитика компании ↓</a><div class="scroll"><table><thead><tr><th style="width:36px"></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="owner">Владелец<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
-<th scope="col"><button type="button" class="sort-button" data-sort="name">Персонаж<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
+<th scope="col" aria-sort="ascending"><button type="button" class="sort-button" data-sort="name">Персонаж<span class="sort-arrow" aria-hidden="true">↑</span></button></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="race">Раса<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="class">Класс<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
 <th scope="col"><button type="button" class="sort-button" data-sort="level">Уровень<span class="sort-arrow" aria-hidden="true">↕</span></button></th>
@@ -337,7 +337,7 @@ const sortValues = {
   level: hero => hero.character?.level
 };
 const collator = new Intl.Collator('ru', {sensitivity: 'base', numeric: true});
-let sortKey = null;
+let sortKey = 'name';
 let sortDirection = 1;
 function compareHeroes(firstIndex, secondIndex) {
   const value = sortValues[sortKey];
