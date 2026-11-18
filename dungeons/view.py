@@ -26,6 +26,29 @@ def stamp(iso):
     return datetime.fromisoformat(iso).astimezone(timezone(timedelta(hours=3))).strftime('%d.%m · %H:%M МСК')
 
 
+def chain_focus(route, progress):
+    if progress is None:
+        return ''
+    active, done = progress
+    if route[-1]['id'] in done:
+        return '<p class="chain-finished">Квест для подземелья сдан.</p>'
+
+    in_log = [i for i, step in enumerate(route) if step['id'] in active and step['id'] not in done]
+    if in_log:
+        current = in_log[-1]
+        label = 'Цепочка взята'
+        action = 'Текущий квест в журнале. Заверши и сдай его.'
+    else:
+        completed = [i for i, step in enumerate(route) if step['id'] in done]
+        if not completed:
+            return ''
+        current = completed[-1] + 1
+        label = 'Цепочка начата'
+        action = 'Возьми следующее задание.'
+    return (f'<div class="quest-start quest-focus"><span class="origin-label">{label} · Шаг {current+1} из {len(route)}</span>'
+            f'<h5>{quest_link(route[current])}</h5><p>{action}</p></div>')
+
+
 def chain_details(q, progress):
     steps = q.get('prereqs', [])
     final = f'<p>{address(q)}</p><p>{escape(q.get("objective", q["how"]))}</p>'
@@ -35,15 +58,15 @@ def chain_details(q, progress):
         tip = 'Возьми первое задание до входа. Сдай его внутри, затем возьми продолжение.'
     else:
         tip = 'Сдай предыдущие задания до входа. Пока цепочка не пройдена, принять этот квест от группы нельзя.'
+    route = [*steps, q]
     items = []
-    for step in steps:
+    for step in route:
         state = ''
         if progress is not None:
             active, done = progress
-            state = 'Сдан' if step['id'] in done else 'В журнале' if step['id'] in active else 'Не взят'
+            state = 'Сдан' if step['id'] in done else 'В журнале' if step['id'] in active else 'Не готово'
             state = f' <small>{state}</small>'
         items.append(f'<li>{quest_link(step)}{state}</li>')
-    items.append(f'<li>{quest_link(q)}</li>')
     origin = ORIGINS.get(str(q['id']))
     start = ''
     source = ''
@@ -55,8 +78,10 @@ def chain_details(q, progress):
                  f'<p>{escape(origin["action"])}</p></div>')
         source = (f'<a class="walk-source" href="{escape(origin["sources"][0])}" target="_blank" '
                   'rel="noopener noreferrer">Источник по цепочке ↗</a>')
-    return (start + '<details class="quest-route"><summary>Все шаги и получение квеста</summary>'
-            f'<ol>{"".join(items)}</ol><p>{tip}</p><span class="final-label">Квест для подземелья</span>'
+    focus = chain_focus(route, progress)
+    route_start = start if focus else ''
+    return ((focus or start) + '<details class="quest-route"><summary>Все шаги и получение квеста</summary>'
+            + route_start + f'<ol>{"".join(items)}</ol><p>{tip}</p><span class="final-label">Квест для подземелья</span>'
             + final + source + '</details>')
 
 
@@ -116,17 +141,17 @@ def member(dungeon, hero, record):
         score_tip = (f'{hero["name"]}: {total-left} из {total} подходящих квестов до входа '
                      f'уже в журнале или сданы. Осталось взять {left}.')
         if left:
-            status = metric(status, f'Ещё нужно взять {left} квестов до входа. Раскрой строку, чтобы узнать, у кого начать.')
+            status = metric(status, f'Ещё нужно взять {left} квестов до входа. Раскрой строку, чтобы увидеть текущие шаги.')
         detail = f'<p class="dg-stamp">Battle.net · {stamp(record["time"])}</p>'
-        for label, rows, opened in [('Не взяты',missing,True), ('В журнале',active,False), ('Сданы',done,False)]:
+        for label, rows, opened in [('Не готово',missing,True), ('В журнале',active,False), ('Сданы',done,False)]:
             count_tip = {
-                'Не взяты':'Количество подходящих заданий, которых ещё нет в журнале и среди сданных.',
+                'Не готово':'Количество заданий для подземелья, которых ещё нет в журнале и среди сданных. Цепочка при этом может быть уже начата.',
                 'В журнале':'Количество подходящих заданий в активном журнале героя.',
                 'Сданы':'Количество подходящих заданий, уже сданных героем.',
             }[label]
             count = metric(len(rows), count_tip, f'{label} · {len(rows)}')
             if rows:
-                detail += f'<details class="dg-quest-list"'+(' open' if opened else '')+f'><summary>{label} · {count}</summary>{quest_groups(rows, level, (active_ids, done_ids) if opened else None)}</details>'
+                detail += f'<details class="dg-quest-list"'+(' open' if opened else '')+f'><summary>{label} · {count}</summary>{quest_groups(rows, level, (active_ids, done_ids))}</details>'
             else:
                 detail += f'<p class="dg-zero">{label} · {count}</p>'
     name = escape(hero['name'])

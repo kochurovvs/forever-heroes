@@ -33,7 +33,7 @@ class DungeonQuestsTest(unittest.TestCase):
         score, html = member(self.dungeon,self.hero,record)
         self.assertAlmostEqual(score,2/3)
         self.assertIn('Взять 1',html)
-        for label in ['Не взяты · 1','В журнале · 2','Сданы · 1','Внутри данжа','Quest 5']:
+        for label in ['Не готово · 1','В журнале · 2','Сданы · 1','Внутри данжа','Quest 5']:
             self.assertIn(label,html)
         self.assertNotIn('Quest 4',html)
 
@@ -52,6 +52,33 @@ class DungeonQuestsTest(unittest.TestCase):
         self.assertNotIn('Other class step', html)
         record['done'] = [51,52]
         self.assertNotIn('dg-blocked', member(self.dungeon,self.hero,record)[1])
+
+    def test_chain_focus_follows_the_hero_journal(self):
+        catalog = json.loads((Path(__file__).parent/'dungeons/catalog.json').read_text())
+        dungeon = next(d for d in catalog if d['id'] == 'rol')
+        quest = next(q for q in dungeon['quests'] if q['id'] == 92422)
+        first, second = [s['id'] for s in quest['prereqs']]
+        goal = quest['id']
+        for active, done, label, current in [
+            ([], [], 'Начало цепочки', first),
+            ([first], [], 'Цепочка взята · Шаг 1 из 3', first),
+            ([second], [first], 'Цепочка взята · Шаг 2 из 3', second),
+            ([], [first], 'Цепочка начата · Шаг 2 из 3', second),
+            ([], [first, second], 'Цепочка начата · Шаг 3 из 3', goal),
+            ([goal], [], 'Цепочка взята · Шаг 3 из 3', goal),
+            ([goal], [goal], 'Квест для подземелья сдан.', None),
+        ]:
+            with self.subTest(active=active, done=done):
+                record = {'active': active, 'done': done, 'time': '2026-11-18T07:00:00+00:00'}
+                _, page = member({**dungeon, 'quests':[quest]}, self.hero, record)
+                focus, route = page.split('<details class="quest-route">')
+                self.assertIn(label, focus)
+                if current is not None:
+                    self.assertIn(f'<h5><a href="https://www.wowhead.com/forever/quest={current}"', focus)
+                if active or done:
+                    self.assertNotIn('Начало цепочки', focus)
+                    self.assertIn('Начало цепочки', route)
+                    self.assertIn('data-who="Deathguard Linnea"', route)
 
     def test_all_dungeons_have_levels_and_working_tabs(self):
         catalog = json.loads((Path(__file__).parent/'dungeons/catalog.json').read_text())

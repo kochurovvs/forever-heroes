@@ -123,6 +123,8 @@ __DG_VISIBLE__{display:block}
 .quest-start p{margin:3px 0;font:13px/1.5 system-ui,sans-serif}
 .quest-start .origin-label{color:#d7bb7b}
 .quest-start .start-address{margin-bottom:7px;color:#ddd0b9}
+.quest-focus{border-left-color:#9bb878;background:linear-gradient(110deg,#303425,#25251d)}
+.quest-focus .origin-label,.dg-row p.chain-finished{color:#bbd69e}
 .dg-row .quest-route{margin-top:7px;color:#d5c1a2;font:12px/1.4 system-ui,sans-serif}
 .quest-route>summary{cursor:pointer;padding:3px 0;color:#dac6a3;font-size:12px}
 .quest-route ol{padding-left:24px;margin:5px 0}
