@@ -16,6 +16,7 @@ import urllib.request
 import urllib.parse
 from pathlib import Path
 
+from armory.assets import dashboard_assets, split_resources
 from dungeons import quests
 from dungeons.view import add_dungeons
 
@@ -247,6 +248,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--roster', type=Path, default=ROOT / 'roster.json')
     parser.add_argument('--output', type=Path, default=ROOT / 'index.html')
+    parser.add_argument('--pages', action='store_true', help='Write a Pages bundle with local images, styles and scripts')
     parser.add_argument('--allow-partial', action='store_true', help='Explicitly allow a partial snapshot; never used by the scheduled workflow')
     parser.add_argument('--offline', action='store_true', help='Build using the saved snapshot without network access')
     args = parser.parse_args()
@@ -278,9 +280,18 @@ def main():
             snapshot = quests.collect(config['region'], heroes, catalog, args.allow_partial)
         except RuntimeError as error:
             raise SystemExit(str(error)) from None
-    html = render_dashboard((ROOT / 'template.html').read_text(encoding='utf-8'), data, icons)
+    template = (ROOT / 'template.html').read_text(encoding='utf-8')
+    directory = args.output.parent / 'assets' if args.pages else None
+    if '__ARMORY_ASSETS__' in template:
+        assets = dashboard_assets(heroes, directory, online=not args.offline)
+        template = (template.replace('__ARMORY_ASSETS__', json.dumps(assets, separators=(',', ':')).replace('<', '\\u003c'))
+                    .replace('__EQUIPMENT_VIEW__', (ROOT/'armory/equipment.js').read_text(encoding='utf-8'))
+                    .replace('__DUNGEON_INTERACTIONS__', (ROOT/'dungeons/interactions.js').read_text(encoding='utf-8')))
+    html = render_dashboard(template, data, icons)
     html = html.replace('WoW Forever · EU', 'WoW Forever · ' + config['region'].upper())
     html = add_dungeons(html, heroes, catalog, snapshot)
+    if args.pages:
+        html = split_resources(html, directory)
     atomic_write(args.output, html)
     if not args.offline:
         atomic_write(quest_cache, json.dumps(snapshot, ensure_ascii=False))

@@ -1,0 +1,133 @@
+{
+  "914": {
+    "id": 870,
+    "name": "The Forgotten Pools",
+    "giver": "Tonga Runetotem",
+    "zone": "The Barrens",
+    "area": "The Crossroads",
+    "x": 52.2,
+    "y": 31.9,
+    "action": "Возьми у Tonga задание и исследуй оазис к северо-западу от The Crossroads. Вернись к нему и продолжай до поручения к Hamuul Runetotem в Thunder Bluff. Там маршрут приведёт к Nara Wildmane.",
+    "sources": [
+      "https://db.icy-veins.com/wow-forever/quests/870",
+      "https://db.icy-veins.com/wow-forever/quests/1489",
+      "https://wowforever.gg/en/atlas/knowledge/instances/wailing-caverns-d718/"
+    ]
+  },
+  "1491": {
+    "id": 865,
+    "name": "Raptor Horns",
+    "giver": "Mebok Mizzyrix",
+    "zone": "The Barrens",
+    "area": "Ratchet",
+    "x": 62.4,
+    "y": 37.6,
+    "action": "Принеси Mebok пять Intact Raptor Horn с Sunscale Scytheclaw. После сдачи он предложит Smart Drinks.",
+    "sources": [
+      "https://db.icy-veins.com/wow-forever/quests/865",
+      "https://www.forever-xp.com/quests/865/"
+    ]
+  },
+  "5724": {
+    "id": 5722,
+    "name": "Searching for the Lost Satchel",
+    "giver": "Rahauro",
+    "zone": "Thunder Bluff",
+    "area": "Elder Rise",
+    "x": 70.4,
+    "y": 29.6,
+    "action": "До входа в Ragefire Chasm попроси Rahauro рассказать о пропавшем разведчике. Внутри найди тело Maur Grimtotem у Oggleflint, сдай поиск и забери сумку.",
+    "sources": [
+      "https://questing.wiki/wow-forever/quests/series/5722/",
+      "https://db.icy-veins.com/wow-forever/quests/5722"
+    ]
+  },
+  "5728": {
+    "id": 5726,
+    "name": "Hidden Enemies",
+    "giver": "Thrall",
+    "zone": "Orgrimmar",
+    "area": "Valley of Wisdom",
+    "x": 31.7,
+    "y": 37.8,
+    "action": "Возьми у Thrall поручение на Lieutenant’s Insignia и отправляйся в Skull Rock. Вернись со знаком, затем выполни его поручение поговорить с Neeru Fireblade.",
+    "sources": [
+      "https://www.forever-xp.com/quests/5726/",
+      "https://db.icy-veins.com/wow-forever/quests/5726",
+      "https://questing.wiki/wow-forever/quests/5727/"
+    ]
+  },
+  "6563": {
+    "id": 6562,
+    "name": "Trouble in the Deeps",
+    "giver": "Tsunaman",
+    "zone": "Stonetalon Mountains",
+    "area": "Sun Rock Retreat",
+    "x": 47.4,
+    "y": 64.3,
+    "action": "Поговори с Tsunaman и отнеси его поручение Je’neu Sancrea в Zoram’gar Outpost. Там начинается сбор сапфиров.",
+    "sources": [
+      "https://www.60.tools/quests/6562-trouble-in-the-deeps",
+      "https://questing.wiki/wow-forever/quests/series/6562/"
+    ]
+  },
+  "6565": {
+    "id": 6564,
+    "name": "Allegiance to the Old Gods",
+    "giver": "Damp Note · Blackfathom Tide Priestess",
+    "zone": "Ashenvale",
+    "area": "тоннели Blackfathom Deeps перед порталом",
+    "x": 13.6,
+    "y": 12.1,
+    "action": "Сначала возьми у Je’neu задание на сапфиры The Essence of Aku’Mai. В тоннелях убивай Blackfathom Tide Priestess и нажми на выпавшую Damp Note в сумке. На карте отмечено одно из мест появления жрицы.",
+    "sources": [
+      "https://questing.wiki/wow-forever/quests/series/6564/",
+      "https://www.wowhead.com/forever/item=16790/damp-note",
+      "https://wowforever.gg/en/atlas/?focus=n4802&map=1440&zone=1440"
+    ]
+  },
+  "92422": {
+    "id": 356,
+    "name": "Rear Guard Patrol",
+    "giver": "Deathguard Linnea",
+    "zone": "Tirisfal Glades",
+    "area": "дорожный пост к юго-востоку от Brill",
+    "x": 65.5,
+    "y": 60.2,
+    "action": "Возьми у Linnea первую часть про нежить на ферме. Вернись к ней за второй частью и убей Riptear. После сдачи поговори с Deathguard Kristof в том же лагере.",
+    "sources": [
+      "https://www.wowhead.com/news/new-prerequisites-required-for-ruins-of-lordaeron-dungeon-quests-in-wow-forever-383769",
+      "https://azeroth.wiki/forever/map/tirisfal-glades/deathguard-linnea",
+      "https://db.icy-veins.com/wow-forever/quests/356"
+    ]
+  },
+  "95036": {
+    "id": 91858,
+    "name": "Diplomatic Incident",
+    "giver": "Danitha Morr",
+    "zone": "Tirisfal Glades",
+    "area": "Bandarion Keep",
+    "x": 22.1,
+    "y": 44.7,
+    "action": "Паладин-нежить может начать с 18-го уровня. Поговори с Danitha, затем найди Trevan Rol в The Sepulcher. Пройди цепочку до The Debt, чтобы получить у Lumina задание на материалы для клинка.",
+    "sources": [
+      "https://db.icy-veins.com/wow-forever/quests/91858",
+      "https://wowforeverinfo.com/guides/blackfathom-deeps/",
+      "https://www.foreverdb.app/en/forever/quests/95036/a-moon-kissed-blade"
+    ]
+  },
+  "95216": {
+    "id": 447,
+    "name": "A Recipe For Death",
+    "giver": "Apothecary Renferrel",
+    "zone": "Silverpine Forest",
+    "area": "The Sepulcher",
+    "x": 42.8,
+    "y": 40.8,
+    "action": "Собери медвежьи сердца и кровь пауков, затем отнеси их Master Apothecary Faranell в Undercity. Продолжи цепочку с журналом и реагентами у озера. После третьей части задание выдаст Theodore Griffs.",
+    "sources": [
+      "https://www.wowhead.com/news/new-prerequisites-required-for-ruins-of-lordaeron-dungeon-quests-in-wow-forever-383769",
+      "https://db.icy-veins.com/wow-forever/quests/447"
+    ]
+  }
+}

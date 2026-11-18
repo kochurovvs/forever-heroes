@@ -20,11 +20,12 @@ Workflow собирает кандидат `_site/index.html`, загружае�
 
 ## Локальная сборка
 
-Нужен Python 3.10+ без дополнительных библиотек:
+Для отдельного HTML нужен Python 3.10+. Сборка для Pages использует Pillow для подготовки изображений оружейной.
 
 ```sh
 python3 update.py
-python3 update.py --output _site/index.html
+python3 -m pip install "Pillow>=11,<14"
+python3 update.py --pages --output _site/index.html
 python3 -m unittest discover
 ```
 
@@ -36,3 +37,5 @@ python3 -m unittest discover
 При первоначальной подготовке `index.html` может содержать частичный снимок, пока не доступны все профили. Не считайте его успешным полным сбором. Свежую версию страницы после успешного запуска Actions можно открыть по адресу GitHub Pages.
 
 Профили берутся из оружейной Blizzard. Вкладка Dungeons использует Battle.net API. Добавьте `BLIZZARD_CLIENT_ID` и `BLIZZARD_CLIENT_SECRET` в GitHub Actions Secrets или в переменные окружения для локальной онлайн-сборки. При ручном и плановом запуске сборка заново читает активные и сданные квесты всех героев. Каталог подземелий, рекомендуемые уровни и отметки запланированных походов находятся в `dungeons/catalog.json`.
+
+В режиме `--pages` публикуйте всю папку вывода вместе с `assets/`. Изображения персонажей и предметов берутся из тех же профилей, что и таблица. Стартовые точки цепочек хранятся в `dungeons/origins.json`, карты зон WoW Forever — в `dungeons/maps/`.

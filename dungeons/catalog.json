@@ -161,7 +161,8 @@
             "id": 451,
             "name": "A Recipe for Death III · у озера"
           }
-        ]
+        ],
+        "objective": "Theodore Griffs находится на нижнем уровне квартала аптекарей."
       },
       {
         "id": 95204,
@@ -233,7 +234,8 @@
             "id": 1490,
             "name": "Nara Wildmane"
           }
-        ]
+        ],
+        "objective": "Nara попросит добыть самоцветы четырёх предводителей в Wailing Caverns."
       },
       {
         "id": 962,
@@ -442,7 +444,8 @@
             "id": 6562,
             "name": "Trouble in the Deeps"
           }
-        ]
+        ],
+        "objective": "Собери 20 сапфиров со стен тоннелей."
       },
       {
         "id": 6565,

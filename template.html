@@ -805,6 +805,7 @@ __SNAPSHOT_ICON_STYLES__
   </section>
 </section>
 <footer><p class="notice">Снимок публичной оружейной Blizzard. Обновляется при запуске скрипта. Профиль может отставать от игры. Иконки классов, рас и профессий — игровые изображения WoW; для Windshaper Skyborne использован портрет из оружейной. Профиль с ошибкой не включён в статистику уровней и навыков. Отсутствие профессии означает отсутствие данных в выгрузке.</p></footer></div></main><div id="hover-tip" role="tooltip" hidden></div><script>
+const armoryAssets=__ARMORY_ASSETS__;
 const DATA=__DATA__, ICONS=__ICONS__;
 const names={'Leatherworking':'Кожевничество','Skinning':'Снятие шкур','Cooking':'Кулинария','Alchemy':'Алхимия','Blacksmithing':'Кузнечное дело','Enchanting':'Наложение чар','Engineering':'Инженерное дело','Herbalism':'Травничество','Mining':'Горное дело','Tailoring':'Портняжное дело','Fishing':'Рыбная ловля','First Aid':'Первая помощь'};
 const races={'Tauren':'Таурен','Undead':'Нежить','Orc':'Орк','Windshaper Skyborne':'Windshaper Skyborne'};
@@ -880,14 +881,6 @@ function statValue(v) {
   const number = decimal.format(v.type === 'WHOLE' ? Math.round(v.value) : v.value);
   return v.type === 'PERCENTAGE' ? number + ' %' : number;
 }
-const gearSlots = {
-  HEAD:'Head', NECK:'Neck', SHOULDER:'Shoulders', BACK:'Back', CHEST:'Chest',
-  SHIRT:'Shirt', TABARD:'Tabard', WRIST:'Wrist', HANDS:'Hands',
-  WAIST:'Waist', LEGS:'Legs', FEET:'Feet', FINGER_1:'Ring 1', FINGER_2:'Ring 2',
-  TRINKET_1:'Trinket 1', TRINKET_2:'Trinket 2', MAIN_HAND:'Main Hand',
-  OFF_HAND:'Off Hand', RANGED:'Ranged'
-};
-const slotOrder = new Map(Object.keys(gearSlots).map((key, index) => [key, index]));
 const qualityColors = {POOR:'#aaa', COMMON:'#eee', UNCOMMON:'#78dc56', RARE:'#67acff',
   EPIC:'#c491ff', LEGENDARY:'#ffad54', ARTIFACT:'#e9cd89', HEIRLOOM:'#94d9df'};
 const itemStatNames = fieldLabels;
@@ -915,31 +908,7 @@ function itemTooltip(item) {
   }
   return lines.length ? lines.join('\n') : 'В оружейной нет характеристик для этого предмета.';
 }
-function equippedItem(item) {
-  const slot = item.slot || {};
-  const label = slot.name || gearSlots[slot.type] || 'Item';
-  const url = item.media?.content?.assets?.find(asset => asset.key === 'icon')?.value;
-  const image = typeof url === 'string' && url.startsWith('https://') ?
-    '<img class="icon" src="' + esc(url) + '" loading="lazy" alt="">' : '';
-  const level = Number.isFinite(item.level?.value) ? ' · ур. ' + item.level.value : '';
-  const color = qualityColors[item.quality?.type] || '#eee';
-  return '<li tabindex="0" data-tip="' + esc(itemTooltip(item)) + '">' + image + '<div><small>' + esc(label) + level + '</small>' +
-    '<div style="color:' + color + '">' + esc(item.name) + '</div></div></li>';
-}
-function details(h) {
-  const profile = '<a target="_blank" rel="noopener" href="' + esc(h.url) + '">Профиль в оружейной ↗</a>';
-  const c = h.character;
-  if (!c) return '<div class="empty">Профиль недоступен. ' + profile + '</div>';
-  const spec = c.specs?.find(s => s.active);
-  const items = Object.values(c.gear || {}).filter(item => item?.name).sort((a, b) =>
-    (slotOrder.get(a.slot?.type) ?? 99) - (slotOrder.get(b.slot?.type) ?? 99));
-  return '<div class="detailhead"><span>' + [c.ruleset?.name, c.faction?.name,
-    spec && spec.name + ' (' + (spec.spentPoints || 0) + ' очк.)'].filter(Boolean).map(esc).join(' · ') +
-    '</span>' + profile + '</div><h3 class="sectiontitle">Экипировка</h3>' +
-    (items.length ? '<ul class="gearlist">' + items.map(equippedItem).join('') + '</ul>' :
-      '<p class="empty">В оружейной нет данных об экипировке.</p>') +
-    '<small class="status">Снимок профиля: ' + time(c.lastUpdatedTimestamp?.iso8601) + ' МСК</small>';
-}
+__EQUIPMENT_VIEW__
 function updateButton(){$('#expand').textContent=visible.length&&visible.every(i=>opened.has(i))?'Свернуть все':'Раскрыть все'}
 const sortValues = {
   owner: hero => hero.owner,
@@ -1295,4 +1264,6 @@ document.getElementById('interactive-roster').hidden=false;document.getElementBy
   }).join('') || '<tr><td colspan="5" class="empty">В доступных профилях нет профессий.</td></tr>';
 })();
 
+</script><script>
+__DUNGEON_INTERACTIONS__
 </script></html>

@@ -7,7 +7,8 @@ from urllib.parse import urlsplit
 from unittest.mock import patch
 
 from dungeons import quests
-from dungeons.view import add_dungeons, member
+from dungeons.locations import ZONES
+from dungeons.view import ORIGINS, add_dungeons, member, quest_card
 
 
 class DungeonQuestsTest(unittest.TestCase):
@@ -66,6 +67,25 @@ class DungeonQuestsTest(unittest.TestCase):
             self.assertIn(f'#pick-{d["id"]}:checked~#dg-report-{d["id"]}', html)
             self.assertIn(f'aria-controls="dg-report-{d["id"]}"',html)
             self.assertIn(f'Для группы · {d["recommended"]} ур.',html)
+
+    def test_routes_start_at_first_prerequisite_and_have_zone_maps(self):
+        root = Path(__file__).parent / 'dungeons'
+        catalog = json.loads((root / 'catalog.json').read_text())
+        for dungeon in catalog:
+            for quest in dungeon['quests']:
+                if not quest.get('prereqs'):
+                    continue
+                with self.subTest(dungeon=dungeon['id'], quest=quest['name']):
+                    origin = ORIGINS[str(quest['id'])]
+                    self.assertEqual(origin['id'], quest['prereqs'][0]['id'])
+                    map_id = ZONES[origin['zone']]
+                    self.assertTrue((root / 'maps' / f'{map_id}.webp').is_file())
+                    card = quest_card(quest)
+                    start, route = card.split('<details class="quest-route">')
+                    self.assertIn('Начало цепочки', start)
+                    self.assertIn(f'data-map="{map_id}"', start)
+                    self.assertIn(f'data-x="{origin["x"]}"', start)
+                    self.assertIn('Квест для подземелья', route)
 
     def test_empty_and_unknown_are_different(self):
         record = self.run_collection([],[])['test-hero']

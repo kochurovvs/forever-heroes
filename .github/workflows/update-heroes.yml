@@ -10,6 +10,7 @@ on:
       - 'update.py'
       - 'template.html'
       - 'dungeons/**'
+      - 'armory/**'
       - 'test_dungeon_quests.py'
       - 'icons.json'
       - '.github/workflows/update-heroes.yml'
@@ -36,13 +37,15 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - name: Install image support
+        run: python -m pip install "Pillow>=11,<14"
       - name: Verify failure handling
         run: python -m unittest discover
       - name: Refresh roster and dungeon quests from Battle.net
         env:
           BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
           BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
-        run: python update.py --output _site/index.html
+        run: python update.py --pages --output _site/index.html
       - name: Set Pages artifact name
         id: site
         run: echo "name=github-pages-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
