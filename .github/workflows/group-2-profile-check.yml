@@ -1,0 +1,63 @@
+name: Check individual Forever profile resources
+on:
+  push:
+    branches: ['test/group-2-profile-404-20261119']
+    paths: ['.github/workflows/group-2-profile-check.yml']
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Compare public character and quest resources
+        env:
+          BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
+          BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          import json
+          from urllib.error import HTTPError
+          from urllib.parse import quote, urlencode, unquote
+          from urllib.request import Request, urlopen
+          from update import collect
+          from dungeons.quests import access_token
+
+          token = access_token()
+          def check(slug, suffix, locale):
+              query = urlencode({'namespace': 'profile-forever-eu', 'locale': locale})
+              path = 'https://eu.api.blizzard.com/profile/wow/character/' + quote(slug, safe='-')
+              request = Request(path + suffix + '?' + query, headers={'Authorization': 'Bearer ' + token})
+              try:
+                  with urlopen(request, timeout=12) as response:
+                      record = json.load(response)
+                      result = {'http': response.status}
+                      if suffix == '':
+                          result.update(name=record.get('name'), surname=record.get('surname'), level=record.get('level'), last_login_timestamp=record.get('last_login_timestamp'), quests_link=bool(record.get('quests')))
+                      if suffix == '/status':
+                          result.update(valid=record.get('is_valid'))
+                      if suffix in ('/quests', '/quests/completed'):
+                          key = 'in_progress' if suffix == '/quests' else 'quests'
+                          result['count'] = len(record[key]) if isinstance(record.get(key), list) else None
+              except HTTPError as exc:
+                  result = {'http': exc.code}
+                  try:
+                      payload = json.loads(exc.read(2048))
+                      result.update({k: str(payload[k])[:150] for k in ('code','type','detail') if k in payload})
+                  except (ValueError, TypeError):
+                      pass
+              print('RESULT', slug, suffix or '/(profile)', locale, json.dumps(result, ensure_ascii=False), flush=True)
+              return result['http']
+
+          for name in ['Дубленка Качественная', 'Тара Нтайка']:
+              char = collect(('', name), 'eu', {}, False)['character'] or {}
+              print('ARMORY', name, json.dumps({k:char.get(k) for k in ['name','surname','slug','level','isOutdated','lastUpdatedTimestamp']}, ensure_ascii=False), (char.get('race') or {}).get('name'), (char.get('class') or {}).get('name'), flush=True)
+              slug = unquote(char.get('slug') or '-'.join(name.lower().split()))
+              statuses = {suffix:check(slug, suffix, 'en_GB') for suffix in ['', '/status', '/equipment', '/quests', '/quests/completed']}
+              if 404 in statuses.values():
+                  for suffix in ['', '/quests', '/quests/completed']:
+                      check(slug, suffix, 'ru_RU')
+          PY
