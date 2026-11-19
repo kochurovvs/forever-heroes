@@ -93,7 +93,10 @@ def collect(pair, region, cached, offline):
     except Exception as exc:
         row.update(character=previous.get('character'), status=str(exc),
                    stale=bool(previous.get('character')), fetchedAt=previous.get('fetchedAt'))
-    print(f"{name}: {row['status']}", flush=True)
+    character = row.get('character') or {}
+    profile = character.get('slug')
+    description = f" ({profile})" if profile else ""
+    print(f"{name}: {row['status']}{description}", flush=True)
     return row
 
 
@@ -287,7 +290,8 @@ def main():
             snapshot = {}
     else:
         try:
-            snapshot = quests.collect(config['region'], heroes, catalog, args.allow_partial)
+            snapshot = quests.collect(config['region'], heroes, catalog, args.allow_partial,
+                                      allow_missing_journals=config.get('allowMissingQuestJournals', False))
         except RuntimeError as error:
             raise SystemExit(str(error)) from None
     template = (ROOT / 'template.html').read_text(encoding='utf-8')

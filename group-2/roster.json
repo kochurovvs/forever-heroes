@@ -18,5 +18,6 @@
       "Дубленка Качественная"
     ]
   },
-  "plannedDungeons": []
+  "plannedDungeons": [],
+  "allowMissingQuestJournals": true
 }

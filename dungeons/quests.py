@@ -5,7 +5,7 @@ import json
 import os
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, urlencode
+from urllib.parse import quote, unquote, urlencode
 from urllib.request import Request, urlopen
 
 
@@ -28,12 +28,18 @@ def tracked_ids(catalog, character=None):
     return ids
 
 
+class JournalNotFound(RuntimeError):
+    """Battle.net returned 404 for a character resource."""
+
+
 def request_json(request):
     for attempt in range(3):
         try:
             with urlopen(request, timeout=20) as response:
                 return json.load(response)
         except HTTPError as error:
+            if error.code == 404:
+                raise JournalNotFound('HTTP 404') from None
             if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
                 raise RuntimeError(f'HTTP {error.code}') from None
             delay = error.headers.get('Retry-After', '')
@@ -72,7 +78,7 @@ def quest_ids(payload, field):
     return result
 
 
-def collect(region, heroes, catalog, allow_partial=False):
+def collect(region, heroes, catalog, allow_partial=False, allow_missing_journals=False):
     token = access_token()
     query = '?' + urlencode({'namespace': f'profile-forever-{region}', 'locale': 'en_GB'})
     allowed = tracked_ids(catalog)
@@ -83,12 +89,18 @@ def collect(region, heroes, catalog, allow_partial=False):
         if not cls:
             return slug, None, 'неизвестен класс'
         applicable = tracked_ids(catalog, character)
-        base = f'https://{region}.api.blizzard.com/profile/wow/character/{quote(slug, safe="-")}/quests'
+        profile_slug = unquote(character.get('slug') or slug)
+        base = f'https://{region}.api.blizzard.com/profile/wow/character/{quote(profile_slug, safe="-")}/quests'
         def read(suffix):
             return request_json(Request(base + suffix + query, headers={'Authorization':'Bearer '+token}))
         try:
             active = quest_ids(read(''), 'in_progress') & applicable
             done = quest_ids(read('/completed'), 'quests') & applicable
+        except JournalNotFound as error:
+            if allow_missing_journals:
+                print(f'{hero["name"]}: журнал квестов Battle.net недоступен ({profile_slug}, HTTP 404)', flush=True)
+                return slug, None, None
+            return slug, None, str(error)
         except (RuntimeError, ValueError) as error:
             return slug, None, str(error)
         return slug, {'active':sorted(active - done), 'done':sorted(done),
@@ -99,7 +111,7 @@ def collect(region, heroes, catalog, allow_partial=False):
         for slug, record, error in pool.map(fetch, heroes):
             if error:
                 failures.append(f'{slug} ({error})')
-            else:
+            elif record is not None:
                 snapshots[slug] = record
     if failures:
         message = 'Квесты недоступны: ' + ', '.join(failures)

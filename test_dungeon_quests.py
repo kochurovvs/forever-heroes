@@ -3,7 +3,7 @@ import io
 import json
 from pathlib import Path
 import unittest
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 from unittest.mock import patch
 
 from dungeons import quests
@@ -113,6 +113,26 @@ class DungeonQuestsTest(unittest.TestCase):
                     self.assertIn(f'data-map="{map_id}"', start)
                     self.assertIn(f'data-x="{origin["x"]}"', start)
                     self.assertIn('Квест для подземелья', route)
+
+    def test_quest_requests_use_armory_slug_but_keep_the_roster_key(self):
+        hero = {**self.hero, 'name': 'Имя Героини', 'character': {**self.hero['character'], 'slug':'другое-имя'}}
+        with patch.object(quests, 'access_token', return_value='test'), \
+             patch.object(quests, 'request_json', side_effect=[{'in_progress':[]}, {'quests':[]}]) as request:
+            snapshot = quests.collect('eu', [hero], [self.dungeon])
+        self.assertIn('имя-героини', snapshot['heroes'])
+        for call in request.call_args_list:
+            self.assertIn('/другое-имя/quests', unquote(call.args[0].full_url))
+
+    def test_unavailable_quest_journal_is_unknown_and_only_404_is_optional(self):
+        with patch.object(quests, 'access_token', return_value='test'), \
+             patch.object(quests, 'request_json', side_effect=quests.JournalNotFound('HTTP 404')) as request:
+            with self.assertRaises(RuntimeError):
+                quests.collect('eu', [self.hero], [self.dungeon])
+            snapshot = quests.collect('eu', [self.hero], [self.dungeon], allow_missing_journals=True)
+            self.assertNotIn('test-hero', snapshot['heroes'])
+            request.side_effect = RuntimeError('HTTP 503')
+            with self.assertRaises(RuntimeError):
+                quests.collect('eu', [self.hero], [self.dungeon], allow_missing_journals=True)
 
     def test_empty_and_unknown_are_different(self):
         record = self.run_collection([],[])['test-hero']
