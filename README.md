@@ -6,6 +6,8 @@
 
 Редактируйте `roster.json`: `region` — eu/us; `owners` — объект «владелец: список имён и фамилий». Серёже принадлежат Lailah Shemesh и Lailah Primali. Пустые списки допустимы.
 
+[Вторая группа](https://kochurovvs.github.io/forever-heroes/group-2/) использует тот же шаблон. Её состав, заголовок и список запланированных подземелий (`plannedDungeons`, идентификаторы из каталога) задаются в `group-2/roster.json`. При каждом ручном или плановом обновлении Pages собирает обе страницы. Снимки героев и квестов лежат рядом с файлом состава каждой группы.
+
 ## GitHub Pages и автоматическое обновление
 
 1. В Settings → Pages → Build and deployment выберите Source: **GitHub Actions**.

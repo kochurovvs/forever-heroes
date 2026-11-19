@@ -2,3 +2,4 @@ __pycache__/
 _site/
 *.pyc
 .dungeon-quests-cache.json
+group-2/cache.json

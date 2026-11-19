@@ -259,7 +259,8 @@ def main():
     args = parser.parse_args()
     config = read_json(args.roster)
     validate(config)
-    cached_data = read_json(ROOT / 'cache.json', {})
+    cache_file = args.roster.parent / 'cache.json'
+    cached_data = read_json(cache_file, {})
     cached = {row['url'].rstrip('/'): row for row in cached_data.get('heroes', [])}
     pairs = [(owner, name) for owner, names in config['owners'].items() for name in names]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
@@ -274,7 +275,11 @@ def main():
     if not args.offline:
         icons = update_icons(heroes, icons)
     catalog = read_json(ROOT / 'dungeons' / 'catalog.json')
-    quest_cache = ROOT / '.dungeon-quests-cache.json'
+    if 'plannedDungeons' in config:
+        planned = set(config['plannedDungeons'])
+        for dungeon in catalog:
+            dungeon['planned'] = dungeon['id'] in planned
+    quest_cache = args.roster.parent / '.dungeon-quests-cache.json'
     if args.offline:
         snapshot = read_json(quest_cache, {})
         catalog_ids = sorted(quests.tracked_ids(catalog))
@@ -286,6 +291,8 @@ def main():
         except RuntimeError as error:
             raise SystemExit(str(error)) from None
     template = (ROOT / 'template.html').read_text(encoding='utf-8')
+    title = config.get('title', 'Side Quest Company')
+    template = template.replace('__GROUP_TITLE__', escape(title)).replace('__GROUP_BRAND__', escape(title.upper()))
     directory = args.output.parent / 'assets' if args.pages else None
     if '__ARMORY_ASSETS__' in template:
         assets = dashboard_assets(heroes, directory, online=not args.offline)
@@ -300,7 +307,7 @@ def main():
     atomic_write(args.output, html)
     if not args.offline:
         atomic_write(quest_cache, json.dumps(snapshot, ensure_ascii=False))
-        atomic_write(ROOT / 'cache.json', json.dumps(data, ensure_ascii=False, indent=2))
+        atomic_write(cache_file, json.dumps(data, ensure_ascii=False, indent=2))
         atomic_write(ROOT / 'icons.json', json.dumps(icons))
     print(f'HTML: {args.output.resolve()}')
 

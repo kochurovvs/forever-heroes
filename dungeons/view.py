@@ -218,5 +218,4 @@ def add_dungeons(page, heroes, catalog, snapshot):
             raise ValueError('Изменился шаблон страницы: '+marker)
     return (page.replace('</style><main>', css+'</style><main>',1)
             .replace('</header><h1>', '</header>'+nav+box+'<div id="sq-heroes"><span id="heroes"></span><h1>',1)
-            .replace('</main><div id="hover-tip"', '</div></main>'+(HERE/'map-dialog.html').read_text(encoding='utf-8')+'<div id="hover-tip"',1)
-            .replace('<title>Side Quest Company — Сравнение героев</title>', '<title>Side Quest Company · Heroes &amp; Dungeons</title>',1))
+            .replace('</main><div id="hover-tip"', '</div></main>'+(HERE/'map-dialog.html').read_text(encoding='utf-8')+'<div id="hover-tip"',1))

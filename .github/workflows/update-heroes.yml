@@ -7,6 +7,7 @@ on:
     branches: [main]
     paths:
       - 'roster.json'
+      - 'group-2/roster.json'
       - 'update.py'
       - 'template.html'
       - 'dungeons/**'
@@ -45,7 +46,9 @@ jobs:
         env:
           BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
           BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
-        run: python update.py --pages --output _site/index.html
+        run: |
+          python update.py --pages --output _site/index.html
+          python update.py --roster group-2/roster.json --pages --output _site/group-2/index.html
       - name: Set Pages artifact name
         id: site
         run: echo "name=github-pages-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
