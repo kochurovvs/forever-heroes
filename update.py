@@ -201,6 +201,11 @@ def snapshot_row(hero):
     color = CLASS_COLORS.get(cls.get('name'), '#d3c2a5')
     race_glyph = f'<i class="glyph {glyph_class(race_key)}" role="img" aria-label="{race_name}"></i>' if race else ''
     class_glyph = f'<i class="glyph {glyph_class("class:" + cls["name"])}" role="img" aria-label="{class_name}"></i>' if cls.get('name') else ''
+    pvp = character.get('pvp') or {}
+    pvp_cells = ''.join(
+        f'<td class="profile-v pvp-value">{stat_text(pvp.get(key)) or "—"}</td>'
+        for key in ('honorableKills', 'rank')
+    )
     identity = (
         f'<tr><th class="who" scope="row"><span style="color:{color}">{escape(hero["name"])}</span>'
         f'<span class="avatar">{race_glyph}{class_glyph}<span class="owner-name">{escape(hero["owner"])}</span></span></th>'
@@ -208,7 +213,7 @@ def snapshot_row(hero):
         f'<td class="profile-v"><span class="profile-field field-class" style="color:{color}">{class_glyph}<span>{class_name}</span></span></td>'
     )
     level_cell = f'<td class="lvl"><span class="level-number">{escape(str(character.get("level", "—")))}</span></td></tr>'
-    return identity, values, level_cell
+    return identity + pvp_cells, values, level_cell
 
 
 def render_dashboard(template, data, icons):

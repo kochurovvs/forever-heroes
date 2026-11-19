@@ -212,6 +212,9 @@ th[aria-sort] .sort-arrow { color: var(--gold) }
 .matrix .owner-col{width:clamp(76px,8.5vw,118px)}
 .matrix .hero-col{width:clamp(205px,19.8vw,264px)}
 .matrix .level-col{width:66px}
+.matrix .honorableKills-col{width:7rem}
+.matrix .rank-col{width:3.5rem}
+.matrix.is-roster .metric-value{border-inline-start:0}
 .matrix th,.matrix td{padding:0;vertical-align:middle}
 .matrix th{background:#30291d;font-size:12px;letter-spacing:normal;height:62px;border-bottom:1px solid #78603b}
 .matrix td{border-bottom:1px solid #423828}
@@ -310,6 +313,9 @@ th[aria-sort] .sort-arrow { color: var(--gold) }
   .matrix .icon-pair{position:relative}
   .matrix.is-roster .icon-pair::after{content:"Игрок ·";position:absolute;left:0;top:50%;transform:translateY(-50%);color:#bcae97;font:11px system-ui;white-space:nowrap}
   .matrix.is-roster .identity-value{padding:0}
+  .matrix .honorableKills-col{width:12%}
+  .matrix .rank-col{width:10%}
+  .matrix.is-roster .metric-value{vertical-align:top;padding-top:12px}
   .matrix.is-roster .profile-field{position:absolute;bottom:9px;left:10px;width:calc(54% - 14px);gap:6px;font-size:13px;min-height:23px}
   .matrix.is-roster .profile-field.field-class{left:55%;width:calc(45% - 12px)}
   .matrix.is-roster .profile-field .icon{width:23px;height:23px;box-shadow:0 0 0 1px #080705}
@@ -594,6 +600,9 @@ __SNAPSHOT_ICON_STYLES__
 #snapshot-roster .paper thead tr{height:62px}
 #snapshot-roster .paper tbody tr{height:55px}
 #snapshot-roster .paper .profile-v{overflow-wrap:anywhere}
+#snapshot-roster .pvp-hk{width:7rem}
+#snapshot-roster .pvp-rank{width:3.5rem}
+#snapshot-roster .paper th.pvp-value{text-align:center;padding-inline:2px}
 #snapshot-roster .paper .who{width:29%}
 #fh-compare:not(:checked) ~ .panel .v,#fh-compare:checked ~ .panel .profile-v{display:none}
 #snapshot-roster .checkmark{width:16px;height:16px;border-radius:3px;border:1px solid #ab9162;display:inline-grid;place-items:center;background:#201c16;margin-right:7px}
@@ -621,6 +630,11 @@ __SNAPSHOT_ICON_STYLES__
 @media(max-width:790px){
 #snapshot-roster .paper{border-collapse:separate;border-spacing:0}
 #snapshot-roster .paper tbody tr{position:relative;height:90px}
+#snapshot-roster .pvp-hk{width:12%}
+#snapshot-roster .pvp-rank{width:10%}
+#snapshot-roster .paper td.pvp-value{vertical-align:top;padding-top:12px}
+#snapshot-roster .pvp-hk .full{display:none}
+#snapshot-roster .pvp-hk .short{display:inline}
 #snapshot-roster .paper tbody .who{vertical-align:top;padding-top:8px;border-left:1px solid transparent;border-top:1px solid transparent}
 #fh-compare:not(:checked) ~ .panel .paper tbody tr{background:linear-gradient(115deg,#2b241b,#201b15)}
 #fh-compare:not(:checked) ~ .panel .paper tbody :is(td,th){border-block:1px solid #675233;box-shadow:inset 0 -4px #191510}
@@ -666,6 +680,7 @@ __SNAPSHOT_ICON_STYLES__
 
 <table class="paper" aria-label="Характеристики · Основные">
 <thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th scope="col" class="profile-v pvp-value pvp-hk" aria-label="Honorable Kills" title="Honorable Kills"><span class="full">Honorable Kills</span><span class="short">HK</span></th><th scope="col" class="profile-v pvp-value pvp-rank">Rank</th>
 <th class="v c2-0 c3-0" scope="col" aria-label="Health" data-key="HEALTH"><i class="glyph glyph-stat-health" aria-hidden="true"></i><span class="cap full">Health</span><span class="cap short">HP</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Armor" data-key="ARMOR"><i class="glyph glyph-stat-armor" aria-hidden="true"></i><span class="cap full">Armor</span><span class="cap short">Armor</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Strength" data-key="STRENGTH"><i class="glyph glyph-stat-strength" aria-hidden="true"></i><span class="cap full">Strength</span><span class="cap short">Str</span></th><th class="v c2-1 c3-1" scope="col" aria-label="Agility" data-key="AGILITY"><i class="glyph glyph-stat-agility" aria-hidden="true"></i><span class="cap full">Agility</span><span class="cap short">Agi</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Stamina" data-key="STAMINA"><i class="glyph glyph-stat-stamina" aria-hidden="true"></i><span class="cap full">Stamina</span><span class="cap short">Sta</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Intellect" data-key="INTELLECT"><i class="glyph glyph-stat-intellect" aria-hidden="true"></i><span class="cap full">Intellect</span><span class="cap short">Int</span></th><th class="v c2-3 c3-2" scope="col" aria-label="Spirit" data-key="SPIRIT"><i class="glyph glyph-stat-spirit" aria-hidden="true"></i><span class="cap full">Spirit</span><span class="cap short">Spi</span></th>
 <th class="lvl" scope="col">Ур.</th></tr></thead>
 <tbody>__SNAPSHOT_ROWS__</tbody></table></div>
@@ -682,6 +697,7 @@ __SNAPSHOT_ICON_STYLES__
 
 <table class="paper" aria-label="Характеристики · Боевые">
 <thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th scope="col" class="profile-v pvp-value pvp-hk" aria-label="Honorable Kills" title="Honorable Kills"><span class="full">Honorable Kills</span><span class="short">HK</span></th><th scope="col" class="profile-v pvp-value pvp-rank">Rank</th>
 <th class="v c2-0 c3-0" scope="col" aria-label="Weapon Damage" data-key="DAMAGE"><i class="glyph glyph-stat-damage" aria-hidden="true"></i><span class="cap full">Weapon Damage</span><span class="cap short">Dmg</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Attack Power" data-key="ATTACKPOWER"><i class="glyph glyph-stat-attackpower" aria-hidden="true"></i><span class="cap full">Attack Power</span><span class="cap short">AP</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Critical Strike" data-key="CRITICALSTRIKE"><i class="glyph glyph-stat-criticalstrike" aria-hidden="true"></i><span class="cap full">Critical Strike</span><span class="cap short">Crit</span></th><th class="v c2-1 c3-1" scope="col" aria-label="Spell Power" data-key="SPELLPOWER"><i class="glyph glyph-stat-spellpower" aria-hidden="true"></i><span class="cap full">Spell Power</span><span class="cap short">SP</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Dodge" data-key="DODGE"><i class="glyph glyph-stat-dodge" aria-hidden="true"></i><span class="cap full">Dodge</span><span class="cap short">Dodge</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Parry" data-key="PARRY"><i class="glyph glyph-stat-parry" aria-hidden="true"></i><span class="cap full">Parry</span><span class="cap short">Parry</span></th><th class="v c2-3 c3-2" scope="col" aria-label="Block" data-key="BLOCK"><i class="glyph glyph-stat-block" aria-hidden="true"></i><span class="cap full">Block</span><span class="cap short">Block</span></th>
 <th class="lvl" scope="col">Ур.</th></tr></thead>
 <tbody>__SNAPSHOT_ROWS__</tbody></table></div>
@@ -698,6 +714,7 @@ __SNAPSHOT_ICON_STYLES__
 
 <table class="paper" aria-label="Характеристики · Ресурсы">
 <thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th scope="col" class="profile-v pvp-value pvp-hk" aria-label="Honorable Kills" title="Honorable Kills"><span class="full">Honorable Kills</span><span class="short">HK</span></th><th scope="col" class="profile-v pvp-value pvp-rank">Rank</th>
 <th class="v c2-0 c3-0" scope="col" aria-label="Mana" data-key="MANA"><i class="glyph glyph-stat-mana" aria-hidden="true"></i><span class="cap full">Mana</span><span class="cap short">Mana</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Rage" data-key="RAGE"><i class="glyph glyph-stat-rage" aria-hidden="true"></i><span class="cap full">Rage</span><span class="cap short">Rage</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Energy" data-key="ENERGY"><i class="glyph glyph-stat-energy" aria-hidden="true"></i><span class="cap full">Energy</span><span class="cap short">Energy</span></th>
 <th class="lvl" scope="col">Ур.</th></tr></thead>
 <tbody>__SNAPSHOT_ROWS__</tbody></table></div>
@@ -720,6 +737,7 @@ __SNAPSHOT_ICON_STYLES__
 
 <table class="paper" aria-label="Профессии · Ремёсла">
 <thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th scope="col" class="profile-v pvp-value pvp-hk" aria-label="Honorable Kills" title="Honorable Kills"><span class="full">Honorable Kills</span><span class="short">HK</span></th><th scope="col" class="profile-v pvp-value pvp-rank">Rank</th>
 <th class="v c2-0 c3-0" scope="col" aria-label="Alchemy" data-key="Alchemy"><i class="glyph glyph-prof-alchemy" aria-hidden="true"></i><span class="cap full">Alchemy</span><span class="cap short">Alch.</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Blacksmithing" data-key="Blacksmithing"><i class="glyph glyph-prof-blacksmithing" aria-hidden="true"></i><span class="cap full">Blacksmithing</span><span class="cap short">Smith.</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Enchanting" data-key="Enchanting"><i class="glyph glyph-prof-enchanting" aria-hidden="true"></i><span class="cap full">Enchanting</span><span class="cap short">Ench.</span></th><th class="v c2-1 c3-1" scope="col" aria-label="Engineering" data-key="Engineering"><i class="glyph glyph-prof-engineering" aria-hidden="true"></i><span class="cap full">Engineering</span><span class="cap short">Eng.</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Leatherworking" data-key="Leatherworking"><i class="glyph glyph-prof-leatherworking" aria-hidden="true"></i><span class="cap full">Leatherworking</span><span class="cap short">Leather</span></th><th class="v c2-2 c3-1" scope="col" aria-label="Tailoring" data-key="Tailoring"><i class="glyph glyph-prof-tailoring" aria-hidden="true"></i><span class="cap full">Tailoring</span><span class="cap short">Tailor</span></th>
 <th class="lvl" scope="col">Ур.</th></tr></thead>
 <tbody>__SNAPSHOT_ROWS__</tbody></table></div>
@@ -736,6 +754,7 @@ __SNAPSHOT_ICON_STYLES__
 
 <table class="paper" aria-label="Профессии · Сбор">
 <thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th scope="col" class="profile-v pvp-value pvp-hk" aria-label="Honorable Kills" title="Honorable Kills"><span class="full">Honorable Kills</span><span class="short">HK</span></th><th scope="col" class="profile-v pvp-value pvp-rank">Rank</th>
 <th class="v c2-0 c3-0" scope="col" aria-label="Herbalism" data-key="Herbalism"><i class="glyph glyph-prof-herbalism" aria-hidden="true"></i><span class="cap full">Herbalism</span><span class="cap short">Herb.</span></th><th class="v c2-0 c3-0" scope="col" aria-label="Mining" data-key="Mining"><i class="glyph glyph-prof-mining" aria-hidden="true"></i><span class="cap full">Mining</span><span class="cap short">Mining</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Skinning" data-key="Skinning"><i class="glyph glyph-prof-skinning" aria-hidden="true"></i><span class="cap full">Skinning</span><span class="cap short">Skin.</span></th>
 <th class="lvl" scope="col">Ур.</th></tr></thead>
 <tbody>__SNAPSHOT_ROWS__</tbody></table></div>
@@ -752,6 +771,7 @@ __SNAPSHOT_ICON_STYLES__
 
 <table class="paper" aria-label="Профессии · Вторичные">
 <thead><tr><th class="who" scope="col">Герой</th><th scope="col" class="profile-v">Раса</th><th scope="col" class="profile-v">Класс</th>
+<th scope="col" class="profile-v pvp-value pvp-hk" aria-label="Honorable Kills" title="Honorable Kills"><span class="full">Honorable Kills</span><span class="short">HK</span></th><th scope="col" class="profile-v pvp-value pvp-rank">Rank</th>
 <th class="v c2-0 c3-0" scope="col" aria-label="Cooking" data-key="Cooking"><i class="glyph glyph-prof-cooking" aria-hidden="true"></i><span class="cap full">Cooking</span><span class="cap short">Cook.</span></th><th class="v c2-0 c3-0" scope="col" aria-label="First Aid" data-key="First Aid"><i class="glyph glyph-prof-first-aid" aria-hidden="true"></i><span class="cap full">First Aid</span><span class="cap short">Aid</span></th><th class="v c2-1 c3-0" scope="col" aria-label="Fishing" data-key="Fishing"><i class="glyph glyph-prof-fishing" aria-hidden="true"></i><span class="cap full">Fishing</span><span class="cap short">Fish.</span></th>
 <th class="lvl" scope="col">Ур.</th></tr></thead>
 <tbody>__SNAPSHOT_ROWS__</tbody></table></div>
@@ -918,8 +938,13 @@ const sortValues = {
   level: hero => hero.character?.level
 };
 const collator = new Intl.Collator('ru', {sensitivity: 'base', numeric: true});
+const pvpFields = {honorableKills:'Honorable Kills', rank:'Rank'};
 const readings = DATA.heroes.map(hero => {
   const result = new Map();
+  for (const key of Object.keys(pvpFields)) {
+    const numeric = hero.character?.pvp?.[key]?.value;
+    if (Number.isFinite(numeric)) result.set(key, {numeric, html:decimal.format(numeric)});
+  }
   const s = hero.character?.stats;
   for (const entry of [...(s?.basic?.primary || []), ...(s?.basic?.secondary || []),
       ...(s?.overview || []), ...(s?.groups || []).flatMap(group => group.stats || [])]) {
@@ -970,6 +995,8 @@ function fieldHeader(key,label,style,isMetric=false) {
     const src = ICONS[(mode === 'stats' ? 'stat:' : 'prof:') + key];
     content = (src ? '<img class="metric-icon" alt="" src="' + src + '">' : '') +
       '<span class="label-long">' + esc(label) + '</span><span class="label-short">' + esc(abbreviations[key] || label) + '</span>';
+  } else if (key === 'honorableKills') {
+    content = '<span class="label-long">Honorable Kills</span><span class="label-short">HK</span>';
   } else if (key === 'level') {
     content = '<span class="label-long">Уровень</span><span class="label-short">Ур.</span>';
   }
@@ -1023,7 +1050,7 @@ function drawComparison(columnsOnly = false) {
   const all = categories[mode][groupChoice[mode]][1], size = pageSize();
   pageNumber = Math.min(pageNumber, Math.ceil(all.length/size)-1);
   const offset = pageNumber*size, metrics = all.slice(offset,offset+size);
-  const columns = comparing ? metrics : Object.keys(profileFields);
+  const columns = comparing ? metrics : [...Object.keys(profileFields), ...Object.keys(pvpFields)];
   for (const button of document.querySelectorAll('[data-mode]')) {
     button.setAttribute('aria-pressed',String(comparing && mode === button.dataset.mode));
   }
@@ -1034,9 +1061,11 @@ function drawComparison(columnsOnly = false) {
   $('#metric-next').disabled = !comparing || offset+metrics.length >= all.length;
   matrix.setAttribute('aria-label',comparing ? 'Сравнение героев · ' + categories[mode][groupChoice[mode]][0] : 'Герои компании');
   matrix.querySelector('colgroup').innerHTML = (narrow.matches ? '' : '<col class="owner-col">') +
-    '<col class="hero-col">' + columns.map(() => '<col>').join('') + '<col class="level-col">';
+    '<col class="hero-col">' + columns.map(key => Object.hasOwn(pvpFields,key) ? '<col class="' + key + '-col">' : '<col>').join('') + '<col class="level-col">';
   matrix.tHead.innerHTML = '<tr>' + (narrow.matches ? '' : fieldHeader('owner','Владелец','m-owner')) +
-    fieldHeader('name','Герой','m-identity') + columns.map(key => fieldHeader(key,profileFields[key] || fieldLabels.get(key) || key,'th-metric',comparing)).join('') +
+    fieldHeader('name','Герой','m-identity') + columns.map(key =>
+      fieldHeader(key,profileFields[key] || pvpFields[key] || fieldLabels.get(key) || key,
+        Object.hasOwn(pvpFields,key) ? 'pvp-heading' : 'th-metric',comparing)).join('') +
     fieldHeader('level','Уровень','m-level') + '</tr>';
   if (columnsOnly) {
     for (const row of matrix.tBodies[0].querySelectorAll('.compare-row')) {

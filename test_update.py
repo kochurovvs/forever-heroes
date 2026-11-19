@@ -56,6 +56,20 @@ class PublicationTests(unittest.TestCase):
             update.validate({'region': 'eu', 'owners': {'A': ['Test Hero'], 'B': ['test hero']}})
 
 
+    def test_roster_uses_kill_count_and_rank_from_the_armory(self):
+        hero = {'name': 'Test Hero', 'owner': 'Owner', 'character': {}}
+        for pvp, expected in [
+            ({'honorableKills': {'tier': 3, 'value': 12450}, 'rank': {'value': 4}}, ['12\xa0450', '4']),
+            ({'honorableKills': {'value': 0}, 'rank': {'value': 0}}, ['0', '0']),
+            ({'rank': {'value': 1}}, ['—', '1']),
+            (None, ['—', '—']),
+        ]:
+            with self.subTest(pvp=pvp):
+                hero['character']['pvp'] = pvp
+                identity, _, _ = update.snapshot_row(hero)
+                cells = [part.split('</td>')[0] for part in identity.split('<td class="profile-v pvp-value">')[1:]]
+                self.assertEqual(cells, expected)
+
     def test_comparison_is_rendered_from_the_current_snapshot(self):
         hero = {'name': 'A & B', 'owner': '<Player>', 'character': {
             'level': 17, 'stats': {'overview': [{'enum': 'MANA', 'value': {'type': 'WHOLE', 'value': 0}}]},
