@@ -1,0 +1,1194 @@
+[
+  {
+    "id": "hot",
+    "name": "The Hall of Thanes",
+    "zone": "Ironforge",
+    "levels": [
+      13,
+      18
+    ],
+    "recommended": 14,
+    "note": "Вход в усыпальницу находится под Стальгорном. У моста проверь задание на реликвии.",
+    "sources": [
+      "https://worldofwarcraft.blizzard.com/en-us/news/24301455/",
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 96403,
+        "name": "Important Heirlooms",
+        "min": 10,
+        "inside": false,
+        "giver": "Thom Filch",
+        "place": "Ironforge · Old Ironforge · 32.2, 44.5",
+        "how": "Собери восемь Dwarven Heirlooms в усыпальнице."
+      },
+      {
+        "id": 96394,
+        "name": "The Restless Dead",
+        "min": 10,
+        "inside": false,
+        "giver": "Afadra Dunwall",
+        "place": "Old Ironforge",
+        "how": "Поговори с Afadra перед входом и возьми её поручение.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 96393,
+        "name": "Old Ironforge Incursion",
+        "min": 9,
+        "inside": false,
+        "giver": "Earthseer Farsen",
+        "place": "Dun Morogh · Gol’Bolar Quarry · 64.8, 58.4",
+        "how": "Расследуй проникновение в Старый Стальгорн.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 96395,
+        "name": "An Ancient Grudge",
+        "min": 10,
+        "inside": true,
+        "giver": "Ghostly Attendant",
+        "place": "The Hall of Thanes · Anvilmar’s Rest",
+        "how": "В западном крыле поговори с призраком и упокой Faldrim Anvilmar."
+      }
+    ]
+  },
+  {
+    "id": "dm",
+    "name": "The Deadmines",
+    "zone": "Westfall",
+    "levels": [
+      18,
+      23
+    ],
+    "recommended": 19,
+    "note": "Корабль с Edwin VanCleef стоит в конце шахты. Часть поручений Альянса выполняется ещё в туннелях перед порталом.",
+    "sources": [
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 168,
+        "name": "Collecting Memories",
+        "min": 14,
+        "inside": false,
+        "giver": "Wilder Thistlenettle",
+        "place": "Stormwind City · Dwarven District · 65, 21",
+        "how": "Ищи карты у нежити в шахтах перед порталом.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 167,
+        "name": "Oh Brother...",
+        "min": 15,
+        "inside": false,
+        "giver": "Wilder Thistlenettle",
+        "place": "Stormwind City · Dwarven District · 65, 21",
+        "how": "Найди Foreman Thistlenettle в боковой части шахты.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 2040,
+        "name": "Underground Assault",
+        "min": 15,
+        "inside": false,
+        "giver": "Shoni the Shilent",
+        "place": "Stormwind City · Dwarven District · 55, 13",
+        "how": "Найди и принеси Gnoam Sprecklesprocket.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 373,
+        "name": "The Unsent Letter",
+        "min": 16,
+        "inside": true,
+        "giver": "Edwin VanCleef",
+        "place": "The Deadmines · корабль в бухте",
+        "how": "Подбери письмо у Ван Клифа. С него начинается дорога к заданию для The Stockade.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 166,
+        "name": "The Defias Brotherhood",
+        "min": 14,
+        "inside": false,
+        "giver": "Gryan Stoutmantle",
+        "place": "Westfall · Sentinel Hill · 56, 47",
+        "how": "Победи Edwin VanCleef и вернись к Gryan.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 65,
+            "name": "The Defias Brotherhood",
+            "giver": "Gryan Stoutmantle",
+            "place": "Westfall · Sentinel Hill · 56, 47"
+          },
+          {
+            "id": 132,
+            "name": "The Defias Brotherhood"
+          },
+          {
+            "id": 135,
+            "name": "The Defias Brotherhood"
+          },
+          {
+            "id": 141,
+            "name": "The Defias Brotherhood"
+          },
+          {
+            "id": 142,
+            "name": "The Defias Brotherhood"
+          },
+          {
+            "id": 155,
+            "name": "The Defias Brotherhood"
+          }
+        ]
+      },
+      {
+        "id": 214,
+        "name": "Red Silk Bandanas",
+        "min": 14,
+        "inside": false,
+        "giver": "Scout Riell",
+        "place": "Westfall · Sentinel Hill · 56, 47",
+        "how": "Собери красные шёлковые банданы у Братства Справедливости.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 65,
+            "name": "The Defias Brotherhood",
+            "giver": "Gryan Stoutmantle",
+            "place": "Westfall · Sentinel Hill · 56, 47"
+          },
+          {
+            "id": 132,
+            "name": "The Defias Brotherhood"
+          },
+          {
+            "id": 135,
+            "name": "The Defias Brotherhood"
+          },
+          {
+            "id": 141,
+            "name": "The Defias Brotherhood"
+          },
+          {
+            "id": 142,
+            "name": "The Defias Brotherhood"
+          },
+          {
+            "id": 155,
+            "name": "The Defias Brotherhood"
+          }
+        ]
+      },
+      {
+        "id": 95036,
+        "name": "A Moon-Kissed Blade",
+        "min": 20,
+        "inside": false,
+        "place": "Silverpine Forest · The Sepulcher · 43.3, 41.0",
+        "giver": "Lumina Windsinger",
+        "how": "Добудь Whitestone Oak Lumber у Goblin Woodcarver в шахтах. Остальные материалы перечислены в записках Trevan Rol.",
+        "prereqs": [
+          {
+            "id": 91858,
+            "name": "Diplomatic Incident"
+          },
+          {
+            "id": 91859,
+            "name": "A Curious Pair"
+          },
+          {
+            "id": 91860,
+            "name": "A Grim Fate"
+          },
+          {
+            "id": 91861,
+            "name": "Into Fenris Keep"
+          },
+          {
+            "id": 91862,
+            "name": "Lumina Windsinger"
+          },
+          {
+            "id": 96204,
+            "name": "The Windshaper’s Wrath"
+          },
+          {
+            "id": 95034,
+            "name": "The Debt"
+          }
+        ],
+        "cls": "Paladin",
+        "race": "Undead",
+        "faction": "Horde"
+      }
+    ]
+  },
+  {
+    "id": "stockade",
+    "name": "The Stockade",
+    "zone": "Stormwind City",
+    "levels": [
+      22,
+      30
+    ],
+    "recommended": 26,
+    "note": "Вход в тюрьму расположен у канала Штормграда. Обычные квесты, перечисленные здесь, выдаёт Альянс.",
+    "sources": [
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 387,
+        "name": "Quell the Uprising",
+        "min": 22,
+        "inside": false,
+        "giver": "Warden Thelwater",
+        "place": "Stormwind City · The Stockade · 41, 58",
+        "how": "Возьми задание у входа и подави бунт заключённых.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 388,
+        "name": "The Color of Blood",
+        "min": 22,
+        "inside": false,
+        "giver": "Nikova Raskol",
+        "place": "Stormwind City · Old Town",
+        "how": "Найди Nikova в Старом городе и собери красные шерстяные банданы.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 377,
+        "name": "Crime and Punishment",
+        "min": 22,
+        "inside": false,
+        "giver": "Councilman Millstipe",
+        "place": "Duskwood · Darkshire · 42, 47",
+        "how": "Найди заключённого Dextren Ward.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 386,
+        "name": "What Comes Around...",
+        "min": 22,
+        "inside": false,
+        "giver": "Guard Berton",
+        "place": "Redridge Mountains · Lakeshire · 26, 46",
+        "how": "Разыщи Targorr the Dread в тюрьме.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 378,
+        "name": "The Fury Runs Deep",
+        "min": 25,
+        "inside": false,
+        "giver": "Motley Garmason",
+        "place": "Wetlands · Dun Modr · 49, 18",
+        "how": "Победи Kam Deepfury.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 303,
+            "name": "The Dark Iron War",
+            "giver": "Motley Garmason",
+            "place": "Wetlands · Dun Modr · 49, 18"
+          }
+        ]
+      },
+      {
+        "id": 391,
+        "name": "The Stockade Riots",
+        "min": 16,
+        "inside": false,
+        "giver": "Warden Thelwater",
+        "place": "Stormwind City · The Stockade · 41, 58",
+        "how": "После письма Ван Клифа поговори с начальником тюрьмы о Bazil Thredd.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 373,
+            "name": "The Unsent Letter",
+            "giver": "Edwin VanCleef",
+            "place": "The Deadmines · корабль в бухте"
+          },
+          {
+            "id": 389,
+            "name": "Bazil Thredd"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esw",
+    "name": "Excavation Site: Wetlands",
+    "zone": "Wetlands",
+    "levels": [
+      24,
+      29
+    ],
+    "recommended": 29,
+    "note": "Перед походом в раскопки Орда может забрать поручения в Оргриммаре и в Нагорье Арати.",
+    "sources": [
+      "https://worldofwarcraft.blizzard.com/en-us/news/24301455/",
+      "https://wofwforever.com/en/dungeons/excavation-site-wetlands/",
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 95697,
+        "name": "Changing Tastes",
+        "min": 24,
+        "inside": false,
+        "giver": "Borstan",
+        "place": "Orgrimmar · 57, 33",
+        "how": "Проверь список ингредиентов у Borstan перед отходом в Болотину.",
+        "faction": "Horde"
+      },
+      {
+        "id": 95682,
+        "name": "Open the Maw",
+        "min": 24,
+        "inside": false,
+        "giver": "Deathstalker Agent",
+        "place": "Wetlands · холмы над лагерем Dragonmaw",
+        "how": "Собери у орков Dragonmaw в раскопках улики для агента.",
+        "faction": "Horde",
+        "prereqs": [
+          {
+            "id": 95663,
+            "name": "Dragonmaw Rumors",
+            "giver": "Zaruk",
+            "place": "Arathi Highlands · Hammerfall · 74.5, 35.6"
+          }
+        ]
+      },
+      {
+        "id": 95664,
+        "name": "Elder Knowledge",
+        "min": 24,
+        "inside": true,
+        "giver": "Titan Relic",
+        "place": "Excavation Site: Wetlands · добыча с последнего босса",
+        "how": "Осмотри реликвию титанов, чтобы начать задание.",
+        "faction": "Horde"
+      },
+      {
+        "id": 95772,
+        "name": "Songblade Search",
+        "min": 24,
+        "inside": false,
+        "giver": "Dorin Songblade",
+        "place": "Redridge Mountains · Lakeshire · 25.6, 46.6",
+        "how": "Поговори с Dorin до поездки в Болотину.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 95646,
+        "name": "Horrors in the Highland",
+        "min": 24,
+        "inside": false,
+        "giver": "Rethiel the Greenwarden",
+        "place": "Wetlands · Greenwarden’s Grove · 56.2, 40.6",
+        "how": "Забери поручение у Rethiel в Болотине.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 98815,
+        "name": "Highland Hides",
+        "min": 24,
+        "inside": false,
+        "giver": "James Halloran",
+        "place": "Wetlands · Menethil Harbor · 8, 55",
+        "how": "Заготовь шкуры по поручению James.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 469,
+            "name": "Daily Delivery",
+            "giver": "Einar Stonegrip",
+            "place": "Wetlands · окрестности Menethil Harbor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dalaran",
+    "name": "City of Dalaran",
+    "zone": "Alterac Mountains",
+    "levels": [
+      28,
+      33
+    ],
+    "recommended": 31,
+    "note": "Вход через решётку канализации. Дверь открывает один участник с Dalaran Sewer Key. Ключ выдают при получении Heart of Disruption.",
+    "sources": [
+      "https://worldofwarcraft.blizzard.com/en-us/news/24301455/",
+      "https://www.method.gg/wow-forever/dungeons/city-of-dalaran",
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 96984,
+        "name": "Heart of Disruption",
+        "min": 24,
+        "inside": false,
+        "giver": "Image of Archmage Modera",
+        "place": "Silverpine Forest · у канализации Даларана · 68.6, 45.2",
+        "how": "Получи ключ у проекции у входа. Возьми Arcane Mote в Даларане и отнеси Magus в Tarren Mill.",
+        "faction": "Horde",
+        "prereqs": [
+          {
+            "id": 544,
+            "name": "Prison Break In",
+            "giver": "Magus Wordeen Voidglare",
+            "place": "Hillsbrad Foothills · Tarren Mill · 61.6, 20.8",
+            "how": "У Magus возьми также Key to the City. Первые задания удобно делать одновременно."
+          },
+          {
+            "id": 545,
+            "name": "Dalaran Patrols"
+          },
+          {
+            "id": 92434,
+            "name": "Blood in the Streets"
+          }
+        ]
+      },
+      {
+        "id": 96986,
+        "name": "The Grave Knight",
+        "min": 24,
+        "inside": false,
+        "giver": "Melisara",
+        "place": "Hillsbrad Foothills · Tarren Mill · 61.6, 20.8",
+        "how": "Победи Atrexis the Grave Knight в канализации и вернись к Melisara.",
+        "faction": "Horde"
+      },
+      {
+        "id": 96988,
+        "name": "Source of Power",
+        "min": 24,
+        "inside": false,
+        "giver": "Doctor Martin Felben",
+        "place": "Undercity · The Apothecarium · 46, 74",
+        "how": "Собери шесть Cracked Sentry Cores с часовых Даларана.",
+        "faction": "Horde"
+      },
+      {
+        "id": 96987,
+        "name": "Opportunistic Education",
+        "min": 24,
+        "inside": true,
+        "giver": "Rexxie Copperclutch",
+        "place": "City of Dalaran · у входа из канализации",
+        "how": "Найди книгу The Founding of Dalaran для Rexxie.",
+        "faction": "Horde"
+      },
+      {
+        "id": 92458,
+        "name": "Heart of Disruption",
+        "min": 24,
+        "inside": false,
+        "giver": "Image of Archmage Modera",
+        "place": "Silverpine Forest · у канализации Даларана · 68.6, 45.2",
+        "how": "Получи ключ у проекции перед входом и добудь Arcane Mote.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 92432,
+            "name": "An Alarming Request",
+            "giver": "Emissary Jacques",
+            "place": "Hillsbrad Foothills · Southshore · 48.3, 60.1"
+          }
+        ]
+      },
+      {
+        "id": 92457,
+        "name": "Starving Arcane",
+        "min": 24,
+        "inside": false,
+        "giver": "Image of Archmage Modera",
+        "place": "Silverpine Forest · у канализации Даларана · 68.6, 45.2",
+        "how": "Поговори с проекцией перед походом.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 92432,
+            "name": "An Alarming Request",
+            "giver": "Emissary Jacques",
+            "place": "Hillsbrad Foothills · Southshore · 48.3, 60.1"
+          }
+        ]
+      },
+      {
+        "id": 92489,
+        "name": "Power Overwhelming",
+        "min": 24,
+        "inside": false,
+        "giver": "High Sorcerer Andromath",
+        "place": "Stormwind City · Mage Quarter · 49, 88",
+        "how": "Забери задание у Andromath до отправления в Даларан.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 92456,
+        "name": "A Green Sample",
+        "min": 24,
+        "inside": false,
+        "giver": "Shylamiir",
+        "place": "Stormwind City · The Park · 32, 63",
+        "how": "Поговори с Shylamiir в Штормграде перед походом.",
+        "faction": "Alliance"
+      }
+    ]
+  },
+  {
+    "id": "sm-graveyard",
+    "name": "Scarlet Monastery: Graveyard",
+    "zone": "Tirisfal Glades",
+    "levels": [
+      28,
+      38
+    ],
+    "recommended": 33,
+    "note": "Кладбище. Пленный Vorrel находится в комнате Interrogator Vishas. Для этого крыла ключ не требуется.",
+    "sources": [
+      "https://www.icy-veins.com/wow-forever/scarlet-monastery-graveyard-quests",
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 1113,
+        "name": "Hearts of Zeal",
+        "min": 30,
+        "inside": false,
+        "giver": "Master Apothecary Faranell",
+        "place": "Undercity · The Apothecarium · 48, 69",
+        "how": "После похода в Razorfen Kraul собери сердца бойцов Алого ордена.",
+        "faction": "Horde",
+        "prereqs": [
+          {
+            "id": 1109,
+            "name": "Going, Going, Guano!",
+            "giver": "Master Apothecary Faranell",
+            "place": "Undercity · The Apothecarium · 48, 69"
+          }
+        ]
+      },
+      {
+        "id": 1051,
+        "name": "Vorrel's Revenge",
+        "min": 25,
+        "inside": true,
+        "giver": "Vorrel Sengutz",
+        "place": "Scarlet Monastery: Graveyard · камера пыток",
+        "how": "Поговори с пленным Vorrel. За его кольцом предстоит отправиться в Alterac Mountains.",
+        "faction": "Horde"
+      }
+    ]
+  },
+  {
+    "id": "gnomer",
+    "name": "Gnomeregan",
+    "zone": "Dun Morogh",
+    "levels": [
+      29,
+      38
+    ],
+    "recommended": 33,
+    "note": "Орда может добраться в Гномреган через телепорт Scooty в Пиратской Бухте. Внутри проверь боковую комнату у Clean Zone.",
+    "sources": [
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 2841,
+        "name": "Rig Wars",
+        "min": 25,
+        "inside": false,
+        "giver": "Nogg",
+        "place": "Orgrimmar · Valley of Honor · 76, 25",
+        "how": "Добудь чертежи из сейфа Thermaplugg. После получения поручения поговори с Sovik о телепорте.",
+        "faction": "Horde"
+      },
+      {
+        "id": 2904,
+        "name": "A Fine Mess",
+        "min": 20,
+        "inside": true,
+        "giver": "Kernobee",
+        "place": "Gnomeregan · боковая комната у Clean Zone",
+        "how": "Освободи и сопроводи Kernobee."
+      },
+      {
+        "id": 2945,
+        "name": "Grime-Encrusted Ring",
+        "min": 28,
+        "inside": true,
+        "giver": "Grime-Encrusted Ring",
+        "place": "Gnomeregan · добыча с противников",
+        "how": "Осмотри покрытое грязью кольцо."
+      },
+      {
+        "id": 2951,
+        "name": "The Sparklematic 5200!",
+        "min": 25,
+        "inside": true,
+        "giver": "The Sparklematic 5200",
+        "place": "Gnomeregan · Clean Zone",
+        "how": "Положи Grime-Encrusted Object в машину для очистки."
+      },
+      {
+        "id": 2922,
+        "name": "Save Techbot's Brain!",
+        "min": 20,
+        "inside": false,
+        "giver": "Tinkmaster Overspark",
+        "place": "Ironforge · Tinker Town · 69, 50",
+        "how": "Найди Techbot в туннелях у входа.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 2928,
+        "name": "Gyrodrillmatic Excavationators",
+        "min": 20,
+        "inside": false,
+        "giver": "Shoni the Shilent",
+        "place": "Stormwind City · Dwarven District · 55, 12",
+        "how": "Возьми поручение на детали механизмов.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 2924,
+        "name": "Essential Artificials",
+        "min": 24,
+        "inside": false,
+        "giver": "Klockmort Spannerspan",
+        "place": "Ironforge · Tinker Town",
+        "how": "Собери предметы из ящиков в Гномрегане.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 2930,
+        "name": "Data Rescue",
+        "min": 25,
+        "inside": false,
+        "giver": "Master Mechanic Castpipe",
+        "place": "Ironforge · Tinker Town · 69, 48",
+        "how": "Используй терминалы в подземелье по порядку.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 2929,
+        "name": "The Grand Betrayal",
+        "min": 25,
+        "inside": false,
+        "giver": "High Tinker Mekkatorque",
+        "place": "Ironforge · Tinker Town · 68, 49",
+        "how": "Победи Mekgineer Thermaplugg в последнем зале.",
+        "faction": "Alliance"
+      }
+    ]
+  },
+  {
+    "id": "sm-library",
+    "name": "Scarlet Monastery: Library",
+    "zone": "Tirisfal Glades",
+    "levels": [
+      29,
+      39
+    ],
+    "recommended": 36,
+    "note": "Библиотека. После Arcanist Doan открой сундук в его комнате и забери The Scarlet Key для следующих двух крыльев.",
+    "sources": [
+      "https://www.wowhead.com/forever/guide/scarlet-monastery-library-dungeon-overview-location-rewards",
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 1048,
+        "name": "Into The Scarlet Monastery",
+        "min": 33,
+        "inside": false,
+        "giver": "Varimathras",
+        "place": "Undercity · Royal Quarter · 56, 92",
+        "how": "В этом крыле цель задания — Houndmaster Loksey. Общее задание охватывает Библиотеку, Оружейную и Собор.",
+        "faction": "Horde"
+      },
+      {
+        "id": 1053,
+        "name": "In the Name of the Light",
+        "min": 34,
+        "inside": false,
+        "giver": "Raleigh the Devout",
+        "place": "Hillsbrad Foothills · Southshore · 51, 58",
+        "how": "В этом крыле цель задания — Houndmaster Loksey. Общее задание охватывает Библиотеку, Оружейную и Собор.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 6141,
+            "name": "Brother Anton",
+            "giver": "Brother Crowley",
+            "place": "Stormwind City · Cathedral of Light"
+          },
+          {
+            "id": 261,
+            "name": "Down the Scarlet Path · Desolace"
+          },
+          {
+            "id": 1052,
+            "name": "Down the Scarlet Path · Southshore"
+          }
+        ]
+      },
+      {
+        "id": 1113,
+        "name": "Hearts of Zeal",
+        "min": 30,
+        "inside": false,
+        "giver": "Master Apothecary Faranell",
+        "place": "Undercity · The Apothecarium · 48, 69",
+        "how": "После похода в Razorfen Kraul собери сердца бойцов Алого ордена.",
+        "faction": "Horde",
+        "prereqs": [
+          {
+            "id": 1109,
+            "name": "Going, Going, Guano!",
+            "giver": "Master Apothecary Faranell",
+            "place": "Undercity · The Apothecarium · 48, 69"
+          }
+        ]
+      },
+      {
+        "id": 1049,
+        "name": "Compendium of the Fallen",
+        "min": 28,
+        "inside": false,
+        "giver": "Sage Truthseeker",
+        "place": "Thunder Bluff · Elder Rise · 35, 28",
+        "how": "Найди в библиотеке Compendium of the Fallen.",
+        "excludeRace": "Undead",
+        "faction": "Horde"
+      },
+      {
+        "id": 1160,
+        "name": "Test of Lore",
+        "min": 25,
+        "inside": false,
+        "giver": "Parqual Fintallas",
+        "place": "Undercity · The Apothecarium · 57.8, 65.0",
+        "how": "Принеси Parqual книгу Beginnings of the Undead Threat.",
+        "faction": "Horde",
+        "prereqs": [
+          {
+            "id": 1149,
+            "name": "Test of Faith",
+            "giver": "Dorn Plainstalker",
+            "place": "Thousand Needles · Weathered Nook"
+          },
+          {
+            "id": 1150,
+            "name": "Test of Endurance"
+          },
+          {
+            "id": 1151,
+            "name": "Test of Strength"
+          },
+          {
+            "id": 1152,
+            "name": "Test of Lore · к Braug"
+          },
+          {
+            "id": 1154,
+            "name": "Test of Lore · Legacy of the Aspects"
+          },
+          {
+            "id": 6627,
+            "name": "Test of Lore · ответ Braug"
+          },
+          {
+            "id": 1159,
+            "name": "Test of Lore · к Parqual"
+          }
+        ]
+      },
+      {
+        "id": 1951,
+        "name": "Rituals of Power",
+        "min": 30,
+        "inside": false,
+        "giver": "Magus Tirth",
+        "place": "Thousand Needles · Shimmering Flats · 78, 75",
+        "how": "Сними книгу Rituals of Power с полки и отнеси Tabetha.",
+        "cls": "Mage",
+        "prereqs": [
+          {
+            "id": 1947,
+            "name": "Journey to the Marsh",
+            "giver": "Наставник магов",
+            "place": "Столица фракции"
+          },
+          {
+            "id": 1949,
+            "name": "Hidden Secrets"
+          },
+          {
+            "id": 1950,
+            "name": "Get the Scoop"
+          }
+        ]
+      },
+      {
+        "id": 1050,
+        "name": "Mythology of the Titans",
+        "min": 28,
+        "inside": false,
+        "giver": "Librarian Mae Paledust",
+        "place": "Ironforge · Hall of Explorers · 75, 12",
+        "how": "Забери книгу из библиотеки монастыря.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 96800,
+        "name": "Past Due",
+        "min": 30,
+        "inside": false,
+        "giver": "Magus Olvek",
+        "place": "Alterac Mountains · Dalaran · 10.7, 64.1",
+        "how": "Верни в Даларан книгу The Lost Magic of the Runemasters.",
+        "faction": "Alliance"
+      }
+    ]
+  },
+  {
+    "id": "rfk",
+    "name": "Razorfen Kraul",
+    "zone": "The Barrens",
+    "levels": [
+      30,
+      40
+    ],
+    "recommended": 31,
+    "note": "Вход на юге Степей. Задание аптекаря Фаранелла открывает продолжение для Алого монастыря.",
+    "sources": [
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 1102,
+        "name": "A Vengeful Fate",
+        "min": 29,
+        "inside": false,
+        "giver": "Auld Stonespire",
+        "place": "Thunder Bluff · 37, 29",
+        "how": "Добудь сердце Charlga Razorflank.",
+        "faction": "Horde"
+      },
+      {
+        "id": 1109,
+        "name": "Going, Going, Guano!",
+        "min": 30,
+        "inside": false,
+        "giver": "Master Apothecary Faranell",
+        "place": "Undercity · The Apothecarium · 48, 69",
+        "how": "Добудь Kraul Guano у летучих мышей и вернись к Faranell за Hearts of Zeal.",
+        "faction": "Horde"
+      },
+      {
+        "id": 6522,
+        "name": "An Unholy Alliance",
+        "min": 28,
+        "inside": true,
+        "giver": "Small Scroll",
+        "place": "Razorfen Kraul · Charlga Razorflank",
+        "how": "Осмотри свиток, который выпадает из Charlga.",
+        "faction": "Horde"
+      },
+      {
+        "id": 1101,
+        "name": "The Crone of the Kraul",
+        "min": 29,
+        "inside": false,
+        "giver": "Falfindel Waywarder",
+        "place": "Feralas · 89, 46",
+        "how": "Победи Charlga Razorflank.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 1100,
+            "name": "Lonebrow’s Journal",
+            "giver": "Lonebrow’s Journal",
+            "place": "Thousand Needles · у Great Lift"
+          }
+        ]
+      },
+      {
+        "id": 1142,
+        "name": "Mortality Wanes",
+        "min": 25,
+        "inside": true,
+        "giver": "Heralath Fallowbrook",
+        "place": "Razorfen Kraul · за последним боссом",
+        "how": "Поговори с Heralath в конце маршрута.",
+        "faction": "Alliance"
+      },
+      {
+        "id": 1221,
+        "name": "Blueleaf Tubers",
+        "min": 20,
+        "inside": false,
+        "giver": "Mebok Mizzyrix",
+        "place": "The Barrens · Ratchet · 62, 37",
+        "how": "Возьми у Mebok снаряжение для поиска клубней до отправления в данж."
+      },
+      {
+        "id": 1144,
+        "name": "Willix the Importer",
+        "min": 22,
+        "inside": true,
+        "giver": "Willix the Importer",
+        "place": "Razorfen Kraul · лагерь у финального босса",
+        "how": "Сопроводи Willix до выхода."
+      }
+    ]
+  },
+  {
+    "id": "sm-armory",
+    "name": "Scarlet Monastery: Armory",
+    "zone": "Tirisfal Glades",
+    "levels": [
+      32,
+      42
+    ],
+    "recommended": 39,
+    "note": "Оружейная. Для двери возьмите The Scarlet Key из Библиотеки. В конце крыла группу ждёт Herod.",
+    "sources": [
+      "https://www.method.gg/wow-forever/dungeons/scarlet-monastery-armory",
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 1048,
+        "name": "Into The Scarlet Monastery",
+        "min": 33,
+        "inside": false,
+        "giver": "Varimathras",
+        "place": "Undercity · Royal Quarter · 56, 92",
+        "how": "В этом крыле победи Herod. Общее задание охватывает Библиотеку, Оружейную и Собор.",
+        "faction": "Horde"
+      },
+      {
+        "id": 1053,
+        "name": "In the Name of the Light",
+        "min": 34,
+        "inside": false,
+        "giver": "Raleigh the Devout",
+        "place": "Hillsbrad Foothills · Southshore · 51, 58",
+        "how": "В этом крыле победи Herod. Общее задание охватывает Библиотеку, Оружейную и Собор.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 6141,
+            "name": "Brother Anton",
+            "giver": "Brother Crowley",
+            "place": "Stormwind City · Cathedral of Light"
+          },
+          {
+            "id": 261,
+            "name": "Down the Scarlet Path · Desolace"
+          },
+          {
+            "id": 1052,
+            "name": "Down the Scarlet Path · Southshore"
+          }
+        ]
+      },
+      {
+        "id": 1113,
+        "name": "Hearts of Zeal",
+        "min": 30,
+        "inside": false,
+        "giver": "Master Apothecary Faranell",
+        "place": "Undercity · The Apothecarium · 48, 69",
+        "how": "После похода в Razorfen Kraul собери сердца бойцов Алого ордена.",
+        "faction": "Horde",
+        "prereqs": [
+          {
+            "id": 1109,
+            "name": "Going, Going, Guano!",
+            "giver": "Master Apothecary Faranell",
+            "place": "Undercity · The Apothecarium · 48, 69"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "drowned",
+    "name": "The Drowned City",
+    "zone": "Stranglethorn Vale",
+    "levels": [
+      35,
+      40
+    ],
+    "recommended": 40,
+    "note": "Вход под водой у западного побережья Тернистой долины. Нейтральные поручения на пиратов выдаёт Krazek в Пиратской Бухте.",
+    "sources": [
+      "https://worldofwarcraft.blizzard.com/en-us/news/24301455/",
+      "https://www.wofwforever.com/en/dungeons/the-drowned-city/",
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 95775,
+        "name": "The Drowned City",
+        "min": 30,
+        "inside": false,
+        "giver": "Kin’weelay",
+        "place": "Stranglethorn Vale · Grom’gol Base Camp · 32.2, 27.8",
+        "how": "Возьми материалы для снятия оттисков в руинах.",
+        "faction": "Horde",
+        "prereqs": [
+          {
+            "id": 629,
+            "name": "The Vile Reef",
+            "giver": "Kin’weelay",
+            "place": "Stranglethorn Vale · Grom’gol Base Camp · 32.2, 27.8"
+          }
+        ]
+      },
+      {
+        "id": 95776,
+        "name": "The Only Good Brinescale...",
+        "min": 30,
+        "inside": false,
+        "giver": "Commander Aggro’gosh",
+        "place": "Stranglethorn Vale · Grom’gol Base Camp · 32.2, 27.8",
+        "how": "Победи Var’Taka в Затонувшем городе.",
+        "faction": "Horde",
+        "prereqs": [
+          {
+            "id": 629,
+            "name": "The Vile Reef",
+            "giver": "Kin’weelay",
+            "place": "Stranglethorn Vale · Grom’gol Base Camp · 32.2, 27.8"
+          },
+          {
+            "id": 95773,
+            "name": "Enemies in the Water"
+          }
+        ]
+      },
+      {
+        "id": 96774,
+        "name": "Ancient Gurubashi Idol",
+        "min": 30,
+        "inside": false,
+        "giver": "Mazu’kon",
+        "place": "Mulgore · Skywatcher Plateau · 32.5, 20.7",
+        "how": "Найди в руинах древнего идола Гурубаши.",
+        "faction": "Horde"
+      },
+      {
+        "id": 95789,
+        "name": "Shady Saltseers",
+        "min": 34,
+        "inside": false,
+        "giver": "Krazek",
+        "place": "Stranglethorn Vale · Booty Bay · 27, 77.2",
+        "how": "Собери десять артефактов у пиратов Saltseer."
+      },
+      {
+        "id": 95791,
+        "name": "The Saltseer Captain",
+        "min": 34,
+        "inside": false,
+        "giver": "Krazek",
+        "place": "Stranglethorn Vale · Booty Bay · 27, 77.2",
+        "how": "Убей трёх Saltseer Coroners и Captain Dreadrise."
+      },
+      {
+        "id": 97130,
+        "name": "Ancient Gurubashi Secrets",
+        "min": 34,
+        "inside": false,
+        "giver": "Archmage Timear",
+        "place": "Alterac Mountains · Dalaran",
+        "how": "Поговори с архимагом в Даларане до похода в руины.",
+        "faction": "Alliance"
+      }
+    ]
+  },
+  {
+    "id": "sm-cathedral",
+    "name": "Scarlet Monastery: Cathedral",
+    "zone": "Tirisfal Glades",
+    "levels": [
+      35,
+      45
+    ],
+    "recommended": 42,
+    "note": "Собор. Возьмите The Scarlet Key из Библиотеки. В финале предстоит бой с Mograine и Whitemane.",
+    "sources": [
+      "https://www.method.gg/wow-forever/dungeons/scarlet-monastery-cathedral",
+      "https://www.wowhead.com/forever/guide/dungeons/every-dungeon-quest-location",
+      "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details"
+    ],
+    "quests": [
+      {
+        "id": 1048,
+        "name": "Into The Scarlet Monastery",
+        "min": 33,
+        "inside": false,
+        "giver": "Varimathras",
+        "place": "Undercity · Royal Quarter · 56, 92",
+        "how": "В этом крыле победи Scarlet Commander Mograine и High Inquisitor Whitemane. Общее задание охватывает Библиотеку, Оружейную и Собор.",
+        "faction": "Horde"
+      },
+      {
+        "id": 1053,
+        "name": "In the Name of the Light",
+        "min": 34,
+        "inside": false,
+        "giver": "Raleigh the Devout",
+        "place": "Hillsbrad Foothills · Southshore · 51, 58",
+        "how": "В этом крыле победи Scarlet Commander Mograine и High Inquisitor Whitemane. Общее задание охватывает Библиотеку, Оружейную и Собор.",
+        "faction": "Alliance",
+        "prereqs": [
+          {
+            "id": 6141,
+            "name": "Brother Anton",
+            "giver": "Brother Crowley",
+            "place": "Stormwind City · Cathedral of Light"
+          },
+          {
+            "id": 261,
+            "name": "Down the Scarlet Path · Desolace"
+          },
+          {
+            "id": 1052,
+            "name": "Down the Scarlet Path · Southshore"
+          }
+        ]
+      }
+    ]
+  }
+]

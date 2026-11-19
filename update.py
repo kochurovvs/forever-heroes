@@ -278,6 +278,9 @@ def main():
     if not args.offline:
         icons = update_icons(heroes, icons)
     catalog = read_json(ROOT / 'dungeons' / 'catalog.json')
+    if config.get('additionalDungeonCatalog'):
+        extra = read_json(ROOT / 'dungeons' / config['additionalDungeonCatalog'])
+        catalog = sorted(catalog + extra, key=lambda dungeon: (dungeon['levels'][0], dungeon['recommended']))
     if 'plannedDungeons' in config:
         planned = set(config['plannedDungeons'])
         for dungeon in catalog:
@@ -296,7 +299,7 @@ def main():
             raise SystemExit(str(error)) from None
     template = (ROOT / 'template.html').read_text(encoding='utf-8')
     title = config.get('title', 'Side Quest Company')
-    template = template.replace('__GROUP_TITLE__', escape(title)).replace('__GROUP_BRAND__', escape(title.upper()))
+    template = template.replace('__GROUP_TITLE__', escape(title)).replace('__GROUP_BRAND__', escape(config.get('title', 'SIDE QUEST COMPANY')))
     directory = args.output.parent / 'assets' if args.pages else None
     if '__ARMORY_ASSETS__' in template:
         assets = dashboard_assets(heroes, directory, online=not args.offline)

@@ -14,8 +14,10 @@ def character_key(name):
 
 
 def applies(quest, character):
+    if quest.get('excludeRace') and quest['excludeRace'] == (character.get('race') or {}).get('name'):
+        return False
     return all(not quest.get(rule) or quest[rule] == (character.get(field) or {}).get('name')
-               for rule, field in (('cls','class'), ('race','race')))
+               for rule, field in (('cls','class'), ('race','race'), ('faction','faction')))
 
 
 def tracked_ids(catalog, character=None):

@@ -6,6 +6,10 @@ ZONES = {
     'Orgrimmar': 1637, 'Thunder Bluff': 1638, 'Undercity': 1497,
     'Tirisfal Glades': 85, 'Silverpine Forest': 130, 'The Barrens': 17,
     'Ashenvale': 331, 'Stonetalon Mountains': 406,
+    'Hillsbrad Foothills': 267, 'Alterac Mountains': 36, 'Arathi Highlands': 45,
+    'Stormwind City': 1519, 'Ironforge': 1537, 'Westfall': 40, 'Wetlands': 11,
+    'Dun Morogh': 1, 'Duskwood': 10, 'Redridge Mountains': 44, 'Feralas': 357,
+    'Stranglethorn Vale': 33, 'Thousand Needles': 400, 'Mulgore': 215,
 }
 COORDINATES = re.compile(r' · (\d+(?:\.\d+)?),\s*(\d+(?:\.\d+)?)$')
 

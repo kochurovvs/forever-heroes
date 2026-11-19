@@ -1,5 +1,5 @@
 {
-  "title": "Группа 2",
+  "title": "WoW энтузиасты",
   "region": "eu",
   "owners": {
     "Боря": [
@@ -18,6 +18,9 @@
       "Дубленка Качественная"
     ]
   },
-  "plannedDungeons": [],
-  "allowMissingQuestJournals": true
+  "plannedDungeons": [
+    "dalaran"
+  ],
+  "allowMissingQuestJournals": true,
+  "additionalDungeonCatalog": "leveling.json"
 }

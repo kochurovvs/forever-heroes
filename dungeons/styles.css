@@ -3,7 +3,7 @@
 #dungeons:not(:target)~.sqc-tabs a[href="#heroes"],#dungeons:target~.sqc-tabs a[href="#dungeons"]{color:#f1d292;border-color:#d1a859}
 #sq-dungeons,#dungeons:target~#sq-heroes{display:none}
 #dungeons:target~#sq-dungeons{display:block}
-#sq-dungeons{--hairline:#473a29;--pale:#f1dcb5;--dim:#bcac93;max-width:940px;margin-inline:auto}
+#sq-dungeons{--tint:#d3b77d;--hairline:#473a29;--pale:#f1dcb5;--dim:#bcac93;max-width:940px;margin-inline:auto}
 .dg-toolbar{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
 .dg-toolbar h1{font:27px/1.15 Georgia,serif;margin:16px 0 10px}
 .dg-toolbar small{font-size:11px;color:var(--dim)}
@@ -69,6 +69,8 @@ __DG_VISIBLE__{display:block}
 }
 @media(max-width:340px){.dg-line{grid-template-columns:minmax(0,1fr) 31px 50px}.dg-bar{display:none}}
 
+.dg-run-note{margin:0;padding:5px 18px 9px;color:#e5ce9e;font-size:14px}
+.dg-dalaran{--tint:#c4a1df}
 .dg-bfd{--tint:#7eb5b8}
 .dg-switch label{flex-direction:column;gap:4px;text-align:center}
 .dg-switch label small{font:11px/1.2 system-ui,sans-serif;color:#c4b297}

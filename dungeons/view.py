@@ -78,6 +78,11 @@ def chain_details(q, progress):
                  f'<p>{escape(origin["action"])}</p></div>')
         source = (f'<a class="walk-source" href="{escape(origin["sources"][0])}" target="_blank" '
                   'rel="noopener noreferrer">Источник по цепочке ↗</a>')
+    elif steps[0].get('giver'):
+        first = steps[0]
+        start = (f'<div class="quest-start"><span class="origin-label">Начало цепочки</span>'
+                 f'<h5>{quest_link(first)}</h5><p>{address(first)}</p>'
+                 + (f'<p>{escape(first["how"])}</p>' if first.get('how') else '') + '</div>')
     focus = chain_focus(route, progress)
     route_start = start if focus else ''
     return ((focus or start) + '<details class="quest-route"><summary>Все шаги и получение квеста</summary>'
@@ -93,6 +98,9 @@ def quest_card(q, level=None, progress=None):
         tags.append('<span class="dg-tag">Взять лично</span>')
     if q['inside']:
         tags.append('<span class="dg-tag inner">Внутри данжа</span>')
+    if q.get('faction'):
+        side = {'Horde': 'Орда', 'Alliance': 'Альянс'}[q['faction']]
+        tags.append(f'<span class="dg-tag">{side}</span>')
     if q.get('cls'):
         tags.append('<span class="dg-tag">'+escape(q['cls'])+'</span>')
     if level is not None and q['min'] > level:
@@ -124,6 +132,10 @@ def member(dungeon, hero, record):
     score_tip = 'Для этого героя нет снимка квестов. Готовность неизвестна.'
     if record is None or not cls.get('name'):
         detail = '<p>Нет снимка Battle.net для этого героя.</p>'
+    elif not available:
+        status = 'Нет заданий'
+        score_tip = 'Для этого героя в каталоге подземелья нет подходящих заданий.'
+        detail = f'<p>{score_tip}</p>'
     else:
         done_ids, active_ids = set(record['done']), set(record['active'])
         done = [q for q in available if q['id'] in done_ids]
@@ -181,9 +193,10 @@ def report(d, heroes, records):
     ready = metric(f'{complete}/{len(heroes)}', f'У {complete} из {len(heroes)} героев все подходящие квесты до входа уже взяты или сданы. Квесты внутри, уровень и экипировка в этот показатель не входят.')
     before = metric(before, 'Столько заданий берут до входа. Диапазон означает, что у героев разных классов или рас набор заданий различается.')
     inside = metric(inside, 'Количество заданий каталога, которые начинаются внутри. Они не входят в показатель готовности до входа.')
+    note = f'<p class="dg-run-note">{escape(d["note"])}</p>' if d.get('note') else ''
     return f'''<section class="dg-report dg-{d["id"]}" id="dg-report-{d["id"]}" data-report="{d["id"]}" aria-label="{escape(d["name"],quote=True)}">
 <header class="dg-report-head"><div><div class="dg-zone">{escape(d["zone"])} · {band}</div><h2>{escape(d["name"])}</h2><div class="dg-recommended">Для группы · {preferred}</div></div><div class="dg-total"><strong>{ready}</strong><span>полностью готовы</span></div></header>
-<p class="dg-legend">До входа <b>{before}</b> · Внутри данжа <b>{inside}</b><span>Засчитаны взятые и сданные квесты для класса и расы героя.</span></p>
+{note}<p class="dg-legend">До входа <b>{before}</b> · Внутри данжа <b>{inside}</b><span>Засчитаны взятые и сданные квесты для класса и расы героя.</span></p>
 <details class="dg-guide"><summary>Где взять квесты и начать цепочки</summary>{quest_groups(d["quests"])}<div class="dg-refs">{sources}</div></details>
 <div class="dg-colheads dg-line" aria-hidden="true"><span>Герой</span><span>До входа</span><span>Статус</span></div>
 <div class="dg-people">{group}</div></section>'''
@@ -193,7 +206,9 @@ def add_dungeons(page, heroes, catalog, snapshot):
     records = snapshot.get('heroes', {})
     times = [r['time'] for r in records.values()]
     when = stamp(max(times)) if times else 'нет снимка'
-    radios = ''.join(f'<input type="radio" class="dg-radio" name="dungeon" id="pick-{d["id"]}" aria-controls="dg-report-{d["id"]}" '+('checked' if d['id']=='wc' else '')+'>' for d in catalog)
+    plans = [d['id'] for d in catalog if d.get('planned')]
+    default = plans[0] if len(plans) == 1 else 'wc'
+    radios = ''.join(f'<input type="radio" class="dg-radio" name="dungeon" id="pick-{d["id"]}" aria-controls="dg-report-{d["id"]}" '+('checked' if d['id']==default else '')+'>' for d in catalog)
     tabs = []
     for d in catalog:
         planned = '<span class="dg-planned-label">В планах</span>' if d['planned'] else ''
