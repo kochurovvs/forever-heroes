@@ -1,0 +1,20 @@
+<div id="cc-preview">
+  <div class="cc-modes" role="group" aria-label="Разделы подземелий">
+    <button type="button" data-cc-mode="company" aria-pressed="true">С кем ходили</button>
+    <button type="button" data-cc-mode="quests" aria-pressed="false">Квесты и подготовка</button>
+    <button type="button" data-cc-mode="catalog" aria-pressed="false">Справочник статистики</button>
+  </div>
+  <section id="cc-company" aria-labelledby="cc-title">
+    <div class="cc-heading"><div><h2 id="cc-title">С кем ходили</h2><p>Выбери героя, чтобы увидеть, с кем у него совпало время победы над боссом.</p></div></div>
+    <div class="cc-controls"><label>Герой<select id="cc-hero" aria-label="Герой для журнала"></select></label><label>Подземелье<select id="cc-dungeon" aria-label="Фильтр по подземелью"></select></label></div>
+    <div class="cc-columns">
+      <aside class="cc-aside" aria-label="Выбранный герой и его напарники"><div id="cc-identity"></div><h3>Напарники</h3><div id="cc-companions"></div></aside>
+      <section aria-labelledby="cc-recordtitle" class="cc-journal"><div class="cc-journalhead"><h3 id="cc-recordtitle">Совпадения по боссам</h3><span id="cc-count"></span></div><div id="cc-pair"></div><div id="cc-events" aria-live="polite"></div></section>
+    </div>
+    <details class="cc-method"><summary>Как определены напарники</summary><p>Мы сопоставили ID счётчика босса и время его последнего изменения у героев разных игроков. В журнал попадают только точные совпадения до секунды. Имена на карточке принадлежат героям компании, у которых сохранилась эта отметка. Полный состав группы и конкретные действия в бою подтверждает боевой лог.</p><p>Повторная победа заменяет время предыдущей. По одной выгрузке часть старых напарников пропадёт из истории. Два босса одного забега могут дать две записи. Число на странице относится к совпавшим отметкам боссов.</p></details>
+  </section>
+  <section id="cc-catalog" hidden aria-labelledby="cc-catalogtitle"><div class="cc-heading"><div><h2 id="cc-catalogtitle">Справочник статистики</h2><p>Какие вопросы о походе можно задать и где взять ответ.</p></div></div>
+  __CATALOG__
+  </section>
+  <noscript><p>Для переключения героев и подземелий откройте HTML в браузере с включённым JavaScript.</p></noscript>
+</div>
