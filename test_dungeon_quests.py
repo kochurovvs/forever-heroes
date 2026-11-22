@@ -82,7 +82,7 @@ class DungeonQuestsTest(unittest.TestCase):
 
     def test_all_dungeons_have_levels_and_working_tabs(self):
         catalog = json.loads((Path(__file__).parent/'dungeons/catalog.json').read_text())
-        self.assertEqual({d['id'] for d in catalog if d['planned']}, {'rol','wc'})
+        self.assertEqual({d['id'] for d in catalog if d['planned']}, {'wc','sfk'})
         base = '<style></style><main><header></header><h1>Heroes</h1></main><div id="hover-tip"></div>'
         html = add_dungeons(base,[self.hero],catalog,{})
         self.assertIn('Blackfathom Deeps',html)

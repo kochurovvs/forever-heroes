@@ -190,7 +190,7 @@
       20
     ],
     "recommended": 18,
-    "planned": true
+    "planned": false
   },
   {
     "id": "wc",
@@ -416,7 +416,7 @@
       30
     ],
     "recommended": 23,
-    "planned": false
+    "planned": true
   },
   {
     "id": "bfd",
