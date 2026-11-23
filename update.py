@@ -298,6 +298,8 @@ def main():
         except RuntimeError as error:
             raise SystemExit(str(error)) from None
     template = (ROOT / 'template.html').read_text(encoding='utf-8')
+    theme = args.roster.parent / 'theme.css'
+    template = template.replace('__GROUP_STYLES__', theme.read_text(encoding='utf-8') if theme.is_file() else '')
     title = config.get('title', 'Side Quest Company')
     template = template.replace('__GROUP_TITLE__', escape(title)).replace('__GROUP_BRAND__', escape(config.get('title', 'SIDE QUEST COMPANY')))
     directory = args.output.parent / 'assets' if args.pages else None

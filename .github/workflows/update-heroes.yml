@@ -8,6 +8,7 @@ on:
     paths:
       - 'roster.json'
       - 'group-2/roster.json'
+      - 'dungeon-enjoyers/**'
       - 'update.py'
       - 'template.html'
       - 'dungeons/**'
@@ -49,6 +50,7 @@ jobs:
         run: |
           python update.py --pages --output _site/index.html
           python update.py --roster group-2/roster.json --pages --output _site/group-2/index.html
+          python update.py --roster dungeon-enjoyers/roster.json --pages --output _site/dungeon-enjoyers/index.html
       - name: Set Pages artifact name
         id: site
         run: echo "name=github-pages-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"

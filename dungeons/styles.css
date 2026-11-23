@@ -13,7 +13,7 @@
 .dg-switch{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:0 0 9px}
 .dg-switch label{display:flex;align-items:center;justify-content:center;padding:8px 6px;min-height:37px;line-height:1.1;border:1px solid #574830;border-radius:4px;background:#211c15;color:#c5b59b;cursor:pointer;font:600 14px/1.2 Georgia,serif}
 .dg-switch label:hover{background:#32291e;color:#f8e4c1}
-__DG_SELECTED__{color:#f7e9cc;border-color:var(--tint);box-shadow:inset 0 -2px var(--tint);background:#2e2a21}
+__DG_SELECTED__{color:var(--selected-text,#f7e9cc);border-color:var(--tint);box-shadow:inset 0 -2px var(--tint);background:var(--selected-bg,#2e2a21)}
 __DG_FOCUSED__,#sq-dungeons :is(summary,button,select,input,textarea):focus-visible,.sqc-tabs a:focus-visible{outline:2px solid #efcb84;outline-offset:-2px}
 .dg-report{display:none;border:1px solid #605036;border-radius:5px;background:#211c15;overflow:hidden}
 __DG_VISIBLE__{display:block}

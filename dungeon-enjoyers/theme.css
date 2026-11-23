@@ -1,0 +1,112 @@
+:root {
+  --gold: #8ad8ff;
+  --muted: #a6bfd4;
+  --line: #375974;
+  --deep: #091828;
+  --surface: #10263b;
+  --stripe: #152f47;
+  --raised: #1c405b;
+  --ice: #e4f5ff;
+}
+
+body {
+  color: var(--ice);
+  background: radial-gradient(ellipse at 80% 0%, #113653 0, transparent 45rem), #091522;
+}
+main > header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  gap: 1rem;
+  padding: clamp(1.1rem, 3vw, 2.25rem);
+  border: 1px solid #356889;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(108deg, #0e2941 16%, #194667 70%, #245b7b);
+}
+main > header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    repeating-radial-gradient(circle at 82% 95%, transparent 0 31px, #9ae4ff28 32px, transparent 33px 46px),
+    repeating-linear-gradient(135deg, transparent 0 39px, #a2e7ff0e 40px, transparent 41px 60px);
+  mask-image: linear-gradient(to right, transparent 20%, black);
+}
+.brand { font-size: clamp(1.65rem, 4vw, 2.75rem); letter-spacing: .015em; line-height: 1.12; color: #edfaff }
+.eyebrow { margin-bottom: .42rem; color: #a4dcf6; letter-spacing: .18em }
+.region { flex-shrink: 0; border-color: #5287a5; background: #102e46; color: #d3f1ff }
+.sqc-tabs { gap: 1.25rem; padding-inline: clamp(.75rem, 3vw, 2.25rem); background: var(--deep); border-color: var(--line) }
+.sqc-tabs a { color: var(--muted); padding-block: .7rem }
+#dungeons:not(:target) ~ .sqc-tabs a[href="#heroes"],
+#dungeons:target ~ .sqc-tabs a[href="#dungeons"] { color: #a0e2ff; border-color: #7bd0f9 }
+h1, h2, .report-head h2, .report-panel h3, .sheet-top h3 { color: var(--ice) }
+input, select, .person, .mode-picker, .rank-disclosure summary, #metric-pager button {
+  background: var(--deep); color: var(--ice); border-color: var(--line);
+}
+input::placeholder { color: var(--muted) }
+:focus-visible, .matrix :focus-visible, #matrix-wrap button:focus-visible { outline-color: #8de0ff }
+.compact-option, #expand, .person b, .sectiontitle, .sheet-top a { color: var(--gold) }
+.compact-option input { accent-color: #79cdff }
+#matrix-wrap, .matrix-tools, .matrix td, .matrix th, .matrix .metric-value, .matrix .th-metric,
+.matrix .m-level, .report-head, footer { border-color: var(--line) }
+#matrix-wrap, .matrix, .matrix .compare-row, .matrix.is-roster .compare-row { background: var(--surface) }
+.matrix-tools, .matrix th, .profession-ranks th { background: #18354e }
+.mode-picker button { color: var(--muted) }
+.mode-picker button[aria-pressed=true] { color: var(--ice); border-color: #527f9e; background: var(--raised) }
+.matrix .compare-row.shaded, .matrix.is-roster .compare-row.shaded { background: var(--stripe) }
+.matrix .compare-row:is(:hover,:focus-within,.expanded),
+.matrix.is-roster .compare-row:is(:hover,:focus-within,.expanded) { background: var(--raised) }
+.matrix .m-sort, .field-picker span, #metric-page, .panel-caption, .report-head p,
+.matrix .missing, .metric-value .denom, .mobile-owner, .legend { color: var(--muted) }
+.matrix .sort-mark, .matrix .level-number, .matrix .m-sort:hover, .matrix th[aria-sort] .m-sort { color: var(--gold) }
+.matrix .th-metric[aria-sort] { box-shadow: inset 0 -2px var(--gold) }
+.matrix td.m-owner, .matrix.is-roster td.m-owner, .matrix .identity-value, .metric-value { color: var(--ice) }
+#matrix-wrap .matrix-detail .detailbox, .armory-sheet, #hover-tip, #map-dialog {
+  background: var(--deep); border-color: var(--line); color: var(--ice);
+}
+.sheet-top, .sheet-foot, .report-panel, .dg-report-head { background: linear-gradient(115deg, #193953, #102338) }
+.sheet-kicker, .sheet-top p, .sheet-foot, .map-heading small, .map-caption { color: var(--muted) }
+.analytics { --edge: var(--line); --bar: #74b6e2; --teal: #77cde5 }
+.level-bin, .profession-ranks th, .profession-ranks tbody th { color: var(--muted) }
+.bin-bar { background: linear-gradient(#81d8f8, #3884b2) }
+.level-bin[aria-pressed="true"] .bin-bar { background: linear-gradient(#d1f5ff, #62bff0) }
+.report-meter { background: #263f54 }
+#snapshot-roster { color: var(--ice) }
+#snapshot-roster .shell, #snapshot-roster .paper, #snapshot-roster .picks { background: var(--surface); border-color: var(--line) }
+#snapshot-roster .bar, #snapshot-roster .paper thead th { color: var(--ice); background: #18354e }
+#snapshot-roster .paper tbody tr:nth-child(even) { background: var(--stripe) }
+#snapshot-roster .paper th, #snapshot-roster .paper td, #snapshot-roster .modebar { border-color: var(--line) }
+#snapshot-roster .bar label, #snapshot-roster .avatar { color: var(--muted) }
+#snapshot-roster .level-number { color: var(--gold) }
+
+#sq-dungeons { --tint: #89ccec; --hairline: var(--line); --pale: var(--ice); --dim: var(--muted); --selected-text: var(--ice); --selected-bg: var(--raised) }
+.dg-switch label, .dg-report, .dg-guide, .dg-body, .map-point, .map-close {
+  background: var(--surface); border-color: var(--line); color: var(--ice);
+}
+.dg-switch label:hover, .dg-member > summary:hover, .dg-member[open] > summary { background: var(--raised) }
+.dg-switch label small, .dg-legend, .dg-owner, .dg-total span, .dg-total small,
+.dg-run-note, .dg-recommended, .dg-row p, .quest-route > summary { color: var(--muted) }
+.dg-member { border-color: var(--line) }
+.dg-member:not(.is-ready) { --progress: #69b8e8; --status: #b8d8ed }
+.dg-body, .dg-colheads { background: var(--deep) }
+.dg-colheads, .dg-name, .dg-total strong, .dg-score b, .dg-row b, .dg-group h4, .map-heading h2 { color: var(--ice) }
+.dg-guide > summary, .dg-quest-list summary, .dg-legend b, .dg-profile, .dg-row-head a, .map-atlas { color: var(--gold) }
+.quest-start:not(.quest-focus), .dg-chain { background: var(--stripe); border-left-color: var(--gold) }
+.quest-start h5 a, .quest-start .origin-label { color: #baebff }
+.dg-bar { background: #29445b }
+
+@media (max-width: 700px) {
+  .matrix.is-roster .compare-row td, .matrix.is-roster .compare-row td:first-child,
+  .matrix.is-roster .compare-row td:last-child { border-color: var(--line); box-shadow: inset 0 -4px var(--deep) }
+  .matrix.is-roster .level-number, #fh-compare:not(:checked) ~ .panel .level-number {
+    border-color: #547d99; background: #1b3b55; color: var(--ice);
+  }
+  .matrix.is-roster .icon-pair::after { color: var(--muted) }
+  #fh-compare:not(:checked) ~ .panel .paper tbody tr { background: var(--surface) }
+  #fh-compare:not(:checked) ~ .panel .paper tbody :is(td, th) { border-color: var(--line); box-shadow: inset 0 -4px var(--deep) }
+}
+@media (max-width: 480px) {
+  main > header { flex-wrap: wrap; gap: .55rem }
+  .region { padding: .2rem .55rem }
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Dungeon Enjoyers",
+  "region": "eu",
+  "owners": {
+    "Саша": ["Cassandra LuckyBlue"],
+    "Никита": ["Jay Signs"],
+    "Сеня": ["Fombur McBomfrey"],
+    "Света": ["Brunara Eirvald"]
+  },
+  "plannedDungeons": [],
+  "allowMissingQuestJournals": true,
+  "additionalDungeonCatalog": "leveling.json"
+}
