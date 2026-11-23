@@ -1,0 +1,28 @@
+name: Snapshot armory books and recipes
+on:
+  push:
+    branches: [preview/armory-books-recipes-20261123]
+    paths:
+      - .github/workflows/snapshot-armory-books.yml
+      - snapshot_armory_books.py
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Fetch profession books and library turn-ins from Battle.net
+        env:
+          BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
+          BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
+        run: python snapshot_armory_books.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: armory-books-recipes
+          path: armory-books-recipes.json
+          if-no-files-found: error
+          retention-days: 1
