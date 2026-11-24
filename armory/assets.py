@@ -40,13 +40,15 @@ def profile_media(heroes):
     return urls
 
 
-def dashboard_assets(heroes, directory, online):
+def dashboard_assets(heroes, directory, online, craft_icons=()):
     result = {'heroes': {}, 'backgrounds': {}, 'icons': {}, 'slots': {}, 'maps': {}}
     for group, folder in [('slots', ROOT/'armory/slots'), ('maps', ROOT/'dungeons/maps')]:
         for file in sorted(folder.glob('*.webp')):
             result[group][file.stem] = asset_url(file.read_bytes(), 'webp', directory)
 
     media = profile_media(heroes)
+    media.update({url: 'icons' for url in craft_icons
+                  if url.startswith('https://wow.zamimg.com/images/wow/icons/large/')})
     # Standalone and offline builds keep original image links. Live Pages takes a
     # local copy so visiting players don't depend on an extra cross-origin request.
     for url, group in media.items():
@@ -58,7 +60,7 @@ def dashboard_assets(heroes, directory, online):
 
     def fetch(entry):
         url, group = entry
-        if not url.startswith('https://render.worldofwarcraft.com/'):
+        if not url.startswith(('https://render.worldofwarcraft.com/', 'https://wow.zamimg.com/images/wow/icons/large/')):
             return
         try:
             request = Request(url, headers={'User-Agent': 'ForeverRoster/1.0'})

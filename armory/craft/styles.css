@@ -1,0 +1,58 @@
+.armory-sheet .wc-panel {
+  background:var(--craft-surface,linear-gradient(115deg,#24281f,#1c1e18 60%,#1c1b17)); border-top:1px solid var(--craft-line,#566047);
+  padding:clamp(15px,2.4vw,25px); color:#e9e3d4; text-align:left; white-space:normal;
+  font:400 1rem/1.5 system-ui,sans-serif; letter-spacing:normal;
+}
+
+.wc-panel .wc-extra {margin:0;padding:0;border:0;background:transparent}
+.armory-sheet .wc-panel {padding-block:6px}
+.wc-extra summary {display:list-item;padding:.55rem 0;cursor:pointer;color:#d6c7a5;font:600 .9rem/1.5 system-ui,sans-serif}
+.wc-extra summary span {color:#a6a28c}
+.wc-extra summary:hover,.wc-extra a:hover {color:#f4d792}
+.wc-extra :is(summary,a):focus-visible {outline:2px solid #d9bd80;outline-offset:2px}
+.wc-extra ul {list-style:none;padding:0;margin:.5rem 0}
+.wc-extra li {display:flex;align-items:flex-start;gap:.6rem;margin:.6rem 0;font-size:.86rem}
+.wc-extra img {width:26px;height:26px;flex:none;border-radius:3px;object-fit:cover}
+.wc-extra a {color:#ddc58d;text-decoration:underline;text-underline-offset:3px}
+.wc-extra li p {color:#cfc7b6;font:400 .82rem/1.5 system-ui,sans-serif;margin:.1rem 0}
+.wc-extra li .wc-effects {margin-top:.15rem;overflow-wrap:anywhere}
+.wc-direct {--verdict:#b1d0a3;--craft-frame:#91ec83}
+.wc-role {--verdict:#a5c8d9;--craft-frame:#63caff}
+.wc-marginal {--verdict:#dbbd88;--craft-frame:#f2bf62}
+.wc-unknown {--verdict:#b9b0c2;--craft-frame:#c7a7e1}
+.wc-extra li .wc-effects,#hover-tip:has(.wc-verdict) {color:#e1d9c9;font:400 .82rem/1.45 system-ui;letter-spacing:normal}
+.wc-why,.wc-talent,.wc-heading {color:#c8bfaf}
+.wc-line,.wc-talent {margin-top:.24rem}
+.wc-number {font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.wc-up {color:#a9cca3}
+.wc-down {color:#daa3a0}
+#hover-tip:has(.wc-verdict) {max-width:min(390px,calc(100vw - 12px));padding:10px 13px;white-space:normal}
+/* Item titles share a verdict in the tooltip and in the maker's list. */
+.wc-craft-title {display:block;min-width:0;white-space:normal;overflow-wrap:anywhere;text-wrap:pretty}
+.wc-item-name {font-weight:600;color:#e6d7b8}
+.wc-verdict {display:inline-block;vertical-align:baseline;white-space:nowrap;margin-inline-start:.15em;
+  color:var(--verdict);font:600 .69rem/1.3 system-ui,sans-serif;letter-spacing:normal}
+.wc-verdict > span {font-weight:700}
+.wc-extra .wc-order {flex:1;min-width:0}
+.wc-extra .wc-craft-title,#hover-tip .wc-craft-title {font:600 .88rem/1.4 system-ui,sans-serif}
+.wc-extra .wc-item-name {text-decoration-thickness:1px;text-underline-offset:.16em}
+#hover-tip .wc-craft-title {margin-bottom:.26rem}
+.paper-stage {--wc-rail:40px;--wc-gap:5px}
+.wc-slot-pair {display:grid;min-width:0;align-content:center;column-gap:var(--wc-gap)}
+.paper-left .wc-slot-pair {grid-template-columns:var(--wc-rail) minmax(0,1fr);--gear-column:2;--craft-column:1}
+.paper-right .wc-slot-pair {grid-template-columns:minmax(0,1fr) var(--wc-rail);--gear-column:1;--craft-column:2}
+.wc-slot-pair > .paper-slot {grid-column:var(--gear-column,1);grid-row:1}
+.wc-candidate {grid-column:var(--craft-column,1);grid-row:1;place-self:center;display:grid;
+  padding:0;border:0;border-radius:4px;background:transparent;box-shadow:none;cursor:pointer}
+.wc-candidate > .slot-icon {border:2px solid var(--craft-frame);box-shadow:0 0 0 1px #161411}
+.wc-candidate:focus-visible {outline:2px solid #ebc56f;outline-offset:2px}
+.paper-weapons .wc-slot-pair {grid-template-columns:minmax(0,1fr);min-width:115px;max-width:29%;align-content:start;row-gap:4px}
+.paper-weapons .wc-slot-pair > .paper-slot {min-width:0;max-width:none}
+.paper-weapons .wc-candidate {grid-row:2}
+@media(max-width:700px) {
+  .paper-stage {--wc-rail:34px;--wc-gap:3px}
+  .paper-weapons .wc-slot-pair {min-width:0;max-width:32%;flex:1}
+}
+@media(max-width:520px) {
+  .paper-stage:has(.wc-slot-pair) {grid-template-columns:minmax(0,1fr) minmax(70px,.95fr) minmax(0,1fr)}
+}

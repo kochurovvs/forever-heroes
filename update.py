@@ -17,6 +17,7 @@ import urllib.parse
 from pathlib import Path
 
 from armory.assets import dashboard_assets, split_resources
+from armory.craft import collect as craft
 from dungeons import quests
 from dungeons.view import add_dungeons
 
@@ -304,8 +305,18 @@ def main():
     template = template.replace('__GROUP_TITLE__', escape(title)).replace('__GROUP_BRAND__', escape(config.get('title', 'SIDE QUEST COMPANY')))
     directory = args.output.parent / 'assets' if args.pages else None
     if '__ARMORY_ASSETS__' in template:
-        assets = dashboard_assets(heroes, directory, online=not args.offline)
+        if args.offline:
+            members = {h['character']['slug'] for h in heroes if h.get('character') and h['character'].get('slug')}
+            matches = [m for m in cached_data.get('craft', [])
+                       if m['h']['key'] in members and all(maker['key'] in members for maker in m['makers'])]
+        else:
+            matches = craft.collect(config['region'], heroes)
+        data['craft'] = matches
+        craft_icons = {m['r']['icon'] for m in matches}
+        assets = dashboard_assets(heroes, directory, online=not args.offline, craft_icons=craft_icons)
         template = (template.replace('__ARMORY_ASSETS__', json.dumps(assets, separators=(',', ':')).replace('<', '\\u003c'))
+                    .replace('__CRAFT_STYLES__', (ROOT/'armory/craft/styles.css').read_text(encoding='utf-8'))
+                    .replace('__CRAFT_VIEW__', (ROOT/'armory/craft/panel.js').read_text(encoding='utf-8'))
                     .replace('__EQUIPMENT_VIEW__', (ROOT/'armory/equipment.js').read_text(encoding='utf-8'))
                     .replace('__DUNGEON_INTERACTIONS__', (ROOT/'dungeons/interactions.js').read_text(encoding='utf-8')))
     html = render_dashboard(template, data, icons)

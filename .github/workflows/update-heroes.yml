@@ -7,7 +7,7 @@ on:
     branches: [main]
     paths:
       - 'roster.json'
-      - 'group-2/roster.json'
+      - 'group-2/**'
       - 'dungeon-enjoyers/**'
       - 'update.py'
       - 'template.html'

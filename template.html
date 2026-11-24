@@ -654,6 +654,7 @@ __SNAPSHOT_ICON_STYLES__
   #snapshot-roster .paper tbody .who{padding-bottom:37px}
 }
 @media(max-width:360px){ #snapshot-roster .paper tbody .who{padding-bottom:47px}}
+__CRAFT_STYLES__
 __GROUP_STYLES__
 </style>
 <div class="shell">
@@ -780,7 +781,7 @@ __GROUP_STYLES__
 </div>
 
 </div>
-</div><div id="interactive-roster" hidden><p class="intro">Нажмите на имя героя, чтобы посмотреть экипировку.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select></div><div class="view-options" id="roster-view">
+</div><div id="interactive-roster" hidden><p class="intro">Нажмите на имя героя, чтобы посмотреть экипировку и рекомендации по крафту.</p><div id="counts" class="counts"></div><div class="toolbar"><input id="search" aria-label="Поиск персонажа, игрока или профессии" placeholder="Имя героя, игрок или профессия…"><select id="owner" aria-label="Владелец"><option value="">Все владельцы</option></select><select id="profession" aria-label="Профессия"><option value="">Все профессии</option></select></div><div class="view-options" id="roster-view">
   <label class="compact-option"><input id="compact" type="checkbox"> Сравнить героев</label>
   <button id="expand" type="button">Раскрыть все</button>
   <a class="report-shortcut" href="#analytics">Аналитика ↓</a>
@@ -878,7 +879,9 @@ function displaySnapshotTime() {
   document.addEventListener('visibilitychange', updateAge);
 }
 displaySnapshotTime();
-const opened=new Set();let visible=[];
+const requestedHero = new URLSearchParams(location.search).get('hero');
+const requestedIndex = DATA.heroes.findIndex(h=>requestedHero && h.character?.slug===requestedHero);
+const opened=new Set(requestedIndex < 0 ? [] : [requestedIndex]);let visible=[];
 const categories = {}, fieldLabels = new Map(), abbreviations = {};
 for (const mode of ['stats','prof']) {
   const groups = document.querySelectorAll('#snapshot-roster .panel-fh-' + mode + ' [data-group]');
@@ -929,6 +932,8 @@ function itemTooltip(item) {
   }
   return lines.length ? lines.join('\n') : 'В оружейной нет характеристик для этого предмета.';
 }
+__CRAFT_VIEW__
+const guildCraft=createGuildCraft(DATA.craft || [],armoryAssets,esc);
 __EQUIPMENT_VIEW__
 function updateButton(){$('#expand').textContent=visible.length&&visible.every(i=>opened.has(i))?'Свернуть все':'Раскрыть все'}
 const sortValues = {
@@ -1073,7 +1078,7 @@ function drawComparison(columnsOnly = false) {
       row.querySelectorAll('.identity-value,.metric-value').forEach(cell => cell.remove());
       row.lastElementChild.insertAdjacentHTML('beforebegin',middleCells(Number(row.dataset.index),columns));
     }
-    for (const cell of matrix.tBodies[0].querySelectorAll('.matrix-detail td,.no-profiles')) {
+    for (const cell of matrix.tBodies[0].querySelectorAll('.matrix-detail > td,.no-profiles')) {
       cell.colSpan = columns.length + (narrow.matches ? 2 : 3);
     }
     return;
@@ -1145,7 +1150,12 @@ function showTooltip(anchor) {
   if (!anchor || anchor === tipAnchor) return;
   hideTooltip();
   tipAnchor = anchor;
-  tip.textContent = anchor.dataset.tip;
+  const detail = anchor.classList.contains('wc-candidate') && anchor.nextElementSibling;
+  if (detail instanceof HTMLTemplateElement && detail.classList.contains('wc-tip')) {
+    tip.replaceChildren(detail.content.cloneNode(true));
+  } else {
+    tip.textContent = anchor.dataset.tip;
+  }
   anchor.setAttribute('aria-describedby', tip.id);
   tip.hidden = false;
   const rect = anchor.getBoundingClientRect();

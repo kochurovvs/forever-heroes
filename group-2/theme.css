@@ -1,0 +1,12 @@
+:root {
+  --gold: #bbd396;
+  --muted: #a3b198;
+  --line: #4c6147;
+  --craft-surface: linear-gradient(115deg,#293728,#1b231c);
+  --craft-line: #556c4c;
+}
+body { background: radial-gradient(ellipse at 50% -20%,#354a2d,transparent 65%),#171d17 }
+main > header, .sqc-tabs { border-color: var(--line) }
+.brand, h1, .sheet-top h3, .report-head h2 { color: #d6e3bc }
+.matrix-tools, .report-panel, .sheet-top, .sheet-foot { background: linear-gradient(115deg,#2c3729,#20281f) }
+#sq-dungeons { --tint: var(--gold); --hairline: var(--line); --selected-bg: #303f2a }

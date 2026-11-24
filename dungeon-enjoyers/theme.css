@@ -1,4 +1,6 @@
 :root {
+  --craft-surface: linear-gradient(115deg,#162e41,#101f30);
+  --craft-line: #42677c;
   --gold: #8ad8ff;
   --muted: #a6bfd4;
   --line: #375974;
@@ -13,31 +15,12 @@ body {
   color: var(--ice);
   background: radial-gradient(ellipse at 80% 0%, #113653 0, transparent 45rem), #091522;
 }
-main > header {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  gap: 1rem;
-  padding: clamp(1.1rem, 3vw, 2.25rem);
-  border: 1px solid #356889;
-  border-radius: 8px 8px 0 0;
-  background: linear-gradient(108deg, #0e2941 16%, #194667 70%, #245b7b);
-}
-main > header::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background:
-    repeating-radial-gradient(circle at 82% 95%, transparent 0 31px, #9ae4ff28 32px, transparent 33px 46px),
-    repeating-linear-gradient(135deg, transparent 0 39px, #a2e7ff0e 40px, transparent 41px 60px);
-  mask-image: linear-gradient(to right, transparent 20%, black);
-}
-.brand { font-size: clamp(1.65rem, 4vw, 2.75rem); letter-spacing: .015em; line-height: 1.12; color: #edfaff }
-.eyebrow { margin-bottom: .42rem; color: #a4dcf6; letter-spacing: .18em }
-.region { flex-shrink: 0; border-color: #5287a5; background: #102e46; color: #d3f1ff }
-.sqc-tabs { gap: 1.25rem; padding-inline: clamp(.75rem, 3vw, 2.25rem); background: var(--deep); border-color: var(--line) }
-.sqc-tabs a { color: var(--muted); padding-block: .7rem }
+main > header { border-color: #356889; background: linear-gradient(108deg,#0e2941,#245b7b) }
+.brand { color: #edfaff }
+.eyebrow { color: #a4dcf6 }
+.region { border-color: #5287a5; background: #102e46; color: #d3f1ff }
+.sqc-tabs { background: var(--deep); border-color: var(--line) }
+.sqc-tabs a { color: var(--muted) }
 #dungeons:not(:target) ~ .sqc-tabs a[href="#heroes"],
 #dungeons:target ~ .sqc-tabs a[href="#dungeons"] { color: #a0e2ff; border-color: #7bd0f9 }
 h1, h2, .report-head h2, .report-panel h3, .sheet-top h3 { color: var(--ice) }
@@ -105,8 +88,4 @@ input::placeholder { color: var(--muted) }
   .matrix.is-roster .icon-pair::after { color: var(--muted) }
   #fh-compare:not(:checked) ~ .panel .paper tbody tr { background: var(--surface) }
   #fh-compare:not(:checked) ~ .panel .paper tbody :is(td, th) { border-color: var(--line); box-shadow: inset 0 -4px var(--deep) }
-}
-@media (max-width: 480px) {
-  main > header { flex-wrap: wrap; gap: .55rem }
-  .region { padding: .2rem .55rem }
 }

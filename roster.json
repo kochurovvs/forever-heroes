@@ -32,5 +32,10 @@
     "Стас": [
       "Aloy Cosem"
     ]
-  }
+  },
+  "additionalDungeonCatalog": "leveling.json",
+  "plannedDungeons": [
+    "wc",
+    "sfk"
+  ]
 }

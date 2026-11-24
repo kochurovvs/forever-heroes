@@ -26,13 +26,13 @@ function details(h) {
   const appearance = photo ? '<img class="paper-hero" src="'+esc(photo)+'" alt="'+esc(h.name)+'">' : '<span class="no-render">Изображение недоступно</span>';
   const spec = c.specs?.find(s => s.active)?.name;
   const gear = c.gear || {};
-  const column = (side, slots) => '<div class="paper-'+side+'">'+slots.map(slot => renderSlot(gear, slot)).join('')+'</div>';
+  const column = (side, slots) => '<div class="paper-'+side+'">'+slots.map(slot => guildCraft.renderSlotPair(c.slug, slot[0], renderSlot(gear, slot))).join('')+'</div>';
   const weapons = c.showRangedSlot || gear.ranged ? weaponSlots : weaponSlots.slice(0,2);
   const subtitle = [c.race?.name,c.class?.name,spec].filter(Boolean).map(esc).join(' · ');
   const stamp = time(c.lastUpdatedTimestamp?.iso8601);
-  return '<section class="armory-sheet" aria-label="Экипировка '+esc(h.name)+'">'+
+  return '<section class="armory-sheet" id="armory-'+esc(c.slug)+'" aria-label="Экипировка '+esc(h.name)+'">'+
     '<div class="sheet-top"><div><div class="sheet-kicker">Экипировка</div><h3>'+esc(h.name)+'</h3><p>'+subtitle+'</p></div>'+profile+'</div>'+
     '<div class="paper-stage"'+(background?' style="--backdrop:url('+esc(background)+')"':'')+'>'+
     column('left',leftSlots)+'<div class="paper-figure">'+appearance+'</div>'+column('right',rightSlots)+column('weapons',weapons)+'</div>'+
-    '<div class="sheet-foot"><span>Характеристики предмета — при наведении или касании.</span><span>Снимок профиля · '+stamp+' МСК</span></div></section>';
+    '<div class="sheet-foot"><span>' + (guildCraft.best(c.slug) ? 'Снаружи — крафт гильдии. Наведите или нажмите на иконку, чтобы увидеть замену и мастера.' : 'Характеристики предмета — при наведении или касании.') + '</span><span>Снимок профиля · '+stamp+' МСК</span></div>'+guildCraft.renderPanel(h)+'</section>';
 }

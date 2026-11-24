@@ -1,0 +1,2666 @@
+[
+  {
+    "id": 7026,
+    "name": "Linen Belt",
+    "slot": "waist",
+    "type": "Cloth",
+    "level": 4,
+    "ilvl": 9,
+    "stats": {
+      "Armor": 9
+    },
+    "bind": "unbound",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/linen-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_05.jpg"
+  },
+  {
+    "id": 277037,
+    "name": "Azure Stormsewn Cord",
+    "slot": "waist",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 11
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/azure-stormsewn-cord/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277013,
+    "name": "Cloudy Stormsewn Cord",
+    "slot": "waist",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 11
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/cloudy-stormsewn-cord/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277035,
+    "name": "Azure Stormsewn Cuffs",
+    "slot": "wrist",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Intellect": 1,
+      "Armor": 8
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/azure-stormsewn-cuffs/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277011,
+    "name": "Cloudy Stormsewn Cuffs",
+    "slot": "wrist",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Intellect": 1,
+      "Armor": 8
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/cloudy-stormsewn-cuffs/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 4308,
+    "name": "Green Linen Bracers",
+    "slot": "wrist",
+    "type": "Cloth",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 10
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/green-linen-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_12.jpg"
+  },
+  {
+    "id": 2570,
+    "name": "Linen Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 1,
+    "ilvl": 6,
+    "stats": {
+      "Armor": 6
+    },
+    "bind": "unbound",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/linen-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_cape_14.jpg"
+  },
+  {
+    "id": 2580,
+    "name": "Reinforced Linen Cape",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Spell Power": 1,
+      "Armor": 11
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/reinforced-linen-cape/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_cape_07.jpg"
+  },
+  {
+    "id": 2584,
+    "name": "Woolen Cape",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 11,
+    "ilvl": 16,
+    "stats": {
+      "Spell Power": 1,
+      "Spirit": 1,
+      "Armor": 15
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/woolen-cape/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_cape_10.jpg"
+  },
+  {
+    "id": 5542,
+    "name": "Pearl-clasped Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 14,
+    "ilvl": 19,
+    "stats": {
+      "Intellect": 3,
+      "Spell Power": 2,
+      "Armor": 16
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/pearl-clasped-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_cape_11.jpg"
+  },
+  {
+    "id": 4311,
+    "name": "Heavy Woolen Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 16,
+    "ilvl": 21,
+    "stats": {
+      "Spirit": 4,
+      "Spell Power": 4,
+      "Armor": 17
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/heavy-woolen-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_cape_14.jpg"
+  },
+  {
+    "id": 6787,
+    "name": "White Woolen Dress",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 17,
+    "ilvl": 22,
+    "stats": {
+      "Spirit": 4,
+      "Stamina": 5,
+      "Armor": 36
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/white-woolen-dress/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_shirt_12.jpg"
+  },
+  {
+    "id": 4307,
+    "name": "Heavy Linen Gloves",
+    "slot": "hand",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Spell Power": 1,
+      "Armor": 12
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/heavy-linen-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 277036,
+    "name": "Azure Stormsewn Handwraps",
+    "slot": "hand",
+    "type": "Cloth",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 13
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/azure-stormsewn-handwraps/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277012,
+    "name": "Cloudy Stormsewn Handwraps",
+    "slot": "hand",
+    "type": "Cloth",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 13
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/cloudy-stormsewn-handwraps/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 4310,
+    "name": "Heavy Woolen Gloves",
+    "slot": "hand",
+    "type": "Cloth",
+    "level": 12,
+    "ilvl": 17,
+    "stats": {
+      "Intellect": 2,
+      "Spell Power": 2,
+      "Armor": 19
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/heavy-woolen-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 10045,
+    "name": "Simple Linen Pants",
+    "slot": "leg",
+    "type": "Cloth",
+    "level": 2,
+    "ilvl": 7,
+    "stats": {
+      "Armor": 12
+    },
+    "bind": "unbound",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/simple-linen-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_11.jpg"
+  },
+  {
+    "id": 4343,
+    "name": "Brown Linen Pants",
+    "slot": "leg",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Spell Power": 1,
+      "Armor": 17
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/brown-linen-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_06.jpg"
+  },
+  {
+    "id": 277038,
+    "name": "Azure Stormsewn Leggings",
+    "slot": "leg",
+    "type": "Cloth",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 20
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/azure-stormsewn-leggings/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277014,
+    "name": "Cloudy Stormsewn Leggings",
+    "slot": "leg",
+    "type": "Cloth",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 20
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/cloudy-stormsewn-leggings/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 4309,
+    "name": "Handstitched Linen Britches",
+    "slot": "leg",
+    "type": "Cloth",
+    "level": 9,
+    "ilvl": 14,
+    "stats": {
+      "Spell Power": 2,
+      "Intellect": 2,
+      "Armor": 23
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/handstitched-linen-britches/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_07.jpg"
+  },
+  {
+    "id": 10047,
+    "name": "Simple Kilt",
+    "slot": "leg",
+    "type": "Cloth",
+    "level": 10,
+    "ilvl": 15,
+    "stats": {
+      "Stamina": 3,
+      "Spell Power": 2,
+      "Armor": 24
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/simple-kilt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_11.jpg"
+  },
+  {
+    "id": 10048,
+    "name": "Colorful Kilt",
+    "slot": "leg",
+    "type": "Cloth",
+    "level": 14,
+    "ilvl": 19,
+    "stats": {
+      "Spell Power": 5,
+      "Spirit": 5,
+      "Armor": 29
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/colorful-kilt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_02.jpg"
+  },
+  {
+    "id": 4316,
+    "name": "Heavy Woolen Pants",
+    "slot": "leg",
+    "type": "Cloth",
+    "level": 17,
+    "ilvl": 22,
+    "stats": {
+      "Spirit": 6,
+      "Spell Power": 3,
+      "Armor": 31
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/heavy-woolen-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_01.jpg"
+  },
+  {
+    "id": 2568,
+    "name": "Brown Linen Vest",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 3,
+    "ilvl": 8,
+    "stats": {
+      "Armor": 15
+    },
+    "bind": "unbound",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/brown-linen-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_shirt_05.jpg"
+  },
+  {
+    "id": 6238,
+    "name": "Brown Linen Robe",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 19
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/brown-linen-robe/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_21.jpg"
+  },
+  {
+    "id": 2572,
+    "name": "Red Linen Robe",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Intellect": 1,
+      "Armor": 19
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/red-linen-robe/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_18.jpg"
+  },
+  {
+    "id": 6241,
+    "name": "White Linen Robe",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Intellect": 1,
+      "Armor": 19
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/white-linen-robe/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_04.jpg"
+  },
+  {
+    "id": 6240,
+    "name": "Blue Linen Vest",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Spirit": 2,
+      "Spell Power": 1,
+      "Armor": 23
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/blue-linen-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_37.jpg"
+  },
+  {
+    "id": 6239,
+    "name": "Red Linen Vest",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Intellect": 2,
+      "Spell Power": 1,
+      "Armor": 23
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/red-linen-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_40.jpg"
+  },
+  {
+    "id": 277034,
+    "name": "Azure Stormsewn Vest",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Intellect": 2,
+      "Armor": 23
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/azure-stormsewn-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277010,
+    "name": "Cloudy Stormsewn Vest",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Intellect": 2,
+      "Armor": 23
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/cloudy-stormsewn-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 2578,
+    "name": "Barbaric Linen Vest",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 9,
+    "ilvl": 14,
+    "stats": {
+      "Stamina": 2,
+      "Spell Power": 2,
+      "Armor": 26
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/barbaric-linen-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_fur.jpg"
+  },
+  {
+    "id": 6242,
+    "name": "Blue Linen Robe",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 9,
+    "ilvl": 14,
+    "stats": {
+      "Spirit": 3,
+      "Spell Power": 2,
+      "Armor": 26
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/blue-linen-robe/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_23.jpg"
+  },
+  {
+    "id": 2582,
+    "name": "Green Woolen Vest",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 12,
+    "ilvl": 17,
+    "stats": {
+      "Spell Power": 4,
+      "Spirit": 4,
+      "Armor": 30
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/green-woolen-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_39.jpg"
+  },
+  {
+    "id": 6243,
+    "name": "Green Woolen Robe",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 13,
+    "ilvl": 18,
+    "stats": {
+      "Intellect": 3,
+      "Spell Power": 3,
+      "Armor": 32
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/green-woolen-robe/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_22.jpg"
+  },
+  {
+    "id": 6263,
+    "name": "Blue Overalls",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 15,
+    "ilvl": 20,
+    "stats": {
+      "Strength": 4,
+      "Stamina": 4,
+      "Armor": 34
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/blue-overalls/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_shirt_13.jpg"
+  },
+  {
+    "id": 2585,
+    "name": "Gray Woolen Robe",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 16,
+    "ilvl": 21,
+    "stats": {
+      "Intellect": 5,
+      "Spell Power": 4,
+      "Armor": 35
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/gray-woolen-robe/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_13.jpg"
+  },
+  {
+    "id": 6264,
+    "name": "Greater Adept's Robe",
+    "slot": "chest",
+    "type": "Cloth",
+    "level": 18,
+    "ilvl": 23,
+    "stats": {
+      "Spell Power": 1,
+      "Intellect": 2,
+      "Spirit": 7,
+      "Armor": 37
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/greater-adepts-robe/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_24.jpg"
+  },
+  {
+    "id": 10046,
+    "name": "Simple Linen Boots",
+    "slot": "foot",
+    "type": "Cloth",
+    "level": 4,
+    "ilvl": 9,
+    "stats": {
+      "Armor": 11
+    },
+    "bind": "unbound",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/simple-linen-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_05.jpg"
+  },
+  {
+    "id": 277039,
+    "name": "Azure Stormsewn Shoes",
+    "slot": "foot",
+    "type": "Cloth",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 14
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/azure-stormsewn-shoes/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277015,
+    "name": "Cloudy Stormsewn Shoes",
+    "slot": "foot",
+    "type": "Cloth",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 14
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/cloudy-stormsewn-shoes/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_cloth_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 2569,
+    "name": "Linen Boots",
+    "slot": "foot",
+    "type": "Cloth",
+    "level": 8,
+    "ilvl": 13,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 17
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/linen-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_09.jpg"
+  },
+  {
+    "id": 4313,
+    "name": "Red Woolen Boots",
+    "slot": "foot",
+    "type": "Cloth",
+    "level": 15,
+    "ilvl": 20,
+    "stats": {
+      "Spirit": 5,
+      "Spell Power": 4,
+      "Armor": 23
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/red-woolen-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_09.jpg"
+  },
+  {
+    "id": 4312,
+    "name": "Soft-soled Linen Boots",
+    "slot": "foot",
+    "type": "Cloth",
+    "level": 11,
+    "ilvl": 16,
+    "stats": {
+      "Stamina": 2,
+      "Spell Power": 2,
+      "Armor": 20
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/soft-soled-linen-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_09.jpg"
+  },
+  {
+    "id": 2583,
+    "name": "Woolen Boots",
+    "slot": "foot",
+    "type": "Cloth",
+    "level": 14,
+    "ilvl": 19,
+    "stats": {
+      "Intellect": 2,
+      "Spirit": 2,
+      "Spell Power": 2,
+      "Armor": 22
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/woolen-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_09.jpg"
+  },
+  {
+    "id": 4314,
+    "name": "Double-Stitched Woolen Shoulders",
+    "slot": "shoulder",
+    "type": "Cloth",
+    "level": 17,
+    "ilvl": 22,
+    "stats": {
+      "Spell Power": 4,
+      "Stamina": 4,
+      "Armor": 27
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/double-stitched-woolen-shoulders/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_06.jpg"
+  },
+  {
+    "id": 4315,
+    "name": "Reinforced Woolen Shoulders",
+    "slot": "shoulder",
+    "type": "Cloth",
+    "level": 19,
+    "ilvl": 24,
+    "stats": {
+      "Intellect": 4,
+      "Spell Power": 5,
+      "Armor": 28
+    },
+    "bind": "BoE",
+    "profession": "Tailoring",
+    "recipeUrl": "https://theforeverera.com/en/recipes/tailoring/reinforced-woolen-shoulders/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_09.jpg"
+  },
+  {
+    "id": 7276,
+    "name": "Handstitched Leather Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 4,
+    "ilvl": 9,
+    "stats": {
+      "Armor": 8
+    },
+    "bind": "unbound",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/handstitched-leather-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_helmet_48.jpg"
+  },
+  {
+    "id": 2310,
+    "name": "Embossed Leather Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 8,
+    "ilvl": 13,
+    "stats": {
+      "Agility": 1,
+      "Armor": 12
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/embossed-leather-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_helmet_48.jpg"
+  },
+  {
+    "id": 2308,
+    "name": "Fine Leather Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 10,
+    "ilvl": 15,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 14
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/fine-leather-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_cape_10.jpg"
+  },
+  {
+    "id": 6466,
+    "name": "Deviate Scale Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 13,
+    "ilvl": 18,
+    "stats": {
+      "Stamina": 2,
+      "Agility": 2,
+      "Armor": 16
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/deviate-scale-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_monsterscales_03.jpg"
+  },
+  {
+    "id": 7283,
+    "name": "Black Whelp Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 15,
+    "ilvl": 20,
+    "stats": {
+      "Spell Power": 3,
+      "Armor": 17
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/black-whelp-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_monsterscales_03.jpg"
+  },
+  {
+    "id": 2316,
+    "name": "Dark Leather Cloak",
+    "slot": "back",
+    "type": "Cloth",
+    "level": 17,
+    "ilvl": 22,
+    "stats": {
+      "Agility": 3,
+      "Strength": 2,
+      "Armor": 18
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/dark-leather-cloak/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_misc_cape_10.jpg"
+  },
+  {
+    "id": 277025,
+    "name": "Azure Gustwoven Belt",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 31
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-gustwoven-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277031,
+    "name": "Azure Windraveled Strap",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 31
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-windraveled-strap/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 277001,
+    "name": "Cloudy Gustwoven Belt",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 31
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-gustwoven-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277007,
+    "name": "Cloudy Windraveled Strap",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 31
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-windraveled-strap/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 4237,
+    "name": "Handstitched Leather Belt",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Strength": 1,
+      "Armor": 31
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/handstitched-leather-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_04.jpg"
+  },
+  {
+    "id": 4246,
+    "name": "Fine Leather Belt",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 11,
+    "ilvl": 16,
+    "stats": {
+      "Agility": 2,
+      "Stamina": 2,
+      "Armor": 40
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/fine-leather-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_04.jpg"
+  },
+  {
+    "id": 5780,
+    "name": "Murloc Scale Belt",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 13,
+    "ilvl": 18,
+    "stats": {
+      "Agility": 3,
+      "Strength": 2,
+      "Armor": 42
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/murloc-scale-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_02.jpg"
+  },
+  {
+    "id": 6468,
+    "name": "Deviate Scale Belt",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 18,
+    "ilvl": 23,
+    "stats": {
+      "Stamina": 6,
+      "Agility": 5,
+      "Strength": 3,
+      "Armor": 51
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/deviate-scale-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_09.jpg"
+  },
+  {
+    "id": 4249,
+    "name": "Dark Leather Belt",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 20,
+    "ilvl": 25,
+    "stats": {
+      "Agility": 4,
+      "Stamina": 4,
+      "Armor": 48
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/dark-leather-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_03.jpg"
+  },
+  {
+    "id": 4250,
+    "name": "Hillman's Belt",
+    "slot": "waist",
+    "type": "Leather",
+    "level": 20,
+    "ilvl": 25,
+    "stats": {
+      "Stamina": 4,
+      "Spell Power": 4,
+      "Armor": 48
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/hillmans-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_06.jpg"
+  },
+  {
+    "id": 2302,
+    "name": "Handstitched Leather Boots",
+    "slot": "foot",
+    "type": "Leather",
+    "level": 3,
+    "ilvl": 8,
+    "stats": {
+      "Armor": 31
+    },
+    "bind": "unbound",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/handstitched-leather-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_04.jpg"
+  },
+  {
+    "id": 277027,
+    "name": "Azure Gustwoven Boots",
+    "slot": "foot",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Agility": 1,
+      "Armor": 40
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-gustwoven-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277033,
+    "name": "Azure Windraveled Footwraps",
+    "slot": "foot",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 40
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-windraveled-footwraps/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 277003,
+    "name": "Cloudy Gustwoven Boots",
+    "slot": "foot",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Agility": 1,
+      "Armor": 40
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-gustwoven-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277009,
+    "name": "Cloudy Windraveled Footwraps",
+    "slot": "foot",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 40
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-windraveled-footwraps/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 2309,
+    "name": "Embossed Leather Boots",
+    "slot": "foot",
+    "type": "Leather",
+    "level": 10,
+    "ilvl": 15,
+    "stats": {
+      "Stamina": 2,
+      "Spell Power": 2,
+      "Armor": 48
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/embossed-leather-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_05.jpg"
+  },
+  {
+    "id": 2307,
+    "name": "Fine Leather Boots",
+    "slot": "foot",
+    "type": "Leather",
+    "level": 13,
+    "ilvl": 18,
+    "stats": {
+      "Agility": 3,
+      "Stamina": 2,
+      "Armor": 51
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/fine-leather-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_06.jpg"
+  },
+  {
+    "id": 7277,
+    "name": "Handstitched Leather Bracers",
+    "slot": "wrist",
+    "type": "Leather",
+    "level": 4,
+    "ilvl": 9,
+    "stats": {
+      "Armor": 21
+    },
+    "bind": "unbound",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/handstitched-leather-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_08.jpg"
+  },
+  {
+    "id": 277023,
+    "name": "Azure Gustwoven Bracers",
+    "slot": "wrist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Strength": 1,
+      "Armor": 24
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-gustwoven-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277029,
+    "name": "Azure Windraveled Armguards",
+    "slot": "wrist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Intellect": 1,
+      "Armor": 24
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-windraveled-armguards/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 276999,
+    "name": "Cloudy Gustwoven Bracers",
+    "slot": "wrist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Strength": 1,
+      "Armor": 24
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-gustwoven-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277005,
+    "name": "Cloudy Windraveled Armguards",
+    "slot": "wrist",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Intellect": 1,
+      "Armor": 24
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-windraveled-armguards/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 7281,
+    "name": "Light Leather Bracers",
+    "slot": "wrist",
+    "type": "Leather",
+    "level": 9,
+    "ilvl": 14,
+    "stats": {
+      "Agility": 1,
+      "Strength": 1,
+      "Armor": 30
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/light-leather-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_04.jpg"
+  },
+  {
+    "id": 5957,
+    "name": "Handstitched Leather Vest",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 3,
+    "ilvl": 10,
+    "stats": {
+      "Agility": 1,
+      "Armor": 55
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/handstitched-leather-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_wolf.jpg"
+  },
+  {
+    "id": 277022,
+    "name": "Azure Gustwoven Harness",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Strength": 2,
+      "Armor": 62
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-gustwoven-harness/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277028,
+    "name": "Azure Windraveled Jerkin",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Intellect": 2,
+      "Armor": 62
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-windraveled-jerkin/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 276998,
+    "name": "Cloudy Gustwoven Harness",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Strength": 2,
+      "Armor": 62
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-gustwoven-harness/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277004,
+    "name": "Cloudy Windraveled Jerkin",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Intellect": 2,
+      "Armor": 62
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-windraveled-jerkin/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 2300,
+    "name": "Embossed Leather Vest",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 62
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/embossed-leather-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_09.jpg"
+  },
+  {
+    "id": 2311,
+    "name": "White Leather Jerkin",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 8,
+    "ilvl": 13,
+    "stats": {
+      "Strength": 2,
+      "Spell Power": 2,
+      "Armor": 65
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/white-leather-jerkin/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_wolf.jpg"
+  },
+  {
+    "id": 4243,
+    "name": "Fine Leather Tunic",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 12,
+    "ilvl": 17,
+    "stats": {
+      "Agility": 4,
+      "Stamina": 3,
+      "Armor": 73
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/fine-leather-tunic/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_09.jpg"
+  },
+  {
+    "id": 6709,
+    "name": "Moonglow Vest",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 13,
+    "ilvl": 18,
+    "stats": {
+      "Spell Power": 4,
+      "Intellect": 3,
+      "Armor": 74
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/moonglow-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_09.jpg"
+  },
+  {
+    "id": 20575,
+    "name": "Black Whelp Tunic",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 15,
+    "ilvl": 20,
+    "stats": {
+      "Intellect": 5,
+      "Spell Power": 3,
+      "Armor": 78
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/black-whelp-tunic/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_45.jpg"
+  },
+  {
+    "id": 2317,
+    "name": "Dark Leather Tunic",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 15,
+    "ilvl": 20,
+    "stats": {
+      "Agility": 6,
+      "Armor": 78
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/dark-leather-tunic/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_03.jpg"
+  },
+  {
+    "id": 4244,
+    "name": "Hillman's Leather Vest",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 15,
+    "ilvl": 20,
+    "stats": {
+      "Stamina": 4,
+      "Spell Power": 4,
+      "Armor": 78
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/hillmans-leather-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_10.jpg"
+  },
+  {
+    "id": 5781,
+    "name": "Murloc Scale Breastplate",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 14,
+    "ilvl": 19,
+    "stats": {
+      "Strength": 5,
+      "Agility": 3,
+      "Armor": 76
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/murloc-scale-breastplate/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_chain_12.jpg"
+  },
+  {
+    "id": 2314,
+    "name": "Toughened Leather Armor",
+    "slot": "chest",
+    "type": "Leather",
+    "level": 19,
+    "ilvl": 24,
+    "stats": {
+      "Stamina": 2,
+      "Spirit": 7,
+      "Armor": 84
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/toughened-leather-armor/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_10.jpg"
+  },
+  {
+    "id": 277024,
+    "name": "Azure Gustwoven Gloves",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Agility": 1,
+      "Armor": 36
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-gustwoven-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277030,
+    "name": "Azure Windraveled Mitts",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 36
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-windraveled-mitts/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 277000,
+    "name": "Cloudy Gustwoven Gloves",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Agility": 1,
+      "Armor": 36
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-gustwoven-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277006,
+    "name": "Cloudy Windraveled Mitts",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Spirit": 1,
+      "Armor": 36
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-windraveled-mitts/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 4239,
+    "name": "Embossed Leather Gloves",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 8,
+    "ilvl": 13,
+    "stats": {
+      "Agility": 1,
+      "Stamina": 1,
+      "Armor": 41
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/embossed-leather-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 2312,
+    "name": "Fine Leather Gloves",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 10,
+    "ilvl": 15,
+    "stats": {
+      "Intellect": 2,
+      "Spell Power": 2,
+      "Armor": 43
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/fine-leather-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 6467,
+    "name": "Deviate Scale Gloves",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 16,
+    "ilvl": 21,
+    "stats": {
+      "Stamina": 3,
+      "Agility": 3,
+      "Armor": 49
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/deviate-scale-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 7285,
+    "name": "Nimble Leather Gloves",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 19,
+    "ilvl": 24,
+    "stats": {
+      "Agility": 4,
+      "Stamina": 4,
+      "Armor": 52
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/nimble-leather-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 7348,
+    "name": "Fletcher's Gloves",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 20,
+    "ilvl": 25,
+    "stats": {
+      "Critical Strike": 1,
+      "Parry": -1,
+      "Armor": 53
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/fletchers-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 4253,
+    "name": "Toughened Leather Gloves",
+    "slot": "hand",
+    "type": "Leather",
+    "level": 22,
+    "ilvl": 27,
+    "stats": {
+      "Agility": 6,
+      "Strength": 6,
+      "Stamina": 3,
+      "Armor": 61
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/toughened-leather-gloves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_24.jpg"
+  },
+  {
+    "id": 2303,
+    "name": "Handstitched Leather Pants",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Agility": 1,
+      "Armor": 48
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/handstitched-leather-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_wolf.jpg"
+  },
+  {
+    "id": 7280,
+    "name": "Rugged Leather Pants",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 51
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/rugged-leather-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_02.jpg"
+  },
+  {
+    "id": 277026,
+    "name": "Azure Gustwoven Trousers",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 54
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-gustwoven-trousers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277032,
+    "name": "Azure Windraveled Pants",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 54
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/azure-windraveled-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 277002,
+    "name": "Cloudy Gustwoven Trousers",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 54
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-gustwoven-trousers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_leather_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277008,
+    "name": "Cloudy Windraveled Pants",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 54
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/cloudy-windraveled-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_leather_skybornec60_b_02.jpg"
+  },
+  {
+    "id": 4242,
+    "name": "Embossed Leather Pants",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 10,
+    "ilvl": 15,
+    "stats": {
+      "Stamina": 2,
+      "Spell Power": 3,
+      "Armor": 61
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/embossed-leather-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_02.jpg"
+  },
+  {
+    "id": 7282,
+    "name": "Light Leather Pants",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 14,
+    "ilvl": 19,
+    "stats": {
+      "Agility": 5,
+      "Stamina": 3,
+      "Armor": 66
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/light-leather-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_02.jpg"
+  },
+  {
+    "id": 5958,
+    "name": "Fine Leather Pants",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 16,
+    "ilvl": 21,
+    "stats": {
+      "Intellect": 5,
+      "Spirit": 4,
+      "Armor": 69
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/fine-leather-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_02.jpg"
+  },
+  {
+    "id": 5961,
+    "name": "Dark Leather Pants",
+    "slot": "leg",
+    "type": "Leather",
+    "level": 18,
+    "ilvl": 23,
+    "stats": {
+      "Agility": 8,
+      "Armor": 72
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/dark-leather-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_09.jpg"
+  },
+  {
+    "id": 4251,
+    "name": "Hillman's Shoulders",
+    "slot": "shoulder",
+    "type": "Leather",
+    "level": 21,
+    "ilvl": 26,
+    "stats": {
+      "Stamina": 5,
+      "Spirit": 3,
+      "Armor": 65
+    },
+    "bind": "BoE",
+    "profession": "Leatherworking",
+    "recipeUrl": "https://theforeverera.com/en/recipes/leatherworking/hillmans-shoulders/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_08.jpg"
+  },
+  {
+    "id": 277019,
+    "name": "Azure Skyforged Chain",
+    "slot": "waist",
+    "type": "Mail",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 61
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/azure-skyforged-chain/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 276995,
+    "name": "Cloudy Skyforged Chain",
+    "slot": "waist",
+    "type": "Mail",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 61
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/cloudy-skyforged-chain/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 2851,
+    "name": "Copper Chain Belt",
+    "slot": "waist",
+    "type": "Mail",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 65
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/copper-chain-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_02.jpg"
+  },
+  {
+    "id": 2857,
+    "name": "Runed Copper Belt",
+    "slot": "waist",
+    "type": "Mail",
+    "level": 13,
+    "ilvl": 18,
+    "stats": {
+      "Strength": 3,
+      "Stamina": 2,
+      "Armor": 91
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/runed-copper-belt/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_03.jpg"
+  },
+  {
+    "id": 277021,
+    "name": "Azure Skyforged Greaves",
+    "slot": "foot",
+    "type": "Mail",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Agility": 1,
+      "Armor": 79
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/azure-skyforged-greaves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 276997,
+    "name": "Cloudy Skyforged Greaves",
+    "slot": "foot",
+    "type": "Mail",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Agility": 1,
+      "Armor": 79
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/cloudy-skyforged-greaves/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 277672,
+    "name": "Rough Copper Chain Boots",
+    "slot": "foot",
+    "type": "Mail",
+    "level": 4,
+    "ilvl": 10,
+    "stats": {
+      "Strength": 1,
+      "Armor": 74
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/rough-copper-chain-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_01.jpg"
+  },
+  {
+    "id": 3469,
+    "name": "Copper Chain Boots",
+    "slot": "foot",
+    "type": "Mail",
+    "level": 4,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 74
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/copper-chain-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_01.jpg"
+  },
+  {
+    "id": 6350,
+    "name": "Rough Bronze Boots",
+    "slot": "foot",
+    "type": "Mail",
+    "level": 13,
+    "ilvl": 18,
+    "stats": {
+      "Strength": 2,
+      "Stamina": 3,
+      "Armor": 111
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/rough-bronze-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_01.jpg"
+  },
+  {
+    "id": 250483,
+    "name": "Sterling Silver Boots",
+    "slot": "foot",
+    "type": "Mail",
+    "level": 20,
+    "ilvl": 25,
+    "stats": {
+      "Spell Power": 4,
+      "Stamina": 3,
+      "Strength": 3,
+      "Armor": 126
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/sterling-silver-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_01.jpg"
+  },
+  {
+    "id": 3482,
+    "name": "Silvered Bronze Boots",
+    "slot": "foot",
+    "type": "Mail",
+    "level": 21,
+    "ilvl": 26,
+    "stats": {
+      "Strength": 4,
+      "Stamina": 4,
+      "Spirit": 3,
+      "Armor": 128
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/silvered-bronze-boots/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_boots_01.jpg"
+  },
+  {
+    "id": 2853,
+    "name": "Copper Bracers",
+    "slot": "wrist",
+    "type": "Mail",
+    "level": 2,
+    "ilvl": 7,
+    "stats": {
+      "Armor": 35
+    },
+    "bind": "unbound",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/copper-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_03.jpg"
+  },
+  {
+    "id": 277017,
+    "name": "Azure Skyforged Wristguards",
+    "slot": "wrist",
+    "type": "Mail",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Strength": 1,
+      "Armor": 47
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/azure-skyforged-wristguards/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 276993,
+    "name": "Cloudy Skyforged Wristguards",
+    "slot": "wrist",
+    "type": "Mail",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Strength": 1,
+      "Armor": 47
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/cloudy-skyforged-wristguards/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 2854,
+    "name": "Runed Copper Bracers",
+    "slot": "wrist",
+    "type": "Mail",
+    "level": 14,
+    "ilvl": 19,
+    "stats": {
+      "Strength": 2,
+      "Stamina": 2,
+      "Armor": 72
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/runed-copper-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_03.jpg"
+  },
+  {
+    "id": 2867,
+    "name": "Rough Bronze Bracers",
+    "slot": "wrist",
+    "type": "Mail",
+    "level": 18,
+    "ilvl": 23,
+    "stats": {
+      "Stamina": 4,
+      "Armor": 77
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/rough-bronze-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_05.jpg"
+  },
+  {
+    "id": 2868,
+    "name": "Patterned Bronze Bracers",
+    "slot": "wrist",
+    "type": "Mail",
+    "level": 20,
+    "ilvl": 25,
+    "stats": {
+      "Strength": 5,
+      "Armor": 80
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/patterned-bronze-bracers/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_07.jpg"
+  },
+  {
+    "id": 10421,
+    "name": "Rough Copper Vest",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 2,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 108
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/rough-copper-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_chain.jpg"
+  },
+  {
+    "id": 277016,
+    "name": "Azure Skyforged Chainmail",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Strength": 2,
+      "Armor": 122
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/azure-skyforged-chainmail/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 276992,
+    "name": "Cloudy Skyforged Chainmail",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Strength": 2,
+      "Armor": 122
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/cloudy-skyforged-chainmail/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 3471,
+    "name": "Copper Chain Vest",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Strength": 1,
+      "Armor": 108
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/copper-chain-vest/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_chain.jpg"
+  },
+  {
+    "id": 6730,
+    "name": "Ironforge Chain",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 11,
+    "ilvl": 16,
+    "stats": {
+      "Stamina": 4,
+      "Armor": 151
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/ironforge-chain/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_chain.jpg"
+  },
+  {
+    "id": 2864,
+    "name": "Runed Copper Breastplate",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 13,
+    "ilvl": 18,
+    "stats": {
+      "Strength": 4,
+      "Stamina": 3,
+      "Armor": 162
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/runed-copper-breastplate/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_plate03.jpg"
+  },
+  {
+    "id": 6731,
+    "name": "Ironforge Breastplate",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 15,
+    "ilvl": 20,
+    "stats": {
+      "Strength": 3,
+      "Stamina": 3,
+      "Armor": 198
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/ironforge-breastplate/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_plate05.jpg"
+  },
+  {
+    "id": 2866,
+    "name": "Rough Bronze Cuirass",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 18,
+    "ilvl": 23,
+    "stats": {
+      "Stamina": 8,
+      "Armor": 177
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/rough-bronze-cuirass/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_chain_08.jpg"
+  },
+  {
+    "id": 2869,
+    "name": "Silvered Bronze Breastplate",
+    "slot": "chest",
+    "type": "Mail",
+    "level": 21,
+    "ilvl": 26,
+    "stats": {
+      "Strength": 5,
+      "Stamina": 5,
+      "Spirit": 4,
+      "Armor": 186
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/silvered-bronze-breastplate/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_chain_09.jpg"
+  },
+  {
+    "id": 277018,
+    "name": "Azure Skyforged Gauntlets",
+    "slot": "hand",
+    "type": "Mail",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Agility": 1,
+      "Armor": 72
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/azure-skyforged-gauntlets/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 276994,
+    "name": "Cloudy Skyforged Gauntlets",
+    "slot": "hand",
+    "type": "Mail",
+    "level": 6,
+    "ilvl": 11,
+    "stats": {
+      "Agility": 1,
+      "Armor": 72
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/cloudy-skyforged-gauntlets/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 3474,
+    "name": "Gemmed Copper Gauntlets",
+    "slot": "hand",
+    "type": "Mail",
+    "level": 10,
+    "ilvl": 15,
+    "stats": {
+      "Armor": 90
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/gemmed-copper-gauntlets/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 3472,
+    "name": "Runed Copper Gauntlets",
+    "slot": "hand",
+    "type": "Mail",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Strength": 1,
+      "Stamina": 1,
+      "Armor": 77
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/runed-copper-gauntlets/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_04.jpg"
+  },
+  {
+    "id": 250485,
+    "name": "Sterling Silver Gauntlet",
+    "slot": "hand",
+    "type": "Mail",
+    "level": 21,
+    "ilvl": 26,
+    "stats": {
+      "Spell Power": 4,
+      "Stamina": 4,
+      "Strength": 4,
+      "Armor": 116
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/sterling-silver-gauntlet/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_gauntlets_05.jpg"
+  },
+  {
+    "id": 2852,
+    "name": "Copper Chain Pants",
+    "slot": "leg",
+    "type": "Mail",
+    "level": 4,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "Armor": 94
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/copper-chain-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_03.jpg"
+  },
+  {
+    "id": 277020,
+    "name": "Azure Skyforged Legguards",
+    "slot": "leg",
+    "type": "Mail",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 107
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/azure-skyforged-legguards/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 276996,
+    "name": "Cloudy Skyforged Legguards",
+    "slot": "leg",
+    "type": "Mail",
+    "level": 7,
+    "ilvl": 12,
+    "stats": {
+      "Stamina": 2,
+      "Armor": 107
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/cloudy-skyforged-legguards/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_mail_skybornec60_b_01.jpg"
+  },
+  {
+    "id": 3473,
+    "name": "Runed Copper Pants",
+    "slot": "leg",
+    "type": "Mail",
+    "level": 8,
+    "ilvl": 13,
+    "stats": {
+      "Strength": 2,
+      "Stamina": 2,
+      "Armor": 113
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/runed-copper-pants/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_03.jpg"
+  },
+  {
+    "id": 2865,
+    "name": "Rough Bronze Leggings",
+    "slot": "leg",
+    "type": "Mail",
+    "level": 16,
+    "ilvl": 21,
+    "stats": {
+      "Stamina": 5,
+      "Spirit": 4,
+      "Armor": 149
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/rough-bronze-leggings/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_03.jpg"
+  },
+  {
+    "id": 250484,
+    "name": "Sterling Silver Leggings",
+    "slot": "leg",
+    "type": "Mail",
+    "level": 21,
+    "ilvl": 26,
+    "stats": {
+      "Spell Power": 4,
+      "Stamina": 3,
+      "Strength": 3,
+      "Armor": 163
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/sterling-silver-leggings/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_pants_03.jpg"
+  },
+  {
+    "id": 3480,
+    "name": "Rough Bronze Shoulders",
+    "slot": "shoulder",
+    "type": "Mail",
+    "level": 17,
+    "ilvl": 22,
+    "stats": {
+      "Stamina": 4,
+      "Strength": 3,
+      "Armor": 130
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/rough-bronze-shoulders/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_05.jpg"
+  },
+  {
+    "id": 3481,
+    "name": "Silvered Bronze Shoulders",
+    "slot": "shoulder",
+    "type": "Mail",
+    "level": 20,
+    "ilvl": 25,
+    "stats": {
+      "Strength": 3,
+      "Stamina": 3,
+      "Spirit": 3,
+      "Armor": 137
+    },
+    "bind": "BoE",
+    "profession": "Blacksmithing",
+    "recipeUrl": "https://theforeverera.com/en/recipes/blacksmithing/silvered-bronze-shoulders/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_09.jpg"
+  },
+  {
+    "id": 4362,
+    "name": "Rough Boomstick",
+    "slot": "ranged",
+    "type": "Gun",
+    "level": 5,
+    "ilvl": 10,
+    "stats": {
+      "Stamina": 1,
+      "DPS": 4.1
+    },
+    "bind": "BoE",
+    "profession": "Engineering",
+    "recipeUrl": "https://theforeverera.com/en/recipes/engineering/rough-boomstick/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_weapon_rifle_03.jpg",
+    "damage": {
+      "min": 6,
+      "max": 13,
+      "speed": 2.3,
+      "dps": 4.1,
+      "school": 0
+    }
+  },
+  {
+    "id": 4369,
+    "name": "Deadly Blunderbuss",
+    "slot": "ranged",
+    "type": "Gun",
+    "level": 16,
+    "ilvl": 21,
+    "stats": {
+      "Agility": 2,
+      "DPS": 8.3
+    },
+    "bind": "BoE",
+    "profession": "Engineering",
+    "recipeUrl": "https://theforeverera.com/en/recipes/engineering/deadly-blunderbuss/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_weapon_rifle_07.jpg",
+    "damage": {
+      "min": 15,
+      "max": 28,
+      "speed": 2.6,
+      "dps": 8.3,
+      "school": 0
+    }
+  },
+  {
+    "id": 4372,
+    "name": "Lovingly Crafted Boomstick",
+    "slot": "ranged",
+    "type": "Gun",
+    "level": 19,
+    "ilvl": 24,
+    "stats": {
+      "Spirit": 3,
+      "DPS": 9.7
+    },
+    "bind": "BoE",
+    "profession": "Engineering",
+    "recipeUrl": "https://theforeverera.com/en/recipes/engineering/lovingly-crafted-boomstick/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_weapon_rifle_07.jpg",
+    "damage": {
+      "min": 12,
+      "max": 23,
+      "speed": 1.8,
+      "dps": 9.7,
+      "school": 0
+    }
+  },
+  {
+    "id": 4379,
+    "name": "Silver-plated Shotgun",
+    "slot": "ranged",
+    "type": "Gun",
+    "level": 21,
+    "ilvl": 26,
+    "stats": {
+      "Stamina": 3,
+      "DPS": 10.4
+    },
+    "bind": "BoE",
+    "profession": "Engineering",
+    "recipeUrl": "https://theforeverera.com/en/recipes/engineering/silver-plated-shotgun/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_weapon_rifle_07.jpg",
+    "damage": {
+      "min": 19,
+      "max": 37,
+      "speed": 2.7,
+      "dps": 10.4,
+      "school": 0
+    }
+  },
+  {
+    "id": 4383,
+    "name": "Moonsight Rifle",
+    "slot": "ranged",
+    "type": "Gun",
+    "level": 24,
+    "ilvl": 29,
+    "stats": {
+      "Hit": 0.3,
+      "DPS": 11.8
+    },
+    "bind": "BoE",
+    "profession": "Engineering",
+    "recipeUrl": "https://theforeverera.com/en/recipes/engineering/moonsight-rifle/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_weapon_rifle_06.jpg",
+    "damage": {
+      "min": 14,
+      "max": 26,
+      "speed": 1.7,
+      "dps": 11.8,
+      "school": 0
+    }
+  },
+  {
+    "id": 247789,
+    "name": "Novice's Practice Wand",
+    "slot": "ranged",
+    "type": "Wand",
+    "level": 1,
+    "ilvl": 6,
+    "stats": {
+      "DPS": 4
+    },
+    "bind": "BoE",
+    "profession": "Enchanting",
+    "recipeUrl": "https://theforeverera.com/en/recipes/enchanting/novices-practice-wand/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_weapon_shortblade_09.jpg",
+    "damage": {
+      "min": 4,
+      "max": 8,
+      "speed": 1.5,
+      "dps": 4,
+      "school": 6
+    }
+  },
+  {
+    "id": 11287,
+    "name": "Lesser Magic Wand",
+    "slot": "ranged",
+    "type": "Wand",
+    "level": 5,
+    "ilvl": 15,
+    "stats": {
+      "Spell Power": 1,
+      "DPS": 11.3
+    },
+    "bind": "BoE",
+    "profession": "Enchanting",
+    "recipeUrl": "https://theforeverera.com/en/recipes/enchanting/lesser-magic-wand/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_staff_02.jpg",
+    "damage": {
+      "min": 12,
+      "max": 22,
+      "speed": 1.5,
+      "dps": 11.3,
+      "school": 6
+    }
+  },
+  {
+    "id": 11288,
+    "name": "Greater Magic Wand",
+    "slot": "ranged",
+    "type": "Wand",
+    "level": 13,
+    "ilvl": 23,
+    "stats": {
+      "Spell Power": 2,
+      "DPS": 17.5
+    },
+    "bind": "BoE",
+    "profession": "Enchanting",
+    "recipeUrl": "https://theforeverera.com/en/recipes/enchanting/greater-magic-wand/",
+    "icon": "https://wow.zamimg.com/images/wow/icons/large/inv_staff_07.jpg",
+    "damage": {
+      "min": 22,
+      "max": 41,
+      "speed": 1.8,
+      "dps": 17.5,
+      "school": 6
+    }
+  }
+]
