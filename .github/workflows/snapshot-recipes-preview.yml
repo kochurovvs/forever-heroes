@@ -1,0 +1,58 @@
+name: Refresh confirmed profession recipes
+on:
+  push:
+    branches: [preview/armory-refresh-20261124]
+    paths: ['.github/workflows/snapshot-recipes-preview.yml']
+permissions:
+  contents: read
+jobs:
+  recipes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Fetch only the roster's learned professions and recipes
+        env:
+          BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
+          BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
+        run: python snapshot_professions.py
+      - name: Encrypt the profession JSON
+        run: |
+          cat > "$RUNNER_TEMP/recipient.pem" <<'CERT'
+          -----BEGIN CERTIFICATE-----
+          MIIEGzCCAoOgAwIBAgIUJnejGTE0JgUKVIPXeHV7aga/Y2UwDQYJKoZIhvcNAQEL
+          BQAwHTEbMBkGA1UEAwwSU2lkZS1RdWVzdC1wcmV2aWV3MB4XDTI2MTEyNDE5MTk0
+          NFoXDTI2MTEyNjE5MTk0NFowHTEbMBkGA1UEAwwSU2lkZS1RdWVzdC1wcmV2aWV3
+          MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEApmkslyJNPiKTeO12qwLQ
+          ryAFQK6HKRGp+LvRio8ULWXmwMaVESDQxfDT20EsYJdcHQAT3jNHw3AKnO6puem3
+          UBWOcoM+l9CBqNpg2cgN7eImVRKne+eGtBnhPkDxdAKOeNoAdZ8hZ835RZq4zMu+
+          Pnx+rcWgEVHCmpJil3bgD0PdswmvINAWfj7Muu7O/r535I5nf7AfKMwJBpJibCtf
+          CqN5NmFjiquhR+q/cuo8E/rjN1pgreYV4HoWWofKAxZUNlEclsynNrsDN4cYZZkI
+          +hg4OOgV6anEPHNuzP6ARw1jK4EJcGGH2TzfDtW6k/+9Qa10Jum+HClrVskbriJM
+          pBNGPio0QerLc/aPllChZm24vHJhO6yFULw8d45V5KfGQ8r91ymE8aqVyaww3QAx
+          umaZXBPR0BGGCU93hyTAh5K+dkupe/9l7rt/vAr0YU5QbO/eOjStDAkNguViHM91
+          e+PLIUpSM/JOquV8yeAFwmLZ2bAxjsw7zt1pyqBI67vnAgMBAAGjUzBRMB0GA1Ud
+          DgQWBBSFRitOcCPW0bq6Vs9kFjQNL2xoSDAfBgNVHSMEGDAWgBSFRitOcCPW0bq6
+          Vs9kFjQNL2xoSDAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBgQBy
+          bpJGNVgQczltLzmwe94VvH2hISK84yz6H1c2us2+sg2S8xkxZSdFt4wS9JZQ8gSL
+          n12b4uURvBXGmBC7dIy/a+fpZa49hw+my+wmH6LCty1qHV5AE2SnV7Y+/BAoZ6sa
+          HnyehcLECyxjYAU7fOP2yHzJcOIrsIqoBzT7M/z5iq1s1MPPBmgGcfBL6s9PfeZf
+          sO40ZGDabCfe4gU4XCoLMAkQwPyzv+lGCeiesVcCp5dFOXbFhDwBiGrfExXKDET/
+          OFB+p1JhcQNRU9lL1bjQGoq15laa/xJKu1yS8jmAy1UMVTlRPARf4FdQ9M+8e+UK
+          FpKnMqWL2tdS/jnbeioUUseEcyAAZl2NZotSE+/ovFo+cPD63M7IITEya5guasio
+          Hh3KPTUaRwIzvyhHcDzKVtnol6RfLMK5etq/bC0oy4u42VoX4GcO04J547dix2vu
+          GRXD3ITZlfIXu3lWDV+Kdw2kiJnaMHTstGZP2NJ3SL4QTKmah91RV7WPWxA32bU=
+          -----END CERTIFICATE-----
+          CERT
+          openssl cms -encrypt -binary -aes-256-cbc -outform DER -in armory-professions.json -out professions.cms "$RUNNER_TEMP/recipient.pem"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: learned-professions-20261124
+          path: professions.cms
+          retention-days: 1
+          if-no-files-found: error
