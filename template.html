@@ -1150,7 +1150,7 @@ function showTooltip(anchor) {
   if (!anchor || anchor === tipAnchor) return;
   hideTooltip();
   tipAnchor = anchor;
-  const detail = anchor.classList.contains('wc-candidate') && anchor.nextElementSibling;
+  const detail = anchor.nextElementSibling;
   if (detail instanceof HTMLTemplateElement && detail.classList.contains('wc-tip')) {
     tip.replaceChildren(detail.content.cloneNode(true));
   } else {
