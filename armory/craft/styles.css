@@ -82,4 +82,14 @@
 }
 @media(max-width:520px) {
   .paper-stage:has(.wc-slot-pair) {grid-template-columns:minmax(0,1fr) minmax(70px,.95fr) minmax(0,1fr)}
+  .wc-slot-pair:has(> .wc-candidate) {--icon-inset:2px}
+  .wc-slot-pair:has(> .wc-candidate) > .paper-slot {
+    align-self:start;justify-content:flex-start;padding-block-start:calc(var(--icon-inset) - 1px)
+  }
+  .wc-slot-pair > .wc-candidate {align-self:start;margin-block-start:var(--icon-inset)}
+  .paper-weapons .wc-slot-pair:has(> .wc-candidate) {
+    grid-template-columns:repeat(2,minmax(0,1fr));--craft-column:2
+  }
+  .paper-weapons .wc-slot-pair:has(> .wc-candidate) > .paper-slot {padding-inline:0}
+  .paper-weapons .wc-candidate {grid-row:1}
 }
