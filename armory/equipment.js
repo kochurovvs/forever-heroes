@@ -11,10 +11,26 @@ function renderSlot(gear, [key, label]) {
   const icon = typeof iconUrl === 'string' && /^(https:\/\/|data:image\/|assets\/)/.test(iconUrl) ? '<img src="'+esc(iconUrl)+'" alt="">' : '';
   const level = item?.level?.value;
   const caption = filled ? item.name : 'Пусто';
-  const tip = filled ? [item.name, label + (Number.isFinite(level) ? ' · Item level '+level : ''), itemTooltip(item)].join('\n') : label+' · Пустой слот';
+  const tip = filled ? ['Сейчас надето', item.name, label + (Number.isFinite(level) ? ' · Item level '+level : ''), itemTooltip(item)].join('\n') : label+' · Пустой слот';
   return '<button type="button" class="paper-slot '+(filled?'occupied':'vacant')+'" style="--quality:'+color+'" data-tip="'+esc(tip)+'" aria-label="'+esc(label+' · '+caption)+'">'+
     '<span class="slot-icon">'+icon+'</span><span class="slot-copy"><small>'+esc(label)+'</small><span>'+esc(caption)+'</span></span></button>';
 }
+
+function markerSwitch() {
+  const selected=document.documentElement.dataset.marker || 'arrow';
+  const option=(value,text)=>'<button type="button" data-marker-choice="'+value+
+    '" aria-pressed="'+(value===selected)+'">'+text+'</button>';
+  return '<div class="wc-mode" role="group" aria-label="Маркер рекомендации">'+
+    option('arrow','↑ Стрелка')+option('frame','Рамка')+'</div>';
+}
+document.addEventListener('click',event=>{
+  const button=event.target.closest('[data-marker-choice]');
+  if (!button) return;
+  document.documentElement.dataset.marker=button.dataset.markerChoice;
+  for (const choice of document.querySelectorAll('[data-marker-choice]')) {
+    choice.setAttribute('aria-pressed',String(choice.dataset.markerChoice===button.dataset.markerChoice));
+  }
+});
 
 function details(h) {
   const profile = '<a target="_blank" rel="noopener noreferrer" href="'+esc(h.url)+'">В оружейную ↗</a>';
@@ -31,8 +47,8 @@ function details(h) {
   const subtitle = [c.race?.name,c.class?.name,spec].filter(Boolean).map(esc).join(' · ');
   const stamp = time(c.lastUpdatedTimestamp?.iso8601);
   return '<section class="armory-sheet" id="armory-'+esc(c.slug)+'" aria-label="Экипировка '+esc(h.name)+'">'+
-    '<div class="sheet-top"><div><div class="sheet-kicker">Экипировка</div><h3>'+esc(h.name)+'</h3><p>'+subtitle+'</p></div>'+profile+'</div>'+
-    '<div class="paper-stage"'+(background?' style="--backdrop:url('+esc(background)+')"':'')+'>'+
+    '<div class="sheet-top"><div><div class="sheet-kicker">Экипировка</div><h3>'+esc(h.name)+'</h3><p>'+subtitle+'</p></div><div class="wc-marker-tools">'+(guildCraft.best(c.slug)?markerSwitch():'')+profile+'</div></div>'+
+    guildCraft.renderColorKey(c.slug)+'<div class="paper-stage"'+(background?' style="--backdrop:url('+esc(background)+')"':'')+'>'+
     column('left',leftSlots)+'<div class="paper-figure">'+appearance+'</div>'+column('right',rightSlots)+column('weapons',weapons)+'</div>'+
     '<div class="sheet-foot"><span>' + (guildCraft.best(c.slug) ? 'Снаружи — крафт гильдии. Наведите или нажмите на иконку, чтобы увидеть замену и мастера.' : 'Характеристики предмета — при наведении или касании.') + '</span><span>Снимок профиля · '+stamp+' МСК</span></div>'+guildCraft.renderPanel(h)+'</section>';
 }

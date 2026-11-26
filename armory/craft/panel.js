@@ -20,12 +20,28 @@ function createGuildCraft(matches,armoryAssets,html) {
   for (const orders of offered.values())
     orders.sort((a,b)=>a.h.name.localeCompare(b.h.name)||a.r.slot.localeCompare(b.r.slot));
   const verdictSigns={direct:'✓',role:'◇',marginal:'≈',unknown:'?'};
-  const shortVerdicts={
-    'Уверенная замена':'Явно лучше', 'Для ближних ударов':'Ближний бой', 'Для дальних атак':'Дальний бой',
-    'Для урона заклинаниями':'Заклинания', 'Для ударов в облике кошки':'В кошке',
-    'Для защиты со щитом':'Со щитом', 'Для долгого лечения':'Лечение', 'Для стрельбы жезлом':'Жезл',
-    'Зависит от боя':'По ситуации', 'Малый перевес':'На грани', 'Нужны данные':'Неясно'
+  const verdictLabels={
+    'Уверенная замена':{text:'Явно лучше'}, 'Для ближних ударов':{text:'Ближний бой',tone:'melee'},
+    'Для дальних атак':{text:'Дальний бой',tone:'ranged'}, 'Для урона заклинаниями':{text:'Заклинания'},
+    'Для ударов в облике кошки':{text:'В кошке',tone:'cat'}, 'Для защиты со щитом':{text:'Со щитом',tone:'shield'},
+    'Для долгого лечения':{text:'Лечение',tone:'healing'}, 'Для стрельбы жезлом':{text:'Жезл',tone:'wand'},
+    'Зависит от боя':{text:'По ситуации'}, 'Малый перевес':{text:'На грани',tone:'narrow'}, 'Нужны данные':{text:'Неясно'}
   };
+  function verdictClasses(m) {
+    const tone=verdictLabels[m.label]?.tone;
+    return 'wc-'+m.kind+(tone?' wc-'+tone:'');
+  }
+  function markerBadge(m) {
+    const symbol=m.kind==='unknown' ? verdictSigns.unknown : '';
+    return '<span class="wc-arrow-badge" aria-hidden="true">'+symbol+'</span>';
+  }
+  function renderColorKey(heroKey) {
+    const types=new Map((received.get(heroKey)||[]).map(m=>[m.label,m]));
+    if (!types.size) return '';
+    const entries=Array.from(types.values(),m=>'<span class="wc-key-entry '+verdictClasses(m)+'">'+
+      markerBadge(m)+html(verdictLabels[m.label]?.text||m.label)+'</span>');
+    return '<div class="wc-color-key" role="group" aria-label="Типы замен"><span>Тип замены</span>'+entries.join('')+'</div>';
+  }
   function best(key) {return received.get(key)?.[0];}
   function deltas(entries) {
     return entries.map(({value,direction,label,unit=''})=>{
@@ -38,14 +54,16 @@ function createGuildCraft(matches,armoryAssets,html) {
     const name=html(m.r.name);
     const item=link ? '<a class="wc-item-name" href="'+html(m.r.recipeUrl)+'" target="_blank" rel="noopener noreferrer">'+name+'</a>' :
       '<span class="wc-item-name">'+name+'</span>';
-    const verdict='<span class="wc-verdict wc-'+m.kind+'"><span aria-hidden="true">'+verdictSigns[m.kind]+'</span> '+
-      html(shortVerdicts[m.label]||m.label)+'</span>';
+    const verdict='<span class="wc-verdict '+verdictClasses(m)+'"><span aria-hidden="true">'+verdictSigns[m.kind]+'</span> '+
+      html(verdictLabels[m.label]?.text||m.label)+'</span>';
     return '<span class="wc-craft-title">'+item+' '+verdict+'</span>';
   }
   function detailsMarkup(m,full) {
     const raw=m.changes.map(c=>({label:c.stat,value:c.diff,unit:chances.has(c.stat)?' п.п.':''}));
     const line=(label,value)=>'<div class="wc-line"><span class="wc-heading">'+label+'</span> '+value+'</div>';
-    const title=full?itemTitle(m)+line(html(slots[m.r.slot])+' ·',html(m.old?'вместо '+m.old.name:'пустой слот')):'';
+    const title=full?'<span class="wc-tip-label">Сейчас надето · '+html(slots[m.r.slot])+'</span>'+
+      '<span class="wc-tip-equipped">'+html(m.old?.name||'Пустой слот')+'</span>'+
+      '<span class="wc-tip-label wc-tip-suggestion">Рекомендуемая замена</span>'+itemTitle(m):'';
     return title+'<div class="wc-why">'+html(m.why)+'</div>'+
       (full?line('На предмете ·',deltas(raw)):'')+
       (m.effects.length?line('На герое ·',deltas(m.effects)):(!full?line('На предмете ·',deltas(raw)):''))+
@@ -59,10 +77,11 @@ function createGuildCraft(matches,armoryAssets,html) {
     const m=incoming.find(m=>m.r.slot===slot);
     let button='';
     if (m) {
-      const label='Крафт гильдии · '+m.r.name+' · '+slots[slot]+' · '+m.label;
-      button='<button type="button" class="wc-candidate wc-'+m.kind+'" data-tip="'+html(label)+'" aria-label="'+html(label)+'">'+
+      const quality=qualityColors[String(m.r.quality||'').toUpperCase()]||'#998e77';
+      const label='Рекомендуемая замена · '+m.r.name+' · '+slots[slot]+' · '+m.label;
+      button='<button type="button" class="wc-candidate '+verdictClasses(m)+'" style="--quality:'+quality+'" data-tip="'+html(label)+'" aria-label="'+html(label)+'">'+
         '<span class="slot-icon">'+icon(m.r.icon)+'</span>'+
-        '</button><template class="wc-tip">'+detailsMarkup(m,true)+'</template>';
+        markerBadge(m)+'</button><template class="wc-tip">'+detailsMarkup(m,true)+'</template>';
     }
     return '<div class="wc-slot-pair">'+equipped+button+'</div>';
   }
@@ -75,5 +94,5 @@ function createGuildCraft(matches,armoryAssets,html) {
     return '<section class="wc-panel" aria-label="'+label+'"><details class="wc-extra"><summary>'+label+' <span>· '+orders.length+
       '</span></summary><ul>'+items+'</ul></details></section>';
   }
-  return {best,renderPanel,renderSlotPair};
+  return {best,renderPanel,renderSlotPair,renderColorKey};
 }

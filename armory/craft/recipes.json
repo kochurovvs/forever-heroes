@@ -1,6 +1,7 @@
 [
   {
     "id": 7026,
+    "quality": "Common",
     "name": "Linen Belt",
     "slot": "waist",
     "type": "Cloth",
@@ -16,6 +17,7 @@
   },
   {
     "id": 277037,
+    "quality": "Uncommon",
     "name": "Azure Stormsewn Cord",
     "slot": "waist",
     "type": "Cloth",
@@ -32,6 +34,7 @@
   },
   {
     "id": 277013,
+    "quality": "Uncommon",
     "name": "Cloudy Stormsewn Cord",
     "slot": "waist",
     "type": "Cloth",
@@ -48,6 +51,7 @@
   },
   {
     "id": 277035,
+    "quality": "Uncommon",
     "name": "Azure Stormsewn Cuffs",
     "slot": "wrist",
     "type": "Cloth",
@@ -64,6 +68,7 @@
   },
   {
     "id": 277011,
+    "quality": "Uncommon",
     "name": "Cloudy Stormsewn Cuffs",
     "slot": "wrist",
     "type": "Cloth",
@@ -80,6 +85,7 @@
   },
   {
     "id": 4308,
+    "quality": "Uncommon",
     "name": "Green Linen Bracers",
     "slot": "wrist",
     "type": "Cloth",
@@ -96,6 +102,7 @@
   },
   {
     "id": 2570,
+    "quality": "Common",
     "name": "Linen Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -111,6 +118,7 @@
   },
   {
     "id": 2580,
+    "quality": "Uncommon",
     "name": "Reinforced Linen Cape",
     "slot": "back",
     "type": "Cloth",
@@ -127,6 +135,7 @@
   },
   {
     "id": 2584,
+    "quality": "Uncommon",
     "name": "Woolen Cape",
     "slot": "back",
     "type": "Cloth",
@@ -144,6 +153,7 @@
   },
   {
     "id": 5542,
+    "quality": "Uncommon",
     "name": "Pearl-clasped Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -161,6 +171,7 @@
   },
   {
     "id": 4311,
+    "quality": "Uncommon",
     "name": "Heavy Woolen Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -178,6 +189,7 @@
   },
   {
     "id": 6787,
+    "quality": "Uncommon",
     "name": "White Woolen Dress",
     "slot": "chest",
     "type": "Cloth",
@@ -195,6 +207,7 @@
   },
   {
     "id": 4307,
+    "quality": "Uncommon",
     "name": "Heavy Linen Gloves",
     "slot": "hand",
     "type": "Cloth",
@@ -211,6 +224,7 @@
   },
   {
     "id": 277036,
+    "quality": "Uncommon",
     "name": "Azure Stormsewn Handwraps",
     "slot": "hand",
     "type": "Cloth",
@@ -227,6 +241,7 @@
   },
   {
     "id": 277012,
+    "quality": "Uncommon",
     "name": "Cloudy Stormsewn Handwraps",
     "slot": "hand",
     "type": "Cloth",
@@ -243,6 +258,7 @@
   },
   {
     "id": 4310,
+    "quality": "Uncommon",
     "name": "Heavy Woolen Gloves",
     "slot": "hand",
     "type": "Cloth",
@@ -260,6 +276,7 @@
   },
   {
     "id": 10045,
+    "quality": "Common",
     "name": "Simple Linen Pants",
     "slot": "leg",
     "type": "Cloth",
@@ -275,6 +292,7 @@
   },
   {
     "id": 4343,
+    "quality": "Uncommon",
     "name": "Brown Linen Pants",
     "slot": "leg",
     "type": "Cloth",
@@ -291,6 +309,7 @@
   },
   {
     "id": 277038,
+    "quality": "Uncommon",
     "name": "Azure Stormsewn Leggings",
     "slot": "leg",
     "type": "Cloth",
@@ -307,6 +326,7 @@
   },
   {
     "id": 277014,
+    "quality": "Uncommon",
     "name": "Cloudy Stormsewn Leggings",
     "slot": "leg",
     "type": "Cloth",
@@ -323,6 +343,7 @@
   },
   {
     "id": 4309,
+    "quality": "Uncommon",
     "name": "Handstitched Linen Britches",
     "slot": "leg",
     "type": "Cloth",
@@ -340,6 +361,7 @@
   },
   {
     "id": 10047,
+    "quality": "Uncommon",
     "name": "Simple Kilt",
     "slot": "leg",
     "type": "Cloth",
@@ -357,6 +379,7 @@
   },
   {
     "id": 10048,
+    "quality": "Uncommon",
     "name": "Colorful Kilt",
     "slot": "leg",
     "type": "Cloth",
@@ -374,6 +397,7 @@
   },
   {
     "id": 4316,
+    "quality": "Uncommon",
     "name": "Heavy Woolen Pants",
     "slot": "leg",
     "type": "Cloth",
@@ -391,6 +415,7 @@
   },
   {
     "id": 2568,
+    "quality": "Common",
     "name": "Brown Linen Vest",
     "slot": "chest",
     "type": "Cloth",
@@ -406,6 +431,7 @@
   },
   {
     "id": 6238,
+    "quality": "Uncommon",
     "name": "Brown Linen Robe",
     "slot": "chest",
     "type": "Cloth",
@@ -422,6 +448,7 @@
   },
   {
     "id": 2572,
+    "quality": "Uncommon",
     "name": "Red Linen Robe",
     "slot": "chest",
     "type": "Cloth",
@@ -438,6 +465,7 @@
   },
   {
     "id": 6241,
+    "quality": "Uncommon",
     "name": "White Linen Robe",
     "slot": "chest",
     "type": "Cloth",
@@ -454,6 +482,7 @@
   },
   {
     "id": 6240,
+    "quality": "Uncommon",
     "name": "Blue Linen Vest",
     "slot": "chest",
     "type": "Cloth",
@@ -471,6 +500,7 @@
   },
   {
     "id": 6239,
+    "quality": "Uncommon",
     "name": "Red Linen Vest",
     "slot": "chest",
     "type": "Cloth",
@@ -488,6 +518,7 @@
   },
   {
     "id": 277034,
+    "quality": "Uncommon",
     "name": "Azure Stormsewn Vest",
     "slot": "chest",
     "type": "Cloth",
@@ -504,6 +535,7 @@
   },
   {
     "id": 277010,
+    "quality": "Uncommon",
     "name": "Cloudy Stormsewn Vest",
     "slot": "chest",
     "type": "Cloth",
@@ -520,6 +552,7 @@
   },
   {
     "id": 2578,
+    "quality": "Uncommon",
     "name": "Barbaric Linen Vest",
     "slot": "chest",
     "type": "Cloth",
@@ -537,6 +570,7 @@
   },
   {
     "id": 6242,
+    "quality": "Uncommon",
     "name": "Blue Linen Robe",
     "slot": "chest",
     "type": "Cloth",
@@ -554,6 +588,7 @@
   },
   {
     "id": 2582,
+    "quality": "Uncommon",
     "name": "Green Woolen Vest",
     "slot": "chest",
     "type": "Cloth",
@@ -571,6 +606,7 @@
   },
   {
     "id": 6243,
+    "quality": "Uncommon",
     "name": "Green Woolen Robe",
     "slot": "chest",
     "type": "Cloth",
@@ -588,6 +624,7 @@
   },
   {
     "id": 6263,
+    "quality": "Uncommon",
     "name": "Blue Overalls",
     "slot": "chest",
     "type": "Cloth",
@@ -605,6 +642,7 @@
   },
   {
     "id": 2585,
+    "quality": "Uncommon",
     "name": "Gray Woolen Robe",
     "slot": "chest",
     "type": "Cloth",
@@ -622,6 +660,7 @@
   },
   {
     "id": 6264,
+    "quality": "Uncommon",
     "name": "Greater Adept's Robe",
     "slot": "chest",
     "type": "Cloth",
@@ -640,6 +679,7 @@
   },
   {
     "id": 10046,
+    "quality": "Common",
     "name": "Simple Linen Boots",
     "slot": "foot",
     "type": "Cloth",
@@ -655,6 +695,7 @@
   },
   {
     "id": 277039,
+    "quality": "Uncommon",
     "name": "Azure Stormsewn Shoes",
     "slot": "foot",
     "type": "Cloth",
@@ -671,6 +712,7 @@
   },
   {
     "id": 277015,
+    "quality": "Uncommon",
     "name": "Cloudy Stormsewn Shoes",
     "slot": "foot",
     "type": "Cloth",
@@ -687,6 +729,7 @@
   },
   {
     "id": 2569,
+    "quality": "Uncommon",
     "name": "Linen Boots",
     "slot": "foot",
     "type": "Cloth",
@@ -703,6 +746,7 @@
   },
   {
     "id": 4313,
+    "quality": "Uncommon",
     "name": "Red Woolen Boots",
     "slot": "foot",
     "type": "Cloth",
@@ -720,6 +764,7 @@
   },
   {
     "id": 4312,
+    "quality": "Uncommon",
     "name": "Soft-soled Linen Boots",
     "slot": "foot",
     "type": "Cloth",
@@ -737,6 +782,7 @@
   },
   {
     "id": 2583,
+    "quality": "Uncommon",
     "name": "Woolen Boots",
     "slot": "foot",
     "type": "Cloth",
@@ -755,6 +801,7 @@
   },
   {
     "id": 4314,
+    "quality": "Uncommon",
     "name": "Double-Stitched Woolen Shoulders",
     "slot": "shoulder",
     "type": "Cloth",
@@ -772,6 +819,7 @@
   },
   {
     "id": 4315,
+    "quality": "Uncommon",
     "name": "Reinforced Woolen Shoulders",
     "slot": "shoulder",
     "type": "Cloth",
@@ -789,6 +837,7 @@
   },
   {
     "id": 7276,
+    "quality": "Common",
     "name": "Handstitched Leather Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -804,6 +853,7 @@
   },
   {
     "id": 2310,
+    "quality": "Uncommon",
     "name": "Embossed Leather Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -820,6 +870,7 @@
   },
   {
     "id": 2308,
+    "quality": "Uncommon",
     "name": "Fine Leather Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -836,6 +887,7 @@
   },
   {
     "id": 6466,
+    "quality": "Uncommon",
     "name": "Deviate Scale Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -853,6 +905,7 @@
   },
   {
     "id": 7283,
+    "quality": "Uncommon",
     "name": "Black Whelp Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -869,6 +922,7 @@
   },
   {
     "id": 2316,
+    "quality": "Uncommon",
     "name": "Dark Leather Cloak",
     "slot": "back",
     "type": "Cloth",
@@ -886,6 +940,7 @@
   },
   {
     "id": 277025,
+    "quality": "Uncommon",
     "name": "Azure Gustwoven Belt",
     "slot": "waist",
     "type": "Leather",
@@ -902,6 +957,7 @@
   },
   {
     "id": 277031,
+    "quality": "Uncommon",
     "name": "Azure Windraveled Strap",
     "slot": "waist",
     "type": "Leather",
@@ -918,6 +974,7 @@
   },
   {
     "id": 277001,
+    "quality": "Uncommon",
     "name": "Cloudy Gustwoven Belt",
     "slot": "waist",
     "type": "Leather",
@@ -934,6 +991,7 @@
   },
   {
     "id": 277007,
+    "quality": "Uncommon",
     "name": "Cloudy Windraveled Strap",
     "slot": "waist",
     "type": "Leather",
@@ -950,6 +1008,7 @@
   },
   {
     "id": 4237,
+    "quality": "Uncommon",
     "name": "Handstitched Leather Belt",
     "slot": "waist",
     "type": "Leather",
@@ -966,6 +1025,7 @@
   },
   {
     "id": 4246,
+    "quality": "Uncommon",
     "name": "Fine Leather Belt",
     "slot": "waist",
     "type": "Leather",
@@ -983,6 +1043,7 @@
   },
   {
     "id": 5780,
+    "quality": "Uncommon",
     "name": "Murloc Scale Belt",
     "slot": "waist",
     "type": "Leather",
@@ -1000,6 +1061,7 @@
   },
   {
     "id": 6468,
+    "quality": "Rare",
     "name": "Deviate Scale Belt",
     "slot": "waist",
     "type": "Leather",
@@ -1018,6 +1080,7 @@
   },
   {
     "id": 4249,
+    "quality": "Uncommon",
     "name": "Dark Leather Belt",
     "slot": "waist",
     "type": "Leather",
@@ -1035,6 +1098,7 @@
   },
   {
     "id": 4250,
+    "quality": "Uncommon",
     "name": "Hillman's Belt",
     "slot": "waist",
     "type": "Leather",
@@ -1052,6 +1116,7 @@
   },
   {
     "id": 2302,
+    "quality": "Common",
     "name": "Handstitched Leather Boots",
     "slot": "foot",
     "type": "Leather",
@@ -1067,6 +1132,7 @@
   },
   {
     "id": 277027,
+    "quality": "Uncommon",
     "name": "Azure Gustwoven Boots",
     "slot": "foot",
     "type": "Leather",
@@ -1083,6 +1149,7 @@
   },
   {
     "id": 277033,
+    "quality": "Uncommon",
     "name": "Azure Windraveled Footwraps",
     "slot": "foot",
     "type": "Leather",
@@ -1099,6 +1166,7 @@
   },
   {
     "id": 277003,
+    "quality": "Uncommon",
     "name": "Cloudy Gustwoven Boots",
     "slot": "foot",
     "type": "Leather",
@@ -1115,6 +1183,7 @@
   },
   {
     "id": 277009,
+    "quality": "Uncommon",
     "name": "Cloudy Windraveled Footwraps",
     "slot": "foot",
     "type": "Leather",
@@ -1131,6 +1200,7 @@
   },
   {
     "id": 2309,
+    "quality": "Uncommon",
     "name": "Embossed Leather Boots",
     "slot": "foot",
     "type": "Leather",
@@ -1148,6 +1218,7 @@
   },
   {
     "id": 2307,
+    "quality": "Uncommon",
     "name": "Fine Leather Boots",
     "slot": "foot",
     "type": "Leather",
@@ -1165,6 +1236,7 @@
   },
   {
     "id": 7277,
+    "quality": "Common",
     "name": "Handstitched Leather Bracers",
     "slot": "wrist",
     "type": "Leather",
@@ -1180,6 +1252,7 @@
   },
   {
     "id": 277023,
+    "quality": "Uncommon",
     "name": "Azure Gustwoven Bracers",
     "slot": "wrist",
     "type": "Leather",
@@ -1196,6 +1269,7 @@
   },
   {
     "id": 277029,
+    "quality": "Uncommon",
     "name": "Azure Windraveled Armguards",
     "slot": "wrist",
     "type": "Leather",
@@ -1212,6 +1286,7 @@
   },
   {
     "id": 276999,
+    "quality": "Uncommon",
     "name": "Cloudy Gustwoven Bracers",
     "slot": "wrist",
     "type": "Leather",
@@ -1228,6 +1303,7 @@
   },
   {
     "id": 277005,
+    "quality": "Uncommon",
     "name": "Cloudy Windraveled Armguards",
     "slot": "wrist",
     "type": "Leather",
@@ -1244,6 +1320,7 @@
   },
   {
     "id": 7281,
+    "quality": "Uncommon",
     "name": "Light Leather Bracers",
     "slot": "wrist",
     "type": "Leather",
@@ -1261,6 +1338,7 @@
   },
   {
     "id": 5957,
+    "quality": "Uncommon",
     "name": "Handstitched Leather Vest",
     "slot": "chest",
     "type": "Leather",
@@ -1277,6 +1355,7 @@
   },
   {
     "id": 277022,
+    "quality": "Uncommon",
     "name": "Azure Gustwoven Harness",
     "slot": "chest",
     "type": "Leather",
@@ -1293,6 +1372,7 @@
   },
   {
     "id": 277028,
+    "quality": "Uncommon",
     "name": "Azure Windraveled Jerkin",
     "slot": "chest",
     "type": "Leather",
@@ -1309,6 +1389,7 @@
   },
   {
     "id": 276998,
+    "quality": "Uncommon",
     "name": "Cloudy Gustwoven Harness",
     "slot": "chest",
     "type": "Leather",
@@ -1325,6 +1406,7 @@
   },
   {
     "id": 277004,
+    "quality": "Uncommon",
     "name": "Cloudy Windraveled Jerkin",
     "slot": "chest",
     "type": "Leather",
@@ -1341,6 +1423,7 @@
   },
   {
     "id": 2300,
+    "quality": "Uncommon",
     "name": "Embossed Leather Vest",
     "slot": "chest",
     "type": "Leather",
@@ -1357,6 +1440,7 @@
   },
   {
     "id": 2311,
+    "quality": "Uncommon",
     "name": "White Leather Jerkin",
     "slot": "chest",
     "type": "Leather",
@@ -1374,6 +1458,7 @@
   },
   {
     "id": 4243,
+    "quality": "Uncommon",
     "name": "Fine Leather Tunic",
     "slot": "chest",
     "type": "Leather",
@@ -1391,6 +1476,7 @@
   },
   {
     "id": 6709,
+    "quality": "Uncommon",
     "name": "Moonglow Vest",
     "slot": "chest",
     "type": "Leather",
@@ -1408,6 +1494,7 @@
   },
   {
     "id": 20575,
+    "quality": "Uncommon",
     "name": "Black Whelp Tunic",
     "slot": "chest",
     "type": "Leather",
@@ -1425,6 +1512,7 @@
   },
   {
     "id": 2317,
+    "quality": "Uncommon",
     "name": "Dark Leather Tunic",
     "slot": "chest",
     "type": "Leather",
@@ -1441,6 +1529,7 @@
   },
   {
     "id": 4244,
+    "quality": "Uncommon",
     "name": "Hillman's Leather Vest",
     "slot": "chest",
     "type": "Leather",
@@ -1458,6 +1547,7 @@
   },
   {
     "id": 5781,
+    "quality": "Uncommon",
     "name": "Murloc Scale Breastplate",
     "slot": "chest",
     "type": "Leather",
@@ -1475,6 +1565,7 @@
   },
   {
     "id": 2314,
+    "quality": "Uncommon",
     "name": "Toughened Leather Armor",
     "slot": "chest",
     "type": "Leather",
@@ -1492,6 +1583,7 @@
   },
   {
     "id": 277024,
+    "quality": "Uncommon",
     "name": "Azure Gustwoven Gloves",
     "slot": "hand",
     "type": "Leather",
@@ -1508,6 +1600,7 @@
   },
   {
     "id": 277030,
+    "quality": "Uncommon",
     "name": "Azure Windraveled Mitts",
     "slot": "hand",
     "type": "Leather",
@@ -1524,6 +1617,7 @@
   },
   {
     "id": 277000,
+    "quality": "Uncommon",
     "name": "Cloudy Gustwoven Gloves",
     "slot": "hand",
     "type": "Leather",
@@ -1540,6 +1634,7 @@
   },
   {
     "id": 277006,
+    "quality": "Uncommon",
     "name": "Cloudy Windraveled Mitts",
     "slot": "hand",
     "type": "Leather",
@@ -1556,6 +1651,7 @@
   },
   {
     "id": 4239,
+    "quality": "Uncommon",
     "name": "Embossed Leather Gloves",
     "slot": "hand",
     "type": "Leather",
@@ -1573,6 +1669,7 @@
   },
   {
     "id": 2312,
+    "quality": "Uncommon",
     "name": "Fine Leather Gloves",
     "slot": "hand",
     "type": "Leather",
@@ -1590,6 +1687,7 @@
   },
   {
     "id": 6467,
+    "quality": "Uncommon",
     "name": "Deviate Scale Gloves",
     "slot": "hand",
     "type": "Leather",
@@ -1607,6 +1705,7 @@
   },
   {
     "id": 7285,
+    "quality": "Uncommon",
     "name": "Nimble Leather Gloves",
     "slot": "hand",
     "type": "Leather",
@@ -1624,6 +1723,7 @@
   },
   {
     "id": 7348,
+    "quality": "Uncommon",
     "name": "Fletcher's Gloves",
     "slot": "hand",
     "type": "Leather",
@@ -1641,6 +1741,7 @@
   },
   {
     "id": 4253,
+    "quality": "Rare",
     "name": "Toughened Leather Gloves",
     "slot": "hand",
     "type": "Leather",
@@ -1659,6 +1760,7 @@
   },
   {
     "id": 2303,
+    "quality": "Uncommon",
     "name": "Handstitched Leather Pants",
     "slot": "leg",
     "type": "Leather",
@@ -1675,6 +1777,7 @@
   },
   {
     "id": 7280,
+    "quality": "Uncommon",
     "name": "Rugged Leather Pants",
     "slot": "leg",
     "type": "Leather",
@@ -1691,6 +1794,7 @@
   },
   {
     "id": 277026,
+    "quality": "Uncommon",
     "name": "Azure Gustwoven Trousers",
     "slot": "leg",
     "type": "Leather",
@@ -1707,6 +1811,7 @@
   },
   {
     "id": 277032,
+    "quality": "Uncommon",
     "name": "Azure Windraveled Pants",
     "slot": "leg",
     "type": "Leather",
@@ -1723,6 +1828,7 @@
   },
   {
     "id": 277002,
+    "quality": "Uncommon",
     "name": "Cloudy Gustwoven Trousers",
     "slot": "leg",
     "type": "Leather",
@@ -1739,6 +1845,7 @@
   },
   {
     "id": 277008,
+    "quality": "Uncommon",
     "name": "Cloudy Windraveled Pants",
     "slot": "leg",
     "type": "Leather",
@@ -1755,6 +1862,7 @@
   },
   {
     "id": 4242,
+    "quality": "Uncommon",
     "name": "Embossed Leather Pants",
     "slot": "leg",
     "type": "Leather",
@@ -1772,6 +1880,7 @@
   },
   {
     "id": 7282,
+    "quality": "Uncommon",
     "name": "Light Leather Pants",
     "slot": "leg",
     "type": "Leather",
@@ -1789,6 +1898,7 @@
   },
   {
     "id": 5958,
+    "quality": "Uncommon",
     "name": "Fine Leather Pants",
     "slot": "leg",
     "type": "Leather",
@@ -1806,6 +1916,7 @@
   },
   {
     "id": 5961,
+    "quality": "Uncommon",
     "name": "Dark Leather Pants",
     "slot": "leg",
     "type": "Leather",
@@ -1822,6 +1933,7 @@
   },
   {
     "id": 4251,
+    "quality": "Uncommon",
     "name": "Hillman's Shoulders",
     "slot": "shoulder",
     "type": "Leather",
@@ -1839,6 +1951,7 @@
   },
   {
     "id": 277019,
+    "quality": "Uncommon",
     "name": "Azure Skyforged Chain",
     "slot": "waist",
     "type": "Mail",
@@ -1855,6 +1968,7 @@
   },
   {
     "id": 276995,
+    "quality": "Uncommon",
     "name": "Cloudy Skyforged Chain",
     "slot": "waist",
     "type": "Mail",
@@ -1871,6 +1985,7 @@
   },
   {
     "id": 2851,
+    "quality": "Uncommon",
     "name": "Copper Chain Belt",
     "slot": "waist",
     "type": "Mail",
@@ -1887,6 +2002,7 @@
   },
   {
     "id": 2857,
+    "quality": "Uncommon",
     "name": "Runed Copper Belt",
     "slot": "waist",
     "type": "Mail",
@@ -1904,6 +2020,7 @@
   },
   {
     "id": 277021,
+    "quality": "Uncommon",
     "name": "Azure Skyforged Greaves",
     "slot": "foot",
     "type": "Mail",
@@ -1920,6 +2037,7 @@
   },
   {
     "id": 276997,
+    "quality": "Uncommon",
     "name": "Cloudy Skyforged Greaves",
     "slot": "foot",
     "type": "Mail",
@@ -1936,6 +2054,7 @@
   },
   {
     "id": 277672,
+    "quality": "Uncommon",
     "name": "Rough Copper Chain Boots",
     "slot": "foot",
     "type": "Mail",
@@ -1952,6 +2071,7 @@
   },
   {
     "id": 3469,
+    "quality": "Uncommon",
     "name": "Copper Chain Boots",
     "slot": "foot",
     "type": "Mail",
@@ -1968,6 +2088,7 @@
   },
   {
     "id": 6350,
+    "quality": "Uncommon",
     "name": "Rough Bronze Boots",
     "slot": "foot",
     "type": "Mail",
@@ -1985,6 +2106,7 @@
   },
   {
     "id": 250483,
+    "quality": "Uncommon",
     "name": "Sterling Silver Boots",
     "slot": "foot",
     "type": "Mail",
@@ -2003,6 +2125,7 @@
   },
   {
     "id": 3482,
+    "quality": "Uncommon",
     "name": "Silvered Bronze Boots",
     "slot": "foot",
     "type": "Mail",
@@ -2021,6 +2144,7 @@
   },
   {
     "id": 2853,
+    "quality": "Common",
     "name": "Copper Bracers",
     "slot": "wrist",
     "type": "Mail",
@@ -2036,6 +2160,7 @@
   },
   {
     "id": 277017,
+    "quality": "Uncommon",
     "name": "Azure Skyforged Wristguards",
     "slot": "wrist",
     "type": "Mail",
@@ -2052,6 +2177,7 @@
   },
   {
     "id": 276993,
+    "quality": "Uncommon",
     "name": "Cloudy Skyforged Wristguards",
     "slot": "wrist",
     "type": "Mail",
@@ -2068,6 +2194,7 @@
   },
   {
     "id": 2854,
+    "quality": "Uncommon",
     "name": "Runed Copper Bracers",
     "slot": "wrist",
     "type": "Mail",
@@ -2085,6 +2212,7 @@
   },
   {
     "id": 2867,
+    "quality": "Uncommon",
     "name": "Rough Bronze Bracers",
     "slot": "wrist",
     "type": "Mail",
@@ -2101,6 +2229,7 @@
   },
   {
     "id": 2868,
+    "quality": "Uncommon",
     "name": "Patterned Bronze Bracers",
     "slot": "wrist",
     "type": "Mail",
@@ -2117,6 +2246,7 @@
   },
   {
     "id": 10421,
+    "quality": "Uncommon",
     "name": "Rough Copper Vest",
     "slot": "chest",
     "type": "Mail",
@@ -2133,6 +2263,7 @@
   },
   {
     "id": 277016,
+    "quality": "Uncommon",
     "name": "Azure Skyforged Chainmail",
     "slot": "chest",
     "type": "Mail",
@@ -2149,6 +2280,7 @@
   },
   {
     "id": 276992,
+    "quality": "Uncommon",
     "name": "Cloudy Skyforged Chainmail",
     "slot": "chest",
     "type": "Mail",
@@ -2165,6 +2297,7 @@
   },
   {
     "id": 3471,
+    "quality": "Uncommon",
     "name": "Copper Chain Vest",
     "slot": "chest",
     "type": "Mail",
@@ -2181,6 +2314,7 @@
   },
   {
     "id": 6730,
+    "quality": "Uncommon",
     "name": "Ironforge Chain",
     "slot": "chest",
     "type": "Mail",
@@ -2197,6 +2331,7 @@
   },
   {
     "id": 2864,
+    "quality": "Uncommon",
     "name": "Runed Copper Breastplate",
     "slot": "chest",
     "type": "Mail",
@@ -2214,6 +2349,7 @@
   },
   {
     "id": 6731,
+    "quality": "Uncommon",
     "name": "Ironforge Breastplate",
     "slot": "chest",
     "type": "Mail",
@@ -2231,6 +2367,7 @@
   },
   {
     "id": 2866,
+    "quality": "Uncommon",
     "name": "Rough Bronze Cuirass",
     "slot": "chest",
     "type": "Mail",
@@ -2247,6 +2384,7 @@
   },
   {
     "id": 2869,
+    "quality": "Uncommon",
     "name": "Silvered Bronze Breastplate",
     "slot": "chest",
     "type": "Mail",
@@ -2265,6 +2403,7 @@
   },
   {
     "id": 277018,
+    "quality": "Uncommon",
     "name": "Azure Skyforged Gauntlets",
     "slot": "hand",
     "type": "Mail",
@@ -2281,6 +2420,7 @@
   },
   {
     "id": 276994,
+    "quality": "Uncommon",
     "name": "Cloudy Skyforged Gauntlets",
     "slot": "hand",
     "type": "Mail",
@@ -2297,6 +2437,7 @@
   },
   {
     "id": 3474,
+    "quality": "Uncommon",
     "name": "Gemmed Copper Gauntlets",
     "slot": "hand",
     "type": "Mail",
@@ -2312,6 +2453,7 @@
   },
   {
     "id": 3472,
+    "quality": "Uncommon",
     "name": "Runed Copper Gauntlets",
     "slot": "hand",
     "type": "Mail",
@@ -2329,6 +2471,7 @@
   },
   {
     "id": 250485,
+    "quality": "Uncommon",
     "name": "Sterling Silver Gauntlet",
     "slot": "hand",
     "type": "Mail",
@@ -2347,6 +2490,7 @@
   },
   {
     "id": 2852,
+    "quality": "Uncommon",
     "name": "Copper Chain Pants",
     "slot": "leg",
     "type": "Mail",
@@ -2363,6 +2507,7 @@
   },
   {
     "id": 277020,
+    "quality": "Uncommon",
     "name": "Azure Skyforged Legguards",
     "slot": "leg",
     "type": "Mail",
@@ -2379,6 +2524,7 @@
   },
   {
     "id": 276996,
+    "quality": "Uncommon",
     "name": "Cloudy Skyforged Legguards",
     "slot": "leg",
     "type": "Mail",
@@ -2395,6 +2541,7 @@
   },
   {
     "id": 3473,
+    "quality": "Uncommon",
     "name": "Runed Copper Pants",
     "slot": "leg",
     "type": "Mail",
@@ -2412,6 +2559,7 @@
   },
   {
     "id": 2865,
+    "quality": "Uncommon",
     "name": "Rough Bronze Leggings",
     "slot": "leg",
     "type": "Mail",
@@ -2429,6 +2577,7 @@
   },
   {
     "id": 250484,
+    "quality": "Uncommon",
     "name": "Sterling Silver Leggings",
     "slot": "leg",
     "type": "Mail",
@@ -2447,6 +2596,7 @@
   },
   {
     "id": 3480,
+    "quality": "Uncommon",
     "name": "Rough Bronze Shoulders",
     "slot": "shoulder",
     "type": "Mail",
@@ -2464,6 +2614,7 @@
   },
   {
     "id": 3481,
+    "quality": "Uncommon",
     "name": "Silvered Bronze Shoulders",
     "slot": "shoulder",
     "type": "Mail",
@@ -2482,6 +2633,7 @@
   },
   {
     "id": 4362,
+    "quality": "Uncommon",
     "name": "Rough Boomstick",
     "slot": "ranged",
     "type": "Gun",
@@ -2505,6 +2657,7 @@
   },
   {
     "id": 4369,
+    "quality": "Uncommon",
     "name": "Deadly Blunderbuss",
     "slot": "ranged",
     "type": "Gun",
@@ -2528,6 +2681,7 @@
   },
   {
     "id": 4372,
+    "quality": "Uncommon",
     "name": "Lovingly Crafted Boomstick",
     "slot": "ranged",
     "type": "Gun",
@@ -2551,6 +2705,7 @@
   },
   {
     "id": 4379,
+    "quality": "Uncommon",
     "name": "Silver-plated Shotgun",
     "slot": "ranged",
     "type": "Gun",
@@ -2574,6 +2729,7 @@
   },
   {
     "id": 4383,
+    "quality": "Uncommon",
     "name": "Moonsight Rifle",
     "slot": "ranged",
     "type": "Gun",
@@ -2597,6 +2753,7 @@
   },
   {
     "id": 247789,
+    "quality": "Common",
     "name": "Novice's Practice Wand",
     "slot": "ranged",
     "type": "Wand",
@@ -2619,6 +2776,7 @@
   },
   {
     "id": 11287,
+    "quality": "Uncommon",
     "name": "Lesser Magic Wand",
     "slot": "ranged",
     "type": "Wand",
@@ -2642,6 +2800,7 @@
   },
   {
     "id": 11288,
+    "quality": "Uncommon",
     "name": "Greater Magic Wand",
     "slot": "ranged",
     "type": "Wand",
