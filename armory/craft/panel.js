@@ -32,7 +32,8 @@ function createGuildCraft(matches,armoryAssets,html) {
     return 'wc-'+m.kind+(tone?' wc-'+tone:'');
   }
   function markerBadge(m) {
-    const symbol=m.kind==='unknown' ? verdictSigns.unknown : '';
+    const useVerdictSign=m.kind==='unknown' || m.label==='Малый перевес';
+    const symbol=useVerdictSign ? verdictSigns[m.kind] : '';
     return '<span class="wc-arrow-badge" aria-hidden="true">'+symbol+'</span>';
   }
   function renderColorKey(heroKey) {
