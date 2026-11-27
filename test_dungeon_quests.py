@@ -14,7 +14,7 @@ from dungeons.view import ORIGINS, add_dungeons, member, quest_card
 class DungeonQuestsTest(unittest.TestCase):
     hero = {'name':'Test Hero','owner':'Test','character':{'class':{'name':'Mage','slug':'mage'},'level':18}}
     def setUp(self):
-        self.dungeon = {'id':'wc', 'quests':[
+        self.dungeon = {'id':'wc', 'levels':[15,25], 'quests':[
             {'id':i, 'name':'Quest '+str(i), 'giver':'Giver','place':'Place','how':'Steps',
              'min':10,'inside':i==3, **({'cls':'Warlock'} if i==4 else {})}
             for i in range(1,6)]}
@@ -82,9 +82,10 @@ class DungeonQuestsTest(unittest.TestCase):
 
     def test_all_dungeons_have_levels_and_working_tabs(self):
         catalog = json.loads((Path(__file__).parent/'dungeons/catalog.json').read_text())
-        self.assertEqual({d['id'] for d in catalog if d['planned']}, {'wc','sfk'})
+        self.assertEqual({d['id'] for d in catalog if d['planned']}, {'sfk','bfd'})
         base = '<style></style><main><header></header><h1>Heroes</h1></main><div id="hover-tip"></div>'
         html = add_dungeons(base,[self.hero],catalog,{})
+        self.assertIn('id="pick-sfk" aria-controls="dg-report-sfk" checked', html)
         self.assertIn('Blackfathom Deeps',html)
         self.assertNotIn('__DG_', html)
         self.assertIn('id="dungeons"', html)
@@ -94,6 +95,17 @@ class DungeonQuestsTest(unittest.TestCase):
             self.assertIn(f'#pick-{d["id"]}:checked~#dg-report-{d["id"]}', html)
             self.assertIn(f'aria-controls="dg-report-{d["id"]}"',html)
             self.assertIn(f'Для группы · {d["recommended"]} ур.',html)
+
+    def test_level_fit_uses_inclusive_bounds_even_without_a_journal(self):
+        for level, state, label in [(12, 'below', '−3'), (15, 'within', '✓'),
+                                    (20, 'within', '✓'), (25, 'within', '✓'),
+                                    (27, 'above', '+2'), (None, 'unknown', '—')]:
+            with self.subTest(level=level):
+                hero = {**self.hero, 'character': {**self.hero['character'], 'level': level}}
+                _, html = member(self.dungeon, hero, None)
+                summary = html.split('</summary>', 1)[0]
+                self.assertIn(f'class="dg-level-fit {state}"', summary)
+                self.assertTrue(summary.endswith(f'>{label}</button></span>'))
 
     def test_routes_start_at_first_prerequisite_and_have_zone_maps(self):
         root = Path(__file__).parent / 'dungeons'

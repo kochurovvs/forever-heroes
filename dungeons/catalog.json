@@ -304,7 +304,7 @@
       25
     ],
     "recommended": 19,
-    "planned": true
+    "planned": false
   },
   {
     "id": "sfk",
@@ -558,6 +558,6 @@
       32
     ],
     "recommended": 25,
-    "planned": false
+    "planned": true
   }
 ]

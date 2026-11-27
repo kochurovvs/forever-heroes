@@ -35,7 +35,7 @@
   },
   "additionalDungeonCatalog": "leveling.json",
   "plannedDungeons": [
-    "wc",
-    "sfk"
+    "sfk",
+    "bfd"
   ]
 }

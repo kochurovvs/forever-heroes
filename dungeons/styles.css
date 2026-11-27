@@ -24,10 +24,12 @@ __DG_VISIBLE__{display:block}
 .dg-total small{font:16px Georgia,serif;color:#baab92}.dg-total span{color:#cbbca3;font-size:11px}
 .dg-legend{margin:0;padding:4px 18px 10px;color:#d8c7a7;font:12px/1.4 system-ui,sans-serif;border-bottom:1px solid var(--hairline)}
 .dg-legend span{display:inline;margin-left:14px;color:var(--dim)}.dg-legend b{color:#edd4a2;font-variant-numeric:tabular-nums}
-.dg-line{display:grid;grid-template-columns:minmax(0,1fr) minmax(80px,25%) 77px;align-items:center;column-gap:12px;padding:5px 18px}
+.dg-line{display:grid;grid-template-columns:minmax(0,1fr) minmax(80px,25%) 77px 54px;align-items:center;column-gap:12px;padding:5px 18px}
 .dg-colheads{color:#b7a687;background:#19160f;font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding-block:5px}
-.dg-colheads span:nth-child(2){text-align:right}
-.dg-colheads span:last-child,.dg-state{text-align:right}
+.dg-colheads span:not(:first-child),.dg-state{text-align:right}
+.dg-level-fit{justify-self:end;color:var(--dim);font:600 13px/1.2 system-ui,sans-serif;font-variant-numeric:tabular-nums}
+.dg-level-fit.below{color:#ecc38c}.dg-level-fit.within{color:#b8d99f}.dg-level-fit.above{color:#b5c7df}
+.dg-level-fit .metric-help{min-width:32px;min-height:24px;border-radius:4px;background:color-mix(in srgb,currentColor 9%,transparent);text-decoration:none}
 .dg-member{border-bottom:1px solid #3c3225;--progress:#cfad6b;--status:#d9c39b}
 .dg-member:last-child{border-bottom:0}
 .dg-member.is-ready{--progress:#95ae78;--status:#b8d99f}
@@ -36,7 +38,7 @@ __DG_VISIBLE__{display:block}
 .dg-member>summary::-webkit-details-marker{display:none}
 .dg-member>summary:hover,.dg-member[open]>summary{background:#312a1f}
 .dg-person,.dg-score{display:flex;gap:8px;align-items:center;min-width:0}
-.dg-name{font:16px/1.15 Georgia,serif;color:#efdfc5}
+.dg-name{font:16px/1.15 Georgia,serif;color:#efdfc5;overflow-wrap:anywhere}
 .dg-owner{color:#b5a58e;font:11px/1.2 system-ui,sans-serif}
 .dg-dot{width:6px;height:6px;flex:none;border-radius:50%;background:#c2b397}
 .class-shaman{background:#4e94e4}.class-warrior{background:#c79c6e}.class-paladin{background:#f58cba}.class-rogue{background:#e5d55b}.class-priest{background:#eee}.class-druid{background:#ff9342}.class-hunter{background:#a6c778}.class-warlock{background:#aca2d9}.class-mage{background:#75c8db}
@@ -63,11 +65,11 @@ __DG_VISIBLE__{display:block}
  .dg-toolbar h1{font-size:23px;margin:11px 0 8px}.dg-toolbar small{font-size:10px}
  .dg-report-head{padding:9px 11px 5px}.dg-report h2{font-size:23px}.dg-total strong{font-size:22px}.dg-total span{font-size:10px}
  .dg-legend{padding:3px 11px 6px;font-size:11px}.dg-legend span{display:block;margin:2px 0 0}
- .dg-line{grid-template-columns:minmax(0,1fr) 60px 53px;gap:6px;padding-inline:10px}
+ .dg-line{grid-template-columns:minmax(0,1fr) 60px 62px 48px;gap:6px;padding-inline:10px}
  .dg-name{font-size:15px}.dg-owner{display:none}.dg-score,.dg-person{gap:5px}.dg-score b{min-width:25px;font-size:12px}.dg-bar{width:25px}
  .dg-state{font-size:11px}.dg-member>summary{min-height:32px}.dg-body,.dg-guide{padding-inline:11px}
 }
-@media(max-width:340px){.dg-line{grid-template-columns:minmax(0,1fr) 31px 50px}.dg-bar{display:none}}
+@media(max-width:340px){.dg-line{grid-template-columns:minmax(0,1fr) 36px 52px 48px;gap:4px}.dg-bar{display:none}}
 
 .dg-run-note{margin:0;padding:5px 18px 9px;color:#e5ce9e;font-size:14px}
 .dg-dalaran{--tint:#c4a1df}
@@ -159,6 +161,6 @@ __DG_VISIBLE__{display:block}
  .slot-copy>span{display:none}.slot-copy small{font-size:9px}
  .paper-weapons{flex-wrap:nowrap;gap:8px}.paper-weapons .paper-slot{max-width:88px}
  .sheet-foot{font-size:10px}.sheet-top h3{font-size:22px}.sheet-top p{font-size:11px}
- .dg-line{grid-template-columns:minmax(0,1fr) 57px 62px}.map-bottom{align-items:flex-start}.map-heading h2{font-size:19px}
+ .map-bottom{align-items:flex-start}.map-heading h2{font-size:19px}
 }
 .map-point .pin-icon{display:inline-block;box-sizing:border-box;width:9px;height:9px;border:2px solid currentColor;border-radius:50% 50% 50% 0;transform:translateY(-1px) rotate(-45deg);margin:0 2px}

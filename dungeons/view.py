@@ -121,6 +121,25 @@ def quest_groups(quests, level=None, progress=None):
     return ''.join(groups)
 
 
+def level_fit(level, levels):
+    low, high = levels
+    if level is None:
+        state, label = 'unknown', '—'
+        tip = 'Уровень героя неизвестен.'
+    else:
+        if level < low:
+            state, label = 'below', f'−{low - level}'
+            detail = f'До нижней границы не хватает {low - level} ур.'
+        elif level > high:
+            state, label = 'above', f'+{level - high}'
+            detail = f'Выше верхней границы на {level - high} ур.'
+        else:
+            state, label = 'within', '✓'
+            detail = 'Уровень подходит для похода.'
+        tip = f'Герой {level} ур. · Диапазон данжа {low}–{high} ур. {detail}'
+    return f'<span class="dg-level-fit {state}">{metric(label, tip)}</span>'
+
+
 def member(dungeon, hero, record):
     character = hero.get('character') or {}
     cls = character.get('class') or {}
@@ -172,7 +191,7 @@ def member(dungeon, hero, record):
     level_label = metric(f'{level} ур.', 'Уровень героя по снимку оружейной.') if level is not None else '—'
     amount = metric(amount, score_tip)
     body = f'''<details class="dg-member is-{kind}" name="members-{dungeon["id"]}" data-member="{escape(key,quote=True)}">
-<summary class="dg-line"><span class="dg-person"><i class="dg-dot class-{char_class}" aria-hidden="true"></i><span class="dg-name">{name}</span><small class="dg-owner">{owner}</small></span><span class="dg-score"><i class="dg-bar" aria-hidden="true"><i style="width:{max(0,ratio)*100:.2f}%"></i></i><b>{amount}</b></span><span class="dg-state">{status}{blocked}</span></summary>
+<summary class="dg-line"><span class="dg-person"><i class="dg-dot class-{char_class}" aria-hidden="true"></i><span class="dg-name">{name}</span><small class="dg-owner">{owner}</small></span><span class="dg-score"><i class="dg-bar" aria-hidden="true"><i style="width:{max(0,ratio)*100:.2f}%"></i></i><b>{amount}</b></span><span class="dg-state">{status}{blocked}</span>{level_fit(level, dungeon['levels'])}</summary>
 <div class="dg-body"><div class="dg-profile">{owner} · {escape(cls.get("name","—"))} · {level_label}</div>{detail}</div></details>'''
     return ratio, body
 
@@ -198,7 +217,7 @@ def report(d, heroes, records):
 <header class="dg-report-head"><div><div class="dg-zone">{escape(d["zone"])} · {band}</div><h2>{escape(d["name"])}</h2><div class="dg-recommended">Для группы · {preferred}</div></div><div class="dg-total"><strong>{ready}</strong><span>полностью готовы</span></div></header>
 {note}<p class="dg-legend">До входа <b>{before}</b> · Внутри данжа <b>{inside}</b><span>Засчитаны взятые и сданные квесты для класса и расы героя.</span></p>
 <details class="dg-guide"><summary>Где взять квесты и начать цепочки</summary>{quest_groups(d["quests"])}<div class="dg-refs">{sources}</div></details>
-<div class="dg-colheads dg-line" aria-hidden="true"><span>Герой</span><span>До входа</span><span>Статус</span></div>
+<div class="dg-colheads dg-line" aria-hidden="true"><span>Герой</span><span>До входа</span><span>Статус</span><span>Уровень</span></div>
 <div class="dg-people">{group}</div></section>'''
 
 
@@ -207,7 +226,7 @@ def add_dungeons(page, heroes, catalog, snapshot):
     times = [r['time'] for r in records.values()]
     when = stamp(max(times)) if times else 'нет снимка'
     plans = [d['id'] for d in catalog if d.get('planned')]
-    default = plans[0] if len(plans) == 1 else 'wc'
+    default = plans[0] if plans else 'wc'
     radios = ''.join(f'<input type="radio" class="dg-radio" name="dungeon" id="pick-{d["id"]}" aria-controls="dg-report-{d["id"]}" '+('checked' if d['id']==default else '')+'>' for d in catalog)
     tabs = []
     for d in catalog:
